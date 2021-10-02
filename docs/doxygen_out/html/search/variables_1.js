@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hires_5fcount_40',['hires_count',['../namespacem__uuid.html#afe4e55c0cd9b4904e3687d934f9cd34c',1,'m_uuid']]]
+  ['box_357',['box',['../structm__display__util_1_1boxnode.html#a370dd4c2505b16a7e740eb84823b943a',1,'m_display_util::boxnode']]]
 ];

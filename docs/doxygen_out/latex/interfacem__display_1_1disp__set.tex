@@ -1,0 +1,78 @@
+\hypertarget{interfacem__display_1_1disp__set}{}\doxysection{m\+\_\+display\+::disp\+\_\+set Interface Reference}
+\label{interfacem__display_1_1disp__set}\index{m\_display::disp\_set@{m\_display::disp\_set}}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{interfacem__display_1_1disp__set_a3ed84626a8c0aec68c1c44b2e887e742}{disp\+\_\+set}} (advance, digmax, matsep, orient, sep, style, unit, zeroas)
+\item 
+subroutine \mbox{\hyperlink{interfacem__display_1_1disp__set_a763734e87c92afbf37d059cea632d541}{disp\+\_\+set\+\_\+ds}} (settings)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{interfacem__display_1_1disp__set_a3ed84626a8c0aec68c1c44b2e887e742}\label{interfacem__display_1_1disp__set_a3ed84626a8c0aec68c1c44b2e887e742}} 
+\index{m\_display::disp\_set@{m\_display::disp\_set}!disp\_set@{disp\_set}}
+\index{disp\_set@{disp\_set}!m\_display::disp\_set@{m\_display::disp\_set}}
+\doxysubsubsection{\texorpdfstring{disp\_set()}{disp\_set()}}
+{\footnotesize\ttfamily subroutine m\+\_\+display\+::disp\+\_\+set\+::disp\+\_\+set (\begin{DoxyParamCaption}\item[{character($\ast$), intent(in), optional}]{advance,  }\item[{integer, intent(in), optional}]{digmax,  }\item[{character($\ast$), intent(in), optional}]{matsep,  }\item[{character($\ast$), intent(in), optional}]{orient,  }\item[{character($\ast$), intent(in), optional}]{sep,  }\item[{character($\ast$), intent(in), optional}]{style,  }\item[{integer, intent(in), optional}]{unit,  }\item[{character($\ast$), intent(in), optional}]{zeroas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{namespacem__display_autotoc_md14}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__display_autotoc_md14}
+disp\+\_\+set(3f) -\/ \mbox{[}M\+\_\+display\mbox{]} set default options for disp(3f)\hypertarget{namespacem__display_autotoc_md15}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__display_autotoc_md15}
+The subroutine D\+I\+S\+P\+\_\+\+S\+ET may be used to change default values of all the arguments of D\+I\+SP except T\+I\+T\+LE, X, F\+MT and L\+B\+O\+U\+ND. In addition the default separator between items that are displayed side-\/by-\/side (using A\+D\+V\+A\+N\+CE=\textquotesingle{}no\textquotesingle{}) may be changed with the M\+A\+T\+S\+EP argument.\hypertarget{namespacem__display_autotoc_md16}{}\doxysubsubsection{T\+H\+E D\+E\+R\+I\+V\+E\+D T\+Y\+P\+E D\+I\+S\+P\+\_\+\+S\+E\+T\+T\+I\+N\+GS}\label{namespacem__display_autotoc_md16}
+M\+\_\+display contains the following definition of the data type D\+I\+S\+P\+\_\+\+S\+E\+T\+T\+I\+N\+GS. \begin{DoxyVerb}  type disp_settings
+    character(3)  :: advance   = 'YES'
+    character(9)  :: matsep    = '   '
+    character(3)  :: orient    = 'COL'
+    character(9)  :: sep       = '  '
+    character(19) :: style     = 'LEFT'
+    character(4)  :: trim      = 'AUTO'
+    character(9)  :: zeroas    = ''
+    integer       :: digmax    = 6
+    integer       :: matseplen = 3
+    integer       :: seplen    = 2
+    integer       :: unit      = -3
+    integer       :: zaslen    = 0
+  end type disp_settings
+\end{DoxyVerb}
+
+
+Structures of type D\+I\+S\+P\+\_\+\+S\+E\+T\+T\+I\+N\+GS may be used to save and later restore format control settings of D\+I\+SP. As shown, new variables of this type will automatically have default values for all components.\hypertarget{namespacem__display_autotoc_md17}{}\doxysubsubsection{C\+A\+L\+L\+I\+N\+G S\+Y\+N\+T\+A\+X F\+O\+R D\+I\+S\+P\+\_\+\+S\+ET}\label{namespacem__display_autotoc_md17}
+There are two ways to call D\+I\+S\+P\+\_\+\+S\+ET\+: \begin{DoxyVerb}  call disp_set(settings)
+  call disp_set(advance, digmax, matsep, orient, sep, style, unit, zeroas)
+\end{DoxyVerb}
+
+
+Both calls change the default format control used in subsequent calls to D\+I\+SP. In the first call, S\+E\+T\+T\+I\+N\+GS is of type D\+I\+S\+P\+\_\+\+S\+E\+T\+T\+I\+N\+GS and the default values for all arguments is changed. In the second call all the arguments are optional. If an argument is absent the corresponding default setting is not changed. An example call is \begin{DoxyVerb}  call disp_set(style = 'pad', sep = ' ').
+\end{DoxyVerb}
+
+
+The effect is that titles will be written padded above matrices, and matrix column will be separated by one blank. The type and purpose of all the arguments except M\+A\+T\+S\+EP has been described in section 3.\+2.
+
+M\+A\+T\+S\+EP = ms Specifies a character string of length $<$= 9 that is written out between items (matrices) when they are displayed side-\/by-\/side. An example is\+: \begin{DoxyVerb} call disp(x, advance='no')
+ call disp(y, advance='no')
+ call disp_set(matsep=' | ')
+ call disp(z, advance='yes')
+\end{DoxyVerb}
+
+
+The output from these calls might be\+: \begin{DoxyVerb} 12.2 |  1.3 | 1
+  9.6 | 13.0 | 3
+ -2.0 |  4.0 | 4
+\end{DoxyVerb}
+
+
+Note that M\+A\+T\+S\+EP affects the separation of all items that have been placed in the output queue of the unit being displayed on. \hypertarget{namespacem__display_autotoc_md18}{}\doxysubsubsection{A\+U\+T\+H\+OR}\label{namespacem__display_autotoc_md18}
+Based on dispmodule(3f), \char`\"{}\+A Fortran 95 module for pretty-\/printing matrices\char`\"{}. Version number 1.\+02 6-\/Sept-\/2008, Kristjan Jonasson, Dept. of Computer Science, University of Iceland (\href{mailto:jonasson@hi.is}{\texttt{ jonasson@hi.\+is}}). 
+
+\doxysubsection{Member Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{interfacem__display_1_1disp__set_a763734e87c92afbf37d059cea632d541}\label{interfacem__display_1_1disp__set_a763734e87c92afbf37d059cea632d541}} 
+\index{m\_display::disp\_set@{m\_display::disp\_set}!disp\_set\_ds@{disp\_set\_ds}}
+\index{disp\_set\_ds@{disp\_set\_ds}!m\_display::disp\_set@{m\_display::disp\_set}}
+\doxysubsubsection{\texorpdfstring{disp\_set\_ds()}{disp\_set\_ds()}}
+{\footnotesize\ttfamily subroutine m\+\_\+display\+::disp\+\_\+set\+::disp\+\_\+set\+\_\+ds (\begin{DoxyParamCaption}\item[{type(disp\+\_\+settings), intent(in)}]{settings }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/urbanjs/venus/\+V600/github/\+M\+\_\+display/src/\mbox{\hyperlink{M__display_8f90}{M\+\_\+display.\+f90}}\end{DoxyCompactItemize}

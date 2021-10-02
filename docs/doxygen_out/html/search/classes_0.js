@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['mtprng_5fstate_27',['mtprng_state',['../structm__uuid_1_1mtprng__state.html',1,'m_uuid']]]
+  ['boxlist_203',['boxlist',['../structm__display__util_1_1boxlist.html',1,'m_display_util']]],
+  ['boxnode_204',['boxnode',['../structm__display__util_1_1boxnode.html',1,'m_display_util']]]
 ];

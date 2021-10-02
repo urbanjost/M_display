@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['realtime_50',['realtime',['../namespacem__uuid.html#a18c282d14e62977dd0d2ee840f739f58',1,'m_uuid']]],
-  ['rng_5fstate_51',['rng_state',['../namespacem__uuid.html#a82c799af66694f27a6f7ef9eb0a7503b',1,'m_uuid']]]
+  ['gedit_371',['gedit',['../structm__display__util_1_1settings.html#af002794ad38662e2b56edce4f1a98d68',1,'m_display_util::settings']]]
 ];

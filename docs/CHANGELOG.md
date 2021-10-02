@@ -11,7 +11,7 @@ checked ...
    - [x] git repository on WWW (github)
    - [x] annotated source files with an open license
    - [ ] unit test
-   - [ ] make(1) build
+   - [x] make(1) build
    - [x] fpm(1) build
    - [x] user manual (on-line)
    - [x] man-page
@@ -26,6 +26,10 @@ checked ...
 
 ### :green_circle: ADD:
      initial release on github
+### :green_circle: ADD:
+     added make(1) build
+### :green_circle: ADD:
+     reintroduce unit tests build
 ---
 
 <!--

@@ -20,8 +20,39 @@
    and hopefully can improve Fortran's competitiveness against other
    array programming languages. The module also contains a function
    TOSTRING to convert numerical scalars and vectors to strings.
+## SAMPLE
+A simple example ...
+```fortran
+   program demo_disp_get
+   use M_display, only : disp, disp_set
+   implicit none
+   real :: x(2,3), y(3,2)
+      ! create some simple matrices 
+      x(1,:)=[ 1.0, 6.0, 5.0  ]
+      x(2,:)=[ 2.4, 4.0, 6.0  ]
+   
+      y(1,:)=[ 0.0, 3.5  ]
+      y(2,:)=[ 2.0, 7.0  ]
+      y(3,:)=[ 4.0, 8.22 ]
 
-<!--
+      ! print the arrays in row-column order   
+      call disp('y=',y)
+      print *
+      ! set a few default preferences
+      call disp_set(digmax=4, sep=',')
+      call disp('x=',x)
+   end program demo_disp_get
+```
+Expected output
+```text
+   y=0.00000  3.50000
+     2.00000  7.00000
+     4.00000  8.22000
+    
+   x=1.000,6.000,5.000
+     2.400,4.000,6.000
+```
+
 ## BUILDING THE MODULE USING make(1) ![gmake](docs/images/gnu.gif)
      git clone https://github.com/urbanjost/M_display.git
      cd M_display/src
@@ -70,27 +101,25 @@ Note in this version the module "dispmodule" has been named "M_display" ...
    - [Original report](docs/dispmodule-report.pdf)
    - [Original User Manual](docs/dispmodule-userman-report.pdf)
    - ![manpages](docs/images/manpages.gif)
-     There are man-pages in the repository download in the docs/ directory
-     that may be installed on ULS (Unix-Like Systems). 
-
       + a simple index to the man-pages in HTML form for the
         [routines](https://urbanjost.github.io/M_display/man3.html) 
         and [programs](https://urbanjost.github.io/M_display/man1.html) 
    
       + A single page that uses javascript to combine all the HTML
-        descriptions of the man-pages is at 
+        descriptions of the man-pages 
         [BOOK_M_display](https://urbanjost.github.io/M_display/BOOK_M_display.html).
-   
-      + [manpages.zip](https://urbanjost.github.io/M_display/manpages.zip)
-      + [manpages.tgz](https://urbanjost.github.io/M_display/manpages.tgz)
+
+      + There are man-pages in the repository download in the docs/ directory
+        that may be installed on ULS (Unix-Like Systems) --
+        [manpages.zip](https://urbanjost.github.io/M_display/manpages.zip)
+        or
+        [manpages.tgz](https://urbanjost.github.io/M_display/manpages.tgz)
 
    - [CHANGELOG](docs/CHANGELOG.md) provides a history of significant changes
 
 ### DEVELOPER
    - [ford(1) output](https://urbanjost.github.io/M_display/fpm-ford/index.html).
-<!--
    - [doxygen(1) output](https://urbanjost.github.io/M_display/doxygen_out/html/index.html).
--->
    - [github action status](docs/STATUS.md) 
 ---
 ## PEDIGREE

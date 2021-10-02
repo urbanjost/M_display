@@ -1,0 +1,10 @@
+'mainpage.txt
+/**
+         @mainpage M_display Fortran Library
+
+         @section Introduction
+
+     M_display - Fortran module for displaying small matrices
+
+         @image html html/images/sort.gif
+*/'
