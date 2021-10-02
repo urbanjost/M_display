@@ -69,20 +69,20 @@ Note in this version the module "dispmodule" has been named "M_disp" ...
 
    - [Original report](docs/dispmodule-report.pdf)
    - [Original User Manual](docs/dispmodule-userman-report.pdf)
+   - ![manpages](docs/images/manpages.gif)
+     There are man-pages in the repository download in the docs/ directory
+     that may be installed on ULS (Unix-Like Systems). 
 
-   - There are man-pages in the repository download in the docs/ directory
-     that may be installed on ULS (Unix-Like Systems). ![manpages](docs/images/manpages.gif)
-
-   + [manpages.zip](https://urbanjost.github.io/M_display/manpages.zip)
-   + [manpages.tgz](https://urbanjost.github.io/M_display/manpages.tgz)
-
-   - a simple index to the man-pages in HTML form for the
-   [routines](https://urbanjost.github.io/M_display/man3.html) 
-   and [programs](https://urbanjost.github.io/M_display/man1.html) 
-
-   - A single page that uses javascript to combine all the HTML
-     descriptions of the man-pages is at 
-     [BOOK_M_display](https://urbanjost.github.io/M_display/BOOK_M_display.html).
+      + a simple index to the man-pages in HTML form for the
+        [routines](https://urbanjost.github.io/M_display/man3.html) 
+        and [programs](https://urbanjost.github.io/M_display/man1.html) 
+   
+      + A single page that uses javascript to combine all the HTML
+        descriptions of the man-pages is at 
+        [BOOK_M_display](https://urbanjost.github.io/M_display/BOOK_M_display.html).
+   
+      + [manpages.zip](https://urbanjost.github.io/M_display/manpages.zip)
+      + [manpages.tgz](https://urbanjost.github.io/M_display/manpages.tgz)
 
    - [CHANGELOG](docs/CHANGELOG.md) provides a history of significant changes
 
@@ -109,10 +109,10 @@ Iceland (jonasson@hi.is). This software is free. For details see the file LICENS
 ```
 ### Additional References sited by the author
 
-    * Chambers, J. M. 2007. Software for Data Analysis: Programming with
-      R. Springer-Verlag, New York, NY. Google ScholarDigital Library
-    * Eaton, J. W. 2002. GNU Octave Manual. Network Theory Limited, Bristol, U.K.Google Scholar
-    * ISO/IEC. 1997. Information technology—programming
-      languages—Fortran-part 1: Base language. ISO/IEC Tech. rep. 1539-1:1997. 
-      ISO, Geneva, Switzerland.Google Scholar
+  - Chambers, J. M. 2007. Software for Data Analysis: Programming with
+    R. Springer-Verlag, New York, NY. Google ScholarDigital Library
+  - Eaton, J. W. 2002. GNU Octave Manual. Network Theory Limited, Bristol, U.K.Google Scholar
+  - ISO/IEC. 1997. Information technology—programming
+    languages—Fortran-part 1: Base language. ISO/IEC Tech. rep. 1539-1:1997. 
+    ISO, Geneva, Switzerland.Google Scholar
 ---
