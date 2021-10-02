@@ -65,7 +65,7 @@ program that exercise the routine.
 ## DOCUMENTATION
 
 ### USER
-Note in this version the module "dispmodule" has been named "M_disp" ...
+Note in this version the module "dispmodule" has been named "M_display" ...
 
    - [Original report](docs/dispmodule-report.pdf)
    - [Original User Manual](docs/dispmodule-userman-report.pdf)

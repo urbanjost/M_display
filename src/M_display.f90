@@ -238,32 +238,32 @@ END MODULE PUTSTRMODULE
 !!
 !! Expected results:
 !!
-!!    A =  2.718   7.389   20.086
-!!         7.389  20.086   54.598
-!!        20.086  54.598  148.413
-!!
-!!    2.71828E+00  2.71828E+00  2.71828E+00
-!!    7.38906E+00  5.45982E+01  2.98096E+03
-!!    2.00855E+01  8.10308E+03  5.32048E+11
-!!
-!!    2.71828   7.38906  20.08554
-!!    7.38906  20.08554  54.59815
-!!
-!!           MATRIX
-!!    --------------------
-!!         1     2      3
-!!    1   2.7   7.4   20.1
-!!    2   7.4  20.1   54.6
-!!    3  20.1  54.6  148.4
-!!
-!!    ------K-----
-!!    -3 . 12 14 .
-!!
-!!    The square of 1.5 is 2.25
-!!
-!!    11 | T | A
-!!    12 | F | B
-!!    13 | T | C
+!!     > A =  2.718   7.389   20.086
+!!     >      7.389  20.086   54.598
+!!     >     20.086  54.598  148.413
+!!     >
+!!     > 2.71828E+00  2.71828E+00  2.71828E+00
+!!     > 7.38906E+00  5.45982E+01  2.98096E+03
+!!     > 2.00855E+01  8.10308E+03  5.32048E+11
+!!     >
+!!     > 2.71828   7.38906  20.08554
+!!     > 7.38906  20.08554  54.59815
+!!     >
+!!     >        MATRIX
+!!     > --------------------
+!!     >      1     2      3
+!!     > 1   2.7   7.4   20.1
+!!     > 2   7.4  20.1   54.6
+!!     > 3  20.1  54.6  148.4
+!!     >
+!!     > ------K-----
+!!     > -3 . 12 14 .
+!!     >
+!!     > The square of 1.5 is 2.25
+!!     >
+!!     > 11 | T | A
+!!     > 12 | F | B
+!!     > 13 | T | C
 !!
 !!##AUTHOR
 !!   Based on dispmodule(3f), "A Fortran 95 module for pretty-printing matrices".
@@ -1656,7 +1656,7 @@ CONTAINS
 !!
 !! M_display contains the following definition of the data type DISP_SETTINGS.
 !!
-!!       TYPE DISP_SETTINGS
+!!       type disp_settings
 !!         character(3)  :: advance   = 'YES'
 !!         character(9)  :: matsep    = '   '
 !!         character(3)  :: orient    = 'COL'
@@ -1669,7 +1669,7 @@ CONTAINS
 !!         integer       :: seplen    = 2
 !!         integer       :: unit      = -3
 !!         integer       :: zaslen    = 0
-!!       END TYPE DISP_SETTINGS
+!!       end type disp_settings
 !!
 !! Structures of type DISP_SETTINGS may be used to save and later restore format control settings of
 !! DISP. As shown, new variables of this type will automatically have default values for all
@@ -1680,15 +1680,15 @@ CONTAINS
 !!
 !! There are two ways to call DISP_SET:
 !!
-!!       CALL DISP_SET(SETTINGS)
-!!       CALL DISP_SET(ADVANCE, DIGMAX, MATSEP, ORIENT, SEP, STYLE, UNIT, ZEROAS)
+!!       call disp_set(settings)
+!!       call disp_set(advance, digmax, matsep, orient, sep, style, unit, zeroas)
 !!
 !! Both calls change the default format control used in subsequent calls to DISP. In the first call,
 !! SETTINGS is of type DISP_SETTINGS and the default values for all arguments is changed. In the
 !! second call all the arguments are optional. If an argument is absent the corresponding default
 !! setting is not changed. An example call is
 !!
-!!       CALL DISP_SET(STYLE = 'PAD', SEP = ' ').
+!!       call disp_set(style = 'pad', sep = ' ').
 !!
 !! The effect is that titles will be written padded above matrices, and matrix column will be
 !! separated by one blank. The type and purpose of all the arguments except MATSEP has been
@@ -1697,10 +1697,10 @@ CONTAINS
 !! MATSEP = ms  Specifies a character string of length <= 9 that is written out between items
 !!              (matrices) when they are displayed side-by-side. An example is:
 !!
-!!                   CALL DISP(X, ADVANCE='NO')
-!!                   CALL DISP(Y, ADVANCE='NO')
-!!                   CALL DISP_SET(MATSEP=' | ')
-!!                   CALL DISP(Z, ADVANCE='YES')
+!!                   call disp(x, advance='no')
+!!                   call disp(y, advance='no')
+!!                   call disp_set(matsep=' | ')
+!!                   call disp(z, advance='yes')
 !!
 !!              The output from these calls might be:
 !!
