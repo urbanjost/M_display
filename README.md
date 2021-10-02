@@ -5,7 +5,7 @@
 ## SYNOPSIS
 ```text
        use m_display, only : disp
--->
+--!>
 ## DESCRIPTION
    A standard Fortran 95 module for printing scalars, vectors, and
    matrices to external files is provided. The module can display
@@ -41,7 +41,7 @@
 
 This will compile the Fortran module and basic example
 program that exercise the routine.
--->
+--!>
 
 ## BUILD and TEST with FPM ![-](docs/images/fpm_logo.gif)
 
@@ -91,12 +91,12 @@ Note in this version the module "dispmodule" has been named "M_disp" ...
    - [ford(1) output](https://urbanjost.github.io/M_display/fpm-ford/index.html).
 <!--
    - [doxygen(1) output](https://urbanjost.github.io/M_display/doxygen_out/html/index.html).
--->
+--!>
    - [github action status](docs/STATUS.md) 
 ---
 ## PEDIGREE
-  Copyright (c) 2008, Kristj n J nasson, Dept. of Computer Science, University of
-  Iceland (jonasson@hi.is). This software is free. For details see the file README.
+Copyright (c) 2008, Kristján Jónasson, Dept. of Computer Science, University of
+Iceland (jonasson@hi.is). This software is free. For details see the file README.
 
 ## REFERENCES ![-](docs/images/ref.gif)
 
@@ -107,13 +107,12 @@ Note in this version the module "dispmodule" has been named "M_disp" ...
    Author:       Kristjan Jonasson
    Published:    16 March 2009
 ```
-References
+### Additional References sited by the author
 
-    * Algorithm 892: DISPMODULE, a Fortran 95 module for pretty-printing matrices
     * Chambers, J. M. 2007. Software for Data Analysis: Programming with
       R. Springer-Verlag, New York, NY. Google ScholarDigital Library
     * Eaton, J. W. 2002. GNU Octave Manual. Network Theory Limited, Bristol, U.K.Google Scholar
     * ISO/IEC. 1997. Information technology—programming
-      languages—Fortran-part 1: Base language. ISO/IEC
-      Tech. rep. 1539-1:1997. ISO, Geneva, Switzerland.Google Scholar
+      languages—Fortran-part 1: Base language. ISO/IEC Tech. rep. 1539-1:1997. 
+      ISO, Geneva, Switzerland.Google Scholar
 ---
