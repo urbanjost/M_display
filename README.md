@@ -6,7 +6,6 @@
 ```text
        use m_display, only : disp
 -->
-```
 ## DESCRIPTION
    A standard Fortran 95 module for printing scalars, vectors, and
    matrices to external files is provided. The module can display
