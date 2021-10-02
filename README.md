@@ -5,7 +5,7 @@
 ## SYNOPSIS
 ```text
        use m_display, only : disp
---!>
+-->
 ## DESCRIPTION
    A standard Fortran 95 module for printing scalars, vectors, and
    matrices to external files is provided. The module can display
@@ -41,7 +41,7 @@
 
 This will compile the Fortran module and basic example
 program that exercise the routine.
---!>
+-->
 
 ## BUILD and TEST with FPM ![-](docs/images/fpm_logo.gif)
 
@@ -70,9 +70,8 @@ Note in this version the module "dispmodule" has been named "M_disp" ...
    - [Original report](docs/dispmodule-report.pdf)
    - [Original User Manual](docs/dispmodule-userman-report.pdf)
 
-![manpages](docs/images/manpages.gif)
    - There are man-pages in the repository download in the docs/ directory
-     that may be installed on ULS (Unix-Like Systems).
+     that may be installed on ULS (Unix-Like Systems). ![manpages](docs/images/manpages.gif)
 
    + [manpages.zip](https://urbanjost.github.io/M_display/manpages.zip)
    + [manpages.tgz](https://urbanjost.github.io/M_display/manpages.tgz)
@@ -91,16 +90,17 @@ Note in this version the module "dispmodule" has been named "M_disp" ...
    - [ford(1) output](https://urbanjost.github.io/M_display/fpm-ford/index.html).
 <!--
    - [doxygen(1) output](https://urbanjost.github.io/M_display/doxygen_out/html/index.html).
---!>
+-->
    - [github action status](docs/STATUS.md) 
 ---
 ## PEDIGREE
 Copyright (c) 2008, Kristján Jónasson, Dept. of Computer Science, University of
-Iceland (jonasson@hi.is). This software is free. For details see the file README.
+Iceland (jonasson@hi.is). This software is free. For details see the file LICENSE.
 
 ## REFERENCES ![-](docs/images/ref.gif)
 
  * [ACM Algorithm 892: DISPMODULE](https://dl.acm.org/doi/10.1145/1486525.1486531) a Fortran 95 module for pretty-printing matrices
+
 ```text
    ACM Journals: ACM Transactions on Mathematical Software Vol. 36, No. 1 
    Article No.:  6pp 1–7https://doi.org/10.1145/1486525.1486531
