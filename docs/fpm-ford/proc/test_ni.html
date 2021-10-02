@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="display small matrices in row-column order">
+    
+    <meta name="author" content="John S. Urban" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>test_ni &ndash; M_display</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">M_display </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+        
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>test_ni
+      <small>Subroutine</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 7.7% of total for procedures.">97 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/test_naninf_mod.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/test_naninf_mod.f90.html'>test_naninf_mod.f90</a></li>
+    
+     <li><a href='../module/test_naninf_mod.html'>TEST_NANINF_MOD</a></li>
+    
+  
+     <li class="active">test_ni</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-d1">d1</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-d2">d2</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-d3">d3</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-d4">d4</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-mask1">mask1</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-mask2">mask2</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-mask3">mask3</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-s1">s1</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-s2">s2</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-s3">s3</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-s4">s4</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-zero">zero</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/test_ni.html#src">test_ni</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>
+public subroutine test_ni(nan, inf, minf)
+    
+    
+   
+</h2>
+    
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      
+      <li class="list-group-item">
+  <ul class="list-inline">
+    
+    <li><a href='../module/m_display.html'>M_display</a></li>
+    
+  </ul>
+      </li>
+      
+      
+      
+      </ul>
+    </div>
+    
+
+
+    
+
+    <h3>Arguments</h3>
+    
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nan~2"></span>real(kind=srk),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>nan</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-inf~2"></span>real(kind=srk),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>inf</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-minf~2"></span>real(kind=srk),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>minf</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    
+    
+    
+    
+     
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-d1">d1</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-d2">d2</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-d3">d3</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-d4">d4</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-mask1">mask1</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-mask2">mask2</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-mask3">mask3</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-s1">s1</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-s2">s2</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-s3">s3</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-s4">s4</a>
+      
+      <a class="list-group-item" href="../proc/test_ni.html#variable-zero">zero</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/test_ni.html#src">test_ni</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    <section>    
+      <h2>Variables</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-d1"></span>real(kind=srk),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>d1</strong>(3,2)</td><td> =</td><td>reshape((/-2.146_srk, 0._srk, 1._srk, 0._srk, 20.33_srk, 0._srk/), (/3, 2/))</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-d2"></span>real(kind=srk),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>d2</strong>(2)</td><td> =</td><td>(/0._srk, 0._srk/)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-d3"></span>real(kind=srk),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>d3</strong>(2)</td><td> =</td><td>(/12e20_srk, 0._srk/)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-d4"></span>real(kind=srk),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>d4</strong></td><td> =</td><td>0._srk</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mask1"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>mask1</strong>(3,2)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mask2"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>mask2</strong>(2)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mask3"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>mask3</strong>(2)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-s1"></span>character(len=12),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>s1</strong>(3)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-s2"></span>character(len=9),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>s2</strong>(1)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-s3"></span>character(len=16),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>s3</strong>(2)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-s4"></span>character(len=9),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>s4</strong>(2)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-zero"></span>real(kind=srk),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>zero</strong></td><td> =</td><td>0._srk</td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span>  <span class="k">subroutine </span><span class="n">test_ni</span><span class="p">(</span><span class="n">nan</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="n">minf</span><span class="p">)</span>
+    <span class="k">USE </span><span class="n">M_display</span>
+    <span class="c">!use, intrinsic :: ieee_arithmetic</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">srk</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nan</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="n">minf</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">srk</span><span class="p">)</span> <span class="kd">::</span> <span class="p">&amp;</span>
+         <span class="n">zero</span> <span class="o">=</span> <span class="mf">0._srk</span><span class="p">,</span> <span class="p">&amp;</span>
+         <span class="n">d1</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="nb">reshape</span><span class="p">((</span><span class="o">/-</span><span class="mf">2.146_srk</span><span class="p">,</span> <span class="mf">0._srk</span><span class="p">,</span> <span class="mf">1._srk</span><span class="p">,</span> <span class="mf">0._srk</span><span class="p">,</span> <span class="mi">2</span><span class="mf">0.33_srk</span><span class="p">,</span> <span class="mf">0._srk</span><span class="o">/</span><span class="p">),</span> <span class="p">(</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="p">)),</span> <span class="p">&amp;</span>
+         <span class="n">d2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>   <span class="o">=</span> <span class="p">(</span><span class="o">/</span><span class="mf">0._srk</span><span class="p">,</span> <span class="mf">0._srk</span><span class="o">/</span><span class="p">),</span> <span class="p">&amp;</span>
+         <span class="n">d3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>   <span class="o">=</span> <span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="mf">2e20_srk</span><span class="p">,</span> <span class="mf">0._srk</span><span class="o">/</span><span class="p">),</span> <span class="p">&amp;</span>
+         <span class="n">d4</span>      <span class="o">=</span> <span class="mf">0._srk</span>
+    <span class="kt">logical</span> <span class="kd">::</span> <span class="n">mask1</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">mask2</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">mask3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="kt">character</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="kd">::</span> <span class="n">s1</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="kt">character</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">s2</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="kt">character</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="kd">::</span> <span class="n">s3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="kt">character</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">s4</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c">!</span>
+  <span class="k">call </span><span class="n">open_8</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">verbose</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">adv</span> <span class="o">=</span> <span class="s1">&#39;yes&#39;</span>
+    <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">fmt</span><span class="p">,</span> <span class="n">advance</span> <span class="o">=</span> <span class="n">adv</span><span class="p">)</span> <span class="n">srk</span>
+
+    <span class="n">mask1</span> <span class="o">=</span> <span class="n">d1</span> <span class="o">==</span> <span class="n">zero</span>
+    <span class="n">mask2</span> <span class="o">=</span> <span class="n">d2</span> <span class="o">==</span> <span class="n">zero</span>
+    <span class="n">mask3</span> <span class="o">=</span> <span class="n">d3</span> <span class="o">==</span> <span class="n">zero</span>
+    <span class="n">d1</span> <span class="o">=</span> <span class="nb">merge</span><span class="p">(</span><span class="n">nan</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">mask1</span><span class="p">)</span>
+    <span class="n">d2</span> <span class="o">=</span> <span class="nb">merge</span><span class="p">(</span><span class="n">nan</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">mask2</span><span class="p">)</span>
+    <span class="n">d3</span> <span class="o">=</span> <span class="nb">merge</span><span class="p">(</span><span class="n">nan</span><span class="p">,</span> <span class="n">d3</span><span class="p">,</span> <span class="n">mask3</span><span class="p">)</span>
+    <span class="n">d4</span> <span class="o">=</span> <span class="n">nan</span>
+    <span class="c">!</span>
+    <span class="n">s1</span> <span class="o">=</span> <span class="p">(</span><span class="o">/</span><span class="s1">&#39;-2.15    NaN&#39;</span> <span class="p">,&amp;</span>
+        <span class="p">&amp;</span>  <span class="s1">&#39;  NaN  20.33&#39;</span> <span class="p">,&amp;</span>
+        <span class="p">&amp;</span>  <span class="s1">&#39; 1.00    NaN&#39;</span> <span class="o">/</span><span class="p">)</span>
+    <span class="c">!</span>
+    <span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39; NaN, NaN&#39;</span>
+    <span class="c">!</span>
+    <span class="n">s3</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;A = 1.20000E+21&#39;</span>
+    <span class="n">s3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;            NaN&#39;</span>
+    <span class="c">!</span>
+    <span class="n">s4</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;Longtitle&#39;</span>
+    <span class="n">s4</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;   NaN   &#39;</span>
+    <span class="c">!</span>
+    <span class="k">call </span><span class="n">assert_init</span><span class="p">(</span><span class="s1">&#39;TEST_NAN&#39;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">disp_set</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">style</span> <span class="o">=</span> <span class="s1">&#39;PAD&#39;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">digmax</span><span class="o">=</span><span class="mi">4</span><span class="p">);</span>                  <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="s1">&#39;NaN-1&#39;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">digmax</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">zeroas</span><span class="o">=</span><span class="s1">&#39;0.&#39;</span><span class="p">);</span>     <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="s1">&#39;NaN-1&#39;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="s1">&#39;row&#39;</span><span class="p">);</span> <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span> <span class="s1">&#39;NaN-2&#39;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="s1">&#39;A = &#39;</span><span class="p">,</span> <span class="n">d3</span><span class="p">,</span> <span class="n">style</span> <span class="o">=</span> <span class="s1">&#39;left&#39;</span><span class="p">);</span>    <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s3</span><span class="p">,</span> <span class="s1">&#39;NaN-3&#39;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="s1">&#39;Longtitle&#39;</span><span class="p">,</span> <span class="n">d4</span><span class="p">);</span>               <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s4</span><span class="p">,</span> <span class="s1">&#39;NaN-4&#39;</span><span class="p">)</span>
+
+    <span class="n">d1</span> <span class="o">=</span> <span class="nb">merge</span><span class="p">(</span><span class="n">inf</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">mask1</span><span class="p">)</span>
+    <span class="n">d2</span> <span class="o">=</span> <span class="nb">merge</span><span class="p">(</span><span class="n">inf</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">mask2</span><span class="p">)</span>
+    <span class="n">d3</span> <span class="o">=</span> <span class="nb">merge</span><span class="p">(</span><span class="n">inf</span><span class="p">,</span> <span class="n">d3</span><span class="p">,</span> <span class="n">mask3</span><span class="p">)</span>
+    <span class="n">d4</span> <span class="o">=</span> <span class="n">inf</span>
+    <span class="n">s1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;-2.15   +Inf&#39;</span>
+    <span class="n">s1</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39; +Inf  20.33&#39;</span>
+    <span class="n">s1</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39; 1.00   +Inf&#39;</span>
+    <span class="n">s2</span>    <span class="o">=</span> <span class="s1">&#39;+Inf,+Inf&#39;</span>
+    <span class="n">s3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;           +Inf&#39;</span>
+    <span class="n">s4</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;  +Inf   &#39;</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">digmax</span><span class="o">=</span><span class="mi">4</span><span class="p">);</span>                  <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="s1">&#39;Inf-1&#39;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">digmax</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">zeroas</span><span class="o">=</span><span class="s1">&#39;0.&#39;</span><span class="p">);</span>     <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="s1">&#39;Inf-1&#39;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="s1">&#39;row&#39;</span><span class="p">);</span> <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span> <span class="s1">&#39;Inf-2&#39;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="s1">&#39;A = &#39;</span><span class="p">,</span> <span class="n">d3</span><span class="p">,</span> <span class="n">style</span> <span class="o">=</span> <span class="s1">&#39;left&#39;</span><span class="p">);</span>    <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s3</span><span class="p">,</span> <span class="s1">&#39;Inf-3&#39;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="s1">&#39;Longtitle&#39;</span><span class="p">,</span> <span class="n">d4</span><span class="p">);</span>               <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s4</span><span class="p">,</span> <span class="s1">&#39;Inf-4&#39;</span><span class="p">)</span>
+
+    <span class="n">d1</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span> <span class="o">=</span> <span class="nb">merge</span><span class="p">(</span><span class="n">minf</span><span class="p">,</span> <span class="n">d1</span><span class="p">(</span><span class="mi">1</span><span class="p">,:),</span> <span class="n">mask1</span><span class="p">(</span><span class="mi">1</span><span class="p">,:))</span>
+    <span class="n">d1</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span> <span class="o">=</span> <span class="nb">merge</span><span class="p">(</span> <span class="n">nan</span><span class="p">,</span> <span class="n">d1</span><span class="p">(</span><span class="mi">2</span><span class="p">,:),</span> <span class="n">mask1</span><span class="p">(</span><span class="mi">2</span><span class="p">,:))</span>
+    <span class="n">d1</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="o">=</span> <span class="nb">merge</span><span class="p">(</span> <span class="n">inf</span><span class="p">,</span> <span class="n">d1</span><span class="p">(</span><span class="mi">3</span><span class="p">,:),</span> <span class="n">mask1</span><span class="p">(</span><span class="mi">3</span><span class="p">,:))</span>
+    <span class="n">d2</span> <span class="o">=</span> <span class="nb">merge</span><span class="p">(</span><span class="n">minf</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">mask2</span><span class="p">)</span>
+    <span class="n">d3</span> <span class="o">=</span> <span class="nb">merge</span><span class="p">(</span><span class="n">minf</span><span class="p">,</span> <span class="n">d3</span><span class="p">,</span> <span class="n">mask3</span><span class="p">)</span>
+    <span class="n">d4</span> <span class="o">=</span> <span class="n">minf</span>
+    <span class="n">s1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;-2.15   -Inf&#39;</span>
+    <span class="n">s1</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;  NaN  20.33&#39;</span>
+    <span class="n">s1</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39; 1.00   +Inf&#39;</span>
+    <span class="n">s2</span>    <span class="o">=</span> <span class="s1">&#39;-Inf,-Inf&#39;</span>
+    <span class="n">s3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;           -Inf&#39;</span>
+    <span class="n">s4</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;  -Inf   &#39;</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">digmax</span><span class="o">=</span><span class="mi">4</span><span class="p">);</span>                  <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="s1">&#39;-Inf-1&#39;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="s1">&#39;row&#39;</span><span class="p">);</span> <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span> <span class="s1">&#39;-Inf-2&#39;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="s1">&#39;A = &#39;</span><span class="p">,</span> <span class="n">d3</span><span class="p">,</span> <span class="n">style</span> <span class="o">=</span> <span class="s1">&#39;left&#39;</span><span class="p">);</span>    <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s3</span><span class="p">,</span> <span class="s1">&#39;-Inf-3&#39;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="s1">&#39;Longtitle&#39;</span><span class="p">,</span> <span class="n">d4</span><span class="p">);</span>               <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s4</span><span class="p">,</span> <span class="s1">&#39;-Inf-4&#39;</span><span class="p">)</span>
+
+    <span class="n">s1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39; -2.  -Inf&#39;</span>
+    <span class="n">s1</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39; NaN   20.&#39;</span>
+    <span class="n">s1</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;  1.  +Inf&#39;</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">digmax</span><span class="o">=</span><span class="mi">2</span><span class="p">);</span>           <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="s1">&#39;Mixed-1&#39;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="s1">&#39;F4.0&#39;</span><span class="p">);</span>             <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="s1">&#39;Mixed-2&#39;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="s1">&#39;F4.0&#39;</span><span class="p">,</span> <span class="nb">trim</span><span class="o">=</span><span class="s1">&#39;yes&#39;</span><span class="p">);</span> <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="s1">&#39;Mixed-3&#39;</span><span class="p">)</span>
+    <span class="n">s1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;-2.  ***&#39;</span>
+    <span class="n">s1</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;NaN  20.&#39;</span>
+    <span class="n">s1</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39; 1.  Inf&#39;</span>
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="s1">&#39;F3.0&#39;</span><span class="p">);</span> <span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="s1">&#39;Field-overflow-1&#39;</span><span class="p">)</span>
+    
+    <span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="s1">&#39;F2.0&#39;</span><span class="p">);</span> <span class="k">call </span><span class="n">compare</span><span class="p">((</span><span class="o">/</span><span class="s1">&#39;**&#39;</span><span class="p">,</span><span class="s1">&#39;**&#39;</span><span class="o">/</span><span class="p">),</span> <span class="s1">&#39;Field-overflow-2&#39;</span><span class="p">)</span>
+
+    <span class="k">call </span><span class="n">disp_set_factory</span>
+    <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(&quot;  OK&quot;)&#39;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">close_8</span>
+
+  <span class="k">end subroutine </span><span class="n">test_ni</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    
+    </div>
+  </div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2021-10-02 11:12  
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> M_display was developed by John S. Urban</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

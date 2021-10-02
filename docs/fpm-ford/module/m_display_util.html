@@ -1,0 +1,3260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="display small matrices in row-column order">
+    
+    <meta name="author" content="John S. Urban" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>M_display_UTIL &ndash; M_display</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">M_display </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+        
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>M_display_UTIL 
+    <small>Module</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title="26.5% of total for modules and submodules.">779 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/M_display.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/m_display.f90.html'>M_display.f90</a></li>
+    
+  
+     <li class="active">M_display_UTIL</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/m_display_util.html#variable-defset">DEFSET</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#variable-factory_settings">FACTORY_SETTINGS</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#variable-errormsg">errormsg</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#variable-tosfac">tosfac</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#variable-tosset">tosset</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-0">Derived Types</a></h3></div>
+  <div id="types-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/m_display_util.html#type-boxlist">boxlist</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#type-boxnode">boxnode</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#type-disp_settings">disp_settings</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#type-settings">settings</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#type-tostring_settings">tostring_settings</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
+  <div id="funcs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-nnblk">nnblk</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-upper">upper</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-check_settings">check_settings</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-copyseptobox">copyseptobox</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-copytobox">copytobox</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-disp_errmsg">disp_errmsg</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-find_editdesc_real">find_editdesc_real</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-finishbox">finishbox</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-get_se">get_SE</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-preparebox">preparebox</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-readfmt">readfmt</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-replace_w">replace_w</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-replace_zeronaninf">replace_zeronaninf</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-tostring_check_settings">tostring_check_settings</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-tostring_get">tostring_get</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-tostring_get_complex">tostring_get_complex</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-trim_real">trim_real</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-trim_s_real">trim_s_real</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2 id="name">NAME</h2>
+<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="n">M_display</span><span class="p">(</span><span class="mi">3</span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n">M_display</span><span class="o">]</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">pretty</span><span class="o">-</span><span class="n">printing</span><span class="w"> </span><span class="n">matrices</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="introduction">INTRODUCTION</h2>
+<p>M_display is a standard Fortran 95 module for quick and easy displaying of numbers, vectors or
+ matrices using default or specified format. It can be useful for debugging purposes, for
+ preliminary display of numerical results, and even for final display of such results in cases when
+ carefully formatted tables are not needed. It is comparable to the automatic matrix printing of
+ Matlab, S and R, but offers substantially more control over the format used.</p>
+<p>The module can handle the standard Fortran data types integer, single precision, double precision,
+ complex, logical and character. Integer, real, complex and logical data of other than default kind
+ are supported with add-on modules. The module contains the following public procedures:</p>
+<div class="codehilite"><pre><span></span><code>   <span class="nv">Subroutine</span> <span class="nv">DISP</span>                  <span class="nv">The</span> <span class="nv">main</span> <span class="nv">procedure</span> <span class="nv">used</span> <span class="k">for</span> <span class="nv">displaying</span> <span class="nv">items</span>
+   <span class="nv">Subroutine</span> <span class="nv">DISP_SET</span>              <span class="nv">Used</span> <span class="nv">to</span> <span class="nv">change</span> <span class="nv">default</span> <span class="nv">settings</span> <span class="k">for</span> <span class="nv">DISP</span>
+   <span class="nv">Subroutine</span> <span class="nv">DISP_SET_FACTORY</span>      <span class="nv">Restores</span> <span class="nv">DISP</span><span class="o">-</span><span class="nv">settings</span> <span class="nv">to</span> <span class="nv">original</span> <span class="ss">(</span><span class="nv">factory</span><span class="ss">)</span> <span class="nv">default</span>
+   <span class="nv">Function</span> <span class="nv">DISP_GET</span>                <span class="nv">Returns</span> <span class="nv">a</span> <span class="nv">structure</span> <span class="nv">with</span> <span class="nv">current</span> <span class="nv">DISP</span><span class="o">-</span><span class="nv">settings</span>
+   <span class="nv">Function</span> <span class="nv">TOSTRING</span>                <span class="nv">Returns</span> <span class="nv">a</span> <span class="nv">string</span> <span class="nv">representation</span> <span class="nv">of</span> <span class="nv">a</span> <span class="nv">scalar</span> <span class="nv">or</span> <span class="nv">vector</span>
+   <span class="nv">Subroutine</span> <span class="nv">TOSTRING_SET</span>          <span class="nv">Used</span> <span class="nv">to</span> <span class="nv">change</span> <span class="nv">default</span> <span class="nv">settings</span> <span class="k">for</span> <span class="nv">TOSTRING</span>
+   <span class="nv">Subroutine</span> <span class="nv">TOSTRING_SET_FACTORY</span>  <span class="nv">Restores</span> <span class="nv">TOSTRING</span><span class="o">-</span><span class="nv">settings</span> <span class="nv">to</span> <span class="nv">original</span> <span class="nv">default</span>
+</code></pre></div>
+
+<p>In addition the module defines a public derived type, DISP_SETTINGS, used for saving and restoring
+ settings for DISP. The procedures DISP and TOSTRING have a generic interface and optional
+ arguments, so the same subroutine / function name, is used to display items of different data
+ types and ranks, with or without labels, and using default or specified format. Similarly DISP_SET
+ is generic and can be used both to change individual settings and to restore previously saved
+ settings.</p>
+<p>The most basic calling syntax for displaying is CALL DISP(expression) which will display the
+ expression with default format. The format may be specified with CALL DISP(expression, edit-
+ descriptor), and CALL DISP(title, expression) will label the displayed item with a title. Examples
+ are CALL DISP(A), CALL DISP(A,&rsquo;F9.3&rsquo;), CALL DISP(&lsquo;A=&rsquo;,A) and CALL DISP(&lsquo;A=&rsquo;,A,&rsquo;F9.3&rsquo;), the last
+ one specifying both title and format. If aij = exp(i + j - 1), i, j = 1,&hellip;,4, then
+ CALL DISP(&lsquo;A = &lsquo;, A) writes out:</p>
+<div class="codehilite"><pre><span></span><code>  &gt; A =  2.72    7.39   20.09    54.60
+  &gt;      7.39   20.09   54.60   148.41
+  &gt;     20.09   54.60  148.41   403.43
+  &gt;     54.60  148.41  403.43  1096.63
+</code></pre></div>
+
+<p>and if bij = exp(i*j) the result of CALL DISP(B) is:</p>
+<div class="codehilite"><pre><span></span><code>  &gt; 2.71828E+0  7.38906E+0  2.00855E+1  5.45981E+1
+  &gt; 7.38906E+0  5.45981E+1  4.03429E+2  2.98096E+3
+  &gt; 2.00855E+1  4.03429E+2  8.10308E+3  1.62755E+5
+  &gt; 5.45981E+1  2.98096E+3  1.62755E+5  8.88611E+6.
+</code></pre></div>
+
+<p>It is also possible to number the rows and columns: CALL DISP(A, STYLE=&rsquo;NUMBER&rsquo;) will give:</p>
+<div class="codehilite"><pre><span></span><code>  &gt;      1       2       3        4
+  &gt; 1   2.72    7.39   20.09    54.60
+  &gt; 2   7.39   20.09   54.60   148.41
+  &gt; 3  20.09   54.60  148.41   403.43
+  &gt; 4  54.60  148.41  403.43  1096.63.
+</code></pre></div>
+
+<p>The selection between F and E editing depends on the size of the largest displayed element as
+ discussed in section 3.2 below. Among the settings that may be controlled is the spacing between
+ columns, the number of significant digits, the placement of the label, and the file unit where the
+ output goes. Items can in addition be displayed side by side, for example:</p>
+<div class="codehilite"><pre><span></span><code>  &gt; CALL DISP(&#39;X = &#39;, X, ADVANCE=&#39;NO&#39;)
+  &gt; CALL DISP(&#39;Y = &#39;, Y)
+</code></pre></div>
+
+<p>which might output:</p>
+<div class="codehilite"><pre><span></span><code>  &gt; X = 7  8  3   Y = 11
+  &gt;     4  0  2        2
+  &gt;     1  3  6        7
+</code></pre></div>
+
+<p>Complex numbers are formatted as illustrated by:</p>
+<div class="codehilite"><pre><span></span><code>  &gt; COMPLEX C(3,3)
+  &gt; FORALL(I=1:3, K=1:3) C(I,K)=LOG(CMPLX(-I*K))**K
+  &gt; CALL DISP(&#39;C = &#39;, C, &#39;F0.3&#39;)
+</code></pre></div>
+
+<p>which will display</p>
+<div class="codehilite"><pre><span></span><code>  &gt; C = 0.000 + 3.142i   -9.389 +  4.355i   -31.203 - 19.631i
+  &gt;     0.693 + 3.142i   -7.948 +  8.710i   -47.300 -  0.749i
+  &gt;     1.099 + 3.142i   -6.659 + 11.258i   -54.449 + 14.495i
+</code></pre></div>
+
+<p>infinite and not-a-number real values are supported and displayed as nan, +inf or -inf.</p>
+<p>the remaining sections in this user manual contain detailed information on using the module.
+ section 2 discusses the basics of using the module, including use statements, compiling and
+ linking, and add-on modules supporting non-default kinds of data. section 3 gives a detailed
+ description of the generic subroutine disp. all the possible arguments are listed and the purpose
+ of each one described. section 4 describes how to change various settings that control how items
+ are displayed with disp. section 5 describes the function tostring which may be used to change
+ numbers to strings. finally testing of the module is discussed in section 6.</p>
+<h2 id="overview-of-modules">OVERVIEW OF MODULES</h2>
+<p>The file M_display.f90 actually begins with two auxiliary
+ modules, PUTSTRMODULE and M_display_UTIL. The first one contains two dummy subroutines, PUTSTR
+ and PUTNL, which do nothing, but must be incorporated to avoid an &ldquo;undefined symbol&rdquo; link error.
+ In addition it defines the named constant (parameter) DEFAULT_UNIT = -3, which makes the asterisk
+ unit (usually the screen) the default to display on.</p>
+<p>Alternatively the user can write his own PUTSTRMODULE as described below. An
+ example is near the beginning of M_display.f90 (commented out) and also in the file
+ putstrmodule_mex.f90, enclosed with the package. It may be used (commented in instead of the
+ default one) to allow Matlab mex files to display in the Matlab command window.</p>
+<h2 id="an-example-program">AN EXAMPLE PROGRAM</h2>
+<p>Following is a short example program that uses the package:</p>
+<div class="codehilite"><pre><span></span><code>   <span class="nv">program</span> <span class="nv">example</span>
+     <span class="nv">use</span> <span class="nv">M_display</span>
+     <span class="nv">real</span> :: <span class="nv">a</span><span class="ss">(</span><span class="mi">3</span><span class="ss">)</span> <span class="o">=</span> [ <span class="mi">1</span>.<span class="mi">2345</span>, <span class="mi">2</span>.<span class="mi">3456</span>, <span class="mi">3</span>.<span class="mi">4567</span> ]
+     <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">A = </span><span class="s1">&#39;</span>, <span class="nv">A</span>, <span class="nv">SEP</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">, </span><span class="s1">&#39;</span>, <span class="nv">ORIENT</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">ROW</span><span class="s1">&#39;</span><span class="ss">)</span>
+   <span class="k">end</span> <span class="nv">program</span> <span class="nv">example</span>
+</code></pre></div>
+
+<p>The program should write out &ldquo;A = 1.23450, 2.34560, 3.45670&rdquo;.</p>
+<p>A longer example program:</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">program</span> <span class="nv">demo_M_display</span>
+<span class="nv">use</span> <span class="nv">M_display</span>
+<span class="nv">implicit</span> <span class="nv">none</span>
+<span class="nv">integer</span>, <span class="nv">parameter</span> :: <span class="nv">rk</span> <span class="o">=</span> <span class="nv">selected_real_kind</span><span class="ss">(</span><span class="mi">6</span><span class="ss">)</span>, <span class="nv">n</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nv">real</span><span class="ss">(</span><span class="nv">rk</span><span class="ss">)</span> :: <span class="nv">a</span><span class="ss">(</span><span class="nv">n</span>,<span class="nv">n</span><span class="ss">)</span>, <span class="nv">b</span><span class="ss">(</span><span class="nv">n</span>,<span class="nv">n</span><span class="ss">)</span>, <span class="nv">x</span>
+<span class="nv">integer</span> <span class="nv">i</span>, <span class="nv">j</span>, <span class="nv">k</span><span class="ss">(</span><span class="mi">5</span><span class="ss">)</span>
+  <span class="k">call</span> <span class="nl">disp_set</span><span class="ss">(</span><span class="nv">advance</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">double</span><span class="s1">&#39;</span><span class="ss">)</span>
+  <span class="nv">forall</span><span class="ss">(</span><span class="nv">i</span><span class="o">=</span><span class="mi">1</span>:<span class="nv">n</span>, <span class="nv">j</span><span class="o">=</span><span class="mi">1</span>:<span class="nv">n</span><span class="ss">)</span>
+    <span class="nv">a</span><span class="ss">(</span><span class="nv">i</span>,<span class="nv">j</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">exp</span><span class="ss">(</span><span class="nv">real</span><span class="ss">(</span><span class="nv">i</span><span class="o">+</span><span class="nv">j</span><span class="o">-</span><span class="mi">1</span>, <span class="nv">rk</span><span class="ss">))</span>
+    <span class="nv">b</span><span class="ss">(</span><span class="nv">i</span>,<span class="nv">j</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">exp</span><span class="ss">(</span><span class="nv">real</span><span class="ss">(</span><span class="nv">i</span><span class="o">**</span><span class="nv">j</span>, <span class="nv">rk</span><span class="ss">))</span>
+  <span class="k">end</span> <span class="nv">forall</span>
+  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">A = </span><span class="s1">&#39;</span>, <span class="nv">a</span><span class="ss">)</span>
+  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span><span class="nv">b</span><span class="ss">)</span>
+  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span><span class="nv">a</span><span class="ss">(</span><span class="mi">1</span>:<span class="mi">2</span>,:<span class="ss">)</span>,<span class="s1">&#39;</span><span class="s">f0.5</span><span class="s1">&#39;</span><span class="ss">)</span>
+  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">MATRIX</span><span class="s1">&#39;</span>, <span class="nv">a</span>, <span class="nv">style</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">UNDERLINE &amp; NUMBER</span><span class="s1">&#39;</span>, <span class="nv">unit</span><span class="o">=-</span><span class="mi">3</span>, <span class="nv">digmax</span><span class="o">=</span><span class="mi">4</span><span class="ss">)</span>
+  <span class="nv">k</span> <span class="o">=</span> [<span class="o">-</span><span class="mi">3</span>,<span class="mi">0</span>,<span class="mi">12</span>,<span class="mi">14</span>,<span class="mi">0</span>]
+  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">K</span><span class="s1">&#39;</span>, <span class="nv">k</span>, <span class="nv">style</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">pad</span><span class="s1">&#39;</span>, <span class="nv">orient</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">row</span><span class="s1">&#39;</span>, <span class="nv">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="s"> </span><span class="s1">&#39;</span>, <span class="nv">zeroas</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">.</span><span class="s1">&#39;</span><span class="ss">)</span>
+  <span class="nv">x</span> <span class="o">=</span> <span class="mi">1</span>.<span class="mi">5</span>
+  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">The square of </span><span class="s1">&#39;</span><span class="o">//</span><span class="nv">tostring</span><span class="ss">(</span><span class="nv">x</span><span class="ss">)</span><span class="o">//</span><span class="s1">&#39;</span><span class="s"> is </span><span class="s1">&#39;</span><span class="o">//</span><span class="nv">tostring</span><span class="ss">(</span><span class="nv">x</span><span class="o">*</span><span class="nv">x</span><span class="ss">))</span>
+  <span class="k">call</span> <span class="nl">disp_set</span><span class="ss">(</span><span class="nv">matsep</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s"> | </span><span class="s1">&#39;</span><span class="ss">)</span>
+  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span>[<span class="mi">11</span>,<span class="mi">12</span>,<span class="mi">13</span>], <span class="nv">advance</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">no</span><span class="s1">&#39;</span><span class="ss">)</span>
+  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span>[.<span class="nv">true</span>., .<span class="nv">false</span>., .<span class="nv">true</span>.], <span class="nv">advance</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">no</span><span class="s1">&#39;</span><span class="ss">)</span>
+  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span>[<span class="s1">&#39;</span><span class="s">A</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">B</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">C</span><span class="s1">&#39;</span>]<span class="ss">)</span>
+<span class="k">end</span> <span class="nv">program</span> <span class="nv">demo_M_display</span>
+</code></pre></div>
+
+<p>Expected results:</p>
+<div class="codehilite"><pre><span></span><code>A =  2.718   7.389   20.086
+     7.389  20.086   54.598
+    20.086  54.598  148.413
+
+2.71828E+00  2.71828E+00  2.71828E+00
+7.38906E+00  5.45982E+01  2.98096E+03
+2.00855E+01  8.10308E+03  5.32048E+11
+
+2.71828   7.38906  20.08554
+7.38906  20.08554  54.59815
+
+       MATRIX
+--------------------
+     1     2      3
+1   2.7   7.4   20.1
+2   7.4  20.1   54.6
+3  20.1  54.6  148.4
+
+------K-----
+-3 . 12 14 .
+
+The square of 1.5 is 2.25
+
+11 | T | A
+12 | F | B
+13 | T | C
+</code></pre></div>
+
+<h2 id="author">AUTHOR</h2>
+<p>Based on dispmodule(3f), &ldquo;A Fortran 95 module for pretty-printing matrices&rdquo;.
+   Version number 1.02 6-Sept-2008, Kristjan Jonasson, Dept. of Computer Science, University of
+   Iceland (jonasson@hi.is).</p>
+      <br>
+    
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      
+      <li class="list-group-item">
+  <ul class="list-inline">
+    
+    <li><a href='../module/putstrmodule.html'>PUTSTRMODULE</a></li>
+    
+  </ul>
+      </li>
+      
+      
+      
+      </ul>
+    </div>
+    
+
+    
+    
+
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/m_display_util.html#variable-defset">DEFSET</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#variable-factory_settings">FACTORY_SETTINGS</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#variable-errormsg">errormsg</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#variable-tosfac">tosfac</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#variable-tosset">tosset</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-1">Derived Types</a></h3></div>
+  <div id="types-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/m_display_util.html#type-boxlist">boxlist</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#type-boxnode">boxnode</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#type-disp_settings">disp_settings</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#type-settings">settings</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#type-tostring_settings">tostring_settings</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
+  <div id="funcs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-nnblk">nnblk</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-upper">upper</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-check_settings">check_settings</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-copyseptobox">copyseptobox</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-copytobox">copytobox</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-disp_errmsg">disp_errmsg</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-find_editdesc_real">find_editdesc_real</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-finishbox">finishbox</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-get_se">get_SE</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-preparebox">preparebox</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-readfmt">readfmt</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-replace_w">replace_w</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-replace_zeronaninf">replace_zeronaninf</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-tostring_check_settings">tostring_check_settings</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-tostring_get">tostring_get</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-tostring_get_complex">tostring_get_complex</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-trim_real">trim_real</a>
+      
+      <a class="list-group-item" href="../module/m_display_util.html#proc-trim_s_real">trim_s_real</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    <section>
+    <h2>Variables</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-defset"></span>type(<a href='../type/disp_settings.html'>disp_settings</a>),</td>
+  
+  <td>public,</td>
+  <td>save</td><td>::</td>
+  <td><strong>DEFSET</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-factory_settings"></span>type(<a href='../type/disp_settings.html'>disp_settings</a>),</td>
+  
+  <td>public,</td>
+  <td>save</td><td>::</td>
+  <td><strong>FACTORY_SETTINGS</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-errormsg"></span>character(len=*),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>errormsg</strong></td><td> =</td><td>'Illegal format'</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-tosfac"></span>type(<a href='../type/tostring_settings.html'>tostring_settings</a>),</td>
+  
+  <td>public,</td>
+  <td>save</td><td>::</td>
+  <td><strong>tosfac</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-tosset"></span>type(<a href='../type/tostring_settings.html'>tostring_settings</a>),</td>
+  
+  <td>public,</td>
+  <td>save</td><td>::</td>
+  <td><strong>tosset</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    <section>
+     <h2>Derived Types</h2>
+   
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-boxlist"></span><h3>type, public :: <a href='../type/boxlist.html'>boxlist</a>
+    
+  </h3></div>
+  <div class="panel-body">
+    
+     
+     <h4>Components</h4>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-firstbox"></span>type(<a href='../type/boxnode.html'>boxnode</a>),</td>
+  
+  <td>public,</td>
+  <td>pointer</td><td>::</td>
+  <td><strong>firstbox</strong></td><td>=> </td><td>null()</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-lastbox"></span>type(<a href='../type/boxnode.html'>boxnode</a>),</td>
+  
+  <td>public,</td>
+  <td>pointer</td><td>::</td>
+  <td><strong>lastbox</strong></td><td>=> </td><td>null()</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nextboxlist"></span>type(<a href='../type/boxlist.html'>boxlist</a>),</td>
+  
+  <td>public,</td>
+  <td>pointer</td><td>::</td>
+  <td><strong>nextboxlist</strong></td><td>=> </td><td>null()</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-unit"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>unit</strong></td><td> =</td><td>1</td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+     
+     
+          
+     
+  </div>
+</div>
+
+     
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-boxnode"></span><h3>type, public :: <a href='../type/boxnode.html'>boxnode</a>
+    
+  </h3></div>
+  <div class="panel-body">
+    
+     
+     <h4>Components</h4>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-box"></span>character,</td>
+  
+  <td>public,</td>
+  <td>pointer</td><td>::</td>
+  <td><strong>box</strong>(:,:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nextbox"></span>type(<a href='../type/boxnode.html'>boxnode</a>),</td>
+  
+  <td>public,</td>
+  <td>pointer</td><td>::</td>
+  <td><strong>nextbox</strong></td><td>=> </td><td>null()</td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+     
+     
+          
+     
+  </div>
+</div>
+
+     
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-disp_settings"></span><h3>type, public :: <a href='../type/disp_settings.html'>disp_settings</a>
+    
+  </h3></div>
+  <div class="panel-body">
+    
+     
+     <h4>Components</h4>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-advance"></span>character(len=6),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>advance</strong></td><td> =</td><td>'YES'</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-digmax"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>digmax</strong></td><td> =</td><td>6</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-matsep"></span>character(len=9),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>matsep</strong></td><td> =</td><td>'&nbsp;&nbsp;&nbsp;'</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-matseplen"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>matseplen</strong></td><td> =</td><td>3</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-orient"></span>character(len=3),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>orient</strong></td><td> =</td><td>'COL'</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-sep"></span>character(len=9),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>sep</strong></td><td> =</td><td>'&nbsp;&nbsp;'</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-seplen"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>seplen</strong></td><td> =</td><td>2</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-style"></span>character(len=20),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>style</strong></td><td> =</td><td>'LEFT'</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-trim"></span>character(len=4),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>trim</strong></td><td> =</td><td>'AUTO'</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-unit~2"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>unit</strong></td><td> =</td><td>DEFAULT_UNIT</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-zaslen"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>zaslen</strong></td><td> =</td><td>0</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-zeroas"></span>character(len=9),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>zeroas</strong></td><td> =</td><td>''</td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+     
+     
+          
+     
+  </div>
+</div>
+
+     
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-settings"></span><h3>type, public :: <a href='../type/settings.html'>settings</a>
+    
+  </h3></div>
+  <div class="panel-body">
+    
+     
+     <h4>Components</h4>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-adv"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>adv</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-d"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>d</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dmx"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>dmx</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ed"></span>character(len=22),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>ed</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-gedit"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>gedit</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-lsep"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>lsep</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-lun"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>lun</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-lzas"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>lzas</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-m1"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>m1</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-n1"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>n1</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-number"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>number</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-row"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>row</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-sep~2"></span>character(len=9),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>sep</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-tch"></span>character(len=1),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>tch</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-trm"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>trm</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-tsty"></span>character(len=9),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>tsty</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-vec"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>vec</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-w"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>w</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-zas"></span>character(len=9),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>zas</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+     
+     
+          
+     
+  </div>
+</div>
+
+     
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-tostring_settings"></span><h3>type, public :: <a href='../type/tostring_settings.html'>tostring_settings</a>
+    
+  </h3></div>
+  <div class="panel-body">
+    
+     
+     <h4>Components</h4>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ifmt"></span>character(len=10),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>ifmt</strong></td><td> =</td><td>'I0'</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-rfmt"></span>character(len=16),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>rfmt</strong></td><td> =</td><td>'1PG12.5'</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-sep~3"></span>character(len=9),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>sep</strong></td><td> =</td><td>', '</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-seplen~2"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>seplen</strong></td><td> =</td><td>2</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-trimb"></span>character(len=3),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>trimb</strong></td><td> =</td><td>'YES'</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-trimz"></span>character(len=4),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>trimz</strong></td><td> =</td><td>'G'</td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+     
+     
+          
+     
+  </div>
+</div>
+
+     
+    </section>
+  <br>
+    
+    
+     
+    <section>
+    <h2>Functions</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-nnblk"></span><h3>
+public pure function <a href='../proc/nnblk.html'>nnblk</a>(s) result(n)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-upper"></span><h3>
+public pure function <a href='../proc/upper.html'>upper</a>(s) result(su)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=len(s))
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    </section>
+    <br>
+    
+
+    
+    <section>
+    <h2>Subroutines</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-check_settings"></span><h3>
+public subroutine <a href='../proc/check_settings.html'>check_settings</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-copyseptobox"></span><h3>
+public subroutine <a href='../proc/copyseptobox.html'>copyseptobox</a>(sep, m, lin1, boxp, wleft)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>sep</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>m</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lin1</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character,</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>boxp</strong>(:,:)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>wleft</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-copytobox"></span><h3>
+public subroutine <a href='../proc/copytobox.html'>copytobox</a>(s, lin1, widj, widpj, nblj, boxp, wleft)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong>(:)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lin1</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>widj</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>widpj</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>nblj</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character,</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>boxp</strong>(:,:)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>wleft</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-disp_errmsg"></span><h3>
+public subroutine <a href='../proc/disp_errmsg.html'>disp_errmsg</a>(s)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-find_editdesc_real"></span><h3>
+public subroutine <a href='../proc/find_editdesc_real.html'>find_editdesc_real</a>(exp, expm, dmx, edesc, flen, ndec, posit)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>exp</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>expm</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dmx</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=14),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>edesc</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>flen</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>ndec</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>posit</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-finishbox"></span><h3>
+public subroutine <a href='../proc/finishbox.html'>finishbox</a>(title, SE, boxp)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>title</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/settings.html'>settings</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>SE</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character,</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>boxp</strong>(:,:)</td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_se"></span><h3>
+public subroutine <a href='../proc/get_se.html'>get_SE</a>(SE, title, shapex, fmt, advance, lbound, separator, style, trim, unit, orient, zeroas, digmax)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/settings.html'>settings</a>),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>SE</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>title</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>shapex</strong>(:)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>fmt</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>advance</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>lbound</strong>(:)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>separator</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>style</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>trim</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>unit</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>orient</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>zeroas</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>digmax</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-preparebox"></span><h3>
+public subroutine <a href='../proc/preparebox.html'>preparebox</a>(title, SE, m, n, wid, widp, lin1, wleft, boxp)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>title</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/settings.html'>settings</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>SE</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>m</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>n</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>wid</strong>(:)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>widp</strong>(:)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lin1</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>wleft</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character,</td>
+  <td></td>
+  <td></td>
+  
+  <td>pointer</td><td>::</td>
+  <td><strong>boxp</strong>(:,:)</td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-readfmt"></span><h3>
+public pure subroutine <a href='../proc/readfmt.html'>readfmt</a>(fmt, fmt1, w, d, gedit)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>fmt</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>fmt1</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>w</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>d</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>gedit</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-replace_w"></span><h3>
+public pure subroutine <a href='../proc/replace_w.html'>replace_w</a>(fmt, wnew)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>fmt</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>wnew</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-replace_zeronaninf"></span><h3>
+public subroutine <a href='../proc/replace_zeronaninf.html'>replace_zeronaninf</a>(s, zas, maskz, masknan, maskminf, maskinf)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong>(:)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>zas</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>maskz</strong>(:)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>masknan</strong>(:)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>maskminf</strong>(:)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>maskinf</strong>(:)</td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-tostring_check_settings"></span><h3>
+public subroutine <a href='../proc/tostring_check_settings.html'>tostring_check_settings</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-tostring_get"></span><h3>
+public pure subroutine <a href='../proc/tostring_get.html'>tostring_get</a>(sa, st)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>sa</strong>(:)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>st</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-tostring_get_complex"></span><h3>
+public pure subroutine <a href='../proc/tostring_get_complex.html'>tostring_get_complex</a>(sar, sgn, sai, st)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>sar</strong>(:)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>sgn</strong>(*)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>sai</strong>(:)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>st</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-trim_real"></span><h3>
+public pure subroutine <a href='../proc/trim_real.html'>trim_real</a>(sa, gedit, w)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>sa</strong>(:)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>gedit</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>w</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-trim_s_real"></span><h3>
+public pure subroutine <a href='../proc/trim_s_real.html'>trim_s_real</a>(sa, gedit, w)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>sa</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>gedit</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>w</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    </section>    
+    <br>
+    
+    
+    
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2021-10-02 11:12  
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> M_display was developed by John S. Urban</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

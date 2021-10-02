@@ -1,0 +1,26 @@
+# TOML file for fpm as described at https://github.com/fortran-lang/fpm/blob/master/manifest-reference.md
+name = "M_display"
+version = "1.0.0"
+license = "This software is free. For details see the file README"
+author = ["Kristjan Jonasson (johasson@hi.is)" ,"John S. Urban (urbanjost@comcast.net)"]
+copyright = ["Copyright (c) 2008, Kristjan Johnasson, Dept. of Computer Science, University of Iceland","Copyright (c) 2021, John S. Urban"]
+maintainer = "John S. Urban, urbanjost@comcast.com"
+description = "module to display small matrices"
+categories = ["Fortran","formatting","output"]
+keywords = ["fortran", "row-column order", "printing" ]
+homepage = "https://github.com/urbanjost/M_display.git"
+
+[build]
+auto-executables = true
+auto-tests = true
+auto-examples = true
+
+[install]
+#library = true
+
+[[test]]
+name="test_suite_M_display"
+source-dir="test"
+main="test_suite_M_display.f90"
+[test.dependencies]
+M_msg = { git = "https://github.com/urbanjost/M_msg.git" }

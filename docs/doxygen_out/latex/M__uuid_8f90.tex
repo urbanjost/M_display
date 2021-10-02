@@ -1,0 +1,97 @@
+\hypertarget{M__uuid_8f90}{}\doxysection{/home/urbanjs/venus/\+V600/github/\+M\+\_\+uuid/src/\+M\+\_\+uuid.f90 File Reference}
+\label{M__uuid_8f90}\index{/home/urbanjs/venus/V600/github/M\_uuid/src/M\_uuid.f90@{/home/urbanjs/venus/V600/github/M\_uuid/src/M\_uuid.f90}}
+\doxysubsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{structm__uuid_1_1mtprng__state}{m\+\_\+uuid\+::mtprng\+\_\+state}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacem__uuid}{m\+\_\+uuid}}
+\begin{DoxyCompactList}\small\item\em generate\+\_\+uuid(3f) was originally derived from the xmlf90 codebase, (c) Alberto Garcia \& Jon Wakelin, 2003-\/2004. It also calls R\+NG routines from Scott Ladd \href{mailto:scott.ladd@coyotegulch.com}{\texttt{ scott.\+ladd@coyotegulch.\+com}}, and the lib\+FoX modules. Although some sections have been replaced, generate\+\_\+uuid(3f) was originally based on the lib\+FoX version, with licensing as follows\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+character(len=36) function, public \mbox{\hyperlink{namespacem__uuid_a3f2d62f2c0eb65a08d9b80ff402dc944}{m\+\_\+uuid\+::generate\+\_\+uuid}} (version)
+\item 
+character(len=2 $\ast$n) function \mbox{\hyperlink{M__uuid_8f90_ab54629efe2fecd17d9a1865f51373f36}{int32tohexoctets}} (b, n)
+\item 
+character(len=2 $\ast$n) function \mbox{\hyperlink{M__uuid_8f90_a14dab31736bd94ba40a8d2952d09550f}{int64tohexoctets}} (b, n)
+\item 
+integer(kind=i8b) function \mbox{\hyperlink{namespacem__uuid_af0811eb99899b230e28bc57ef0420a51}{m\+\_\+uuid\+::get\+\_\+utc\+\_\+since\+\_\+1582}} (values)
+\item 
+subroutine \mbox{\hyperlink{namespacem__uuid_a2ea3690b6a7e59b2e11a77a3da165dc1}{m\+\_\+uuid\+::date\+\_\+to\+\_\+julian}} (dat, julian, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacem__uuid_a460ceed541025828a7f279cf0ce10771}{m\+\_\+uuid\+::date\+\_\+to\+\_\+unix}} (dat, unixtime, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacem__uuid_adc80e8ca4f2ff53a4dcde6b7778be3e9}{m\+\_\+uuid\+::mtprng\+\_\+init}} (seed, state)
+\item 
+integer(int64) function \mbox{\hyperlink{namespacem__uuid_a4c981902679f9b8e41fefeb6462ca631}{m\+\_\+uuid\+::mtprng\+\_\+rand64}} (state)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter \mbox{\hyperlink{namespacem__uuid_a18c282d14e62977dd0d2ee840f739f58}{m\+\_\+uuid\+::realtime}} =kind(0.\+0d0)
+\item 
+integer, parameter \mbox{\hyperlink{namespacem__uuid_a071f858d7829056ca1fa52ee3d094b4c}{m\+\_\+uuid\+::ieee32}} = selected\+\_\+real\+\_\+kind( 6, 37 )
+\item 
+integer, parameter \mbox{\hyperlink{namespacem__uuid_a4496294163ff1889523c4c44fe3356bf}{m\+\_\+uuid\+::ieee64}} = selected\+\_\+real\+\_\+kind( 15, 307 )
+\item 
+integer(int32), parameter \mbox{\hyperlink{namespacem__uuid_a4db3ac13d557f2a075ecf3303aa4bcc0}{m\+\_\+uuid\+::n}} = 624\+\_\+\+I\+N\+T32
+\item 
+integer(int32), parameter \mbox{\hyperlink{namespacem__uuid_a5cc4f31ac9c3c02629c047f84a1653b3}{m\+\_\+uuid\+::m}} = 397\+\_\+\+I\+N\+T32
+\item 
+real(kind=realtime), parameter, private \mbox{\hyperlink{namespacem__uuid_ae35fcb7bf98c367b848f6ffe3eed80db}{m\+\_\+uuid\+::secday}} =86400.\+0d0
+\item 
+integer, parameter \mbox{\hyperlink{namespacem__uuid_a313c6cd22280f748ff17d41627f1d43f}{m\+\_\+uuid\+::i4b}} = selected\+\_\+int\+\_\+kind(9)
+\item 
+integer, parameter \mbox{\hyperlink{namespacem__uuid_a7987efc6c95fb4a66d34b94793cf82ad}{m\+\_\+uuid\+::i8b}} = selected\+\_\+int\+\_\+kind(18)
+\item 
+type(mtprng\+\_\+state), save \mbox{\hyperlink{namespacem__uuid_a82c799af66694f27a6f7ef9eb0a7503b}{m\+\_\+uuid\+::rng\+\_\+state}}
+\item 
+logical, save \mbox{\hyperlink{namespacem__uuid_a60ebe013d35cf124d12a96c7688fb21d}{m\+\_\+uuid\+::initialized}} = .false.
+\item 
+integer, save \mbox{\hyperlink{namespacem__uuid_a8db2a203eafe58455a0d2db170e87ebb}{m\+\_\+uuid\+::values\+\_\+save}}
+\item 
+integer(kind=i4b), save \mbox{\hyperlink{namespacem__uuid_afe4e55c0cd9b4904e3687d934f9cd34c}{m\+\_\+uuid\+::hires\+\_\+count}} = 0
+\item 
+integer, save \mbox{\hyperlink{namespacem__uuid_a32c306c9bb8775547ab936fbadead0da}{m\+\_\+uuid\+::clock\+\_\+seq}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{M__uuid_8f90_ab54629efe2fecd17d9a1865f51373f36}\label{M__uuid_8f90_ab54629efe2fecd17d9a1865f51373f36}} 
+\index{M\_uuid.f90@{M\_uuid.f90}!int32tohexoctets@{int32tohexoctets}}
+\index{int32tohexoctets@{int32tohexoctets}!M\_uuid.f90@{M\_uuid.f90}}
+\doxysubsubsection{\texorpdfstring{int32tohexoctets()}{int32tohexoctets()}}
+{\footnotesize\ttfamily character(len=2$\ast$n) function generate\+\_\+uuid\+::int32tohexoctets (\begin{DoxyParamCaption}\item[{integer(i4b), intent(in)}]{b,  }\item[{integer, intent(in)}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References m\+\_\+uuid\+::n.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{M__uuid_8f90_ab54629efe2fecd17d9a1865f51373f36_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{M__uuid_8f90_a14dab31736bd94ba40a8d2952d09550f}\label{M__uuid_8f90_a14dab31736bd94ba40a8d2952d09550f}} 
+\index{M\_uuid.f90@{M\_uuid.f90}!int64tohexoctets@{int64tohexoctets}}
+\index{int64tohexoctets@{int64tohexoctets}!M\_uuid.f90@{M\_uuid.f90}}
+\doxysubsubsection{\texorpdfstring{int64tohexoctets()}{int64tohexoctets()}}
+{\footnotesize\ttfamily character(len=2$\ast$n) function generate\+\_\+uuid\+::int64tohexoctets (\begin{DoxyParamCaption}\item[{integer(i8b), intent(in)}]{b,  }\item[{integer, intent(in)}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References m\+\_\+uuid\+::n.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{M__uuid_8f90_a14dab31736bd94ba40a8d2952d09550f_icgraph}
+\end{center}
+\end{figure}

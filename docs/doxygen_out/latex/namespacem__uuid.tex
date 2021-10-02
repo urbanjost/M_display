@@ -1,0 +1,454 @@
+\hypertarget{namespacem__uuid}{}\doxysection{m\+\_\+uuid Module Reference}
+\label{namespacem__uuid}\index{m\_uuid@{m\_uuid}}
+
+
+generate\+\_\+uuid(3f) was originally derived from the xmlf90 codebase, (c) Alberto Garcia \& Jon Wakelin, 2003-\/2004. It also calls R\+NG routines from Scott Ladd \href{mailto:scott.ladd@coyotegulch.com}{\texttt{ scott.\+ladd@coyotegulch.\+com}}, and the lib\+FoX modules. Although some sections have been replaced, generate\+\_\+uuid(3f) was originally based on the lib\+FoX version, with licensing as follows\+:  
+
+
+\doxysubsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{structm__uuid_1_1mtprng__state}{mtprng\+\_\+state}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+character(len=36) function, public \mbox{\hyperlink{namespacem__uuid_a3f2d62f2c0eb65a08d9b80ff402dc944}{generate\+\_\+uuid}} (version)
+\item 
+integer(kind=\mbox{\hyperlink{namespacem__uuid_a7987efc6c95fb4a66d34b94793cf82ad}{i8b}}) function \mbox{\hyperlink{namespacem__uuid_af0811eb99899b230e28bc57ef0420a51}{get\+\_\+utc\+\_\+since\+\_\+1582}} (values)
+\item 
+subroutine \mbox{\hyperlink{namespacem__uuid_a2ea3690b6a7e59b2e11a77a3da165dc1}{date\+\_\+to\+\_\+julian}} (dat, julian, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacem__uuid_a460ceed541025828a7f279cf0ce10771}{date\+\_\+to\+\_\+unix}} (dat, unixtime, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacem__uuid_adc80e8ca4f2ff53a4dcde6b7778be3e9}{mtprng\+\_\+init}} (seed, state)
+\item 
+integer(int64) function \mbox{\hyperlink{namespacem__uuid_a4c981902679f9b8e41fefeb6462ca631}{mtprng\+\_\+rand64}} (state)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter \mbox{\hyperlink{namespacem__uuid_a18c282d14e62977dd0d2ee840f739f58}{realtime}} =kind(0.\+0d0)
+\item 
+integer, parameter \mbox{\hyperlink{namespacem__uuid_a071f858d7829056ca1fa52ee3d094b4c}{ieee32}} = selected\+\_\+real\+\_\+kind( 6, 37 )
+\item 
+integer, parameter \mbox{\hyperlink{namespacem__uuid_a4496294163ff1889523c4c44fe3356bf}{ieee64}} = selected\+\_\+real\+\_\+kind( 15, 307 )
+\item 
+integer(int32), parameter \mbox{\hyperlink{namespacem__uuid_a4db3ac13d557f2a075ecf3303aa4bcc0}{n}} = 624\+\_\+\+I\+N\+T32
+\item 
+integer(int32), parameter \mbox{\hyperlink{namespacem__uuid_a5cc4f31ac9c3c02629c047f84a1653b3}{m}} = 397\+\_\+\+I\+N\+T32
+\item 
+real(kind=\mbox{\hyperlink{namespacem__uuid_a18c282d14e62977dd0d2ee840f739f58}{realtime}}), parameter, private \mbox{\hyperlink{namespacem__uuid_ae35fcb7bf98c367b848f6ffe3eed80db}{secday}} =86400.\+0d0
+\item 
+integer, parameter \mbox{\hyperlink{namespacem__uuid_a313c6cd22280f748ff17d41627f1d43f}{i4b}} = selected\+\_\+int\+\_\+kind(9)
+\item 
+integer, parameter \mbox{\hyperlink{namespacem__uuid_a7987efc6c95fb4a66d34b94793cf82ad}{i8b}} = selected\+\_\+int\+\_\+kind(18)
+\item 
+type(\mbox{\hyperlink{structm__uuid_1_1mtprng__state}{mtprng\+\_\+state}}), save \mbox{\hyperlink{namespacem__uuid_a82c799af66694f27a6f7ef9eb0a7503b}{rng\+\_\+state}}
+\item 
+logical, save \mbox{\hyperlink{namespacem__uuid_a60ebe013d35cf124d12a96c7688fb21d}{initialized}} = .false.
+\item 
+integer, save \mbox{\hyperlink{namespacem__uuid_a8db2a203eafe58455a0d2db170e87ebb}{values\+\_\+save}}
+\item 
+integer(kind=\mbox{\hyperlink{namespacem__uuid_a313c6cd22280f748ff17d41627f1d43f}{i4b}}), save \mbox{\hyperlink{namespacem__uuid_afe4e55c0cd9b4904e3687d934f9cd34c}{hires\+\_\+count}} = 0
+\item 
+integer, save \mbox{\hyperlink{namespacem__uuid_a32c306c9bb8775547ab936fbadead0da}{clock\+\_\+seq}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+generate\+\_\+uuid(3f) was originally derived from the xmlf90 codebase, (c) Alberto Garcia \& Jon Wakelin, 2003-\/2004. It also calls R\+NG routines from Scott Ladd \href{mailto:scott.ladd@coyotegulch.com}{\texttt{ scott.\+ladd@coyotegulch.\+com}}, and the lib\+FoX modules. Although some sections have been replaced, generate\+\_\+uuid(3f) was originally based on the lib\+FoX version, with licensing as follows\+: 
+
+\begin{DoxyVerb}(c) 2005-2009 Toby White <tow@uszla.me.uk>
+(c) 2007-2009 Gen-Tao Chiang <gtc25@cam.ac.uk>
+(c) 2008-2012 Andrew Walker <a.walker@ucl.ac.uk>
+\end{DoxyVerb}
+
+
+All rights reserved.
+
+
+\begin{DoxyItemize}
+\item Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+This software is provided by the copyright holders and contributors \char`\"{}\+A\+S I\+S\char`\"{} and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. in no event shall the copyright owner or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage. 
+\end{DoxyItemize}
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacem__uuid_a2ea3690b6a7e59b2e11a77a3da165dc1}\label{namespacem__uuid_a2ea3690b6a7e59b2e11a77a3da165dc1}} 
+\index{m\_uuid@{m\_uuid}!date\_to\_julian@{date\_to\_julian}}
+\index{date\_to\_julian@{date\_to\_julian}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{date\_to\_julian()}{date\_to\_julian()}}
+{\footnotesize\ttfamily subroutine m\+\_\+uuid\+::date\+\_\+to\+\_\+julian (\begin{DoxyParamCaption}\item[{integer, dimension(8), intent(in)}]{dat,  }\item[{real(kind=\mbox{\hyperlink{namespacem__uuid_a18c282d14e62977dd0d2ee840f739f58}{realtime}}), intent(out)}]{julian,  }\item[{integer, intent(out)}]{ierr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{namespacem__uuid_autotoc_md11}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__uuid_autotoc_md11}
+date\+\_\+to\+\_\+julian(3f) -\/ \mbox{[}M\+\_\+time\+:J\+U\+L\+I\+AN\mbox{]} converts D\+AT date-\/time array to Julian Date (L\+I\+C\+E\+N\+SE\+:PD)\hypertarget{namespacem__uuid_autotoc_md12}{}\doxysubsubsection{S\+Y\+N\+O\+P\+S\+IS}\label{namespacem__uuid_autotoc_md12}
+\begin{DoxyVerb}subroutine date_to_julian(dat,juliandate,ierr)
+
+ integer,intent(in)               :: dat(8)
+ real(kind=realtime),intent(out)  :: juliandate
+ integer,intent(out)              :: ierr
+\end{DoxyVerb}
+\hypertarget{namespacem__uuid_autotoc_md13}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__uuid_autotoc_md13}
+Converts a D\+AT date-\/time array to a Unix Epoch Time (U\+ET) value. U\+ET is the number of seconds since 00\+:00 on January 1st, 1970, U\+TC.\hypertarget{namespacem__uuid_autotoc_md14}{}\doxysubsubsection{O\+P\+T\+I\+O\+NS}\label{namespacem__uuid_autotoc_md14}
+dat Integer array holding a \char`\"{}\+D\+A\+T\char`\"{} array, similar in structure to the array returned by the intrinsic D\+A\+T\+E\+\_\+\+A\+N\+D\+\_\+\+T\+I\+M\+E(3f)\+:
+
+dat=\mbox{[} year,month,day,timezone,hour,\& \& minutes,seconds,milliseconds\mbox{]}\hypertarget{namespacem__uuid_autotoc_md15}{}\doxysubsubsection{R\+E\+T\+U\+R\+NS}\label{namespacem__uuid_autotoc_md15}
+juliandate A Julian Ephemeris Date (J\+ED) is the number of days since noon (not midnight) on January 1st, 4713 BC. ierr Error code. If 0 no error occurred.\hypertarget{namespacem__uuid_autotoc_md16}{}\doxysubsubsection{E\+X\+A\+M\+P\+LE}\label{namespacem__uuid_autotoc_md16}
+\begin{DoxyVerb}Sample Program:
+
+ program demo_date_to_julian
+ use M_time, only : date_to_julian,realtime
+ implicit none
+ integer             :: dat(8)
+ real(kind=realtime) :: juliandate
+ integer             :: ierr
+    ! generate DAT array
+    call date_and_time(values=dat)
+    ! show DAT array
+    write(*,'(" Today is:",*(i0:,":"))')dat
+    ! convert DAT to Julian Date
+    call date_to_julian(dat,juliandate,ierr)
+    write(*,*)'Julian Date is ',juliandate
+    write(*,*)'ierr is ',ierr
+ end program demo_date_to_julian
+
+results:
+
+ Today is:2016:7:19:-240:11:3:13:821
+ Julian Date is    2457589.1272432986
+ ierr is            0
+\end{DoxyVerb}
+\hypertarget{namespacem__uuid_autotoc_md17}{}\doxysubsubsection{A\+U\+T\+H\+OR}\label{namespacem__uuid_autotoc_md17}
+John S. Urban, 2015 \hypertarget{namespacem__uuid_autotoc_md18}{}\doxysubsubsection{L\+I\+C\+E\+N\+SE}\label{namespacem__uuid_autotoc_md18}
+Public Domain
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dat} & A\+U\+T\+H\+OR\+: John S. Urban \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespacem__uuid_autotoc_md20}{}\doxysubsubsection{V\+E\+R\+S\+I\+O\+N\+:   1.\+0 2015-\/12-\/21}\label{namespacem__uuid_autotoc_md20}
+R\+E\+F\+E\+R\+E\+N\+CE\+: From Wikipedia, the free encyclopedia 2015-\/12-\/19 Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__uuid_a2ea3690b6a7e59b2e11a77a3da165dc1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__uuid_a460ceed541025828a7f279cf0ce10771}\label{namespacem__uuid_a460ceed541025828a7f279cf0ce10771}} 
+\index{m\_uuid@{m\_uuid}!date\_to\_unix@{date\_to\_unix}}
+\index{date\_to\_unix@{date\_to\_unix}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{date\_to\_unix()}{date\_to\_unix()}}
+{\footnotesize\ttfamily subroutine m\+\_\+uuid\+::date\+\_\+to\+\_\+unix (\begin{DoxyParamCaption}\item[{integer, dimension(8), intent(in)}]{dat,  }\item[{real(kind=\mbox{\hyperlink{namespacem__uuid_a18c282d14e62977dd0d2ee840f739f58}{realtime}}), intent(out)}]{unixtime,  }\item[{integer, intent(out)}]{ierr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{namespacem__uuid_autotoc_md21}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__uuid_autotoc_md21}
+date\+\_\+to\+\_\+unix(3f) -\/ \mbox{[}M\+\_\+time\+:U\+N\+I\+X\+\_\+\+E\+P\+O\+CH\mbox{]} converts D\+AT date-\/time array to Unix Epoch Time (L\+I\+C\+E\+N\+SE\+:PD)\hypertarget{namespacem__uuid_autotoc_md22}{}\doxysubsubsection{S\+Y\+N\+O\+P\+S\+IS}\label{namespacem__uuid_autotoc_md22}
+\begin{DoxyVerb}subroutine date_to_unix(dat,unixtime,ierr)
+
+ integer,intent(in)               :: dat(8)
+ real(kind=realtime),intent(out)  :: unixtime
+ integer,intent(out)              :: ierr
+\end{DoxyVerb}
+\hypertarget{namespacem__uuid_autotoc_md23}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__uuid_autotoc_md23}
+Converts a D\+AT date-\/time array to a U\+ET (Unix Epoch Time).\hypertarget{namespacem__uuid_autotoc_md24}{}\doxysubsubsection{O\+P\+T\+I\+O\+NS}\label{namespacem__uuid_autotoc_md24}
+dat Integer array holding a \char`\"{}\+D\+A\+T\char`\"{} array, similar in structure to the array returned by the intrinsic D\+A\+T\+E\+\_\+\+A\+N\+D\+\_\+\+T\+I\+M\+E(3f)\+: \begin{DoxyVerb}dat=[ year,month,day,timezone,hour,&
+ & minutes,seconds,milliseconds]
+\end{DoxyVerb}
+ \hypertarget{namespacem__uuid_autotoc_md25}{}\doxysubsubsection{R\+E\+T\+U\+R\+NS}\label{namespacem__uuid_autotoc_md25}
+unixtime The \char`\"{}\+Unix Epoch\char`\"{} time, or the number of seconds since 00\+:00\+:00 on January 1st, 1970, U\+TC. ierr Error code. If 0 no error occurred.\hypertarget{namespacem__uuid_autotoc_md26}{}\doxysubsubsection{E\+X\+A\+M\+P\+LE}\label{namespacem__uuid_autotoc_md26}
+\begin{DoxyVerb} Sample program:
+
+  program demo_date_to_unix
+  use M_time, only : date_to_unix, realtime
+  implicit none
+  integer             :: dat(8)
+  real(kind=realtime) :: unixtime
+  integer             :: ierr
+     call date_and_time(values=dat)
+     write(*,'(" Today is:",*(i0:,":"))')dat
+     call date_to_unix(dat,unixtime,ierr)
+     write(*,*)'Unix Epoch time is ',unixtime
+     write(*,*)'ierr is ',ierr
+  end program demo_date_to_unix
+
+ results:
+
+  Today is:2016:7:18:-240:23:44:20:434
+  Unix Epoch time is    1468899860.4340105
+  ierr is            0
+\end{DoxyVerb}
+ \hypertarget{namespacem__uuid_autotoc_md27}{}\doxysubsubsection{A\+U\+T\+H\+OR}\label{namespacem__uuid_autotoc_md27}
+John S. Urban, 2015 \hypertarget{namespacem__uuid_autotoc_md28}{}\doxysubsubsection{L\+I\+C\+E\+N\+SE}\label{namespacem__uuid_autotoc_md28}
+Public Domain 
+
+References date\+\_\+to\+\_\+julian(), and secday.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__uuid_a460ceed541025828a7f279cf0ce10771_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__uuid_a460ceed541025828a7f279cf0ce10771_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__uuid_a3f2d62f2c0eb65a08d9b80ff402dc944}\label{namespacem__uuid_a3f2d62f2c0eb65a08d9b80ff402dc944}} 
+\index{m\_uuid@{m\_uuid}!generate\_uuid@{generate\_uuid}}
+\index{generate\_uuid@{generate\_uuid}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{generate\_uuid()}{generate\_uuid()}}
+{\footnotesize\ttfamily character(len=36) function, public m\+\_\+uuid\+::generate\+\_\+uuid (\begin{DoxyParamCaption}\item[{integer, intent(in), optional}]{version }\end{DoxyParamCaption})}
+
+\hypertarget{namespacem__uuid_autotoc_md5}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__uuid_autotoc_md5}
+generate\+\_\+uuid(3f) -\/ \mbox{[}M\+\_\+uuid\mbox{]} generate a U\+U\+ID (Universally Unique I\+Dentifier) string per R\+FC 4122 (L\+I\+C\+E\+N\+SE\+:B\+S\+D-\/4-\/\+Clause)\hypertarget{namespacem__uuid_autotoc_md6}{}\doxysubsubsection{S\+Y\+N\+O\+P\+S\+IS}\label{namespacem__uuid_autotoc_md6}
+\begin{DoxyVerb}function generate_uuid(version) result(uuid)
+
+ integer, intent(in), optional :: version
+ character(len=36) :: uuid
+\end{DoxyVerb}
+\hypertarget{namespacem__uuid_autotoc_md7}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__uuid_autotoc_md7}
+A universally unique identifier (U\+U\+ID) is a 128-\/bit number used to identify information in computer systems. When generated according to standard methods U\+U\+I\+Ds are for practical purposes unique. generate\+\_\+uuid(3f) converts the U\+U\+ID to a standard string format per R\+FC 4122.\hypertarget{namespacem__uuid_autotoc_md8}{}\doxysubsubsection{A\+U\+T\+H\+O\+RS}\label{namespacem__uuid_autotoc_md8}
+based on previous work from Alberto Garcia \& Jon Wakelin, 2003-\/2004. R\+NG routines from Scott Ladd \href{mailto:scott.ladd@coyotegulch.com}{\texttt{ scott.\+ladd@coyotegulch.\+com}}, and the lib\+FoX library( Toby White \href{mailto:tow@uszla.me.uk}{\texttt{ tow@uszla.\+me.\+uk}}, Gen-\/\+Tao Chiang \href{mailto:gtc25@cam.ac.uk}{\texttt{ gtc25@cam.\+ac.\+uk}}, Andrew Walker \href{mailto:a.walker@ucl.ac.uk}{\texttt{ a.\+walker@ucl.\+ac.\+uk}}).\hypertarget{namespacem__uuid_autotoc_md9}{}\doxysubsubsection{O\+P\+T\+I\+O\+NS}\label{namespacem__uuid_autotoc_md9}
+version Indicates which standard method as described in R\+FC 4122 is used to generate the string. Versions 0,1, and 4 are supported.
+
+0. Nil U\+U\+ID (ie. \textquotesingle{}00000000-\/0000-\/0000-\/0000-\/000000000000\textquotesingle{})
+\begin{DoxyEnumerate}
+\item time-\/based U\+U\+ID
+\item Not implemented
+\item Not implemented
+\item pseudo-\/\+R\+NG(Random Number Generator) based
+\item Not implemented
+\end{DoxyEnumerate}\hypertarget{namespacem__uuid_autotoc_md10}{}\doxysubsubsection{E\+X\+A\+M\+P\+LE}\label{namespacem__uuid_autotoc_md10}
+Sample usage\+:
+
+program demo\+\_\+generate\+\_\+uuid use M\+\_\+uuid, only \+: generate\+\_\+uuid implicit none character(len=36) \+:: uuid ! uuid=generate\+\_\+uuid(1) ! version 1 (time-\/based U\+U\+ID) write($\ast$,\textquotesingle{}(a36)\textquotesingle{})uuid ! uuid=generate\+\_\+uuid(4) ! version 4 (pseudo-\/\+R\+N\+G-\/based), default ! ! R\+FC 4122 defines a Uniform Resource Name (U\+RN) namespace for U\+U\+I\+Ds. write($\ast$,\textquotesingle{}(\char`\"{}urn\+:uuid\+:\char`\"{},a36)\textquotesingle{})uuid ! ! a good scratch file name open(file=\textquotesingle{}/tmp/scratch\+\_\+\textquotesingle{}//uuid,unit=10) ! end program demo\+\_\+generate\+\_\+uuid
+
+Typical output\+:
+
+e769adf4-\/4af7-\/11e8-\/7421-\/3c9dfbfe9aab urn\+:uuid\+:5b0946b8-\/0eb4-\/4966-\/619d-\/047b7f7e2056 
+
+References clock\+\_\+seq, get\+\_\+utc\+\_\+since\+\_\+1582(), hires\+\_\+count, i4b, initialized, int32tohexoctets(), int64tohexoctets(), mtprng\+\_\+init(), mtprng\+\_\+rand64(), rng\+\_\+state, and values\+\_\+save.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__uuid_a3f2d62f2c0eb65a08d9b80ff402dc944_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__uuid_af0811eb99899b230e28bc57ef0420a51}\label{namespacem__uuid_af0811eb99899b230e28bc57ef0420a51}} 
+\index{m\_uuid@{m\_uuid}!get\_utc\_since\_1582@{get\_utc\_since\_1582}}
+\index{get\_utc\_since\_1582@{get\_utc\_since\_1582}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{get\_utc\_since\_1582()}{get\_utc\_since\_1582()}}
+{\footnotesize\ttfamily integer(kind=\mbox{\hyperlink{namespacem__uuid_a7987efc6c95fb4a66d34b94793cf82ad}{i8b}}) function m\+\_\+uuid\+::get\+\_\+utc\+\_\+since\+\_\+1582 (\begin{DoxyParamCaption}\item[{integer, dimension(8), intent(in)}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References date\+\_\+to\+\_\+unix(), and i8b.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__uuid_af0811eb99899b230e28bc57ef0420a51_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__uuid_af0811eb99899b230e28bc57ef0420a51_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__uuid_adc80e8ca4f2ff53a4dcde6b7778be3e9}\label{namespacem__uuid_adc80e8ca4f2ff53a4dcde6b7778be3e9}} 
+\index{m\_uuid@{m\_uuid}!mtprng\_init@{mtprng\_init}}
+\index{mtprng\_init@{mtprng\_init}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{mtprng\_init()}{mtprng\_init()}}
+{\footnotesize\ttfamily subroutine m\+\_\+uuid\+::mtprng\+\_\+init (\begin{DoxyParamCaption}\item[{integer(int32), intent(in)}]{seed,  }\item[{type(\mbox{\hyperlink{structm__uuid_1_1mtprng__state}{mtprng\+\_\+state}}), intent(out)}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{namespacem__uuid_autotoc_md29}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__uuid_autotoc_md29}
+mtprng\+\_\+init(3f) -\/ \mbox{[}M\+\_\+random\+:M\+E\+R\+S\+E\+N\+NE T\+W\+I\+S\+T\+ER\mbox{]} Initialize the Mersenne Twister random number generator with \char`\"{}seed\char`\"{} (L\+I\+C\+E\+N\+SE\+:B\+S\+D-\/4-\/\+Clause)\hypertarget{namespacem__uuid_autotoc_md30}{}\doxysubsubsection{S\+Y\+N\+O\+P\+S\+IS}\label{namespacem__uuid_autotoc_md30}
+\begin{DoxyVerb}subroutine mtprng_init(seed, state)
+integer(INT32),     intent(in)  :: seed
+type(mtprng_state), intent(out) :: state
+\end{DoxyVerb}
+\hypertarget{namespacem__uuid_autotoc_md31}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__uuid_autotoc_md31}
+Initializes the Mersenne Twister random number generator with \char`\"{}seed\char`\"{}\hypertarget{namespacem__uuid_autotoc_md32}{}\doxysubsubsection{O\+P\+T\+I\+O\+NS}\label{namespacem__uuid_autotoc_md32}
+seed A seed value is used to start a specific sequence of pseudo-\/random numbers state generator state initialized by mtprng\+\_\+init(3f) or mtprng\+\_\+init\+\_\+array(3f)\hypertarget{namespacem__uuid_autotoc_md33}{}\doxysubsubsection{E\+X\+A\+M\+P\+LE}\label{namespacem__uuid_autotoc_md33}
+Sample program\+:
+
+program demo\+\_\+mtprng\+\_\+init use M\+\_\+random, only \+: \mbox{\hyperlink{structm__uuid_1_1mtprng__state}{mtprng\+\_\+state}}, mtprng\+\_\+init, mtprng\+\_\+rand64 use, intrinsic \+:: iso\+\_\+fortran\+\_\+env, only \+: int32, int64 implicit none integer(\+I\+N\+T32) \+:: seed type(mtprng\+\_\+state) \+:: state G\+E\+T\+\_\+\+S\+E\+ED\+: block integer \+:: count integer \+:: count\+\_\+rate call system\+\_\+clock(count, count\+\_\+rate) seed=count endblock G\+E\+T\+\_\+\+S\+E\+ED call mtprng\+\_\+init(seed, state) ! returns a I\+N\+T64 integer with a range in 0 .. 2$^\wedge$32-\/1 write($\ast$,$\ast$) mtprng\+\_\+rand64(state) end program demo\+\_\+mtprng\+\_\+init
+
+Sample Results\+:
+
+867010878 
+
+References n.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__uuid_adc80e8ca4f2ff53a4dcde6b7778be3e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__uuid_a4c981902679f9b8e41fefeb6462ca631}\label{namespacem__uuid_a4c981902679f9b8e41fefeb6462ca631}} 
+\index{m\_uuid@{m\_uuid}!mtprng\_rand64@{mtprng\_rand64}}
+\index{mtprng\_rand64@{mtprng\_rand64}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{mtprng\_rand64()}{mtprng\_rand64()}}
+{\footnotesize\ttfamily integer(int64) function m\+\_\+uuid\+::mtprng\+\_\+rand64 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structm__uuid_1_1mtprng__state}{mtprng\+\_\+state}}), intent(inout)}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{namespacem__uuid_autotoc_md34}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__uuid_autotoc_md34}
+mtprng\+\_\+rand64(3f) -\/ \mbox{[}M\+\_\+random\+:M\+E\+R\+S\+E\+N\+NE T\+W\+I\+S\+T\+ER\mbox{]} Obtain the next 64-\/bit integer in the pseudo-\/random sequence (L\+I\+C\+E\+N\+SE\+:B\+S\+D-\/4-\/\+Clause)\hypertarget{namespacem__uuid_autotoc_md35}{}\doxysubsubsection{S\+Y\+N\+O\+P\+S\+IS}\label{namespacem__uuid_autotoc_md35}
+\begin{DoxyVerb}function mtprng_rand64(state) result(r)
+type(mtprng_state), intent(inout) :: state
+integer(INT64) :: r
+\end{DoxyVerb}
+\hypertarget{namespacem__uuid_autotoc_md36}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__uuid_autotoc_md36}
+Obtain the next 64-\/bit integer in the pseudo-\/random sequence in the range 0 to 2$^\wedge$32-\/1. Note that the range is considerably below the value of H\+U\+G\+E(0\+\_\+int64).\hypertarget{namespacem__uuid_autotoc_md37}{}\doxysubsubsection{O\+P\+T\+I\+O\+NS}\label{namespacem__uuid_autotoc_md37}
+state generator state initialized by mtprng\+\_\+init(3f) or mtprng\+\_\+init\+\_\+array(3f)\hypertarget{namespacem__uuid_autotoc_md38}{}\doxysubsubsection{R\+E\+T\+U\+R\+NS}\label{namespacem__uuid_autotoc_md38}
+r next pseudo-\/random value in the range 0 to 2$^\wedge$32-\/1\hypertarget{namespacem__uuid_autotoc_md39}{}\doxysubsubsection{E\+X\+A\+M\+P\+LE}\label{namespacem__uuid_autotoc_md39}
+Sample program\+:
+
+program demo\+\_\+mtprng\+\_\+rand64 use M\+\_\+random, only \+: \mbox{\hyperlink{structm__uuid_1_1mtprng__state}{mtprng\+\_\+state}}, mtprng\+\_\+init, mtprng\+\_\+rand64 use, intrinsic \+:: iso\+\_\+fortran\+\_\+env, only \+: int32, int64 implicit none integer(\+I\+N\+T32) \+:: seed type(mtprng\+\_\+state) \+:: state G\+E\+T\+\_\+\+S\+E\+ED\+: block integer \+:: count integer \+:: count\+\_\+rate call system\+\_\+clock(count, count\+\_\+rate) seed = count endblock G\+E\+T\+\_\+\+S\+E\+ED call mtprng\+\_\+init(seed, state) write($\ast$,$\ast$) mtprng\+\_\+rand64(state) end program demo\+\_\+mtprng\+\_\+rand64 
+
+References m, mtprng\+\_\+init(), and n.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__uuid_a4c981902679f9b8e41fefeb6462ca631_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__uuid_a4c981902679f9b8e41fefeb6462ca631_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacem__uuid_a32c306c9bb8775547ab936fbadead0da}\label{namespacem__uuid_a32c306c9bb8775547ab936fbadead0da}} 
+\index{m\_uuid@{m\_uuid}!clock\_seq@{clock\_seq}}
+\index{clock\_seq@{clock\_seq}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{clock\_seq}{clock\_seq}}
+{\footnotesize\ttfamily integer, save m\+\_\+uuid\+::clock\+\_\+seq = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacem__uuid_afe4e55c0cd9b4904e3687d934f9cd34c}\label{namespacem__uuid_afe4e55c0cd9b4904e3687d934f9cd34c}} 
+\index{m\_uuid@{m\_uuid}!hires\_count@{hires\_count}}
+\index{hires\_count@{hires\_count}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{hires\_count}{hires\_count}}
+{\footnotesize\ttfamily integer(kind=\mbox{\hyperlink{namespacem__uuid_a313c6cd22280f748ff17d41627f1d43f}{i4b}}), save m\+\_\+uuid\+::hires\+\_\+count = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacem__uuid_a313c6cd22280f748ff17d41627f1d43f}\label{namespacem__uuid_a313c6cd22280f748ff17d41627f1d43f}} 
+\index{m\_uuid@{m\_uuid}!i4b@{i4b}}
+\index{i4b@{i4b}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{i4b}{i4b}}
+{\footnotesize\ttfamily integer, parameter m\+\_\+uuid\+::i4b = selected\+\_\+int\+\_\+kind(9)\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacem__uuid_a7987efc6c95fb4a66d34b94793cf82ad}\label{namespacem__uuid_a7987efc6c95fb4a66d34b94793cf82ad}} 
+\index{m\_uuid@{m\_uuid}!i8b@{i8b}}
+\index{i8b@{i8b}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{i8b}{i8b}}
+{\footnotesize\ttfamily integer, parameter m\+\_\+uuid\+::i8b = selected\+\_\+int\+\_\+kind(18)\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacem__uuid_a071f858d7829056ca1fa52ee3d094b4c}\label{namespacem__uuid_a071f858d7829056ca1fa52ee3d094b4c}} 
+\index{m\_uuid@{m\_uuid}!ieee32@{ieee32}}
+\index{ieee32@{ieee32}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{ieee32}{ieee32}}
+{\footnotesize\ttfamily integer, parameter m\+\_\+uuid\+::ieee32 = selected\+\_\+real\+\_\+kind( 6, 37 )}
+
+\mbox{\Hypertarget{namespacem__uuid_a4496294163ff1889523c4c44fe3356bf}\label{namespacem__uuid_a4496294163ff1889523c4c44fe3356bf}} 
+\index{m\_uuid@{m\_uuid}!ieee64@{ieee64}}
+\index{ieee64@{ieee64}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{ieee64}{ieee64}}
+{\footnotesize\ttfamily integer, parameter m\+\_\+uuid\+::ieee64 = selected\+\_\+real\+\_\+kind( 15, 307 )}
+
+\mbox{\Hypertarget{namespacem__uuid_a60ebe013d35cf124d12a96c7688fb21d}\label{namespacem__uuid_a60ebe013d35cf124d12a96c7688fb21d}} 
+\index{m\_uuid@{m\_uuid}!initialized@{initialized}}
+\index{initialized@{initialized}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily logical, save m\+\_\+uuid\+::initialized = .false.\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacem__uuid_a5cc4f31ac9c3c02629c047f84a1653b3}\label{namespacem__uuid_a5cc4f31ac9c3c02629c047f84a1653b3}} 
+\index{m\_uuid@{m\_uuid}!m@{m}}
+\index{m@{m}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily integer(int32), parameter m\+\_\+uuid\+::m = 397\+\_\+\+I\+N\+T32}
+
+\mbox{\Hypertarget{namespacem__uuid_a4db3ac13d557f2a075ecf3303aa4bcc0}\label{namespacem__uuid_a4db3ac13d557f2a075ecf3303aa4bcc0}} 
+\index{m\_uuid@{m\_uuid}!n@{n}}
+\index{n@{n}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily integer(int32), parameter m\+\_\+uuid\+::n = 624\+\_\+\+I\+N\+T32}
+
+\mbox{\Hypertarget{namespacem__uuid_a18c282d14e62977dd0d2ee840f739f58}\label{namespacem__uuid_a18c282d14e62977dd0d2ee840f739f58}} 
+\index{m\_uuid@{m\_uuid}!realtime@{realtime}}
+\index{realtime@{realtime}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{realtime}{realtime}}
+{\footnotesize\ttfamily integer, parameter m\+\_\+uuid\+::realtime =kind(0.\+0d0)}
+
+\hypertarget{namespacem__uuid_autotoc_md0}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__uuid_autotoc_md0}
+M\+\_\+uuid(3f) -\/ \mbox{[}M\+\_\+uuid\mbox{]} a module of U\+U\+ID (Universally Unique I\+Dentifier) procedures (L\+I\+C\+E\+N\+SE\+:B\+S\+D-\/4-\/\+Clause)\hypertarget{namespacem__uuid_autotoc_md1}{}\doxysubsubsection{S\+Y\+N\+O\+P\+S\+IS}\label{namespacem__uuid_autotoc_md1}
+\begin{DoxyVerb}use m_uuid, only : generate_uuid
+\end{DoxyVerb}
+\hypertarget{namespacem__uuid_autotoc_md2}{}\doxysubsubsection{Q\+U\+O\+TE}\label{namespacem__uuid_autotoc_md2}
+Remember you are unique, just like everyone else.\hypertarget{namespacem__uuid_autotoc_md3}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__uuid_autotoc_md3}
+\begin{DoxyVerb}A universally unique identifier (UUID) is a 128-bit number used to
+identify information in computer systems.
+
+When generated according to the standard methods, UUIDs are for
+practical purposes unique, without depending for their uniqueness
+on a central registration authority or coordination between the
+parties generating them, unlike most other numbering schemes. While
+the probability that a UUID will be duplicated is not zero, it is
+close enough to zero to be negligible.
+
+Thus, anyone can create a UUID and use it to identify something with
+near certainty that the identifier does not duplicate one that has
+already been or will be created to identify something else. Information
+labeled with UUIDs by independent parties can therefore be later
+combined into a single database, or transmitted on the same channel,
+without needing to resolve conflicts between identifiers.
+
+Adoption of UUIDs and GUIDs is widespread. Many computing platforms
+provide support for generating them, and for parsing their textual
+representation.
+
+RFC 4122 defines a Uniform Resource Name (URN) namespace for UUIDs.
+A UUID presented as a URN appears as follows:
+
+   urn:uuid:123e4567-e89b-12d3-a456-426655440000
+\end{DoxyVerb}
+
+
+-- Wikipedia\hypertarget{namespacem__uuid_autotoc_md4}{}\doxysubsubsection{P\+R\+O\+C\+E\+D\+U\+R\+ES}\label{namespacem__uuid_autotoc_md4}
+\begin{DoxyVerb}generate_uuid(version)   generate 36-character UUID string
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacem__uuid_a82c799af66694f27a6f7ef9eb0a7503b}\label{namespacem__uuid_a82c799af66694f27a6f7ef9eb0a7503b}} 
+\index{m\_uuid@{m\_uuid}!rng\_state@{rng\_state}}
+\index{rng\_state@{rng\_state}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{rng\_state}{rng\_state}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structm__uuid_1_1mtprng__state}{mtprng\+\_\+state}}), save m\+\_\+uuid\+::rng\+\_\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacem__uuid_ae35fcb7bf98c367b848f6ffe3eed80db}\label{namespacem__uuid_ae35fcb7bf98c367b848f6ffe3eed80db}} 
+\index{m\_uuid@{m\_uuid}!secday@{secday}}
+\index{secday@{secday}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{secday}{secday}}
+{\footnotesize\ttfamily real(kind=\mbox{\hyperlink{namespacem__uuid_a18c282d14e62977dd0d2ee840f739f58}{realtime}}), parameter, private m\+\_\+uuid\+::secday =86400.\+0d0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacem__uuid_a8db2a203eafe58455a0d2db170e87ebb}\label{namespacem__uuid_a8db2a203eafe58455a0d2db170e87ebb}} 
+\index{m\_uuid@{m\_uuid}!values\_save@{values\_save}}
+\index{values\_save@{values\_save}!m\_uuid@{m\_uuid}}
+\doxysubsubsection{\texorpdfstring{values\_save}{values\_save}}
+{\footnotesize\ttfamily integer, save m\+\_\+uuid\+::values\+\_\+save\hspace{0.3cm}{\ttfamily [private]}}
+

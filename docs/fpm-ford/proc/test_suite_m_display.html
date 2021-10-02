@@ -1,0 +1,4563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="display small matrices in row-column order">
+    
+    <meta name="author" content="John S. Urban" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>test_suite_M_display &ndash; M_display</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">M_display </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+        
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>test_suite_M_display
+      <small>Subroutine</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title="40.0% of total for procedures.">501 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/M_display.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/m_display.f90.html'>M_display.f90</a></li>
+    
+     <li><a href='../module/m_display.html'>M_display</a></li>
+    
+  
+     <li class="active">test_suite_M_display</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_check_settings">test_check_settings</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_copyseptobox">test_copyseptobox</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_copytobox">test_copytobox</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_errmsg">test_disp_errmsg</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_get">test_disp_get</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_m_cpld">test_disp_m_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_m_cplx">test_disp_m_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_m_dble">test_disp_m_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_m_dchr">test_disp_m_dchr</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_m_dlog">test_disp_m_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_m_sngl">test_disp_m_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_matrix_int">test_disp_matrix_int</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_s_cpld">test_disp_s_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_s_cplx">test_disp_s_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_s_dble">test_disp_s_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_s_dlog">test_disp_s_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_s_sngl">test_disp_s_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_scalar_int">test_disp_scalar_int</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_set">test_disp_set</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_set_ds">test_disp_set_ds</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_set_factory">test_disp_set_factory</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_title_matrix_int">test_disp_title_matrix_int</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_title_scalar_int">test_disp_title_scalar_int</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_title_vector_int">test_disp_title_vector_int</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tm_cpld">test_disp_tm_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tm_cplx">test_disp_tm_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tm_dble">test_disp_tm_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tm_dchr">test_disp_tm_dchr</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tm_dlog">test_disp_tm_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tm_sngl">test_disp_tm_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_ts_cpld">test_disp_ts_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_ts_cplx">test_disp_ts_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_ts_dble">test_disp_ts_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_ts_dchr">test_disp_ts_dchr</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_ts_dlog">test_disp_ts_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_ts_sngl">test_disp_ts_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tv_cpld">test_disp_tv_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tv_cplx">test_disp_tv_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tv_dble">test_disp_tv_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tv_dchr">test_disp_tv_dchr</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tv_dlog">test_disp_tv_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tv_sngl">test_disp_tv_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_v_cpld">test_disp_v_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_v_cplx">test_disp_v_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_v_dble">test_disp_v_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_v_dchr">test_disp_v_dchr</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_v_dlog">test_disp_v_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_v_sngl">test_disp_v_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_vector_int">test_disp_vector_int</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_find_editdesc_real">test_find_editdesc_real</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_finishbox">test_finishbox</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_get_se">test_get_se</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_len_f_cpld">test_len_f_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_len_f_cplx">test_len_f_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_len_f_dble">test_len_f_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_len_f_dint">test_len_f_dint</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_len_f_dlog">test_len_f_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_len_f_sngl">test_len_f_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_len_s_cpld">test_len_s_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_len_s_cplx">test_len_s_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_nnblk">test_nnblk</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_preparebox">test_preparebox</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_putnl">test_putnl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_putstr">test_putstr</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_readfmt">test_readfmt</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_replace_w">test_replace_w</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_replace_zeronaninf">test_replace_zeronaninf</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_check_settings">test_tostring_check_settings</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_cpld">test_tostring_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_cplx">test_tostring_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_dble">test_tostring_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_dint">test_tostring_dint</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_dlog">test_tostring_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_f_cpld">test_tostring_f_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_f_cplx">test_tostring_f_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_f_dble">test_tostring_f_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_f_dint">test_tostring_f_dint</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_f_dlog">test_tostring_f_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_f_sngl">test_tostring_f_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_get">test_tostring_get</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_get_complex">test_tostring_get_complex</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_s_cpld">test_tostring_s_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_s_cplx">test_tostring_s_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_s_dble">test_tostring_s_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_s_dint">test_tostring_s_dint</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_s_dlog">test_tostring_s_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_s_sngl">test_tostring_s_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_set">test_tostring_set</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_set_factory">test_tostring_set_factory</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_sf_cpld">test_tostring_sf_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_sf_cplx">test_tostring_sf_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_sf_dble">test_tostring_sf_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_sf_dint">test_tostring_sf_dint</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_sf_dlog">test_tostring_sf_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_sf_sngl">test_tostring_sf_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_sngl">test_tostring_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_trim_real">test_trim_real</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_trim_s_real">test_trim_s_real</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_upper">test_upper</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/test_suite_m_display.html#src">test_suite_M_display</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>
+public subroutine test_suite_M_display()
+    
+    
+   
+</h2>
+    
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      
+      <li class="list-group-item">
+  <ul class="list-inline">
+    
+    <li>M_verify</li>
+    
+    <li>M_verify</li>
+    
+  </ul>
+      </li>
+      
+      
+      
+      </ul>
+    </div>
+    
+
+
+    
+    <p>setup
+ teardown</p>
+    
+
+    <h3>Arguments</h3>
+    
+    <em>None</em>
+    <br>
+    
+    
+    
+    
+     
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_check_settings">test_check_settings</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_copyseptobox">test_copyseptobox</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_copytobox">test_copytobox</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_errmsg">test_disp_errmsg</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_get">test_disp_get</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_m_cpld">test_disp_m_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_m_cplx">test_disp_m_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_m_dble">test_disp_m_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_m_dchr">test_disp_m_dchr</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_m_dlog">test_disp_m_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_m_sngl">test_disp_m_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_matrix_int">test_disp_matrix_int</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_s_cpld">test_disp_s_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_s_cplx">test_disp_s_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_s_dble">test_disp_s_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_s_dlog">test_disp_s_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_s_sngl">test_disp_s_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_scalar_int">test_disp_scalar_int</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_set">test_disp_set</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_set_ds">test_disp_set_ds</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_set_factory">test_disp_set_factory</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_title_matrix_int">test_disp_title_matrix_int</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_title_scalar_int">test_disp_title_scalar_int</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_title_vector_int">test_disp_title_vector_int</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tm_cpld">test_disp_tm_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tm_cplx">test_disp_tm_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tm_dble">test_disp_tm_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tm_dchr">test_disp_tm_dchr</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tm_dlog">test_disp_tm_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tm_sngl">test_disp_tm_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_ts_cpld">test_disp_ts_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_ts_cplx">test_disp_ts_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_ts_dble">test_disp_ts_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_ts_dchr">test_disp_ts_dchr</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_ts_dlog">test_disp_ts_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_ts_sngl">test_disp_ts_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tv_cpld">test_disp_tv_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tv_cplx">test_disp_tv_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tv_dble">test_disp_tv_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tv_dchr">test_disp_tv_dchr</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tv_dlog">test_disp_tv_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_tv_sngl">test_disp_tv_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_v_cpld">test_disp_v_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_v_cplx">test_disp_v_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_v_dble">test_disp_v_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_v_dchr">test_disp_v_dchr</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_v_dlog">test_disp_v_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_v_sngl">test_disp_v_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_disp_vector_int">test_disp_vector_int</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_find_editdesc_real">test_find_editdesc_real</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_finishbox">test_finishbox</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_get_se">test_get_se</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_len_f_cpld">test_len_f_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_len_f_cplx">test_len_f_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_len_f_dble">test_len_f_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_len_f_dint">test_len_f_dint</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_len_f_dlog">test_len_f_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_len_f_sngl">test_len_f_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_len_s_cpld">test_len_s_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_len_s_cplx">test_len_s_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_nnblk">test_nnblk</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_preparebox">test_preparebox</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_putnl">test_putnl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_putstr">test_putstr</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_readfmt">test_readfmt</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_replace_w">test_replace_w</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_replace_zeronaninf">test_replace_zeronaninf</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_check_settings">test_tostring_check_settings</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_cpld">test_tostring_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_cplx">test_tostring_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_dble">test_tostring_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_dint">test_tostring_dint</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_dlog">test_tostring_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_f_cpld">test_tostring_f_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_f_cplx">test_tostring_f_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_f_dble">test_tostring_f_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_f_dint">test_tostring_f_dint</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_f_dlog">test_tostring_f_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_f_sngl">test_tostring_f_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_get">test_tostring_get</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_get_complex">test_tostring_get_complex</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_s_cpld">test_tostring_s_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_s_cplx">test_tostring_s_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_s_dble">test_tostring_s_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_s_dint">test_tostring_s_dint</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_s_dlog">test_tostring_s_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_s_sngl">test_tostring_s_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_set">test_tostring_set</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_set_factory">test_tostring_set_factory</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_sf_cpld">test_tostring_sf_cpld</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_sf_cplx">test_tostring_sf_cplx</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_sf_dble">test_tostring_sf_dble</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_sf_dint">test_tostring_sf_dint</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_sf_dlog">test_tostring_sf_dlog</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_sf_sngl">test_tostring_sf_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_tostring_sngl">test_tostring_sngl</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_trim_real">test_trim_real</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_trim_s_real">test_trim_s_real</a>
+      
+      <a class="list-group-item" href="../proc/test_suite_m_display.html#proc-test_upper">test_upper</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/test_suite_m_display.html#src">test_suite_M_display</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+
+    
+    <section>
+    <h2>Subroutines</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_check_settings"></span><h3>
+subroutine test_check_settings()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;check_settings&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_copyseptobox"></span><h3>
+subroutine test_copyseptobox()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;copyseptobox&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_copytobox"></span><h3>
+subroutine test_copytobox()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;copytobox&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_errmsg"></span><h3>
+subroutine test_disp_errmsg()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_errmsg&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_get"></span><h3>
+subroutine test_disp_get()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_get&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_m_cpld"></span><h3>
+subroutine test_disp_m_cpld()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_m_cpld&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_m_cplx"></span><h3>
+subroutine test_disp_m_cplx()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_m_cplx&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_m_dble"></span><h3>
+subroutine test_disp_m_dble()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_m_dble&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_m_dchr"></span><h3>
+subroutine test_disp_m_dchr()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_m_dchr&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_m_dlog"></span><h3>
+subroutine test_disp_m_dlog()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_m_dlog&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_m_sngl"></span><h3>
+subroutine test_disp_m_sngl()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_m_sngl&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_matrix_int"></span><h3>
+subroutine test_disp_matrix_int()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_matrix_int&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_s_cpld"></span><h3>
+subroutine test_disp_s_cpld()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_s_cpld&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_s_cplx"></span><h3>
+subroutine test_disp_s_cplx()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_s_cplx&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_s_dble"></span><h3>
+subroutine test_disp_s_dble()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_s_dble&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_s_dlog"></span><h3>
+subroutine test_disp_s_dlog()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_s_dlog&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_s_sngl"></span><h3>
+subroutine test_disp_s_sngl()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_s_sngl&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_scalar_int"></span><h3>
+subroutine test_disp_scalar_int()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_scalar_int&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_set"></span><h3>
+subroutine test_disp_set()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_set&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_set_ds"></span><h3>
+subroutine test_disp_set_ds()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_set_ds&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_set_factory"></span><h3>
+subroutine test_disp_set_factory()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_set_factory&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_title_matrix_int"></span><h3>
+subroutine test_disp_title_matrix_int()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_title_matrix_int&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_title_scalar_int"></span><h3>
+subroutine test_disp_title_scalar_int()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_title_scalar_int&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_title_vector_int"></span><h3>
+subroutine test_disp_title_vector_int()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_title_vector_int&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_tm_cpld"></span><h3>
+subroutine test_disp_tm_cpld()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_tm_cpld&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_tm_cplx"></span><h3>
+subroutine test_disp_tm_cplx()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_tm_cplx&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_tm_dble"></span><h3>
+subroutine test_disp_tm_dble()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_tm_dble&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_tm_dchr"></span><h3>
+subroutine test_disp_tm_dchr()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_tm_dchr&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_tm_dlog"></span><h3>
+subroutine test_disp_tm_dlog()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_tm_dlog&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_tm_sngl"></span><h3>
+subroutine test_disp_tm_sngl()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_tm_sngl&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_ts_cpld"></span><h3>
+subroutine test_disp_ts_cpld()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_ts_cpld&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_ts_cplx"></span><h3>
+subroutine test_disp_ts_cplx()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_ts_cplx&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_ts_dble"></span><h3>
+subroutine test_disp_ts_dble()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_ts_dble&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_ts_dchr"></span><h3>
+subroutine test_disp_ts_dchr()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_ts_dchr&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_ts_dlog"></span><h3>
+subroutine test_disp_ts_dlog()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_ts_dlog&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_ts_sngl"></span><h3>
+subroutine test_disp_ts_sngl()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_ts_sngl&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_tv_cpld"></span><h3>
+subroutine test_disp_tv_cpld()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_tv_cpld&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_tv_cplx"></span><h3>
+subroutine test_disp_tv_cplx()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_tv_cplx&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_tv_dble"></span><h3>
+subroutine test_disp_tv_dble()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_tv_dble&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_tv_dchr"></span><h3>
+subroutine test_disp_tv_dchr()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_tv_dchr&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_tv_dlog"></span><h3>
+subroutine test_disp_tv_dlog()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_tv_dlog&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_tv_sngl"></span><h3>
+subroutine test_disp_tv_sngl()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_tv_sngl&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_v_cpld"></span><h3>
+subroutine test_disp_v_cpld()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_v_cpld&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_v_cplx"></span><h3>
+subroutine test_disp_v_cplx()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_v_cplx&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_v_dble"></span><h3>
+subroutine test_disp_v_dble()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_v_dble&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_v_dchr"></span><h3>
+subroutine test_disp_v_dchr()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_v_dchr&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_v_dlog"></span><h3>
+subroutine test_disp_v_dlog()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_v_dlog&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_v_sngl"></span><h3>
+subroutine test_disp_v_sngl()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_v_sngl&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_disp_vector_int"></span><h3>
+subroutine test_disp_vector_int()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;disp_vector_int&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_find_editdesc_real"></span><h3>
+subroutine test_find_editdesc_real()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;find_editdesc_real&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_finishbox"></span><h3>
+subroutine test_finishbox()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;finishbox&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_get_se"></span><h3>
+subroutine test_get_se()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;get_se&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_len_f_cpld"></span><h3>
+subroutine test_len_f_cpld()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;len_f_cpld&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_len_f_cplx"></span><h3>
+subroutine test_len_f_cplx()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;len_f_cplx&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_len_f_dble"></span><h3>
+subroutine test_len_f_dble()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;len_f_dble&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_len_f_dint"></span><h3>
+subroutine test_len_f_dint()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;len_f_dint&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_len_f_dlog"></span><h3>
+subroutine test_len_f_dlog()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;len_f_dlog&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_len_f_sngl"></span><h3>
+subroutine test_len_f_sngl()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;len_f_sngl&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_len_s_cpld"></span><h3>
+subroutine test_len_s_cpld()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;len_s_cpld&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_len_s_cplx"></span><h3>
+subroutine test_len_s_cplx()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;len_s_cplx&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_nnblk"></span><h3>
+subroutine test_nnblk()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;nnblk&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_preparebox"></span><h3>
+subroutine test_preparebox()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;preparebox&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_putnl"></span><h3>
+subroutine test_putnl()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;putnl&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_putstr"></span><h3>
+subroutine test_putstr()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;putstr&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_readfmt"></span><h3>
+subroutine test_readfmt()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;readfmt&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_replace_w"></span><h3>
+subroutine test_replace_w()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;replace_w&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_replace_zeronaninf"></span><h3>
+subroutine test_replace_zeronaninf()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;replace_zeronaninf&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_check_settings"></span><h3>
+subroutine test_tostring_check_settings()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_check_settings&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_cpld"></span><h3>
+subroutine test_tostring_cpld()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_cpld&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_cplx"></span><h3>
+subroutine test_tostring_cplx()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_cplx&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_dble"></span><h3>
+subroutine test_tostring_dble()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_dble&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_dint"></span><h3>
+subroutine test_tostring_dint()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_dint&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_dlog"></span><h3>
+subroutine test_tostring_dlog()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_dlog&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_f_cpld"></span><h3>
+subroutine test_tostring_f_cpld()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_f_cpld&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_f_cplx"></span><h3>
+subroutine test_tostring_f_cplx()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_f_cplx&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_f_dble"></span><h3>
+subroutine test_tostring_f_dble()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_f_dble&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_f_dint"></span><h3>
+subroutine test_tostring_f_dint()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_f_dint&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_f_dlog"></span><h3>
+subroutine test_tostring_f_dlog()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_f_dlog&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_f_sngl"></span><h3>
+subroutine test_tostring_f_sngl()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_f_sngl&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_get"></span><h3>
+subroutine test_tostring_get()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_get&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_get_complex"></span><h3>
+subroutine test_tostring_get_complex()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_get_complex&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_s_cpld"></span><h3>
+subroutine test_tostring_s_cpld()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_s_cpld&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_s_cplx"></span><h3>
+subroutine test_tostring_s_cplx()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_s_cplx&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_s_dble"></span><h3>
+subroutine test_tostring_s_dble()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_s_dble&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_s_dint"></span><h3>
+subroutine test_tostring_s_dint()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_s_dint&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_s_dlog"></span><h3>
+subroutine test_tostring_s_dlog()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_s_dlog&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_s_sngl"></span><h3>
+subroutine test_tostring_s_sngl()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_s_sngl&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_set"></span><h3>
+subroutine test_tostring_set()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_set&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_set_factory"></span><h3>
+subroutine test_tostring_set_factory()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_set_factory&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_sf_cpld"></span><h3>
+subroutine test_tostring_sf_cpld()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_sf_cpld&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_sf_cplx"></span><h3>
+subroutine test_tostring_sf_cplx()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_sf_cplx&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_sf_dble"></span><h3>
+subroutine test_tostring_sf_dble()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_sf_dble&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_sf_dint"></span><h3>
+subroutine test_tostring_sf_dint()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_sf_dint&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_sf_dlog"></span><h3>
+subroutine test_tostring_sf_dlog()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_sf_dlog&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_sf_sngl"></span><h3>
+subroutine test_tostring_sf_sngl()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_sf_sngl&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_tostring_sngl"></span><h3>
+subroutine test_tostring_sngl()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;tostring_sngl&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_trim_real"></span><h3>
+subroutine test_trim_real()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;trim_real&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_trim_s_real"></span><h3>
+subroutine test_trim_s_real()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;trim_s_real&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_upper"></span><h3>
+subroutine test_upper()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>call unit_check(&lsquo;upper&rsquo;, 0.eq.0, &lsquo;checking&rsquo;,100)</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    </section>    
+    
+    
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="k">subroutine </span><span class="n">test_suite_M_display</span><span class="p">()</span>
+<span class="k">use </span><span class="n">M_verify</span><span class="p">,</span> <span class="k">only</span> <span class="p">:</span> <span class="n">unit_check_start</span><span class="p">,</span><span class="n">unit_check</span><span class="p">,</span><span class="n">unit_check_done</span><span class="p">,</span><span class="n">unit_check_good</span><span class="p">,</span><span class="n">unit_check_bad</span><span class="p">,</span><span class="n">unit_check_msg</span>
+<span class="k">use </span><span class="n">M_verify</span><span class="p">,</span> <span class="k">only</span> <span class="p">:</span> <span class="n">unit_check_level</span>
+<span class="k">implicit none</span>
+<span class="c">!! setup</span>
+   <span class="k">call </span><span class="n">test_disp_get</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_m_cpld</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_m_cplx</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_m_dble</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_m_dchr</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_m_dlog</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_m_sngl</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_matrix_int</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_s_cpld</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_s_cplx</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_s_dble</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_s_dlog</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_s_sngl</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_scalar_int</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_set</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_set_ds</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_set_factory</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_title_matrix_int</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_title_scalar_int</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_title_vector_int</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_tm_cpld</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_tm_cplx</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_tm_dble</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_tm_dchr</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_tm_dlog</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_tm_sngl</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_ts_cpld</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_ts_cplx</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_ts_dble</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_ts_dchr</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_ts_dlog</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_ts_sngl</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_tv_cpld</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_tv_cplx</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_tv_dble</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_tv_dchr</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_tv_dlog</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_tv_sngl</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_v_cpld</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_v_cplx</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_v_dble</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_v_dchr</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_v_dlog</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_v_sngl</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_vector_int</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_len_f_cpld</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_len_f_cplx</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_len_f_dble</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_len_f_dint</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_len_f_dlog</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_len_f_sngl</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_len_s_cpld</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_len_s_cplx</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_cpld</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_cplx</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_dble</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_dint</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_dlog</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_f_cpld</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_f_cplx</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_f_dble</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_f_dint</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_f_dlog</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_f_sngl</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_s_cpld</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_s_cplx</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_s_dble</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_s_dint</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_s_dlog</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_s_sngl</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_set</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_set_factory</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_sf_cpld</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_sf_cplx</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_sf_dble</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_sf_dint</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_sf_dlog</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_sf_sngl</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_sngl</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_check_settings</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_copyseptobox</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_copytobox</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_disp_errmsg</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_find_editdesc_real</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_finishbox</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_get_se</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_nnblk</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_preparebox</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_readfmt</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_replace_w</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_replace_zeronaninf</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_check_settings</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_get</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_tostring_get_complex</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_trim_real</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_trim_s_real</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_upper</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_putnl</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">test_putstr</span><span class="p">()</span>
+<span class="c">!! teardown</span>
+<span class="k">contains</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_get</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_get&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_get&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_get&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_get</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_m_cpld</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_m_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_m_cpld&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_m_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_m_cpld</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_m_cplx</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_m_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_m_cplx&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_m_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_m_cplx</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_m_dble</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_m_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_m_dble&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_m_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_m_dble</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_m_dchr</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_m_dchr&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_m_dchr&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_m_dchr&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_m_dchr</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_m_dlog</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_m_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_m_dlog&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_m_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_m_dlog</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_m_sngl</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_m_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_m_sngl&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_m_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_m_sngl</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_matrix_int</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_matrix_int&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_matrix_int&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_matrix_int&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_matrix_int</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_s_cpld</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_s_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_s_cpld&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_s_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_s_cpld</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_s_cplx</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_s_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_s_cplx&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_s_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_s_cplx</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_s_dble</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_s_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_s_dble&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_s_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_s_dble</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_s_dlog</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_s_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_s_dlog&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_s_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_s_dlog</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_s_sngl</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_s_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_s_sngl&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_s_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_s_sngl</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_scalar_int</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_scalar_int&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_scalar_int&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_scalar_int&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_scalar_int</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_set</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_set&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_set&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_set&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_set</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_set_ds</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_set_ds&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_set_ds&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_set_ds&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_set_ds</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_set_factory</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_set_factory&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_set_factory&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_set_factory&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_set_factory</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_title_matrix_int</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_title_matrix_int&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_title_matrix_int&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_title_matrix_int&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_title_matrix_int</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_title_scalar_int</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_title_scalar_int&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_title_scalar_int&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_title_scalar_int&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_title_scalar_int</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_title_vector_int</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_title_vector_int&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_title_vector_int&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_title_vector_int&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_title_vector_int</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_tm_cpld</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_tm_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_tm_cpld&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_tm_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_tm_cpld</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_tm_cplx</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_tm_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_tm_cplx&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_tm_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_tm_cplx</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_tm_dble</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_tm_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_tm_dble&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_tm_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_tm_dble</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_tm_dchr</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_tm_dchr&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_tm_dchr&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_tm_dchr&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_tm_dchr</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_tm_dlog</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_tm_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_tm_dlog&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_tm_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_tm_dlog</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_tm_sngl</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_tm_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_tm_sngl&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_tm_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_tm_sngl</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_ts_cpld</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_ts_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_ts_cpld&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_ts_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_ts_cpld</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_ts_cplx</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_ts_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_ts_cplx&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_ts_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_ts_cplx</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_ts_dble</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_ts_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_ts_dble&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_ts_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_ts_dble</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_ts_dchr</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_ts_dchr&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_ts_dchr&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_ts_dchr&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_ts_dchr</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_ts_dlog</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_ts_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_ts_dlog&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_ts_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_ts_dlog</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_ts_sngl</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_ts_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_ts_sngl&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_ts_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_ts_sngl</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_tv_cpld</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_tv_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_tv_cpld&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_tv_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_tv_cpld</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_tv_cplx</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_tv_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_tv_cplx&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_tv_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_tv_cplx</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_tv_dble</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_tv_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_tv_dble&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_tv_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_tv_dble</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_tv_dchr</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_tv_dchr&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_tv_dchr&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_tv_dchr&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_tv_dchr</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_tv_dlog</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_tv_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_tv_dlog&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_tv_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_tv_dlog</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_tv_sngl</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_tv_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_tv_sngl&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_tv_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_tv_sngl</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_v_cpld</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_v_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_v_cpld&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_v_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_v_cpld</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_v_cplx</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_v_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_v_cplx&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_v_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_v_cplx</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_v_dble</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_v_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_v_dble&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_v_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_v_dble</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_v_dchr</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_v_dchr&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_v_dchr&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_v_dchr&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_v_dchr</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_v_dlog</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_v_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_v_dlog&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_v_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_v_dlog</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_v_sngl</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_v_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_v_sngl&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_v_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_v_sngl</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_vector_int</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_vector_int&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_vector_int&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_vector_int&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_vector_int</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_len_f_cpld</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;len_f_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;len_f_cpld&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;len_f_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_len_f_cpld</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_len_f_cplx</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;len_f_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;len_f_cplx&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;len_f_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_len_f_cplx</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_len_f_dble</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;len_f_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;len_f_dble&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;len_f_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_len_f_dble</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_len_f_dint</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;len_f_dint&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;len_f_dint&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;len_f_dint&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_len_f_dint</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_len_f_dlog</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;len_f_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;len_f_dlog&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;len_f_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_len_f_dlog</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_len_f_sngl</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;len_f_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;len_f_sngl&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;len_f_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_len_f_sngl</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_len_s_cpld</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;len_s_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;len_s_cpld&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;len_s_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_len_s_cpld</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_len_s_cplx</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;len_s_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;len_s_cplx&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;len_s_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_len_s_cplx</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_cpld</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_cpld&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_cpld</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_cplx</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_cplx&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_cplx</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_dble</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_dble&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_dble</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_dint</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_dint&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_dint&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_dint&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_dint</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_dlog</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_dlog&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_dlog</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_f_cpld</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_f_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_f_cpld&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_f_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_f_cpld</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_f_cplx</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_f_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_f_cplx&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_f_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_f_cplx</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_f_dble</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_f_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_f_dble&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_f_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_f_dble</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_f_dint</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_f_dint&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_f_dint&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_f_dint&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_f_dint</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_f_dlog</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_f_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_f_dlog&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_f_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_f_dlog</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_f_sngl</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_f_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_f_sngl&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_f_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_f_sngl</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_s_cpld</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_s_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_s_cpld&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_s_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_s_cpld</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_s_cplx</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_s_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_s_cplx&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_s_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_s_cplx</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_s_dble</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_s_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_s_dble&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_s_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_s_dble</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_s_dint</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_s_dint&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_s_dint&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_s_dint&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_s_dint</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_s_dlog</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_s_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_s_dlog&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_s_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_s_dlog</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_s_sngl</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_s_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_s_sngl&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_s_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_s_sngl</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_set</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_set&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_set&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_set&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_set</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_set_factory</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_set_factory&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_set_factory&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_set_factory&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_set_factory</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_sf_cpld</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_sf_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_sf_cpld&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_sf_cpld&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_sf_cpld</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_sf_cplx</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_sf_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_sf_cplx&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_sf_cplx&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_sf_cplx</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_sf_dble</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_sf_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_sf_dble&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_sf_dble&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_sf_dble</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_sf_dint</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_sf_dint&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_sf_dint&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_sf_dint&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_sf_dint</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_sf_dlog</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_sf_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_sf_dlog&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_sf_dlog&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_sf_dlog</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_sf_sngl</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_sf_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_sf_sngl&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_sf_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_sf_sngl</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_sngl</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_sngl&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_sngl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_sngl</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_check_settings</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;check_settings&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;check_settings&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;check_settings&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_check_settings</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_copyseptobox</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;copyseptobox&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;copyseptobox&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;copyseptobox&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_copyseptobox</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_copytobox</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;copytobox&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;copytobox&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;copytobox&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_copytobox</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_disp_errmsg</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;disp_errmsg&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;disp_errmsg&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;disp_errmsg&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_disp_errmsg</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_find_editdesc_real</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;find_editdesc_real&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;find_editdesc_real&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;find_editdesc_real&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_find_editdesc_real</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_finishbox</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;finishbox&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;finishbox&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;finishbox&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_finishbox</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_get_se</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;get_se&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;get_se&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;get_se&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_get_se</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_nnblk</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;nnblk&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;nnblk&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;nnblk&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_nnblk</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_preparebox</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;preparebox&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;preparebox&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;preparebox&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_preparebox</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_readfmt</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;readfmt&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;readfmt&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;readfmt&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_readfmt</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_replace_w</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;replace_w&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;replace_w&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;replace_w&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_replace_w</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_replace_zeronaninf</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;replace_zeronaninf&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;replace_zeronaninf&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;replace_zeronaninf&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_replace_zeronaninf</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_check_settings</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_check_settings&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_check_settings&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_check_settings&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_check_settings</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_get</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_get&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_get&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_get&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_get</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_tostring_get_complex</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;tostring_get_complex&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;tostring_get_complex&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;tostring_get_complex&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_tostring_get_complex</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_trim_real</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;trim_real&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;trim_real&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;trim_real&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_trim_real</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_trim_s_real</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;trim_s_real&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;trim_s_real&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;trim_s_real&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_trim_s_real</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_upper</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;upper&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_upper</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_putnl</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;putnl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;putnl&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;putnl&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_putnl</span>
+<span class="c">!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+<span class="k">subroutine </span><span class="n">test_putstr</span><span class="p">()</span>
+
+   <span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;putstr&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+   <span class="c">!!call unit_check(&#39;putstr&#39;, 0.eq.0, &#39;checking&#39;,100)</span>
+   <span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;putstr&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">test_putstr</span>
+<span class="c">!===================================================================================================================================</span>
+<span class="c">!()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()=</span>
+<span class="c">!===================================================================================================================================</span>
+<span class="k">end subroutine </span><span class="n">test_suite_M_display</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    
+    </div>
+  </div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2021-10-02 11:12  
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> M_display was developed by John S. Urban</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>
