@@ -16,23 +16,24 @@ subroutine \mbox{\hyperlink{interfacem__display_1_1disp__set_a763734e87c92afbf37
 \doxysubsubsection{\texorpdfstring{disp\_set()}{disp\_set()}}
 {\footnotesize\ttfamily subroutine m\+\_\+display\+::disp\+\_\+set\+::disp\+\_\+set (\begin{DoxyParamCaption}\item[{character($\ast$), intent(in), optional}]{advance,  }\item[{integer, intent(in), optional}]{digmax,  }\item[{character($\ast$), intent(in), optional}]{matsep,  }\item[{character($\ast$), intent(in), optional}]{orient,  }\item[{character($\ast$), intent(in), optional}]{sep,  }\item[{character($\ast$), intent(in), optional}]{style,  }\item[{integer, intent(in), optional}]{unit,  }\item[{character($\ast$), intent(in), optional}]{zeroas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\hypertarget{namespacem__display_autotoc_md14}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__display_autotoc_md14}
-disp\+\_\+set(3f) -\/ \mbox{[}M\+\_\+display\mbox{]} set default options for disp(3f)\hypertarget{namespacem__display_autotoc_md15}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__display_autotoc_md15}
-The subroutine D\+I\+S\+P\+\_\+\+S\+ET may be used to change default values of all the arguments of D\+I\+SP except T\+I\+T\+LE, X, F\+MT and L\+B\+O\+U\+ND. In addition the default separator between items that are displayed side-\/by-\/side (using A\+D\+V\+A\+N\+CE=\textquotesingle{}no\textquotesingle{}) may be changed with the M\+A\+T\+S\+EP argument.\hypertarget{namespacem__display_autotoc_md16}{}\doxysubsubsection{T\+H\+E D\+E\+R\+I\+V\+E\+D T\+Y\+P\+E D\+I\+S\+P\+\_\+\+S\+E\+T\+T\+I\+N\+GS}\label{namespacem__display_autotoc_md16}
-M\+\_\+display contains the following definition of the data type D\+I\+S\+P\+\_\+\+S\+E\+T\+T\+I\+N\+GS. \begin{DoxyVerb}  type disp_settings
-    character(3)  :: advance   = 'YES'
-    character(9)  :: matsep    = '   '
-    character(3)  :: orient    = 'COL'
-    character(9)  :: sep       = '  '
-    character(19) :: style     = 'LEFT'
-    character(4)  :: trim      = 'AUTO'
-    character(9)  :: zeroas    = ''
-    integer       :: digmax    = 6
-    integer       :: matseplen = 3
-    integer       :: seplen    = 2
-    integer       :: unit      = -3
-    integer       :: zaslen    = 0
-  end type disp_settings
+\hypertarget{namespacem__display_autotoc_md13}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__display_autotoc_md13}
+disp\+\_\+set(3f) -\/ \mbox{[}M\+\_\+display\mbox{]} set default options for disp(3f)\hypertarget{namespacem__display_autotoc_md14}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__display_autotoc_md14}
+The subroutine D\+I\+S\+P\+\_\+\+S\+ET may be used to change default values of all the arguments of D\+I\+SP except T\+I\+T\+LE, X, F\+MT and L\+B\+O\+U\+ND. In addition the default separator between items that are displayed side-\/by-\/side (using A\+D\+V\+A\+N\+CE=\textquotesingle{}no\textquotesingle{}) may be changed with the M\+A\+T\+S\+EP argument.\hypertarget{namespacem__display_autotoc_md15}{}\doxysubsubsection{T\+H\+E D\+E\+R\+I\+V\+E\+D T\+Y\+P\+E D\+I\+S\+P\+\_\+\+S\+E\+T\+T\+I\+N\+GS}\label{namespacem__display_autotoc_md15}
+M\+\_\+display contains the following definition of the data type \hypertarget{namespacem__display_autotoc_md16}{}\doxysubsubsection{D\+I\+S\+P\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S.}\label{namespacem__display_autotoc_md16}
+\begin{DoxyVerb}   type disp_settings
+     character(3)  :: advance   = 'YES'
+     character(9)  :: matsep    = '   '
+     character(3)  :: orient    = 'COL'
+     character(9)  :: sep       = '  '
+     character(19) :: style     = 'LEFT'
+     character(4)  :: trim      = 'AUTO'
+     character(9)  :: zeroas    = ''
+     integer       :: digmax    = 6
+     integer       :: matseplen = 3
+     integer       :: seplen    = 2
+     integer       :: unit      = -3
+     integer       :: zaslen    = 0
+   end type disp_settings
 \end{DoxyVerb}
 
 

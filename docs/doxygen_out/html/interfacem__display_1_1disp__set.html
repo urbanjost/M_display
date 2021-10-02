@@ -151,28 +151,31 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 NAME</h2>
 <p>disp_set(3f) - [M_display] set default options for disp(3f)</p>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 DESCRIPTION</h2>
 <p>The subroutine DISP_SET may be used to change default values of all the arguments of DISP except TITLE, X, FMT and LBOUND. In addition the default separator between items that are displayed side-by-side (using ADVANCE='no') may be changed with the MATSEP argument.</p>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 THE DERIVED TYPE DISP_SETTINGS</h2>
-<p>M_display contains the following definition of the data type DISP_SETTINGS. </p><pre class="fragment">  type disp_settings
-    character(3)  :: advance   = 'YES'
-    character(9)  :: matsep    = '   '
-    character(3)  :: orient    = 'COL'
-    character(9)  :: sep       = '  '
-    character(19) :: style     = 'LEFT'
-    character(4)  :: trim      = 'AUTO'
-    character(9)  :: zeroas    = ''
-    integer       :: digmax    = 6
-    integer       :: matseplen = 3
-    integer       :: seplen    = 2
-    integer       :: unit      = -3
-    integer       :: zaslen    = 0
-  end type disp_settings
+<p>M_display contains the following definition of the data type </p>
+<h2><a class="anchor" id="autotoc_md16"></a>
+DISP_SETTINGS.</h2>
+<pre class="fragment">   type disp_settings
+     character(3)  :: advance   = 'YES'
+     character(9)  :: matsep    = '   '
+     character(3)  :: orient    = 'COL'
+     character(9)  :: sep       = '  '
+     character(19) :: style     = 'LEFT'
+     character(4)  :: trim      = 'AUTO'
+     character(9)  :: zeroas    = ''
+     integer       :: digmax    = 6
+     integer       :: matseplen = 3
+     integer       :: seplen    = 2
+     integer       :: unit      = -3
+     integer       :: zaslen    = 0
+   end type disp_settings
 </pre><p>Structures of type DISP_SETTINGS may be used to save and later restore format control settings of DISP. As shown, new variables of this type will automatically have default values for all components.</p>
 <h2><a class="anchor" id="autotoc_md17"></a>
 CALLING SYNTAX FOR DISP_SET</h2>

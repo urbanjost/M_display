@@ -96,13 +96,13 @@ type(\mbox{\hyperlink{structm__display__util_1_1boxlist}{boxlist}}), pointer \mb
 M\+\_\+display(3f) -\/ \mbox{[}M\+\_\+display\mbox{]} module for pretty-\/printing matrices\hypertarget{namespacem__display__util_autotoc_md2}{}\doxysubsubsection{I\+N\+T\+R\+O\+D\+U\+C\+T\+I\+ON}\label{namespacem__display__util_autotoc_md2}
 M\+\_\+display is a standard Fortran 95 module for quick and easy displaying of numbers, vectors or matrices using default or specified format. It can be useful for debugging purposes, for preliminary display of numerical results, and even for final display of such results in cases when carefully formatted tables are not needed. It is comparable to the automatic matrix printing of Matlab, S and R, but offers substantially more control over the format used.
 
-The module can handle the standard Fortran data types integer, single precision, double precision, complex, logical and character. Integer, real, complex and logical data of other than default kind are supported with add-\/on modules. The module contains the following public procedures\+: \begin{DoxyVerb}  Subroutine DISP                  The main procedure used for displaying items
-  Subroutine DISP_SET              Used to change default settings for DISP
-  Subroutine DISP_SET_FACTORY      Restores DISP-settings to original (factory) default
-  Function DISP_GET                Returns a structure with current DISP-settings
-  Function TOSTRING                Returns a string representation of a scalar or vector
-  Subroutine TOSTRING_SET          Used to change default settings for TOSTRING
-  Subroutine TOSTRING_SET_FACTORY  Restores TOSTRING-settings to original default
+The module can handle the standard Fortran data types integer, single precision, double precision, complex, logical and character. Integer, real, complex and logical data of other than default kind are supported with add-\/on modules. The module contains the following public procedures\+: \begin{DoxyVerb}Subroutine DISP                  The main procedure used for displaying items
+Subroutine DISP_SET              Used to change default settings for DISP
+Subroutine DISP_SET_FACTORY      Restores DISP-settings to original (factory) default
+Function DISP_GET                Returns a structure with current DISP-settings
+Function TOSTRING                Returns a string representation of a scalar or vector
+Subroutine TOSTRING_SET          Used to change default settings for TOSTRING
+Subroutine TOSTRING_SET_FACTORY  Restores TOSTRING-settings to original default
 \end{DoxyVerb}
 
 

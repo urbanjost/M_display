@@ -195,26 +195,30 @@ CALL WITH COMPLETE LIST OF ARGUMENTS</h2>
 <p>SEP = sep Specifies a string which is written out between columns of displayed matrices. If X has rows (-1, 3) and (5, 10) and SEP is ', ' then the output will be:</p>
 <p>&gt; -1, 5 &gt; 5, 10</p>
 <p>The length of the string must be at most 9. Default is ' ' (character string with two spaces).</p>
-<p>STYLE = style There are five possible styles: </p><pre class="fragment">      'left'       Title is immediately to the left of the first line of the displayed item.
-      'above'      Title is centered immediately above the item.
-      'pad'        Title is centered above the item, padded with hyphens (-).
-      'underline'  Title is centered above the item, underlined with hyphens.
-      'number'     Each matrix or vector row and / or column is numbered.
+<p>STYLE = style There are five possible styles: </p><pre class="fragment">  'left'       Title is immediately to the left of the first line
+               of the displayed item.
+  'above'      Title is centered immediately above the item.
+  'pad'        Title is centered above the item, padded with hyphens (-).
+  'underline'  Title is centered above the item, underlined with hyphens.
+  'number'     Each matrix or vector row and / or column is numbered.
 
-  Any of the four title position styles can also be combined with the number style by
-  specifying for example STYLE = 'pad &amp; number'. Any character except space may be used
-  instead of hyphen by prefixing it to the style. STYLE = '*underline' will thus underline the
-  title with asterisks. Both row and column numbers appear for numbered matrices, but for
-  vectors only row numbers appear (or column numbers when ORIENT is 'col'). The five styles
-  are illustrated below, accompanied by an example of combined padded title and numbering.
+  Any of the four title position styles can also be combined with the
+  number style by specifying for example STYLE = 'pad &amp; number'. Any
+  character except space may be used instead of hyphen by prefixing
+  it to the style. STYLE = '*underline' will thus underline the title
+  with asterisks. Both row and column numbers appear for numbered
+  matrices, but for vectors only row numbers appear (or column numbers
+  when ORIENT is 'col'). The five styles are illustrated below,
+  accompanied by an example of combined padded title and numbering.
 
     &gt; Matr = 1.2   4.2       Matr      ---Matr--       Matr          1     2     ____Matr____
     &gt;        5.6  18.3    1.2   4.2    1.2   4.2    ---------    1  1.2   4.2        1     2
     &gt;                     5.6  18.3    5.6  18.3    1.2   4.2    2  5.6  18.3    1  1.2   4.2
     &gt;                                               5.6  18.3                    2  5.6  18.3
 
-  The default value of STYLE is 'left' if LBOUND is absent, 'number' if it is present, and
-  'left &amp; number' if both TITLE and LBOUND are present.
+  The default value of STYLE is 'left' if LBOUND is absent, 'number'
+  if it is present, and 'left &amp; number' if both TITLE and LBOUND
+  are present.
 </pre><p>TRIM = trim This argument can take three values, 'YES', 'NO' and 'AUTO'. When YES is specified, each column of displayed items is trimmed from the left, with 'NO' the items are not trimmed and if TRIM is 'AUTO' the items are trimmed when FMT is absent but not when it is present. In the following example, X and U are displayed with TRIM = 'yes', but Y and V with TRIM = 'no'. In all cases the edit descriptor is the default (I4). The default is TRIM = 'AUTO'.</p>
 <p>&gt; -&mdash;X-&mdash; ----&mdash;Y---&mdash; --&mdash;U--&mdash; ----&mdash;V---&mdash; &gt; 1 2 4 1 2 3 333 22 4444 333 22 4444 &gt; 2 22 34 2 22 34 &gt; 3 32 1234 3 32 1234</p>
 <p>One application of trimming is to display matrices with a fixed number of fractional digits but variable effective field width. Then Fw.d editing with w big enough is accompanied by TRIM = 'yes'. An example is the following display of a matrix with (i, k) element exp(k**i) using F20.2 and 'yes': </p><pre class="fragment"> power exponentials
@@ -235,9 +239,7 @@ CALL WITH COMPLETE LIST OF ARGUMENTS</h2>
 <h2><a class="anchor" id="autotoc_md9"></a>
 ASTERISK_UNIT AND NULL_UNIT</h2>
 <p>As already mentioned in section 3.2 there are three special units, ASTERISK_UNIT = -3, PUTSTR_UNIT = -2 and NULL_UNIT = -1. These public named constants (parameters) are defined by M_display.</p>
-<p>Selecting ASTERISK_UNIT channels all output to the unit that WRITE(*,...) statements use. The ISO_FORTRAN_ENV intrinsic module of Fortran 2003 defines the named constant OUTPUT_UNIT and this may be used instead, unless its value is set to -2 by the compiler (which would clash with </p>
-<h2><a class="anchor" id="autotoc_md10"></a>
-PUTSTR_UNIT).</h2>
+<p>Selecting ASTERISK_UNIT channels all output to the unit that WRITE(*,...) statements use. The ISO_FORTRAN_ENV intrinsic module of Fortran 2003 defines the named constant OUTPUT_UNIT and this may be used instead, unless its value is set to -2 by the compiler (which would clash with PUTSTR_UNIT).</p>
 <p>Selecting NULL_UNIT causes all output via DISP to be discarded. This feature makes it simple to turn the output on and off, which may be useful for debugging and testing purposes. If UNIT = U is specified in all DISP-calls, it is enough to change the value of U to -1 to turn off output.</p>
 <p>PUTSTR_UNIT: Output with user written subroutines</p>
 <p>One of the purposes of the PUTSTR_UNIT is to make displaying possible in situations where ordinary print- and write-statements do not work. This is for example the case in Matlab mex-files (in fact the execution of a write statement on the asterisk unit crashes Matlab). To use the PUTSTR_UNIT it is necessary to write two subroutines with interfaces: </p><pre class="fragment">  SUBROUTINE PUTSTR(S)
@@ -259,17 +261,17 @@ PUTSTR_UNIT).</h2>
 
   end module putstrmodule
 </pre><p>At the beginning of the file <a class="el" href="M__display_8f90.html">M_display.f90</a> there is a slightly longer version which works with both g95 and gfortran. Testing this module is discussed in section 6.2 below.</p>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 USING W=0 EDITING</h2>
 <p>The Fortran standard stipulates that writing a single element with I0 editing results in the smallest field width that accommodates the value, and the same applies to B0, O0, Z0 and F0.d editing. With DISP, the width of a displayed column will be the width of the widest field in the column, and each element is right-adjusted in the column. This gives exactly the same output as using TRIM='yes' and a specified field width bigger than the largest occurring. Note that with F0.d editing, there is no limit on the width of a column, but with Fw.d and TRIM='yes' any element wider than w will be displayed as w asterisks: </p><pre class="fragment">  ------------------F0.2------------------    -----F13.2, TRIM='yes'----
   14.28  142857142857142857142857.14  0.47    14.28  *************  0.47
    1.42                1414213562.37  0.69     1.42  1414213562.37  0.69
-</pre><h2><a class="anchor" id="autotoc_md12"></a>
+</pre><h2><a class="anchor" id="autotoc_md11"></a>
 NOT-A-NUMBER AND INFINITE VALUES</h2>
 <p>If the compiler supports not-a-number and infinite values as defined by the IEEE exceptional values of Fortran 2003, these are displayed as NaN, +Inf or Inf. A not-a-number value X is identified as being not equal to itself, and an infinite value is either greater than HUGE(X) or smaller than -HUGE(X). On all the compilers tried the sequence BIG=1E20; CALL DISP(EXP(BIG)) displays +Inf, and the program segment: </p><pre class="fragment">&gt; real :: z = 0, big = 1e20
 &gt; call disp([z, z/z, big, -exp(big)])
 </pre><p>displays &gt; 0.00000E+00 &gt; NaN &gt; 1.00000E+20 &gt; -Inf</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 AUTHOR</h2>
 <p>Based on dispmodule(3f), "A Fortran 95 module for pretty-printing matrices". Version number 1.02 6-Sept-2008, Kristjan Jonasson, Dept. of Computer Science, University of Iceland (<a href="#" onclick="location.href='mai'+'lto:'+'jon'+'as'+'son'+'@h'+'i.i'+'s'; return false;">jonas<span style="display: none;">.nosp@m.</span>son@<span style="display: none;">.nosp@m.</span>hi.is</a>). </p>
 </div><h2 class="groupheader">Member Function/Subroutine Documentation</h2>
