@@ -1289,8 +1289,6 @@ MODULE M_display
   PUBLIC PUTSTR_UNIT          ! Constant to specify the use of subroutines putstr and putnl to display
   PUBLIC NULL_UNIT            ! Constant to specify discarding of all displayed output
 
-  public test_suite_M_display
-
   ! ********************************** INTERFACE DECLARATIONS *************************************
   interface disp_set
     module procedure disp_set, disp_set_ds
