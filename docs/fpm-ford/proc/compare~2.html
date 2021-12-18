@@ -141,16 +141,16 @@
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/test_naninf_mod.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/test_suite_M_display.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/test_naninf_mod.f90.html'>test_naninf_mod.f90</a></li>
+     <li><a href='../sourcefile/test_suite_m_display.f90.html'>test_suite_M_display.f90</a></li>
     
-     <li><a href='../module/test_naninf_mod.html'>TEST_NANINF_MOD</a></li>
+     <li><a href='../program/test_m_display.html'>TEST_M_display</a></li>
     
   
      <li class="active">compare</li>
@@ -181,13 +181,13 @@
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../proc/compare~2.html#variable-i~7">i</a>
+      <a class="list-group-item" href="../proc/compare~2.html#variable-i~2">i</a>
       
       <a class="list-group-item" href="../proc/compare~2.html#variable-ios1~2">ios1</a>
       
       <a class="list-group-item" href="../proc/compare~2.html#variable-mess~2">mess</a>
       
-      <a class="list-group-item" href="../proc/compare~2.html#variable-s~15">s</a>
+      <a class="list-group-item" href="../proc/compare~2.html#variable-s~10">s</a>
       
     </div>
   </div>
@@ -227,7 +227,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public subroutine compare(sok, message, sok1)
+subroutine compare(sok, message, sok1)
     
     
    
@@ -256,8 +256,8 @@ public subroutine compare(sok, message, sok1)
   
 <tr>
   
-  <td><span class="anchor" id="variable-sok~2"></span>character</td>
-  <td></td>
+  <td><span class="anchor" id="variable-sok~2"></span>character,</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
@@ -271,8 +271,8 @@ public subroutine compare(sok, message, sok1)
   
 <tr>
   
-  <td><span class="anchor" id="variable-message~2"></span>character</td>
-  <td></td>
+  <td><span class="anchor" id="variable-message~2"></span>character,</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
@@ -286,8 +286,8 @@ public subroutine compare(sok, message, sok1)
   
 <tr>
   
-  <td><span class="anchor" id="variable-sok1~2"></span>character</td>
-  <td></td>
+  <td><span class="anchor" id="variable-sok1~2"></span>character,</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
@@ -317,13 +317,13 @@ public subroutine compare(sok, message, sok1)
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../proc/compare~2.html#variable-i~7">i</a>
+      <a class="list-group-item" href="../proc/compare~2.html#variable-i~2">i</a>
       
       <a class="list-group-item" href="../proc/compare~2.html#variable-ios1~2">ios1</a>
       
       <a class="list-group-item" href="../proc/compare~2.html#variable-mess~2">mess</a>
       
-      <a class="list-group-item" href="../proc/compare~2.html#variable-s~15">s</a>
+      <a class="list-group-item" href="../proc/compare~2.html#variable-s~10">s</a>
       
     </div>
   </div>
@@ -381,7 +381,7 @@ public subroutine compare(sok, message, sok1)
   
 <tr>
   
-  <td><span class="anchor" id="variable-i~7"></span>integer,</td>
+  <td><span class="anchor" id="variable-i~2"></span>integer,</td>
   
   <td>public</td>
   <td></td><td>::</td>
@@ -423,7 +423,7 @@ public subroutine compare(sok, message, sok1)
   
 <tr>
   
-  <td><span class="anchor" id="variable-s~15"></span>character(len=100),</td>
+  <td><span class="anchor" id="variable-s~10"></span>character(len=100),</td>
   
   <td>public</td>
   <td></td><td>::</td>
@@ -457,9 +457,9 @@ public subroutine compare(sok, message, sok1)
     <div class="highlight"><pre><span></span>  <span class="k">subroutine </span><span class="n">compare</span><span class="p">(</span><span class="n">sok</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">sok1</span><span class="p">)</span>
     <span class="c">! Utility for all the test routines. Print to the screen what the last disp calls</span>
     <span class="c">! displayed, and assert that what was displayed matches either sok or sok1.</span>
-    <span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>       <span class="kd">::</span> <span class="n">sok</span><span class="p">(:),</span> <span class="n">sok1</span><span class="p">(:),</span> <span class="n">message</span>
-    <span class="k">optional</span>           <span class="kd">::</span> <span class="n">message</span><span class="p">,</span> <span class="n">sok1</span>
-    <span class="kt">character</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>     <span class="kd">::</span> <span class="n">s</span><span class="p">,</span> <span class="n">mess</span>
+    <span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">sok</span><span class="p">(:),</span> <span class="n">sok1</span><span class="p">(:),</span> <span class="n">message</span>
+    <span class="k">optional</span>                 <span class="kd">::</span> <span class="n">message</span><span class="p">,</span> <span class="n">sok1</span>
+    <span class="kt">character</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>           <span class="kd">::</span> <span class="n">s</span><span class="p">,</span> <span class="n">mess</span>
     <span class="kt">integer </span><span class="n">ios1</span><span class="p">,</span> <span class="n">i</span>
     <span class="k">rewind</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
     <span class="n">compare_no</span> <span class="o">=</span> <span class="n">compare_no</span> <span class="o">+</span> <span class="mi">1</span>
@@ -502,7 +502,7 @@ public subroutine compare(sok, message, sok1)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-10-02 23:37  
+             on 2021-12-18 02:27  
             
           </p>
         </div>
