@@ -116,18 +116,11 @@ The item to be displayed. X may be scalar, vector or matrix
 <TR><TD width=6%>&nbsp;</TD><TD>
 With the add-on modules described in section 2.3 other kinds may
 be displayed. Matrices are displayed in traditional mathematical
-<TABLE width=100% cellpadding=3><!-- tsb: With the add-on modules described in section 2.3 other kinds may
- -->
-<TR></TR><TR></TR>
-<TR valign=top><TD colspan=2>
-<B>order, so the rows displayed are </B><B>X</B>(1,:), <B>X</B>(2,:) etc. </TD></TR><TR valign=top><TD width=6%>&nbsp;</TD><TD>
-Vectors are
+order, so the rows displayed are <B>X</B>(1,:), <B>X</B>(2,:) etc. Vectors are
 by default displayed as column vectors (but a row orientation may
 be specified with the ORIENT argument). An SS edit descriptor is
 applied automatically so positive elements are not prefixed with
 a + sign (the Fortran standard makes outputting a + sign optional).
-</TD></TR>
-<TR></TR></TABLE><!-- .TP -->
 </TD></TR>
 <TR valign=top><TD width=6% nowrap>
 <B>TITLE</B> </TD><TD valign=bottom>
@@ -182,13 +175,7 @@ SEP, STYLE, TRIM, UNIT, ZEROAS)
 </BLOCKQUOTE>
 <P>
 All dummy arguments are optional and some of them are incompatible
-<BLOCKQUOTE>
-<TABLE cellpadding=3><!-- tsb: All dummy arguments are optional and some of them are incompatible
- -->
-<TR></TR><TR></TR>
-<TR valign=top><TD colspan=2>
-<B>with some data types of X.</B> </TD></TR><TR valign=top><TD width=6%>&nbsp;</TD><TD>
-The arguments control how X is displayed,
+with some data types of X. The arguments control how X is displayed,
 as described in section 3.1 and below. For the character arguments
 ADVANCE and ORIENT the case of letters is ignored (so e.g. ADVANCE =
 for arguments after FMT (or FMT_IMAG) will be realized with argument
@@ -198,7 +185,10 @@ section 3.1. The most useful application of calling DISP with X absent is
 to advance to the next line or display an empty line. For this purpose,
 the only relevant arguments are UNIT, and ADVANCE with the value &#146;YES&#146;
 or &#146;DOUBLE&#146;.
-</TD></TR>
+<BLOCKQUOTE>
+<TABLE cellpadding=3><!-- tsb: All dummy arguments are optional and some of them are incompatible
+ -->
+<TR></TR><TR></TR>
 <TR valign=top><TD colspan=2>
 <B>FMT_IMAG = edit-descriptor-imag</B> </TD></TR><TR valign=top><TD width=6%>&nbsp;</TD><TD>
 An edit descriptor for imaginary parts
@@ -206,15 +196,8 @@ of complex X. The statement CALL <B>DISP</B>((1.31,2.47),&#146;F0.1&#146;,&#146;
 will display "1.3 + 2.47i". If FMT_IMAG is absent and FMT
 is present then both real and imaginary parts are edited with
 FMT. If both are absent, separate defaults are used, as explained
-<TABLE width=100% cellpadding=3><!-- tsb: An edit descriptor for imaginary parts
- -->
-<TR></TR><TR></TR>
-<TR valign=top><TD colspan=2>
-<B>in the DIGMAX-paragraph below.</B> </TD></TR><TR valign=top><TD width=6%>&nbsp;</TD><TD>
-FMT_IMAG must be absent if X is
+in the DIGMAX-paragraph below. FMT_IMAG must be absent if X is
 not complex.
-</TD></TR>
-<TR></TR></TABLE><!-- .TP -->
 </TD></TR>
 <TR valign=top><TD colspan=2>
 <B>ADVANCE = adv</B> </TD></TR><TR valign=top><TD width=6%>&nbsp;</TD><TD>
@@ -226,15 +209,8 @@ on (either by default, via a call to DISP_SET, or via the ADVANCE
 keyword). When this occurs, all the items displayed with DISP since
 the last output occurred on the unit are written out side by side,
 separated by three spaces unless a different separation has been
-<TABLE width=100% cellpadding=3><!-- tsb: The value for ADVANCE may be &#146;yes&#146;, &#146;no&#146; or &#146;double&#146;. If
- -->
-<TR></TR><TR></TR>
-<TR valign=top><TD colspan=2>
-<B>specified via the MATSEP argument of DISP_SET.</B> </TD></TR><TR valign=top><TD width=6%>&nbsp;</TD><TD>
-Default value of
+specified via the MATSEP argument of DISP_SET. Default value of
 ADVANCE is &#146;yes&#146;.
-</TD></TR>
-<TR></TR></TABLE><!-- .TP -->
 </TD></TR>
 <TR valign=top><TD colspan=2>
 <B>DIGMAX = n</B> </TD></TR><TR valign=top><TD width=6%>&nbsp;</TD><TD>
@@ -340,12 +316,7 @@ are present.
 This argument can take three values, &#146;YES&#146;, &#146;NO&#146; and
 trimmed from the left, with &#146;NO&#146; the items are not trimmed and if
 TRIM is &#146;AUTO&#146; the items are trimmed when FMT is absent but not when
-<TABLE width=100% cellpadding=3><!-- tsb: This argument can take three values, &#146;YES&#146;, &#146;NO&#146; and
- -->
-<TR></TR><TR></TR>
-<TR valign=top><TD colspan=2>
-<B>it is present.</B> </TD></TR><TR valign=top><TD width=6%>&nbsp;</TD><TD>
-In the following example, X and U are displayed
+it is present. In the following example, X and U are displayed
 with TRIM = &#146;yes&#146;, but Y and V with TRIM = &#146;no&#146;. In all cases the
 edit descriptor is the default (I4). The default is TRIM = &#146;AUTO&#146;.
 </TD></TR>
@@ -357,17 +328,20 @@ edit descriptor is the default (I4). The default is TRIM = &#146;AUTO&#146;.
         &gt; 3 32 1234      3   32 1234
 <P>
 </PRE>
+</TD></TR>
+<TR><TD width=6%>&nbsp;</TD><TD>
 One application of trimming is to display matrices with a fixed
 number of fractional digits but variable effective field width. Then
 Fw.d editing with w big enough is accompanied by TRIM = &#146;yes&#146;. An
 example is the following display of a matrix with (i, k) element
 <B>exp</B>(k**i) using F20.2 and &#146;yes&#146;:
-</TD></TR>
-<TR><TD colspan=2>
+<P>
 <PRE>
            power exponentials
 </PRE>
-</TD></TR>
+<TABLE width=100% cellpadding=3><!-- tsb:            power exponentials
+ -->
+<TR></TR><TR></TR>
 <TR><TD width=6%>&nbsp;</TD><TD>
 <TABLE width=100% cellpadding=3>
 <TR valign=top><TD width=6% nowrap>
@@ -378,9 +352,10 @@ example is the following display of a matrix with (i, k) element
 <B>2.72</B> </TD><TD valign=bottom>
 54.60  8103.08
 </TD></TR>
+<TR></TR></TABLE></TD></TR>
 <TR></TR></TABLE><!-- .PP -->
-</TD></TR>
-<TR></TR></TABLE>Similar output may be obtained using I and F edit descriptors
+<P>
+Similar output may be obtained using I and F edit descriptors
 with w = 0 as discussed in section 3.5. Apart from I and F edited
 displays, it is possible to trim A-edited displays as well as
 E-edited displays with some negative elements, but the first column
@@ -483,17 +458,11 @@ PUTSTR_UNIT it is necessary to write two subroutines with interfaces:
 </PRE>
 The first of these should output the string S, and the second one should
 advance output to the next line. These subroutines should be placed
-<TABLE cellpadding=3><!-- tsb: The first of these should output the string S, and the second one should
- -->
-<TR></TR><TR></TR>
-<TR valign=top><TD colspan=2>
-<B>in a module PUTSTRMODULE as explained in section 2.</B> </TD></TR><TR valign=top><TD width=6%>&nbsp;</TD><TD>
-The module should
+in a module PUTSTRMODULE as explained in section 2. The module should
 also define a named constant DEFAULT_UNIT, which could be set to <B>-2</B> to
 make the PUTSTR_UNIT default. An example that works with g95 and Matlab
 mex-files is:
-</TD></TR>
-<TR><TD colspan=2>
+<P>
 <PRE>
       module putstrmodule
         integer, parameter :: default_unit = -2
@@ -514,11 +483,9 @@ mex-files is:
 At the beginning of the file M_display.f90 there is a slightly longer
 version which works with both g95 and gfortran. Testing this module is
 discussed in section 6.2 below.
-</TD></TR>
-<TR><TD colspan=2>
+<P>
 USING W=0 EDITING
-</TD></TR>
-<TR><TD colspan=2>
+<P>
 The Fortran standard stipulates that writing a single element with
 I0 editing results in the smallest field width that accommodates the
 value, and the same applies to B0, O0, Z0 and F0.d editing. With DISP,
@@ -528,8 +495,7 @@ gives exactly the same output as using TRIM=&#146;yes&#146; and a specified fiel
 width bigger than the largest occurring. Note that with F0.d editing,
 there is no limit on the width of a column, but with Fw.d and TRIM=&#146;yes&#146;
 any element wider than w will be displayed as w asterisks:
-</TD></TR>
-<TR><TD colspan=2>
+<P>
 <PRE>
       ------------------F0.2------------------    -----F13.2, TRIM=&#146;yes&#146;----
       14.28  142857142857142857142857.14  0.47    14.28  *************  0.47
@@ -538,25 +504,24 @@ any element wider than w will be displayed as w asterisks:
 <P>
 </PRE>
 NOT-A-NUMBER AND INFINITE VALUES
-</TD></TR>
-<TR><TD colspan=2>
+<P>
 If the compiler supports not-a-number and infinite values as defined by
 the IEEE exceptional values of Fortran 2003, these are displayed as NaN,
 +Inf or Inf. A not-a-number value X is identified as being not equal to
 itself, and an infinite value is either greater than <B>HUGE</B>(X) or smaller
 than -<B>HUGE</B>(X). On all the compilers tried the sequence BIG=1E20; CALL
 <B>DISP</B>(EXP(BIG)) displays +Inf, and the program segment:
-</TD></TR>
-<TR><TD colspan=2>
+<P>
 <PRE>
     &gt; real :: z = 0, big = 1e20
     &gt; call disp([z, z/z, big, -exp(big)])
 <P>
 </PRE>
 displays
-</TD></TR>
-<TR><TD width=6%>&nbsp;</TD><TD>
-<TABLE width=100% cellpadding=3>
+<BLOCKQUOTE>
+<TABLE cellpadding=3><!-- tsb: displays
+ -->
+<TR></TR><TR></TR>
 <TR valign=top><TD width=6% nowrap>
 <B>&gt;</B> </TD><TD valign=bottom>
 0.00000E+00
@@ -573,8 +538,8 @@ NaN
 <B>&gt;</B> </TD><TD valign=bottom>
 <B>-Inf</B>
 </TD></TR>
-<TR></TR></TABLE></TD></TR>
 <TR></TR></TABLE></BLOCKQUOTE>
+</BLOCKQUOTE>
 <A name=4>
 
      <H3>AUTHOR</H3>
@@ -589,7 +554,7 @@ Dept. of Computer Science,
 University of Iceland (<A HREF="mailto:jonasson@hi.is">jonasson@hi.is</A>).
 </BLOCKQUOTE>
 <P><HR>
-<TABLE width=100%><TR> <TD width=33%><I>Nemo Release 3.1</I></TD> <TD width=33% align=center>disp (3m_display)</TD> <TD align=right width=33%><I>January 03, 2022</I></TD> </TR></TABLE><FONT SIZE=-1>Generated by <A HREF="http://www.squarebox.co.uk/download/manServer.shtml">manServer 1.08</A> from 9a74abf5-7e1f-4811-b910-9ac47629266f using man macros.</FONT>
+<TABLE width=100%><TR> <TD width=33%><I>Nemo Release 3.1</I></TD> <TD width=33% align=center>disp (3m_display)</TD> <TD align=right width=33%><I>April 30, 2022</I></TD> </TR></TABLE><FONT SIZE=-1>Generated by <A HREF="http://www.squarebox.co.uk/download/manServer.shtml">manServer 1.08</A> from 4b1a6c6c-713c-4b03-9490-517b8e6ade5c using man macros.</FONT>
 <br><br><center><img src="images/disp.gif"></center>
 </div>
 </div>

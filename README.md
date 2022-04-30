@@ -82,8 +82,8 @@ program that exercise the routine.
    ```bash
         git clone https://github.com/urbanjost/M_display.git
         cd M_display
-        fpm run
-        fpm run --example
+        fpm run "*"
+        fpm run --example "*"
         fpm test
    ```
 
@@ -93,14 +93,14 @@ program that exercise the routine.
         [dependencies]
         M_display        = { git = "https://github.com/urbanjost/M_display.git" }
 ```
-## DOCUMENTATION
+## DOCUMENTATION   ![docs](docs/images/docs.gif)
 
 ### USER
 Note in this version the module "dispmodule" has been named "M_display" ...
 
    - [Original report](docs/dispmodule-report.pdf)
    - [Original User Manual](docs/dispmodule-userman-report.pdf)
-   - ![manpages](docs/images/manpages.gif)
+   - ![man-pages](docs/images/manpages.gif)
       + a simple index to the man-pages in HTML form for the
         [routines](https://urbanjost.github.io/M_display/man3.html) 
         and [programs](https://urbanjost.github.io/M_display/man1.html) 
