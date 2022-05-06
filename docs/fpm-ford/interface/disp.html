@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 0.7% of total for procedures.</p>Including implementation: 419 statements, 33.5% of total for procedures.">9 statements</a>
+    title="<p> 0.5% of total for procedures.</p>Including implementation: 419 statements, 23.3% of total for procedures.">9 statements</a>
      </li> 
      
      
@@ -292,12 +292,14 @@
 </code></pre></div>
 
 <h2 id="description">DESCRIPTION</h2>
-<p>This is the principal subroutine of the package. It has various control arguments that specify the
- exact format of the output. Most of these may also be used as arguments of the subroutine
- DISP_SET. When used with DISP, a control argument affects only the item being displayed with the
- current call, but when used with DISP_SET, the default settings for subsequent DISP calls are
- affected. The default values for individual arguments given below are used unless they have been
- changed by a call to DISP_SET. All character arguments should be of type default character.</p>
+<p>This is the principal subroutine of the package. It has various control
+ arguments that specify the exact format of the output. Most of these
+ may also be used as arguments of the subroutine DISP_SET. When used
+ with DISP, a control argument affects only the item being displayed with
+ the current call, but when used with DISP_SET, the default settings for
+ subsequent DISP calls are affected. The default values for individual
+ arguments given below are used unless they have been changed by a call
+ to DISP_SET. All character arguments should be of type default character.</p>
 <p>Simple Calls:</p>
 <div class="codehilite"><pre><span></span><code>   call disp
    call disp(x)
@@ -306,12 +308,12 @@
    call disp(title, x, fmt)
 </code></pre></div>
 
-<p>The first call advances to the next line, and the other calls display X on the default unit (the
- unit may be changed with the UNIT argument). The default putstrmodule (see section 2) sets the
- asterisk unit (usually the screen) to be default. The purpose of individual arguments is as
- follows:</p>
-<p>X      The item to be displayed. X may be scalar, vector or matrix (i.e. of rank &lt;= 2) and the
-        following kinds of data are supported:</p>
+<p>The first call advances to the next line, and the other calls display X
+ on the default unit (the unit may be changed with the UNIT argument). The
+ default putstrmodule (see section 2) sets the asterisk unit (usually the
+ screen) to be default. The purpose of individual arguments is as follows:</p>
+<p>X      The item to be displayed. X may be scalar, vector or matrix
+        (i.e. of rank &lt;= 2) and the following kinds of data are supported:</p>
 <div class="codehilite"><pre><span></span><code>       default integer
        default real (or single precision, real(kind(1.0)))
        double precision real (or real(kind(1d0)))
@@ -320,37 +322,43 @@
        default logical
        default character
 
-    With the add-on modules described in section 2.3 other kinds may be displayed. Matrices are
-    displayed in traditional mathematical order, so the rows displayed are X(1,:), X(2,:) etc.
-    Vectors are by default displayed as column vectors (but a row orientation may be specified
-    with the ORIENT argument). An SS edit descriptor is applied automatically so positive
-    elements are not prefixed with a + sign (the Fortran standard makes outputting a + sign
-    optional).
+    With the add-on modules described in section 2.3 other kinds may
+    be displayed. Matrices are displayed in traditional mathematical
+    order, so the rows displayed are X(1,:), X(2,:) etc. Vectors are
+    by default displayed as column vectors (but a row orientation may
+    be specified with the ORIENT argument). An SS edit descriptor is
+    applied automatically so positive elements are not prefixed with
+    a + sign (the Fortran standard makes outputting a + sign optional).
 </code></pre></div>
 
-<p>TITLE  Provides a label for X. The label prefixes X by default but this may be changed with the
-        STYLE argument (see examples in section 3.2). When X is absent TITLE must also be absent.</p>
-<p>FMT    When present, FMT should contain an edit descriptor that will be used to format each
-        element of X (or the real parts of X in case X is complex and FMT_IMAG is present; see
-        below). The possible edit descriptors are:</p>
+<p>TITLE  Provides a label for X. The label prefixes X by default but this
+        may be changed with the STYLE argument (see examples in section
+        3.2). When X is absent TITLE must also be absent.</p>
+<p>FMT    When present, FMT should contain an edit descriptor that will be
+        used to format each element of X (or the real parts of X in case
+        X is complex and FMT_IMAG is present; see below). The possible
+        edit descriptors are:</p>
 <div class="codehilite"><pre><span></span><code>       <span class="nv">Fw</span>.<span class="nv">d</span>, <span class="nv">Dw</span>.<span class="nv">d</span>, <span class="nv">Ew</span>.<span class="nv">dEe</span>, <span class="nv">ENw</span>.<span class="nv">dEe</span>, <span class="nv">ESw</span>.<span class="nv">dEe</span>: <span class="nv">real</span> <span class="nv">data</span> <span class="ss">(</span><span class="nv">the</span> <span class="nv">Ee</span> <span class="nv">suffixes</span> <span class="nv">are</span> <span class="nv">optional</span><span class="ss">)</span>
        <span class="nv">Iw</span>, <span class="nv">Bw</span>, <span class="nv">Ow</span>, <span class="nv">Zw</span>: <span class="nv">integer</span> <span class="nv">data</span> <span class="ss">(</span><span class="nv">all</span> <span class="nv">may</span> <span class="nv">be</span> <span class="nv">suffixed</span> <span class="nv">with</span> .<span class="nv">m</span><span class="ss">)</span>
        <span class="nv">Lw</span>: <span class="nv">logical</span> <span class="nv">data</span>
        <span class="nv">A</span>, <span class="nv">Aw</span>: <span class="nv">character</span> <span class="nv">data</span>
        <span class="nv">Gw</span>.<span class="nv">d</span>, <span class="nv">Gw</span>.<span class="nv">dEe</span>: <span class="nv">any</span> <span class="nv">data</span>
 
-    <span class="nv">Example</span> <span class="nv">calls</span> <span class="k">for</span> <span class="nv">numeric</span> <span class="nv">X</span> <span class="nv">are</span> <span class="k">CALL</span> <span class="nl">DISP</span><span class="ss">(</span><span class="nv">X</span>,<span class="s1">&#39;</span><span class="s">ES11.4</span><span class="s1">&#39;</span><span class="ss">)</span> <span class="nv">and</span> <span class="k">CALL</span> <span class="nl">DISP</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">X=</span><span class="s1">&#39;</span>,<span class="nv">X</span>,<span class="s1">&#39;</span><span class="s">F8.4</span><span class="s1">&#39;</span><span class="ss">)</span>. <span class="k">If</span> <span class="nv">X</span> <span class="nv">is</span>
-    <span class="nv">a</span> <span class="nv">scalar</span> <span class="nv">string</span> <span class="ss">(</span><span class="nv">i</span>.<span class="nv">e</span>. <span class="nv">of</span> <span class="nv">rank</span> <span class="mi">0</span><span class="ss">)</span> <span class="nv">and</span> <span class="nv">TITLE</span> <span class="nv">is</span> <span class="nv">absent</span> <span class="nv">FMT</span> <span class="nv">must</span> <span class="nv">be</span> <span class="nv">specified</span> <span class="nv">with</span> <span class="nv">a</span> <span class="nv">keyword</span>
-    <span class="ss">(</span><span class="nv">otherwise</span> <span class="nv">the</span> <span class="k">call</span> <span class="nl">is</span> <span class="nv">taken</span> <span class="nv">to</span> <span class="nv">have</span> <span class="nv">TITLE</span> <span class="nv">and</span> <span class="nv">X</span><span class="ss">)</span>: <span class="k">CALL</span> <span class="nl">DISP</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">str</span><span class="s1">&#39;</span>,<span class="nv">FMT</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">A4</span><span class="s1">&#39;</span><span class="ss">)</span> <span class="nv">displays</span>
-    <span class="s2">&quot;</span><span class="s">str</span><span class="s2">&quot;</span> <span class="nv">but</span> <span class="k">CALL</span> <span class="nl">DISP</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">str</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">A4</span><span class="s1">&#39;</span><span class="ss">)</span> <span class="nv">displays</span> <span class="s2">&quot;</span><span class="s">strA4</span><span class="s2">&quot;</span><span class="ss">)</span>.
+    <span class="nv">Example</span> <span class="nv">calls</span> <span class="k">for</span> <span class="nv">numeric</span> <span class="nv">X</span> <span class="nv">are</span> <span class="k">CALL</span> <span class="nl">DISP</span><span class="ss">(</span><span class="nv">X</span>,<span class="s1">&#39;</span><span class="s">ES11.4</span><span class="s1">&#39;</span><span class="ss">)</span> <span class="nv">and</span> <span class="nv">CALL</span>
+    <span class="nv">DISP</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">X=</span><span class="s1">&#39;</span>,<span class="nv">X</span>,<span class="s1">&#39;</span><span class="s">F8.4</span><span class="s1">&#39;</span><span class="ss">)</span>. <span class="k">If</span> <span class="nv">X</span> <span class="nv">is</span> <span class="nv">a</span> <span class="nv">scalar</span> <span class="nv">string</span> <span class="ss">(</span><span class="nv">i</span>.<span class="nv">e</span>. <span class="nv">of</span> <span class="nv">rank</span> <span class="mi">0</span><span class="ss">)</span> <span class="nv">and</span>
+    <span class="nv">TITLE</span> <span class="nv">is</span> <span class="nv">absent</span> <span class="nv">FMT</span> <span class="nv">must</span> <span class="nv">be</span> <span class="nv">specified</span> <span class="nv">with</span> <span class="nv">a</span> <span class="nv">keyword</span> <span class="ss">(</span><span class="nv">otherwise</span>
+    <span class="nv">the</span> <span class="k">call</span> <span class="nl">is</span> <span class="nv">taken</span> <span class="nv">to</span> <span class="nv">have</span> <span class="nv">TITLE</span> <span class="nv">and</span> <span class="nv">X</span><span class="ss">)</span>: <span class="k">CALL</span> <span class="nl">DISP</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">str</span><span class="s1">&#39;</span>,<span class="nv">FMT</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">A4</span><span class="s1">&#39;</span><span class="ss">)</span>
+    <span class="nv">displays</span> <span class="s2">&quot;</span><span class="s">str</span><span class="s2">&quot;</span> <span class="nv">but</span> <span class="k">CALL</span> <span class="nl">DISP</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">str</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">A4</span><span class="s1">&#39;</span><span class="ss">)</span> <span class="nv">displays</span> <span class="s2">&quot;</span><span class="s">strA4</span><span class="s2">&quot;</span><span class="ss">)</span>.
 
-    <span class="k">If</span> <span class="nv">FMT</span> <span class="nv">is</span> <span class="nv">absent</span>, <span class="nv">each</span> <span class="nv">element</span> <span class="nv">of</span> <span class="nv">X</span> <span class="nv">is</span> <span class="nv">formatted</span> <span class="nv">with</span> <span class="nv">a</span> <span class="nv">default</span> <span class="nv">edit</span> <span class="nv">descriptor</span>. <span class="nv">When</span> <span class="nv">X</span> <span class="nv">is</span>
-    <span class="nv">of</span> <span class="nv">type</span> <span class="nv">logical</span> <span class="nv">the</span> <span class="nv">default</span> <span class="nv">is</span> <span class="nv">L1</span> <span class="nv">and</span> <span class="nv">when</span> <span class="nv">it</span> <span class="nv">is</span> <span class="nv">of</span> <span class="nv">type</span> <span class="nv">character</span> <span class="nv">the</span> <span class="nv">default</span> <span class="nv">is</span> <span class="nv">A</span> <span class="ss">(</span><span class="nv">which</span>
-    <span class="nv">is</span> <span class="nv">equivalent</span> <span class="nv">to</span> <span class="nv">Aw</span> <span class="nv">where</span> <span class="nv">w</span> <span class="o">=</span> <span class="nv">LEN</span><span class="ss">(</span><span class="nv">X</span><span class="ss">))</span>. <span class="k">For</span> <span class="nv">integer</span> <span class="nv">data</span> <span class="nv">the</span> <span class="nv">default</span> <span class="nv">is</span> <span class="nv">Iw</span> <span class="nv">where</span> <span class="nv">w</span> <span class="nv">is</span>
-    <span class="nv">exactly</span> <span class="nv">big</span> <span class="nv">enough</span> <span class="nv">to</span> <span class="nv">accommodate</span> <span class="nv">both</span> <span class="nv">the</span> <span class="nv">largest</span> <span class="nv">positive</span> <span class="nv">and</span> <span class="nv">the</span> <span class="nv">largest</span> <span class="nv">negative</span> <span class="nv">values</span>
-    <span class="nv">in</span> <span class="nv">X</span>. <span class="k">For</span> <span class="nv">real</span> <span class="nv">and</span> <span class="nv">complex</span> <span class="nv">data</span> <span class="nv">the</span> <span class="nv">default</span> <span class="nv">also</span> <span class="nv">depends</span> <span class="nv">on</span> <span class="nv">the</span> <span class="nv">largest</span> <span class="nv">absolute</span> <span class="nv">values</span> <span class="nv">in</span>
-    <span class="nv">X</span>, <span class="nv">as</span> <span class="nv">detailed</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">DIGMAX</span><span class="o">-</span><span class="nv">paragraph</span> <span class="nv">in</span> <span class="nv">section</span> <span class="mi">3</span>.<span class="mi">2</span>. <span class="nv">The</span> <span class="nv">format</span> <span class="nv">used</span> <span class="k">for</span> <span class="nv">complex</span> <span class="nv">numbers</span>
-    <span class="nv">is</span> <span class="nv">demonstrated</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">introduction</span> <span class="nv">above</span>.
+    <span class="k">If</span> <span class="nv">FMT</span> <span class="nv">is</span> <span class="nv">absent</span>, <span class="nv">each</span> <span class="nv">element</span> <span class="nv">of</span> <span class="nv">X</span> <span class="nv">is</span> <span class="nv">formatted</span> <span class="nv">with</span> <span class="nv">a</span> <span class="nv">default</span>
+    <span class="nv">edit</span> <span class="nv">descriptor</span>. <span class="nv">When</span> <span class="nv">X</span> <span class="nv">is</span> <span class="nv">of</span> <span class="nv">type</span> <span class="nv">logical</span> <span class="nv">the</span> <span class="nv">default</span> <span class="nv">is</span> <span class="nv">L1</span> <span class="nv">and</span>
+    <span class="nv">when</span> <span class="nv">it</span> <span class="nv">is</span> <span class="nv">of</span> <span class="nv">type</span> <span class="nv">character</span> <span class="nv">the</span> <span class="nv">default</span> <span class="nv">is</span> <span class="nv">A</span> <span class="ss">(</span><span class="nv">which</span> <span class="nv">is</span> <span class="nv">equivalent</span>
+    <span class="nv">to</span> <span class="nv">Aw</span> <span class="nv">where</span> <span class="nv">w</span> <span class="o">=</span> <span class="nv">LEN</span><span class="ss">(</span><span class="nv">X</span><span class="ss">))</span>. <span class="k">For</span> <span class="nv">integer</span> <span class="nv">data</span> <span class="nv">the</span> <span class="nv">default</span> <span class="nv">is</span> <span class="nv">Iw</span> <span class="nv">where</span>
+    <span class="nv">w</span> <span class="nv">is</span> <span class="nv">exactly</span> <span class="nv">big</span> <span class="nv">enough</span> <span class="nv">to</span> <span class="nv">accommodate</span> <span class="nv">both</span> <span class="nv">the</span> <span class="nv">largest</span> <span class="nv">positive</span>
+    <span class="nv">and</span> <span class="nv">the</span> <span class="nv">largest</span> <span class="nv">negative</span> <span class="nv">values</span> <span class="nv">in</span> <span class="nv">X</span>. <span class="k">For</span> <span class="nv">real</span> <span class="nv">and</span> <span class="nv">complex</span> <span class="nv">data</span>
+    <span class="nv">the</span> <span class="nv">default</span> <span class="nv">also</span> <span class="nv">depends</span> <span class="nv">on</span> <span class="nv">the</span> <span class="nv">largest</span> <span class="nv">absolute</span> <span class="nv">values</span> <span class="nv">in</span> <span class="nv">X</span>,
+    <span class="nv">as</span> <span class="nv">detailed</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">DIGMAX</span><span class="o">-</span><span class="nv">paragraph</span> <span class="nv">in</span> <span class="nv">section</span> <span class="mi">3</span>.<span class="mi">2</span>. <span class="nv">The</span> <span class="nv">format</span>
+    <span class="nv">used</span> <span class="k">for</span> <span class="nv">complex</span> <span class="nv">numbers</span> <span class="nv">is</span> <span class="nv">demonstrated</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">introduction</span> <span class="nv">above</span>.
 </code></pre></div>
 
 <h2 id="call-with-complete-list-of-arguments">CALL WITH COMPLETE LIST OF ARGUMENTS</h2>
@@ -358,166 +366,202 @@
    SEP, STYLE, TRIM, UNIT, ZEROAS)
 </code></pre></div>
 
-<p>All dummy arguments are optional and some of them are incompatible with some data types of X.
- The arguments control how X is displayed, as described in section 3.1 and below. For the character
- arguments ADVANCE and ORIENT the case of letters is ignored (so e.g. ADVANCE = &lsquo;yes&rsquo; and ADVANCE =
- &lsquo;YES&rsquo; are equivalent). Normally argument association for arguments after FMT (or FMT_IMAG) will be
- realized with argument keywords, e.g. CALL DISP(&lsquo;X=&rsquo;, X, DIGMAX=3, ORIENT=&rsquo;ROW&rsquo;). When X is a
- scalar string FMT must also be associated with keyword, as mentioned in section 3.1. The most
- useful application of calling DISP with X absent is to advance to the next line or display an
- empty line. For this purpose, the only relevant arguments are UNIT, and ADVANCE with the value
- &lsquo;YES&rsquo; or &lsquo;DOUBLE&rsquo;.</p>
-<p>FMT_IMAG = edit-descriptor-imag  An edit descriptor for imaginary parts of complex X. The
-        statement CALL DISP((1.31,2.47),&rsquo;F0.1&rsquo;,&rsquo;F0.2&rsquo;) will display &ldquo;1.3 + 2.47i&rdquo;. If FMT_IMAG
-        is absent and FMT is present then both real and imaginary parts are edited with FMT. If
-        both are absent, separate defaults are used, as explained in the DIGMAX-paragraph below.
-        FMT_IMAG must be absent if X is not complex.</p>
-<p>ADVANCE = adv  The value for ADVANCE may be &lsquo;yes&rsquo;, &lsquo;no&rsquo; or &lsquo;double&rsquo;. If the value is &lsquo;yes&rsquo; then X
-       is written out immediately, if it is &lsquo;double&rsquo; then X is written out followed by an empty
-       line (thus giving double spacing), and if it is &lsquo;no&rsquo; then X is not written out until the
-       next DISP call on the same unit with advancing turned on (either by default, via a call to
-       DISP_SET, or via the ADVANCE keyword). When this occurs, all the items displayed with DISP
-       since the last output occurred on the unit are written out side by side, separated by three
-       spaces unless a different separation has been specified via the MATSEP argument of DISP_SET.
-       Default value of ADVANCE is &lsquo;yes&rsquo;.</p>
-<p>DIGMAX = n  Controls the format used for real and complex data in the absence of FMT. For real
-       items the format is chosen so that the displayed number of largest absolute magnitude (say
-       xmax) has n significant decimal digits. If 0.1 &lt;= |xmax| &lt; 10**n an F edit descriptor is
-       used, otherwise an E edit descriptor. For complex items these rules are applied separately
-       to the real parts and imaginary parts, and thus two different formats are used. When X is
-       not of real or complex type the argument DIGMAX is ignored. When DIGMAX is present FMT
-       should be absent. The default is n = 6.</p>
-<p>LBOUND = lbound  This argument is a default integer vector with the numbers of the first row
-       / column to show when displaying with numbered style. When calling subroutines in Fortran,
-       only the shape of matrix arguments is passed with the arguments, but matrix lower bounds are
-       assumed to be 1 unless declared explicitly in the routine. To compensate for this deficiency
-       LBOUND may be set to the declared lower bound(s) of X. To take an example, let
-       aij = exp(i + j - 1) as in section 1, but let A be declared with REAL::A(0:3,0:3). Then
-       CALL DISP(A, STYLE = &lsquo;NUMBER&rsquo;, LBOUND = LBOUND(A)) will display:</p>
+<p>All dummy arguments are optional and some of them are incompatible
+ with some data types of X. The arguments control how X is displayed,
+ as described in section 3.1 and below. For the character arguments
+ ADVANCE and ORIENT the case of letters is ignored (so e.g. ADVANCE =
+ &lsquo;yes&rsquo; and ADVANCE = &lsquo;YES&rsquo; are equivalent). Normally argument association
+ for arguments after FMT (or FMT_IMAG) will be realized with argument
+ keywords, e.g. CALL DISP(&lsquo;X=&rsquo;, X, DIGMAX=3, ORIENT=&rsquo;ROW&rsquo;). When X is a
+ scalar string FMT must also be associated with keyword, as mentioned in
+ section 3.1. The most useful application of calling DISP with X absent is
+ to advance to the next line or display an empty line. For this purpose,
+ the only relevant arguments are UNIT, and ADVANCE with the value &lsquo;YES&rsquo;
+ or &lsquo;DOUBLE&rsquo;.</p>
+<p>FMT_IMAG = edit-descriptor-imag  An edit descriptor for imaginary parts
+        of complex X. The statement CALL DISP((1.31,2.47),&rsquo;F0.1&rsquo;,&rsquo;F0.2&rsquo;)
+        will display &ldquo;1.3 + 2.47i&rdquo;. If FMT_IMAG is absent and FMT
+        is present then both real and imaginary parts are edited with
+        FMT. If both are absent, separate defaults are used, as explained
+        in the DIGMAX-paragraph below. FMT_IMAG must be absent if X is
+        not complex.</p>
+<p>ADVANCE = adv  The value for ADVANCE may be &lsquo;yes&rsquo;, &lsquo;no&rsquo; or &lsquo;double&rsquo;. If
+       the value is &lsquo;yes&rsquo; then X is written out immediately, if it is
+       &lsquo;double&rsquo; then X is written out followed by an empty line (thus
+       giving double spacing), and if it is &lsquo;no&rsquo; then X is not written
+       out until the next DISP call on the same unit with advancing turned
+       on (either by default, via a call to DISP_SET, or via the ADVANCE
+       keyword). When this occurs, all the items displayed with DISP since
+       the last output occurred on the unit are written out side by side,
+       separated by three spaces unless a different separation has been
+       specified via the MATSEP argument of DISP_SET. Default value of
+       ADVANCE is &lsquo;yes&rsquo;.</p>
+<p>DIGMAX = n  Controls the format used for real and complex data in the
+       absence of FMT. For real items the format is chosen so that the
+       displayed number of largest absolute magnitude (say xmax) has n
+       significant decimal digits. If 0.1 &lt;= |xmax| &lt; 10**n an F edit
+       descriptor is used, otherwise an E edit descriptor. For complex
+       items these rules are applied separately to the real parts and
+       imaginary parts, and thus two different formats are used. When X
+       is not of real or complex type the argument DIGMAX is ignored. When
+       DIGMAX is present FMT should be absent. The default is n = 6.</p>
+<p>LBOUND = lbound  This argument is a default integer vector with the
+       numbers of the first row / column to show when displaying with
+       numbered style. When calling subroutines in Fortran, only the
+       shape of matrix arguments is passed with the arguments, but matrix
+       lower bounds are assumed to be 1 unless declared explicitly in
+       the routine. To compensate for this deficiency LBOUND may be
+       set to the declared lower bound(s) of X. To take an example, let
+       aij = exp(i + j - 1) as in section 1, but let A be declared with
+       REAL::A(0:3,0:3). Then CALL DISP(A, STYLE = &lsquo;NUMBER&rsquo;, LBOUND =
+       LBOUND(A)) will display:</p>
 <div class="codehilite"><pre><span></span><code>     &gt;        0       1        2        3
      &gt;  0   1.000   2.718    7.389   20.086
      &gt;  1   2.718   7.389   20.086   54.598
      &gt;  2   7.389  20.086   54.598  148.413
      &gt;  3  20.086  54.598  148.413  403.429.
 
-   In fact the call may be shortened to CALL DISP(A, LBOUND = LBOUND(A)) because numbering is
-   default when LBOUND is present.
+   In fact the call may be shortened to CALL DISP(A, LBOUND =
+   LBOUND(A)) because numbering is default when LBOUND is present.
 </code></pre></div>
 
-<p>ORIENT = ori  This argument can only be used when X is a vector (i.e. has rank 1). If ORIENT is
-       &lsquo;col&rsquo; (the default) a column vector is displayed, and if ORIENT is &lsquo;row&rsquo; a row vector
-       results.</p>
-<p>SEP = sep  Specifies a string which is written out between columns of displayed matrices. If X has
-       rows (-1, 3) and (5, 10) and SEP is &lsquo;, &lsquo; then the output will be:</p>
+<p>ORIENT = ori  This argument can only be used when X is a vector (i.e. has
+       rank 1). If ORIENT is &lsquo;col&rsquo; (the default) a column vector is
+       displayed, and if ORIENT is &lsquo;row&rsquo; a row vector results.</p>
+<p>SEP = sep  Specifies a string which is written out between columns of
+       displayed matrices. If X has rows (-1, 3) and (5, 10) and SEP is &lsquo;,
+       &lsquo; then the output will be:</p>
 <div class="codehilite"><pre><span></span><code>     &gt;  -1,  5
      &gt;   5, 10
 
-   The length of the string must be at most 9. Default is &#39;  &#39; (character string with two
-   spaces).
+   The length of the string must be at most 9. Default is &#39;  &#39;
+   (character string with two spaces).
 </code></pre></div>
 
 <p>STYLE = style  There are five possible styles:</p>
-<div class="codehilite"><pre><span></span><code>       <span class="s1">&#39;</span><span class="s">left</span><span class="s1">&#39;</span>       <span class="nv">Title</span> <span class="nv">is</span> <span class="nv">immediately</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">left</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">first</span> <span class="nv">line</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">displayed</span> <span class="nv">item</span>.
-       <span class="s1">&#39;</span><span class="s">above</span><span class="s1">&#39;</span>      <span class="nv">Title</span> <span class="nv">is</span> <span class="nv">centered</span> <span class="nv">immediately</span> <span class="nv">above</span> <span class="nv">the</span> <span class="nv">item</span>.
-       <span class="s1">&#39;</span><span class="s">pad</span><span class="s1">&#39;</span>        <span class="nv">Title</span> <span class="nv">is</span> <span class="nv">centered</span> <span class="nv">above</span> <span class="nv">the</span> <span class="nv">item</span>, <span class="nv">padded</span> <span class="nv">with</span> <span class="nv">hyphens</span> <span class="ss">(</span><span class="o">-</span><span class="ss">)</span>.
-       <span class="s1">&#39;</span><span class="s">underline</span><span class="s1">&#39;</span>  <span class="nv">Title</span> <span class="nv">is</span> <span class="nv">centered</span> <span class="nv">above</span> <span class="nv">the</span> <span class="nv">item</span>, <span class="nv">underlined</span> <span class="nv">with</span> <span class="nv">hyphens</span>.
-       <span class="s1">&#39;</span><span class="s">number</span><span class="s1">&#39;</span>     <span class="nv">Each</span> <span class="nv">matrix</span> <span class="nv">or</span> <span class="nv">vector</span> <span class="nv">row</span> <span class="nv">and</span> <span class="o">/</span> <span class="nv">or</span> <span class="nv">column</span> <span class="nv">is</span> <span class="nv">numbered</span>.
+<div class="codehilite"><pre><span></span><code>   <span class="s1">&#39;</span><span class="s">left</span><span class="s1">&#39;</span>       <span class="nv">Title</span> <span class="nv">is</span> <span class="nv">immediately</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">left</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">first</span> <span class="nv">line</span>
+                <span class="nv">of</span> <span class="nv">the</span> <span class="nv">displayed</span> <span class="nv">item</span>.
+   <span class="s1">&#39;</span><span class="s">above</span><span class="s1">&#39;</span>      <span class="nv">Title</span> <span class="nv">is</span> <span class="nv">centered</span> <span class="nv">immediately</span> <span class="nv">above</span> <span class="nv">the</span> <span class="nv">item</span>.
+   <span class="s1">&#39;</span><span class="s">pad</span><span class="s1">&#39;</span>        <span class="nv">Title</span> <span class="nv">is</span> <span class="nv">centered</span> <span class="nv">above</span> <span class="nv">the</span> <span class="nv">item</span>, <span class="nv">padded</span> <span class="nv">with</span> <span class="nv">hyphens</span> <span class="ss">(</span><span class="o">-</span><span class="ss">)</span>.
+   <span class="s1">&#39;</span><span class="s">underline</span><span class="s1">&#39;</span>  <span class="nv">Title</span> <span class="nv">is</span> <span class="nv">centered</span> <span class="nv">above</span> <span class="nv">the</span> <span class="nv">item</span>, <span class="nv">underlined</span> <span class="nv">with</span> <span class="nv">hyphens</span>.
+   <span class="s1">&#39;</span><span class="s">number</span><span class="s1">&#39;</span>     <span class="nv">Each</span> <span class="nv">matrix</span> <span class="nv">or</span> <span class="nv">vector</span> <span class="nv">row</span> <span class="nv">and</span> <span class="o">/</span> <span class="nv">or</span> <span class="nv">column</span> <span class="nv">is</span> <span class="nv">numbered</span>.
 
-   <span class="nv">Any</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">four</span> <span class="nv">title</span> <span class="nv">position</span> <span class="nv">styles</span> <span class="nv">can</span> <span class="nv">also</span> <span class="nv">be</span> <span class="nv">combined</span> <span class="nv">with</span> <span class="nv">the</span> <span class="nv">number</span> <span class="nv">style</span> <span class="nv">by</span>
-   <span class="nv">specifying</span> <span class="k">for</span> <span class="nv">example</span> <span class="nv">STYLE</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">pad &amp; number</span><span class="s1">&#39;</span>. <span class="nv">Any</span> <span class="nv">character</span> <span class="nv">except</span> <span class="nv">space</span> <span class="nv">may</span> <span class="nv">be</span> <span class="nv">used</span>
-   <span class="nv">instead</span> <span class="nv">of</span> <span class="nv">hyphen</span> <span class="nv">by</span> <span class="nv">prefixing</span> <span class="nv">it</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">style</span>. <span class="nv">STYLE</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">*underline</span><span class="s1">&#39;</span> <span class="nv">will</span> <span class="nv">thus</span> <span class="nv">underline</span> <span class="nv">the</span>
-   <span class="nv">title</span> <span class="nv">with</span> <span class="nv">asterisks</span>. <span class="nv">Both</span> <span class="nv">row</span> <span class="nv">and</span> <span class="nv">column</span> <span class="nv">numbers</span> <span class="nv">appear</span> <span class="k">for</span> <span class="nv">numbered</span> <span class="nv">matrices</span>, <span class="nv">but</span> <span class="k">for</span>
-   <span class="nv">vectors</span> <span class="nv">only</span> <span class="nv">row</span> <span class="nv">numbers</span> <span class="nv">appear</span> <span class="ss">(</span><span class="nv">or</span> <span class="nv">column</span> <span class="nv">numbers</span> <span class="nv">when</span> <span class="nv">ORIENT</span> <span class="nv">is</span> <span class="s1">&#39;</span><span class="s">col</span><span class="s1">&#39;</span><span class="ss">)</span>. <span class="nv">The</span> <span class="nv">five</span> <span class="nv">styles</span>
-   <span class="nv">are</span> <span class="nv">illustrated</span> <span class="nv">below</span>, <span class="nv">accompanied</span> <span class="nv">by</span> <span class="nv">an</span> <span class="nv">example</span> <span class="nv">of</span> <span class="nv">combined</span> <span class="nv">padded</span> <span class="nv">title</span> <span class="nv">and</span> <span class="nv">numbering</span>.
+   <span class="nv">Any</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">four</span> <span class="nv">title</span> <span class="nv">position</span> <span class="nv">styles</span> <span class="nv">can</span> <span class="nv">also</span> <span class="nv">be</span> <span class="nv">combined</span> <span class="nv">with</span> <span class="nv">the</span>
+   <span class="nv">number</span> <span class="nv">style</span> <span class="nv">by</span> <span class="nv">specifying</span> <span class="k">for</span> <span class="nv">example</span> <span class="nv">STYLE</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">pad &amp; number</span><span class="s1">&#39;</span>. <span class="nv">Any</span>
+   <span class="nv">character</span> <span class="nv">except</span> <span class="nv">space</span> <span class="nv">may</span> <span class="nv">be</span> <span class="nv">used</span> <span class="nv">instead</span> <span class="nv">of</span> <span class="nv">hyphen</span> <span class="nv">by</span> <span class="nv">prefixing</span>
+   <span class="nv">it</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">style</span>. <span class="nv">STYLE</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">*underline</span><span class="s1">&#39;</span> <span class="nv">will</span> <span class="nv">thus</span> <span class="nv">underline</span> <span class="nv">the</span> <span class="nv">title</span>
+   <span class="nv">with</span> <span class="nv">asterisks</span>. <span class="nv">Both</span> <span class="nv">row</span> <span class="nv">and</span> <span class="nv">column</span> <span class="nv">numbers</span> <span class="nv">appear</span> <span class="k">for</span> <span class="nv">numbered</span>
+   <span class="nv">matrices</span>, <span class="nv">but</span> <span class="k">for</span> <span class="nv">vectors</span> <span class="nv">only</span> <span class="nv">row</span> <span class="nv">numbers</span> <span class="nv">appear</span> <span class="ss">(</span><span class="nv">or</span> <span class="nv">column</span> <span class="nv">numbers</span>
+   <span class="nv">when</span> <span class="nv">ORIENT</span> <span class="nv">is</span> <span class="s1">&#39;</span><span class="s">col</span><span class="s1">&#39;</span><span class="ss">)</span>. <span class="nv">The</span> <span class="nv">five</span> <span class="nv">styles</span> <span class="nv">are</span> <span class="nv">illustrated</span> <span class="nv">below</span>,
+   <span class="nv">accompanied</span> <span class="nv">by</span> <span class="nv">an</span> <span class="nv">example</span> <span class="nv">of</span> <span class="nv">combined</span> <span class="nv">padded</span> <span class="nv">title</span> <span class="nv">and</span> <span class="nv">numbering</span>.
 
      <span class="o">&gt;</span> <span class="nv">Matr</span> <span class="o">=</span> <span class="mi">1</span>.<span class="mi">2</span>   <span class="mi">4</span>.<span class="mi">2</span>       <span class="nv">Matr</span>      <span class="o">---</span><span class="nv">Matr</span><span class="o">--</span>       <span class="nv">Matr</span>          <span class="mi">1</span>     <span class="mi">2</span>     <span class="nv">____Matr____</span>
      <span class="o">&gt;</span>        <span class="mi">5</span>.<span class="mi">6</span>  <span class="mi">18</span>.<span class="mi">3</span>    <span class="mi">1</span>.<span class="mi">2</span>   <span class="mi">4</span>.<span class="mi">2</span>    <span class="mi">1</span>.<span class="mi">2</span>   <span class="mi">4</span>.<span class="mi">2</span>    <span class="o">---------</span>    <span class="mi">1</span>  <span class="mi">1</span>.<span class="mi">2</span>   <span class="mi">4</span>.<span class="mi">2</span>        <span class="mi">1</span>     <span class="mi">2</span>
      <span class="o">&gt;</span>                     <span class="mi">5</span>.<span class="mi">6</span>  <span class="mi">18</span>.<span class="mi">3</span>    <span class="mi">5</span>.<span class="mi">6</span>  <span class="mi">18</span>.<span class="mi">3</span>    <span class="mi">1</span>.<span class="mi">2</span>   <span class="mi">4</span>.<span class="mi">2</span>    <span class="mi">2</span>  <span class="mi">5</span>.<span class="mi">6</span>  <span class="mi">18</span>.<span class="mi">3</span>    <span class="mi">1</span>  <span class="mi">1</span>.<span class="mi">2</span>   <span class="mi">4</span>.<span class="mi">2</span>
      <span class="o">&gt;</span>                                               <span class="mi">5</span>.<span class="mi">6</span>  <span class="mi">18</span>.<span class="mi">3</span>                    <span class="mi">2</span>  <span class="mi">5</span>.<span class="mi">6</span>  <span class="mi">18</span>.<span class="mi">3</span>
 
-   <span class="nv">The</span> <span class="nv">default</span> <span class="nv">value</span> <span class="nv">of</span> <span class="nv">STYLE</span> <span class="nv">is</span> <span class="s1">&#39;</span><span class="s">left</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="nv">LBOUND</span> <span class="nv">is</span> <span class="nv">absent</span>, <span class="s1">&#39;</span><span class="s">number</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="nv">it</span> <span class="nv">is</span> <span class="nv">present</span>, <span class="nv">and</span>
-   <span class="s1">&#39;</span><span class="s">left &amp; number</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="nv">both</span> <span class="nv">TITLE</span> <span class="nv">and</span> <span class="nv">LBOUND</span> <span class="nv">are</span> <span class="nv">present</span>.
+   <span class="nv">The</span> <span class="nv">default</span> <span class="nv">value</span> <span class="nv">of</span> <span class="nv">STYLE</span> <span class="nv">is</span> <span class="s1">&#39;</span><span class="s">left</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="nv">LBOUND</span> <span class="nv">is</span> <span class="nv">absent</span>, <span class="s1">&#39;</span><span class="s">number</span><span class="s1">&#39;</span>
+   <span class="k">if</span> <span class="nv">it</span> <span class="nv">is</span> <span class="nv">present</span>, <span class="nv">and</span> <span class="s1">&#39;</span><span class="s">left &amp; number</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="nv">both</span> <span class="nv">TITLE</span> <span class="nv">and</span> <span class="nv">LBOUND</span>
+   <span class="nv">are</span> <span class="nv">present</span>.
 </code></pre></div>
 
-<p>TRIM = trim  This argument can take three values, &lsquo;YES&rsquo;, &lsquo;NO&rsquo; and &lsquo;AUTO&rsquo;. When YES is specified,
-       each column of displayed items is trimmed from the left, with &lsquo;NO&rsquo; the items are not trimmed
-       and if TRIM is &lsquo;AUTO&rsquo; the items are trimmed when FMT is absent but not when it is present.
-       In the following example, X and U are displayed with TRIM = &lsquo;yes&rsquo;, but Y and V with TRIM =
-       &lsquo;no&rsquo;. In all cases the edit descriptor is the default (I4). The default is TRIM = &lsquo;AUTO&rsquo;.</p>
+<p>TRIM = trim  This argument can take three values, &lsquo;YES&rsquo;, &lsquo;NO&rsquo; and
+       &lsquo;AUTO&rsquo;. When YES is specified, each column of displayed items is
+       trimmed from the left, with &lsquo;NO&rsquo; the items are not trimmed and if
+       TRIM is &lsquo;AUTO&rsquo; the items are trimmed when FMT is absent but not when
+       it is present. In the following example, X and U are displayed
+       with TRIM = &lsquo;yes&rsquo;, but Y and V with TRIM = &lsquo;no&rsquo;. In all cases the
+       edit descriptor is the default (I4). The default is TRIM = &lsquo;AUTO&rsquo;.</p>
 <div class="codehilite"><pre><span></span><code>     <span class="o">&gt;</span> <span class="o">----</span><span class="n">X</span><span class="o">----</span>   <span class="o">-------</span><span class="n">Y</span><span class="o">------</span>   <span class="o">-----</span><span class="n">U</span><span class="o">-----</span>   <span class="o">-------</span><span class="n">V</span><span class="o">------</span>
      <span class="o">&gt;</span> <span class="mi">1</span>  <span class="mi">2</span>    <span class="mi">4</span>      <span class="mi">1</span>    <span class="mi">2</span>    <span class="mi">3</span>   <span class="mi">333</span> <span class="mi">22</span> <span class="mi">4444</span>    <span class="mi">333</span>   <span class="mi">22</span> <span class="mi">4444</span>
      <span class="o">&gt;</span> <span class="mi">2</span> <span class="mi">22</span>   <span class="mi">34</span>      <span class="mi">2</span>   <span class="mi">22</span>   <span class="mi">34</span>
      <span class="o">&gt;</span> <span class="mi">3</span> <span class="mi">32</span> <span class="mi">1234</span>      <span class="mi">3</span>   <span class="mi">32</span> <span class="mi">1234</span>
 
-   <span class="n">One</span> <span class="n">application</span> <span class="n">of</span> <span class="n">trimming</span> <span class="k">is</span> <span class="n">to</span> <span class="n">display</span> <span class="n">matrices</span> <span class="n">with</span> <span class="n">a</span> <span class="n">fixed</span> <span class="n">number</span> <span class="n">of</span> <span class="n">fractional</span> <span class="n">digits</span>
-   <span class="n">but</span> <span class="n">variable</span> <span class="n">effective</span> <span class="n">field</span> <span class="n">width</span><span class="o">.</span> <span class="n">Then</span> <span class="n">Fw</span><span class="o">.</span><span class="n">d</span> <span class="n">editing</span> <span class="n">with</span> <span class="n">w</span> <span class="n">big</span> <span class="n">enough</span> <span class="k">is</span> <span class="n">accompanied</span> <span class="n">by</span>
-   <span class="n">TRIM</span> <span class="o">=</span> <span class="s1">&#39;yes&#39;</span><span class="o">.</span> <span class="n">An</span> <span class="n">example</span> <span class="k">is</span> <span class="n">the</span> <span class="n">following</span> <span class="n">display</span> <span class="n">of</span> <span class="n">a</span> <span class="n">matrix</span> <span class="n">with</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="n">element</span> <span class="nb">exp</span><span class="p">(</span><span class="n">k</span><span class="o">**</span><span class="n">i</span><span class="p">)</span>
-   <span class="n">using</span> <span class="n">F20</span><span class="o">.</span><span class="mi">2</span> <span class="ow">and</span> <span class="s1">&#39;yes&#39;</span><span class="p">:</span>
+   <span class="n">One</span> <span class="n">application</span> <span class="n">of</span> <span class="n">trimming</span> <span class="k">is</span> <span class="n">to</span> <span class="n">display</span> <span class="n">matrices</span> <span class="n">with</span> <span class="n">a</span> <span class="n">fixed</span>
+   <span class="n">number</span> <span class="n">of</span> <span class="n">fractional</span> <span class="n">digits</span> <span class="n">but</span> <span class="n">variable</span> <span class="n">effective</span> <span class="n">field</span> <span class="n">width</span><span class="o">.</span> <span class="n">Then</span>
+   <span class="n">Fw</span><span class="o">.</span><span class="n">d</span> <span class="n">editing</span> <span class="n">with</span> <span class="n">w</span> <span class="n">big</span> <span class="n">enough</span> <span class="k">is</span> <span class="n">accompanied</span> <span class="n">by</span> <span class="n">TRIM</span> <span class="o">=</span> <span class="s1">&#39;yes&#39;</span><span class="o">.</span> <span class="n">An</span>
+   <span class="n">example</span> <span class="k">is</span> <span class="n">the</span> <span class="n">following</span> <span class="n">display</span> <span class="n">of</span> <span class="n">a</span> <span class="n">matrix</span> <span class="n">with</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="n">element</span>
+   <span class="nb">exp</span><span class="p">(</span><span class="n">k</span><span class="o">**</span><span class="n">i</span><span class="p">)</span> <span class="n">using</span> <span class="n">F20</span><span class="o">.</span><span class="mi">2</span> <span class="ow">and</span> <span class="s1">&#39;yes&#39;</span><span class="p">:</span>
 
-        <span class="n">power</span> <span class="n">exponentials</span>
-       <span class="mf">2.72</span>   <span class="mf">7.39</span>    <span class="mf">20.09</span>
-       <span class="mf">2.72</span>  <span class="mf">54.60</span>  <span class="mf">8103.08</span>
+     <span class="o">&gt;</span>  <span class="n">power</span> <span class="n">exponentials</span>
+     <span class="o">&gt;</span> <span class="mf">2.72</span>   <span class="mf">7.39</span>    <span class="mf">20.09</span>
+     <span class="o">&gt;</span> <span class="mf">2.72</span>  <span class="mf">54.60</span>  <span class="mf">8103.08</span>
 
-   <span class="n">Similar</span> <span class="n">output</span> <span class="n">may</span> <span class="n">be</span> <span class="n">obtained</span> <span class="n">using</span> <span class="n">I</span> <span class="ow">and</span> <span class="n">F</span> <span class="n">edit</span> <span class="n">descriptors</span> <span class="n">with</span> <span class="n">w</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">as</span> <span class="n">discussed</span> <span class="ow">in</span>
-   <span class="n">section</span> <span class="mf">3.5</span><span class="o">.</span> <span class="n">Apart</span> <span class="n">from</span> <span class="n">I</span> <span class="ow">and</span> <span class="n">F</span> <span class="n">edited</span> <span class="n">displays</span><span class="p">,</span> <span class="n">it</span> <span class="k">is</span> <span class="n">possible</span> <span class="n">to</span> <span class="n">trim</span> <span class="n">A</span><span class="o">-</span><span class="n">edited</span> <span class="n">displays</span> <span class="k">as</span>
-   <span class="n">well</span> <span class="k">as</span> <span class="n">E</span><span class="o">-</span><span class="n">edited</span> <span class="n">displays</span> <span class="n">with</span> <span class="n">some</span> <span class="n">negative</span> <span class="n">elements</span><span class="p">,</span> <span class="n">but</span> <span class="n">the</span> <span class="n">first</span> <span class="n">column</span> <span class="n">all</span> <span class="n">positive</span><span class="p">:</span>
+   <span class="n">Similar</span> <span class="n">output</span> <span class="n">may</span> <span class="n">be</span> <span class="n">obtained</span> <span class="n">using</span> <span class="n">I</span> <span class="ow">and</span> <span class="n">F</span> <span class="n">edit</span> <span class="n">descriptors</span>
+   <span class="n">with</span> <span class="n">w</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">as</span> <span class="n">discussed</span> <span class="ow">in</span> <span class="n">section</span> <span class="mf">3.5</span><span class="o">.</span> <span class="n">Apart</span> <span class="n">from</span> <span class="n">I</span> <span class="ow">and</span> <span class="n">F</span> <span class="n">edited</span>
+   <span class="n">displays</span><span class="p">,</span> <span class="n">it</span> <span class="k">is</span> <span class="n">possible</span> <span class="n">to</span> <span class="n">trim</span> <span class="n">A</span><span class="o">-</span><span class="n">edited</span> <span class="n">displays</span> <span class="k">as</span> <span class="n">well</span> <span class="k">as</span>
+   <span class="n">E</span><span class="o">-</span><span class="n">edited</span> <span class="n">displays</span> <span class="n">with</span> <span class="n">some</span> <span class="n">negative</span> <span class="n">elements</span><span class="p">,</span> <span class="n">but</span> <span class="n">the</span> <span class="n">first</span> <span class="n">column</span>
+   <span class="n">all</span> <span class="n">positive</span><span class="p">:</span>
 
        <span class="n">With</span> <span class="n">TRIM</span><span class="o">=</span><span class="s1">&#39;yes&#39;</span><span class="p">:</span><span class="n">X</span><span class="o">=</span><span class="mf">1.2e+5</span> <span class="o">-</span><span class="mf">4.1e-2</span>   <span class="n">With</span> <span class="n">TRIM</span><span class="o">=</span><span class="s1">&#39;no&#39;</span><span class="p">:</span><span class="n">X</span><span class="o">=</span> <span class="mf">1.2e+5</span> <span class="o">-</span><span class="mf">4.1e-2</span>
                          <span class="mf">2.3e-3</span>  <span class="mf">8.6e+1</span>                     <span class="mf">2.3e-3</span>  <span class="mf">8.6e+1</span>
 </code></pre></div>
 
-<p>UNIT = external-file-unit  The unit which the output is sent to. There are three special units,
-       which may be referred to either with constants or parameters (named constants) as follows:</p>
+<p>UNIT = external-file-unit  The unit which the output is sent to. There
+       are three special units, which may be referred to either with
+       constants or parameters (named constants) as follows:</p>
 <div class="codehilite"><pre><span></span><code>       <span class="n">Constant</span>  <span class="n">Parameter</span>      <span class="n">Preconnected</span> <span class="n">unit</span>
          <span class="o">-</span><span class="mi">3</span>      <span class="n">ASTERISK_UNIT</span>  <span class="n">The</span> <span class="n">asterisk</span> <span class="n">unit</span> <span class="p">(</span><span class="n">often</span> <span class="n">the</span> <span class="n">screen</span><span class="p">)</span>
          <span class="o">-</span><span class="mi">2</span>      <span class="n">PUTSTR_UNIT</span>    <span class="n">The</span> <span class="n">subroutines</span> <span class="n">PUTSTR</span> <span class="ow">and</span> <span class="n">PUTNL</span>
          <span class="o">-</span><span class="mi">1</span>      <span class="n">NULL_UNIT</span>      <span class="n">Null</span> <span class="n">device</span> <span class="p">(</span><span class="n">all</span> <span class="n">output</span> <span class="n">to</span> <span class="n">this</span> <span class="k">is</span> <span class="n">discarded</span><span class="p">)</span>
 
-   <span class="n">These</span> <span class="n">units</span> <span class="n">are</span> <span class="n">further</span> <span class="n">described</span> <span class="ow">in</span> <span class="n">sections</span> <span class="mf">3.3</span> <span class="ow">and</span> <span class="mf">3.4</span><span class="o">.</span> <span class="n">Other</span> <span class="n">unit</span> <span class="n">numbers</span> <span class="n">correspond</span> <span class="n">to</span>
-   <span class="n">external</span> <span class="n">files</span> <span class="n">that</span> <span class="n">should</span> <span class="n">have</span> <span class="n">been</span> <span class="n">connected</span> <span class="n">with</span> <span class="n">open</span><span class="o">-</span><span class="n">statements</span><span class="o">.</span> <span class="n">The</span> <span class="n">default</span> <span class="n">unit</span> <span class="n">depends</span>
-   <span class="n">on</span> <span class="n">the</span> <span class="n">named</span> <span class="n">constant</span> <span class="n">DEFAULT_UNIT</span><span class="p">,</span> <span class="n">defined</span> <span class="ow">in</span> <span class="n">PUTSTRMODULE</span><span class="o">.</span> <span class="n">The</span> <span class="n">default</span> <span class="n">PUTSTRMODULE</span> <span class="n">sets</span>
-   <span class="n">it</span> <span class="n">to</span> <span class="o">-</span><span class="mi">3</span> <span class="p">(</span><span class="n">see</span> <span class="n">sections</span> <span class="mi">2</span> <span class="ow">and</span> <span class="mf">3.4</span><span class="p">)</span><span class="o">.</span>
+   <span class="n">These</span> <span class="n">units</span> <span class="n">are</span> <span class="n">further</span> <span class="n">described</span> <span class="ow">in</span> <span class="n">sections</span> <span class="mf">3.3</span> <span class="ow">and</span> <span class="mf">3.4</span><span class="o">.</span> <span class="n">Other</span>
+   <span class="n">unit</span> <span class="n">numbers</span> <span class="n">correspond</span> <span class="n">to</span> <span class="n">external</span> <span class="n">files</span> <span class="n">that</span> <span class="n">should</span> <span class="n">have</span> <span class="n">been</span>
+   <span class="n">connected</span> <span class="n">with</span> <span class="n">open</span><span class="o">-</span><span class="n">statements</span><span class="o">.</span> <span class="n">The</span> <span class="n">default</span> <span class="n">unit</span> <span class="n">depends</span> <span class="n">on</span> <span class="n">the</span>
+   <span class="n">named</span> <span class="n">constant</span> <span class="n">DEFAULT_UNIT</span><span class="p">,</span> <span class="n">defined</span> <span class="ow">in</span> <span class="n">PUTSTRMODULE</span><span class="o">.</span> <span class="n">The</span> <span class="n">default</span>
+   <span class="n">PUTSTRMODULE</span> <span class="n">sets</span> <span class="n">it</span> <span class="n">to</span> <span class="o">-</span><span class="mi">3</span> <span class="p">(</span><span class="n">see</span> <span class="n">sections</span> <span class="mi">2</span> <span class="ow">and</span> <span class="mf">3.4</span><span class="p">)</span><span class="o">.</span>
 </code></pre></div>
 
-<p>ZEROAS = zerostring  Supported for integer and real X (not complex) Any element that compares equal
-       to 0 will be displayed as zerostring. If, for example, A is a 4 by 4 upper triangular matrix
-       with aij = 1/max(0,j - i + 1) then CALL DISP(&lsquo;A = &lsquo;, A, &lsquo;F0.3&rsquo;, ZEROAS = &lsquo;0&rsquo;, ADVANCE = &lsquo;NO&rsquo;)
-       and CALL DISP(&lsquo;B = &lsquo;, A, &lsquo;F0.3&rsquo;, ZEROAS = &lsquo;.&rsquo;) will display:</p>
+<p>ZEROAS = zerostring  Supported for integer and real X (not complex)
+       Any element that compares equal to 0 will be displayed as
+       zerostring. If, for example, A is a 4 by 4 upper triangular
+       matrix with aij = 1/max(0,j - i + 1) then CALL DISP(&lsquo;A = &lsquo;, A,
+       &lsquo;F0.3&rsquo;, ZEROAS = &lsquo;0&rsquo;, ADVANCE = &lsquo;NO&rsquo;) and CALL DISP(&lsquo;B = &lsquo;, A,
+       &lsquo;F0.3&rsquo;, ZEROAS = &lsquo;.&rsquo;) will display:</p>
 <div class="codehilite"><pre><span></span><code>       <span class="nv">A</span> <span class="o">=</span> <span class="mi">1</span>.<span class="mi">000</span>  <span class="mi">0</span>.<span class="mi">500</span>  <span class="mi">0</span>.<span class="mi">333</span>  <span class="mi">0</span>.<span class="mi">250</span>   <span class="nv">B</span> <span class="o">=</span> <span class="mi">1</span>.<span class="mi">000</span>  <span class="mi">0</span>.<span class="mi">500</span>  <span class="mi">0</span>.<span class="mi">333</span>  <span class="mi">0</span>.<span class="mi">250</span>
                <span class="mi">0</span>  <span class="mi">1</span>.<span class="mi">000</span>  <span class="mi">0</span>.<span class="mi">500</span>  <span class="mi">0</span>.<span class="mi">333</span>        .     <span class="mi">1</span>.<span class="mi">000</span>  <span class="mi">0</span>.<span class="mi">500</span>  <span class="mi">0</span>.<span class="mi">333</span>
                <span class="mi">0</span>      <span class="mi">0</span>  <span class="mi">1</span>.<span class="mi">000</span>  <span class="mi">0</span>.<span class="mi">500</span>        .      .     <span class="mi">1</span>.<span class="mi">000</span>  <span class="mi">0</span>.<span class="mi">500</span>
                <span class="mi">0</span>      <span class="mi">0</span>      <span class="mi">0</span>  <span class="mi">1</span>.<span class="mi">000</span>        .      .      .     <span class="mi">1</span>.<span class="mi">000</span>
 
-   <span class="nv">Notice</span> <span class="nv">that</span> <span class="nv">when</span> <span class="nv">zerostring</span> <span class="nv">contains</span> <span class="nv">a</span> <span class="nv">decimal</span> <span class="nv">point</span> <span class="nv">it</span> <span class="nv">is</span> <span class="nv">lined</span> <span class="nv">up</span> <span class="nv">with</span> <span class="nv">other</span> <span class="nv">decimal</span>
-   <span class="nv">points</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">column</span>. <span class="k">If</span> <span class="nv">zerostring</span> <span class="nv">has</span> <span class="nv">length</span> <span class="mi">0</span>, <span class="nv">the</span> <span class="nv">default</span> <span class="nv">behavior</span> <span class="nv">of</span> <span class="nv">not</span> <span class="nv">treating</span> <span class="nv">zeros</span>
-   <span class="nv">specially</span> <span class="nv">is</span> <span class="nv">re</span><span class="o">-</span><span class="nv">established</span>, <span class="nv">in</span> <span class="nv">case</span> <span class="nv">an</span> <span class="nv">earlier</span> <span class="nv">DISP_SET</span> <span class="k">call</span> <span class="nl">has</span> <span class="nv">been</span> <span class="nv">used</span> <span class="nv">to</span> <span class="nv">set</span> <span class="nv">ZEROAS</span>.
+   <span class="nv">Notice</span> <span class="nv">that</span> <span class="nv">when</span> <span class="nv">zerostring</span> <span class="nv">contains</span> <span class="nv">a</span> <span class="nv">decimal</span> <span class="nv">point</span> <span class="nv">it</span> <span class="nv">is</span> <span class="nv">lined</span>
+   <span class="nv">up</span> <span class="nv">with</span> <span class="nv">other</span> <span class="nv">decimal</span> <span class="nv">points</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">column</span>. <span class="k">If</span> <span class="nv">zerostring</span> <span class="nv">has</span>
+   <span class="nv">length</span> <span class="mi">0</span>, <span class="nv">the</span> <span class="nv">default</span> <span class="nv">behavior</span> <span class="nv">of</span> <span class="nv">not</span> <span class="nv">treating</span> <span class="nv">zeros</span> <span class="nv">specially</span> <span class="nv">is</span>
+   <span class="nv">re</span><span class="o">-</span><span class="nv">established</span>, <span class="nv">in</span> <span class="nv">case</span> <span class="nv">an</span> <span class="nv">earlier</span> <span class="nv">DISP_SET</span> <span class="k">call</span> <span class="nl">has</span> <span class="nv">been</span> <span class="nv">used</span> <span class="nv">to</span>
+   <span class="nv">set</span> <span class="nv">ZEROAS</span>.
 </code></pre></div>
 
 <h2 id="asterisk_unit-and-null_unit">ASTERISK_UNIT AND NULL_UNIT</h2>
-<p>As already mentioned in section 3.2 there are three special units, ASTERISK_UNIT = -3, PUTSTR_UNIT
- = -2 and NULL_UNIT = -1. These public named constants (parameters) are defined by M_display.</p>
-<p>Selecting ASTERISK_UNIT channels all output to the unit that WRITE(*,&hellip;) statements use. The
- ISO_FORTRAN_ENV intrinsic module of Fortran 2003 defines the named constant OUTPUT_UNIT and this
- may be used instead, unless its value is set to -2 by the compiler (which would clash with</p>
-<h2 id="putstr_unit">PUTSTR_UNIT).</h2>
-<p>Selecting NULL_UNIT causes all output via DISP to be discarded. This feature makes it simple to
- turn the output on and off, which may be useful for debugging and testing purposes. If UNIT = U is
- specified in all DISP-calls, it is enough to change the value of U to -1 to turn off output.</p>
+<p>As already mentioned in section 3.2 there are three special units,
+ ASTERISK_UNIT = -3, PUTSTR_UNIT = -2 and NULL_UNIT = -1. These public
+ named constants (parameters) are defined by M_display.</p>
+<p>Selecting ASTERISK_UNIT channels all output to the unit that
+ WRITE(*,&hellip;) statements use. The ISO_FORTRAN_ENV intrinsic module of
+ Fortran 2003 defines the named constant OUTPUT_UNIT and this may be
+ used instead, unless its value is set to -2 by the compiler (which would
+ clash with PUTSTR_UNIT).</p>
+<p>Selecting NULL_UNIT causes all output via DISP to be discarded. This
+ feature makes it simple to turn the output on and off, which may be
+ useful for debugging and testing purposes. If UNIT = U is specified
+ in all DISP-calls, it is enough to change the value of U to -1 to turn
+ off output.</p>
 <p>PUTSTR_UNIT: Output with user written subroutines</p>
-<p>One of the purposes of the PUTSTR_UNIT is to make displaying possible in situations where ordinary
- print- and write-statements do not work. This is for example the case in Matlab mex-files (in fact
- the execution of a write statement on the asterisk unit crashes Matlab). To use the PUTSTR_UNIT it
- is necessary to write two subroutines with interfaces:</p>
+<p>One of the purposes of the PUTSTR_UNIT is to make displaying possible in
+ situations where ordinary print- and write-statements do not work. This
+ is for example the case in Matlab mex-files (in fact the execution
+ of a write statement on the asterisk unit crashes Matlab). To use the
+ PUTSTR_UNIT it is necessary to write two subroutines with interfaces:</p>
 <div class="codehilite"><pre><span></span><code>   SUBROUTINE PUTSTR(S)
    CHARACTER(*), INTENT(IN) :: S
 
    SUBROUTINE PUTNL()
 </code></pre></div>
 
-<p>The first of these should output the string S, and the second one should advance output to the
- next line. These subroutines should be placed in a module PUTSTRMODULE as explained in section 2.
- The module should also define a named constant DEFAULT_UNIT, which could be set to -2 to make the
- PUTSTR_UNIT default. An example that works with g95 and Matlab mex-files is:</p>
+<p>The first of these should output the string S, and the second one should
+ advance output to the next line. These subroutines should be placed
+ in a module PUTSTRMODULE as explained in section 2. The module should
+ also define a named constant DEFAULT_UNIT, which could be set to -2 to
+ make the PUTSTR_UNIT default. An example that works with g95 and Matlab
+ mex-files is:</p>
 <div class="codehilite"><pre><span></span><code>   <span class="k">module</span> <span class="n">putstrmodule</span>
      <span class="n">integer</span>, <span class="nb">parameter</span> :: <span class="n">default_unit</span> = -<span class="mi">2</span>
 
@@ -534,27 +578,31 @@
    <span class="nb">end</span> <span class="k">module</span> <span class="n">putstrmodule</span>
 </code></pre></div>
 
-<p>At the beginning of the file M_display.f90 there is a slightly longer version which works with
- both g95 and gfortran. Testing this module is discussed in section 6.2 below.</p>
+<p>At the beginning of the file M_display.f90 there is a slightly longer
+ version which works with both g95 and gfortran. Testing this module is
+ discussed in section 6.2 below.</p>
 <h2 id="using-w0-editing">USING W=0 EDITING</h2>
-<p>The Fortran standard stipulates that writing a single element with I0 editing results in the
- smallest field width that accommodates the value, and the same applies to B0, O0, Z0 and F0.d
- editing. With DISP, the width of a displayed column will be the width of the widest field in the
- column, and each element is right-adjusted in the column. This gives exactly the same output as
- using TRIM=&rsquo;yes&rsquo; and a specified field width bigger than the largest occurring. Note that with
- F0.d editing, there is no limit on the width of a column, but with Fw.d and TRIM=&rsquo;yes&rsquo; any element
- wider than w will be displayed as w asterisks:</p>
+<p>The Fortran standard stipulates that writing a single element with
+ I0 editing results in the smallest field width that accommodates the
+ value, and the same applies to B0, O0, Z0 and F0.d editing. With DISP,
+ the width of a displayed column will be the width of the widest field
+ in the column, and each element is right-adjusted in the column. This
+ gives exactly the same output as using TRIM=&rsquo;yes&rsquo; and a specified field
+ width bigger than the largest occurring. Note that with F0.d editing,
+ there is no limit on the width of a column, but with Fw.d and TRIM=&rsquo;yes&rsquo;
+ any element wider than w will be displayed as w asterisks:</p>
 <div class="codehilite"><pre><span></span><code>   ------------------F0.2------------------    -----F13.2, TRIM=&#39;yes&#39;----
    14.28  142857142857142857142857.14  0.47    14.28  *************  0.47
     1.42                1414213562.37  0.69     1.42  1414213562.37  0.69
 </code></pre></div>
 
 <h2 id="not-a-number-and-infinite-values">NOT-A-NUMBER AND INFINITE VALUES</h2>
-<p>If the compiler supports not-a-number and infinite values as defined by the IEEE exceptional values
- of Fortran 2003, these are displayed as NaN, +Inf or Inf. A not-a-number value X is identified as
- being not equal to itself, and an infinite value is either greater than HUGE(X) or smaller than
- -HUGE(X). On all the compilers tried the sequence BIG=1E20; CALL DISP(EXP(BIG)) displays +Inf, and
- the program segment:</p>
+<p>If the compiler supports not-a-number and infinite values as defined by
+ the IEEE exceptional values of Fortran 2003, these are displayed as NaN,
+ +Inf or Inf. A not-a-number value X is identified as being not equal to
+ itself, and an infinite value is either greater than HUGE(X) or smaller
+ than -HUGE(X). On all the compilers tried the sequence BIG=1E20; CALL
+ DISP(EXP(BIG)) displays +Inf, and the program segment:</p>
 <div class="codehilite"><pre><span></span><code> &gt; real :: z = 0, big = 1e20
  &gt; call disp([z, z/z, big, -exp(big)])
 </code></pre></div>
@@ -565,9 +613,12 @@
      &gt;  1.00000E+20
      &gt;         -Inf</p>
 <h2 id="author">AUTHOR</h2>
-<p>Based on dispmodule(3f), &ldquo;A Fortran 95 module for pretty-printing matrices&rdquo;.
-   Version number 1.02 6-Sept-2008, Kristjan Jonasson, Dept. of Computer Science, University of
-   Iceland (jonasson@hi.is).</p>
+<p>Based on dispmodule(3f),
+   &ldquo;A Fortran 95 module for pretty-printing matrices&rdquo;.
+   Version number 1.02 6-Sept-2008,
+   Kristjan Jonasson,
+   Dept. of Computer Science,
+   University of Iceland (jonasson@hi.is).</p>
      
      
     <br>
@@ -8157,13 +8208,13 @@ private subroutine disp_tm_dchr(title, x, fmt, advance, lbound, sep, style, trim
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
+        <div class="col-xs-6 col-md-4"><p>&copy; 2022 
                                           </p></div>
         <div class="col-xs-6 col-md-4 col-md-push-4">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2021-10-02 11:12  
+             on 2022-05-06 08:16  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> M_display was developed by John S. Urban</p></div>

@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="67.2% of total for modules and submodules.">1978 statements</a>
+    title="60.5% of total for modules and submodules.">1476 statements</a>
      </li> 
      
      
@@ -229,8 +229,6 @@
       <a class="list-group-item" href="../module/m_display.html#proc-disp_set">disp_set</a>
       
       <a class="list-group-item" href="../module/m_display.html#proc-disp_set_factory">disp_set_factory</a>
-      
-      <a class="list-group-item" href="../module/m_display.html#proc-test_suite_m_display">test_suite_M_display</a>
       
       <a class="list-group-item" href="../module/m_display.html#proc-tostring_set">tostring_set</a>
       
@@ -352,8 +350,6 @@
       
       <a class="list-group-item" href="../module/m_display.html#proc-disp_set_factory">disp_set_factory</a>
       
-      <a class="list-group-item" href="../module/m_display.html#proc-test_suite_m_display">test_suite_M_display</a>
-      
       <a class="list-group-item" href="../module/m_display.html#proc-tostring_set">tostring_set</a>
       
       <a class="list-group-item" href="../module/m_display.html#proc-tostring_set_factory">tostring_set_factory</a>
@@ -452,12 +448,14 @@
   
   <div class="panel-body">
     
-    <p>This is the principal subroutine of the package. It has various control arguments that specify the
- exact format of the output. Most of these may also be used as arguments of the subroutine
- DISP_SET. When used with DISP, a control argument affects only the item being displayed with the
- current call, but when used with DISP_SET, the default settings for subsequent DISP calls are
- affected. The default values for individual arguments given below are used unless they have been
- changed by a call to DISP_SET. All character arguments should be of type default character.</p><a href="../interface/disp.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    <p>This is the principal subroutine of the package. It has various control
+ arguments that specify the exact format of the output. Most of these
+ may also be used as arguments of the subroutine DISP_SET. When used
+ with DISP, a control argument affects only the item being displayed with
+ the current call, but when used with DISP_SET, the default settings for
+ subsequent DISP calls are affected. The default values for individual
+ arguments given below are used unless they have been changed by a call
+ to DISP_SET. All character arguments should be of type default character.</p><a href="../interface/disp.html" class="pull-right"><emph>Read more&hellip;</emph></a>
   </div>
   
   <ul class="list-group">
@@ -9391,7 +9389,8 @@ public function <a href='../proc/disp_get.html'>disp_get</a>() result(defs)
 
 
 
-<p>disp_get(3f) - [M_display] return default settings in a structure of DISP(3f) settings</p><a href="../proc/disp_get.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+<p>disp_get(3f) - [M_display] return default settings in a structure of
+                DISP(3f) settings</p><a href="../proc/disp_get.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -9438,9 +9437,10 @@ public subroutine <a href='../proc/disp_set.html'>disp_set</a>(advance, digmax, 
 
 
 
-<p>The subroutine DISP_SET may be used to change default values of all the arguments of DISP except
- TITLE, X, FMT and LBOUND. In addition the default separator between items that are displayed
- side-by-side (using ADVANCE=&rsquo;no&rsquo;) may be changed with the MATSEP argument.</p><a href="../proc/disp_set.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+<p>The subroutine DISP_SET may be used to change default values of all
+ the arguments of DISP except TITLE, X, FMT and LBOUND. In addition the
+ default separator between items that are displayed side-by-side (using
+ ADVANCE=&rsquo;no&rsquo;) may be changed with the MATSEP argument.</p><a href="../proc/disp_set.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -9604,39 +9604,11 @@ public subroutine <a href='../proc/disp_set_factory.html'>disp_set_factory</a>()
 
 
 
-<p>The subroutine disp_set_factory (which has no arguments) may be called to restore all
- settings of DISP(3f) to the original default values.</p><a href="../proc/disp_set_factory.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-    <h4>Arguments</h4>
-    
-      <em>None</em>
-    
-    
-
-  </div>
-  </div>
-
-    
-    
-  <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-test_suite_m_display"></span><h3>
-public subroutine <a href='../proc/test_suite_m_display.html'>test_suite_M_display</a>()
-    
-    
-   
-</h3></div>
-  <div class="panel-body">
-       
-    
-
-
-
-
-
-
-
-<p>setup
- teardown</p>
+<p>Based on dispmodule(3f),
+   &ldquo;A Fortran 95 module for pretty-printing matrices&rdquo;.
+   Version number 1.02 6-Sept-2008,
+   Kristjan Jonasson,
+   Dept. of Computer Science, University of Iceland (jonasson@hi.is).</p><a href="../proc/disp_set_factory.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -9666,10 +9638,10 @@ public subroutine <a href='../proc/tostring_set.html'>tostring_set</a>(sep, rfmt
 
 
 
-<p>The subroutine TOSTRING_SET has five arguments, all of which are optional. Argument
- association will normally be realized using argument keywords, e.g. CALL
- TOSTRING_SET(SEP=&rsquo;; &lsquo;). The examples in section 5.4 clarify how to use this subroutine. The five
- arguments are:</p><a href="../proc/tostring_set.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+<p>The subroutine TOSTRING_SET has five arguments, all of which are
+ optional. Argument association will normally be realized using argument
+ keywords, e.g. CALL TOSTRING_SET(SEP=&rsquo;; &lsquo;). The examples in section 5.4
+ clarify how to use this subroutine. The five arguments are:</p><a href="../proc/tostring_set.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -9788,9 +9760,10 @@ public subroutine <a href='../proc/tostring_set_factory.html'>tostring_set_facto
 
 
 
-<p>The subroutine TOSTRING_SET_FACTORY (which has no arguments) may be called to restore all
- settings of TOSTRING(3f) to the original default values (the factory defaults): SEP=&rsquo;,&rsquo;, RFMT =
- &lsquo;1PG12.5&rsquo;, IFMT= &lsquo;I0&rsquo;, TRIMB=&rsquo;YES&rsquo; and TRIMZ=&rsquo;G&rsquo;.</p><a href="../proc/tostring_set_factory.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+<p>The subroutine TOSTRING_SET_FACTORY (which has no arguments) may be
+ called to restore all settings of TOSTRING(3f) to the original default
+ values (the factory defaults): SEP=&rsquo;,&rsquo;, RFMT = &lsquo;1PG12.5&rsquo;, IFMT= &lsquo;I0&rsquo;,
+ TRIMB=&rsquo;YES&rsquo; and TRIMZ=&rsquo;G&rsquo;.</p><a href="../proc/tostring_set_factory.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -9816,13 +9789,13 @@ public subroutine <a href='../proc/tostring_set_factory.html'>tostring_set_facto
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
+        <div class="col-xs-6 col-md-4"><p>&copy; 2022 
                                           </p></div>
         <div class="col-xs-6 col-md-4 col-md-push-4">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2021-10-02 11:12  
+             on 2022-05-06 08:16  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> M_display was developed by John S. Urban</p></div>

@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.8% of total for procedures.">10 statements</a>
+    title=" 0.6% of total for procedures.">10 statements</a>
      </li> 
      
      
@@ -218,62 +218,68 @@ public subroutine tostring_set(sep, rfmt, ifmt, trimb, trimz)
 </code></pre></div>
 
 <h2 id="description">DESCRIPTION</h2>
-<p>The subroutine TOSTRING_SET has five arguments, all of which are optional. Argument
- association will normally be realized using argument keywords, e.g. CALL
- TOSTRING_SET(SEP=&rsquo;; &lsquo;). The examples in section 5.4 clarify how to use this subroutine. The five
- arguments are:</p>
-<p>SEP     Character string used to separate elements of displayed vectors. Original default value is
-         &lsquo;, &lsquo;.</p>
-<p>RFMT    Character string containing default edit descriptor to use to display real items. The
-         original default value is &lsquo;1PG12.5&rsquo;</p>
-<p>IFMT    Character string containing default edit descriptor to use to display integer items. The
-         original default value is &lsquo;I0&rsquo;.</p>
-<p>TRIMB   Controls whether leading and trailing blanks are trimmed from individual displayed
-         elements. Possible values are &lsquo;YES&rsquo; (to trim blanks) and &lsquo;NO&rsquo; (for no trimming). Default
-         is &lsquo;YES&rsquo;.</p>
-<p>TRIMZ   Controls whether trailing zeros are trimmed from the fractional part of displayed items.
-         Possible values are &lsquo;NONE&rsquo; (for no zero trimming), &lsquo;G&rsquo; (to trim fractional trailing zeros
-         only when G editing is used), and &lsquo;ALL&rsquo; (to trim zeros with all types of editing). Trailing
-         decimal points are also removed when zero-trimming is active. Default value is &lsquo;G&rsquo;.</p>
+<p>The subroutine TOSTRING_SET has five arguments, all of which are
+ optional. Argument association will normally be realized using argument
+ keywords, e.g. CALL TOSTRING_SET(SEP=&rsquo;; &lsquo;). The examples in section 5.4
+ clarify how to use this subroutine. The five arguments are:</p>
+<p>SEP     Character string used to separate elements of displayed
+         vectors. Original default value is &lsquo;, &lsquo;.</p>
+<p>RFMT    Character string containing default edit descriptor to use to
+         display real items. The original default value is &lsquo;1PG12.5&rsquo;</p>
+<p>IFMT    Character string containing default edit descriptor to use to
+         display integer items. The original default value is &lsquo;I0&rsquo;.</p>
+<p>TRIMB   Controls whether leading and trailing blanks are trimmed from
+         individual displayed elements. Possible values are &lsquo;YES&rsquo;
+         (to trim blanks) and &lsquo;NO&rsquo; (for no trimming). Default is &lsquo;YES&rsquo;.</p>
+<p>TRIMZ   Controls whether trailing zeros are trimmed from the fractional
+         part of displayed items. Possible values are &lsquo;NONE&rsquo; (for no
+         zero trimming), &lsquo;G&rsquo; (to trim fractional trailing zeros only when
+         G editing is used), and &lsquo;ALL&rsquo; (to trim zeros with all types
+         of editing). Trailing decimal points are also removed when
+         zero-trimming is active. Default value is &lsquo;G&rsquo;.</p>
 <h2 id="examples">EXAMPLES</h2>
-<p>When the original (factory) defaults are in effect, the result of invoking TOSTRING will usually
- be as follows.</p>
-<div class="codehilite"><pre><span></span><code>   Invocation                             Returned String
-   ----------                             ---------------
-   tostring(atan(1.0))                    &#39;0.785398&#39;
-   tostring(exp([-3.,-1.,0.,1.]))         &#39;4.97871E-02, 0.36788, 1, 2.7183&#39;
-   tostring(real([(i,i=1,5)])**8)         &#39;1, 256, 6561, 65536, 3.90625E+05&#39;
-   tostring([1.23456,1.2300,1.23456e6])   &#39;1.2346, 1.23, 1.23456E+06&#39;
-   tostring(real([(i,i=1,5)])**8,&#39;f0.1&#39;)  &#39;1.0, 256.0, 6561.0, 65536.0, 390625.0&#39;
-   tostring(real([(i,i=1,5)])**8,&#39;f6.1&#39;)  &#39;1.0, 256.0, 6561.0, ******, ******&#39;
-   tostring([1200000.,-1.2e-9])           &#39;1.2E+06, -1.2E-09&#39;
-   !
-   tostring(1.200d103)                    &#39;1.2+103&#39;
-   tostring([1.1d0,2.2d10,3.3d20])        &#39;1.1E+00, 2.2E+10, 3.3E+20&#39;
-   !
-   tostring(-77)                          &#39;-77&#39;
-   tostring([(i,i=-3,3)]**11)             &#39;-177147, -2048, -1, 0, 1, 2048, 177147&#39;
-   tostring([(i,i=-3,3)]**11, &#39;i7&#39;)       &#39;-177147, -2048, -1, 0, 1, 2048, 177147&#39;
-   tostring([(i,i=-3,3)]**11, &#39;i4&#39;)       &#39;****, ****, -1, 0, 1, 2048, ****&#39;
-   !
-   tostring((1,3)/(4,2))                  &#39;0.5 + 0.5i&#39;
-   tostring(cmplx([-1,-2])**0.25)       &#39;0.70711 + 0.70711i, 0.8409 + 0.8409i&#39;
-   !
-   tostring([.true., .false., .false.])   &#39;T, F, F&#39;
-   tostring(.true., &#39;L2&#39;)                 &#39;T&#39;
+<p>When the original (factory) defaults are in effect, the result of invoking
+ TOSTRING will usually be as follows.</p>
+<div class="codehilite"><pre><span></span><code> Invocation                             Returned String
+ ----------                             ---------------
+ tostring(atan(1.0))                    &#39;0.785398&#39;
+ tostring(exp([-3.,-1.,0.,1.]))         &#39;4.97871E-02, 0.36788, 1, 2.7183&#39;
+ tostring(real([(i,i=1,5)])**8)         &#39;1, 256, 6561, 65536, 3.90625E+05&#39;
+ tostring([1.23456,1.2300,1.23456e6])   &#39;1.2346, 1.23, 1.23456E+06&#39;
+ tostring(real([(i,i=1,5)])**8,&#39;f0.1&#39;)  &#39;1.0, 256.0, 6561.0, 65536.0, 390625.0&#39;
+ tostring(real([(i,i=1,5)])**8,&#39;f6.1&#39;)  &#39;1.0, 256.0, 6561.0, ******, ******&#39;
+ tostring([1200000.,-1.2e-9])           &#39;1.2E+06, -1.2E-09&#39;
+ !
+ tostring(1.200d103)                    &#39;1.2+103&#39;
+ tostring([1.1d0,2.2d10,3.3d20])        &#39;1.1E+00, 2.2E+10, 3.3E+20&#39;
+ !
+ tostring(-77)                          &#39;-77&#39;
+ tostring([(i,i=-3,3)]**11)             &#39;-177147, -2048, -1, 0, 1, 2048, 177147&#39;
+ tostring([(i,i=-3,3)]**11, &#39;i7&#39;)       &#39;-177147, -2048, -1, 0, 1, 2048, 177147&#39;
+ tostring([(i,i=-3,3)]**11, &#39;i4&#39;)       &#39;****, ****, -1, 0, 1, 2048, ****&#39;
+ !
+ tostring((1,3)/(4,2))                  &#39;0.5 + 0.5i&#39;
+ tostring(cmplx([-1,-2])**0.25)       &#39;0.70711 + 0.70711i, 0.8409 + 0.8409i&#39;
+ !
+ tostring([.true., .false., .false.])   &#39;T, F, F&#39;
+ tostring(.true., &#39;L2&#39;)                 &#39;T&#39;
 </code></pre></div>
 
-<p>The returned strings may be slightly different from the ones shown, because some compilers (at
- least some versions of g95) will produce one more decimal place in a few cases, and because the
- Fortran standard allows G editing to give exponent fields in the form 0dd instead of Edd. The
- examples make use of brackets to construct vector constants (a Fortran 2003 feature). If the
- compiler being used does not support this, [ and ] must be used instead. Notice that trimming is
- on by default so there is not much purpose in specifying the format for integers and logicals.
- Notice also that (usually) 5 significant digits are displayed when the default G editing results
- in F edited output, but 6 digits for the numbers of small or large magnitude, displayed with E
- editing. This discrepancy is present in the Fortran standard; the presence of the scale factor 1P
- in the edit descriptor increases the number of displayed significant digits.</p>
-<p>Examples of using TOSTRING_SET follow (again the returned string may be slightly different).</p>
+<p>The returned strings may be slightly different from the ones shown,
+ because some compilers (at least some versions of g95) will produce one
+ more decimal place in a few cases, and because the Fortran standard allows
+ G editing to give exponent fields in the form 0dd instead of Edd. The
+ examples make use of brackets to construct vector constants (a Fortran
+ 2003 feature). If the compiler being used does not support this, [ and
+ ] must be used instead. Notice that trimming is on by default so there
+ is not much purpose in specifying the format for integers and logicals.
+ Notice also that (usually) 5 significant digits are displayed when the
+ default G editing results in F edited output, but 6 digits for the numbers
+ of small or large magnitude, displayed with E editing. This discrepancy
+ is present in the Fortran standard; the presence of the scale factor 1P in
+ the edit descriptor increases the number of displayed significant digits.</p>
+<p>Examples of using TOSTRING_SET follow (again the returned string may be
+ slightly different).</p>
 <div class="codehilite"><pre><span></span><code>   Invocation                              Returned String
    ----------                              ---------------
    call tostring_set(sep=&#39;;&#39;)
@@ -302,9 +308,11 @@ public subroutine tostring_set(sep, rfmt, ifmt, trimb, trimz)
 </code></pre></div>
 
 <h2 id="author">AUTHOR</h2>
-<p>Based on dispmodule(3f), &ldquo;A Fortran 95 module for pretty-printing matrices&rdquo;.
-   Version number 1.02 6-Sept-2008, Kristjan Jonasson, Dept. of Computer Science, University of
-   Iceland (jonasson@hi.is).</p>
+<p>Based on dispmodule(3f),
+   &ldquo;A Fortran 95 module for pretty-printing matrices&rdquo;.
+   Version number 1.02 6-Sept-2008,
+   Kristjan Jonasson, Dept. of Computer Science,
+   University of Iceland (jonasson@hi.is).</p>
     
 
     <h3>Arguments</h3>
@@ -486,13 +494,13 @@ public subroutine tostring_set(sep, rfmt, ifmt, trimb, trimz)
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
+        <div class="col-xs-6 col-md-4"><p>&copy; 2022 
                                           </p></div>
         <div class="col-xs-6 col-md-4 col-md-push-4">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2021-10-02 11:12  
+             on 2022-05-06 08:16  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> M_display was developed by John S. Urban</p></div>
