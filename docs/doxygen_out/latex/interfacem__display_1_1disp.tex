@@ -175,11 +175,9 @@ T\+R\+IM = trim This argument can take three values, \textquotesingle{}Y\+ES\tex
 
 $>$ -\/---X-\/--- -\/-\/-\/-\/---Y-\/-\/-\/--- -\/-\/---U-\/-\/--- -\/-\/-\/-\/---V-\/-\/-\/--- $>$ 1 2 4 1 2 3 333 22 4444 333 22 4444 $>$ 2 22 34 2 22 34 $>$ 3 32 1234 3 32 1234
 
-One application of trimming is to display matrices with a fixed number of fractional digits but variable effective field width. Then Fw.\+d editing with w big enough is accompanied by T\+R\+IM = \textquotesingle{}yes\textquotesingle{}. An example is the following display of a matrix with (i, k) element exp(k$\ast$$\ast$i) using F20.\+2 and \textquotesingle{}yes\textquotesingle{}\+: \begin{DoxyVerb} power exponentials
-2.72   7.39    20.09
-2.72  54.60  8103.08
-\end{DoxyVerb}
+One application of trimming is to display matrices with a fixed number of fractional digits but variable effective field width. Then Fw.\+d editing with w big enough is accompanied by T\+R\+IM = \textquotesingle{}yes\textquotesingle{}. An example is the following display of a matrix with (i, k) element exp(k$\ast$$\ast$i) using F20.\+2 and \textquotesingle{}yes\textquotesingle{}\+:
 
+$>$ power exponentials $>$ 2.\+72 7.\+39 20.\+09 $>$ 2.\+72 54.\+60 8103.\+08
 
 Similar output may be obtained using I and F edit descriptors with w = 0 as discussed in section 3.\+5. Apart from I and F edited displays, it is possible to trim A-\/edited displays as well as E-\/edited displays with some negative elements, but the first column all positive\+: \begin{DoxyVerb}With TRIM='yes':X=1.2e+5 -4.1e-2   With TRIM='no':X= 1.2e+5 -4.1e-2
                   2.3e-3  8.6e+1                     2.3e-3  8.6e+1

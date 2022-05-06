@@ -221,10 +221,9 @@ CALL WITH COMPLETE LIST OF ARGUMENTS</h2>
   are present.
 </pre><p>TRIM = trim This argument can take three values, 'YES', 'NO' and 'AUTO'. When YES is specified, each column of displayed items is trimmed from the left, with 'NO' the items are not trimmed and if TRIM is 'AUTO' the items are trimmed when FMT is absent but not when it is present. In the following example, X and U are displayed with TRIM = 'yes', but Y and V with TRIM = 'no'. In all cases the edit descriptor is the default (I4). The default is TRIM = 'AUTO'.</p>
 <p>&gt; -&mdash;X-&mdash; ----&mdash;Y---&mdash; --&mdash;U--&mdash; ----&mdash;V---&mdash; &gt; 1 2 4 1 2 3 333 22 4444 333 22 4444 &gt; 2 22 34 2 22 34 &gt; 3 32 1234 3 32 1234</p>
-<p>One application of trimming is to display matrices with a fixed number of fractional digits but variable effective field width. Then Fw.d editing with w big enough is accompanied by TRIM = 'yes'. An example is the following display of a matrix with (i, k) element exp(k**i) using F20.2 and 'yes': </p><pre class="fragment"> power exponentials
-2.72   7.39    20.09
-2.72  54.60  8103.08
-</pre><p>Similar output may be obtained using I and F edit descriptors with w = 0 as discussed in section 3.5. Apart from I and F edited displays, it is possible to trim A-edited displays as well as E-edited displays with some negative elements, but the first column all positive: </p><pre class="fragment">With TRIM='yes':X=1.2e+5 -4.1e-2   With TRIM='no':X= 1.2e+5 -4.1e-2
+<p>One application of trimming is to display matrices with a fixed number of fractional digits but variable effective field width. Then Fw.d editing with w big enough is accompanied by TRIM = 'yes'. An example is the following display of a matrix with (i, k) element exp(k**i) using F20.2 and 'yes':</p>
+<p>&gt; power exponentials &gt; 2.72 7.39 20.09 &gt; 2.72 54.60 8103.08</p>
+<p>Similar output may be obtained using I and F edit descriptors with w = 0 as discussed in section 3.5. Apart from I and F edited displays, it is possible to trim A-edited displays as well as E-edited displays with some negative elements, but the first column all positive: </p><pre class="fragment">With TRIM='yes':X=1.2e+5 -4.1e-2   With TRIM='no':X= 1.2e+5 -4.1e-2
                   2.3e-3  8.6e+1                     2.3e-3  8.6e+1
 </pre><p>UNIT = external-file-unit The unit which the output is sent to. There are three special units, which may be referred to either with constants or parameters (named constants) as follows: </p><pre class="fragment">Constant  Parameter      Preconnected unit
   -3      ASTERISK_UNIT  The asterisk unit (often the screen)

@@ -132,7 +132,163 @@
         <div class="col-md-8">
 		  
           <h1>M_display</h1>
-          
+          <h2 id="name">NAME</h2>
+<p>M_display(3f) - a Fortran 95 module for pretty-printing matrices
+   (LICENSE:FREE)</p>
+<!--
+## SYNOPSIS
+
+<div class="codehilite"><pre><span></span><code>       use m_display, only : disp
+--&gt;
+## DESCRIPTION
+   A standard Fortran 95 module for printing scalars, vectors, and
+   matrices to external files is provided. The module can display
+   variables of default kind of all intrinsic types (integer, real,
+   complex, logical, and character), and add-on modules are provided
+   for data of the nondefault kind. The main module is self-contained
+   and incorporating it only requires that it be compiled and linked
+   with a program containing a “use M_display” statement. A generic
+   interface and optional parameters are used, so that the same subroutine
+   name, DISP, is used to display items of different data type and rank,
+   irrespective of display options. The subroutine is quite versatile,
+   and hopefully can improve Fortran&#39;s competitiveness against other
+   array programming languages. The module also contains a function
+   TOSTRING to convert numerical scalars and vectors to strings.
+## SAMPLE
+A simple example ...
+```fortran
+   program demo_disp_get
+   use M_display, only : disp, disp_set
+   implicit none
+   real :: x(2,3), y(3,2)
+      ! create some simple matrices 
+      x(1,:)=[ 1.0, 6.0, 5.0  ]
+      x(2,:)=[ 2.4, 4.0, 6.0  ]
+
+      y(1,:)=[ 0.0, 3.5  ]
+      y(2,:)=[ 2.0, 7.0  ]
+      y(3,:)=[ 4.0, 8.22 ]
+
+      ! print the arrays in row-column order   
+      call disp(&#39;y=&#39;,y)
+      print *
+      ! set a few default preferences
+      call disp_set(digmax=4, sep=&#39;,&#39;)
+      call disp(&#39;x=&#39;,x)
+   end program demo_disp_get
+</code></pre></div>
+
+
+Expected output
+
+<div class="codehilite"><pre><span></span><code>   y=0.00000  3.50000
+     2.00000  7.00000
+     4.00000  8.22000
+
+   x=1.000,6.000,5.000
+     2.400,4.000,6.000
+</code></pre></div>
+
+
+
+## BUILDING THE MODULE USING make(1) ![gmake](docs/images/gnu.gif)
+     git clone https://github.com/urbanjost/M_display.git
+     cd M_display/src
+     # change Makefile if not using one of the listed compilers
+
+     # for gfortran
+     make clean
+     make F90=gfortran gfortran
+
+     # for ifort
+     make clean
+     make F90=ifort ifort
+
+     # for nvfortran
+     make clean
+     make F90=nvfortran nvfortran
+
+This will compile the Fortran module and basic example
+program that exercise the routine.
+-->
+
+<h2 id="build-and-test-with-fpm">BUILD and TEST with FPM <img alt="-" src="docs/images/fpm_logo.gif"></h2>
+<p>Download the github repository and build it with
+   fpm ( as described at <a href="https://github.com/fortran-lang/fpm">Fortran Package Manager</a> )</p>
+<p><code>bash
+        git clone https://github.com/urbanjost/M_display.git
+        cd M_display
+        fpm run "*"
+        fpm run --example "*"
+        fpm test</code></p>
+<p>or just list it as a dependency in your fpm.toml project file.</p>
+<div class="codehilite"><pre><span></span><code>        <span class="k">[dependencies]</span>
+        <span class="n">M_display</span>        <span class="o">=</span> <span class="p">{</span> <span class="n">git</span> <span class="o">=</span> <span class="s">&quot;https://github.com/urbanjost/M_display.git&quot;</span> <span class="p">}</span>
+</code></pre></div>
+
+<h2 id="documentation">DOCUMENTATION   <img alt="docs" src="docs/images/docs.gif"></h2>
+<h3 id="user">USER</h3>
+<p>Note in this version the module &ldquo;dispmodule&rdquo; has been named &ldquo;M_display&rdquo; &hellip;</p>
+<ul>
+<li><a href="docs/dispmodule-report.pdf">Original report</a></li>
+<li><a href="docs/dispmodule-userman-report.pdf">Original User Manual</a></li>
+<li>
+<p><img alt="man-pages" src="docs/images/manpages.gif"></p>
+<ul>
+<li>
+<p>a simple index to the man-pages in HTML form for the
+    <a href="https://urbanjost.github.io/M_display/man3.html">routines</a> 
+    and <a href="https://urbanjost.github.io/M_display/man1.html">programs</a> </p>
+</li>
+<li>
+<p>A single page that uses javascript to combine all the HTML
+    descriptions of the man-pages 
+    <a href="https://urbanjost.github.io/M_display/BOOK_M_display.html">BOOK_M_display</a>.</p>
+</li>
+<li>
+<p>There are man-pages in the repository download in the docs/ directory
+    that may be installed on ULS (Unix-Like Systems) &ndash;
+    <a href="https://urbanjost.github.io/M_display/manpages.zip">manpages.zip</a>
+    or
+    <a href="https://urbanjost.github.io/M_display/manpages.tgz">manpages.tgz</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="docs/CHANGELOG.md">CHANGELOG</a> provides a history of significant changes</p>
+</li>
+</ul>
+<h3 id="developer">DEVELOPER</h3>
+<ul>
+<li><a href="https://urbanjost.github.io/M_display/fpm-ford/index.html">ford(1) output</a>.</li>
+<li><a href="https://urbanjost.github.io/M_display/doxygen_out/html/index.html">doxygen(1) output</a>.</li>
+<li><a href="docs/STATUS.md">github action status</a> </li>
+</ul>
+<hr>
+<h2 id="pedigree">PEDIGREE</h2>
+<p>Copyright (c) 2008, Kristján Jónasson, Dept. of Computer Science, University of
+Iceland (jonasson@hi.is). This software is free. For details see the file LICENSE.</p>
+<h2 id="references">REFERENCES <img alt="-" src="docs/images/ref.gif"></h2>
+<ul>
+<li><a href="https://dl.acm.org/doi/10.1145/1486525.1486531">ACM Algorithm 892: DISPMODULE</a> a Fortran 95 module for pretty-printing matrices</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>   ACM Journals: ACM Transactions on Mathematical Software Vol. 36, No. 1 
+   Article No.:  6pp 1–7https://doi.org/10.1145/1486525.1486531
+   Author:       Kristjan Jonasson
+   Published:    16 March 2009
+</code></pre></div>
+
+<h3 id="additional-references-sited-by-the-author">Additional References sited by the author</h3>
+<ul>
+<li>Chambers, J. M. 2007. Software for Data Analysis: Programming with
+    R. Springer-Verlag, New York, NY. Google ScholarDigital Library</li>
+<li>Eaton, J. W. 2002. GNU Octave Manual. Network Theory Limited, Bristol, U.K.Google Scholar</li>
+<li>ISO/IEC. 1997. Information technology—programming
+    languages—Fortran-part 1: Base language. ISO/IEC Tech. rep. 1539-1:1997. 
+    ISO, Geneva, Switzerland.Google Scholar</li>
+</ul>
+<hr>
+<hr>
         </div>
 		  
         <div class="col-md-4">
@@ -237,7 +393,15 @@
                   
                 
                   
+                    <li><a href='./proc/assert~2.html'>assert</a></li>
+                  
+                
+                  
                     <li><a href='./proc/assert_init.html'>assert_init</a></li>
+                  
+                
+                  
+                    <li><a href='./proc/assert_init~2.html'>assert_init</a></li>
                   
                 
                   
@@ -249,7 +413,15 @@
                   
                 
                   
+                    <li><a href='./proc/close_8~2.html'>close_8</a></li>
+                  
+                
+                  
                     <li><a href='./proc/compare.html'>compare</a></li>
+                  
+                
+                  
+                    <li><a href='./proc/compare~2.html'>compare</a></li>
                   
                 
                   
@@ -257,23 +429,81 @@
                   
                 
                   
-                    <li><a href='./proc/copytobox.html'>copytobox</a></li>
-                  
-                
-                  
-                    <li><a href='./interface/disp.html'>disp</a></li>
-                  
-                
-                  
-                    <li><a href='./proc/disp_errmsg.html'>disp_errmsg</a></li>
-                  
-                
-                  
-                    <li><a href='./proc/disp_get.html'>disp_get</a></li>
-                  
-                
-                  
                     <li><a href="./lists/procedures.html"><em>All procedures&hellip;</em></a></li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
                   
                 
                   
@@ -368,13 +598,13 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
+        <div class="col-xs-6 col-md-4"><p>&copy; 2022 
                                           </p></div>
         <div class="col-xs-6 col-md-4 col-md-push-4">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2021-10-02 11:12  
+             on 2022-05-06 08:16  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> M_display was developed by John S. Urban</p></div>
