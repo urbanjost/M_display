@@ -1,12 +1,12 @@
-## NAME
+## Name
    M_display(3f) - a Fortran 95 module for pretty-printing matrices
    (LICENSE:FREE)
 <!--
-## SYNOPSIS
+## Synopsis
 ```text
        use m_display, only : disp
 -->
-## DESCRIPTION
+## Description
    A standard Fortran 95 module for printing scalars, vectors, and
    matrices to external files is provided. The module can display
    variables of default kind of all intrinsic types (integer, real,
@@ -20,7 +20,7 @@
    and hopefully can improve Fortran's competitiveness against other
    array programming languages. The module also contains a function
    TOSTRING to convert numerical scalars and vectors to strings.
-## SAMPLE
+## Sample
 A simple example ...
 ```fortran
    program demo_disp_get
@@ -53,7 +53,7 @@ Expected output
      2.400,4.000,6.000
 ```
 
-## BUILDING THE MODULE USING make(1) ![gmake](docs/images/gnu.gif)
+## Building the Module Using make(1) ![gmake](docs/images/gnu.gif)
      git clone https://github.com/urbanjost/M_display.git
      cd M_display/src
      # change Makefile if not using one of the listed compilers
@@ -74,7 +74,7 @@ This will compile the Fortran module and basic example
 program that exercise the routine.
 -->
 
-## BUILD and TEST with FPM ![-](docs/images/fpm_logo.gif)
+## Build and Test with FPM ![-](docs/images/fpm_logo.gif)
 
    Download the github repository and build it with
    fpm ( as described at [Fortran Package Manager](https://github.com/fortran-lang/fpm) )
@@ -93,9 +93,9 @@ program that exercise the routine.
         [dependencies]
         M_display        = { git = "https://github.com/urbanjost/M_display.git" }
 ```
-## DOCUMENTATION   ![docs](docs/images/docs.gif)
+## Documentation   ![docs](docs/images/docs.gif)
 
-### USER
+### User
 Note in this version the module "dispmodule" has been named "M_display" ...
 
    - [Original report](docs/dispmodule-report.pdf)
@@ -117,16 +117,16 @@ Note in this version the module "dispmodule" has been named "M_display" ...
 
    - [CHANGELOG](docs/CHANGELOG.md) provides a history of significant changes
 
-### DEVELOPER
+### Developer
    - [ford(1) output](https://urbanjost.github.io/M_display/fpm-ford/index.html).
    - [doxygen(1) output](https://urbanjost.github.io/M_display/doxygen_out/html/index.html).
    - [github action status](docs/STATUS.md) 
 ---
-## PEDIGREE
+## Pedigree
 Copyright (c) 2008, Kristján Jónasson, Dept. of Computer Science, University of
 Iceland (jonasson@hi.is). This software is free. For details see the file LICENSE.
 
-## REFERENCES ![-](docs/images/ref.gif)
+## References ![-](docs/images/ref.gif)
 
  * [ACM Algorithm 892: DISPMODULE](https://dl.acm.org/doi/10.1145/1486525.1486531) a Fortran 95 module for pretty-printing matrices
 
