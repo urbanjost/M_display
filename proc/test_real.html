@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="display small matrices in row-column order">
+    <meta name="author" content="John S. Urban" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>test_real &ndash; M_display</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+         <script src="../js/jquery-2.1.3.min.js"></script>
+         <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">M_display </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+                 data-toggle="dropdown" role="button"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+                 Contents <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                    <li><a href="../lists/files.html">Source Files</a></li>
+                  <li><a href="../lists/modules.html">Modules</a></li>
+                  <li><a href="../lists/procedures.html">Procedures</a></li>
+                  <li><a href="../lists/types.html">Derived Types</a></li>
+                  <li><a href="../lists/programs.html">Programs</a></li>
+              </ul>
+            </li>
+                <li class="visible-xs hidden-sm visible-lg">
+                  <a href="../lists/files.html">Source Files</a>
+                </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/modules.html">Modules</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/procedures.html">Procedures</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/types.html">Derived Types</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/programs.html">Programs</a>
+              </li>
+          </ul>
+            <form action="../search.html" class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+              </div>
+              <!--
+                  <button type="submit" class="btn btn-default">Submit</button>
+                  -->
+            </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+  <div class="row">
+    <h1>test_real
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="row" id="info-bar">
+    <div class="col-lg-12">
+      <div class="well well-sm">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+          <li id="statements"><i class="fa fa-list-ol"></i>
+            <a data-toggle="tooltip"
+               data-placement="bottom" data-html="true"
+               title=" 4.0% of total for procedures.">71 statements</a>
+          </li>
+
+            <li id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/test_suite_M_display.f90"> Source File</a>
+            </li>
+        </ul>
+        <ol class="breadcrumb in-well text-right">
+              <li><a href='../sourcefile/test_suite_m_display.f90.html'>test_suite_M_display.f90</a></li>
+              <li><a href='../program/test_m_display.html'>TEST_M_display</a></li>
+          <li class="active">test_real</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#vars-0">Variables</a>
+        </h3>
+      </div>
+      <div id="vars-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../proc/test_real.html#variable-f1">f1</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-f2">f2</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-f3">f3</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-f4">f4</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-prc">prc</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-r1~3">r1</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-r2~2">r2</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-r3">r3</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-r3_2chr">r3_2chr</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-r4">r4</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-r5">r5</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-rrangec">rrangec</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-rrng">rrng</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-s1~6">s1</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-s2~6">s2</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-s3~6">s3</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-s3a~2">s3a</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-s4~6">s4</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="panel panel-primary">
+      <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/test_real.html#src">test_real</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2> subroutine test_real()  
+</h2>
+    
+
+
+    <h3>Arguments</h3>
+    <em>None</em>
+    <br>
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+        <h3>Contents</h3>
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#vars-1">Variables</a>
+        </h3>
+      </div>
+      <div id="vars-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../proc/test_real.html#variable-f1">f1</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-f2">f2</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-f3">f3</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-f4">f4</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-prc">prc</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-r1~3">r1</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-r2~2">r2</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-r3">r3</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-r3_2chr">r3_2chr</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-r4">r4</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-r5">r5</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-rrangec">rrangec</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-rrng">rrng</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-s1~6">s1</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-s2~6">s2</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-s3~6">s3</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-s3a~2">s3a</a>
+            <a class="list-group-item" href="../proc/test_real.html#variable-s4~6">s4</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="panel panel-primary">
+      <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/test_real.html#src">test_real</a>
+      </div>
+    </div>
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+
+    <section>    
+      <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Visibility</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+<th></th><th>Initial</th>        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-f1"></span>
+              character(len=12),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>f1</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-f2"></span>
+              character(len=15),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>f2</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-f3"></span>
+              character(len=13),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>f3</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-f4"></span>
+              character(len=9),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>f4</strong>(3)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-prc"></span>
+              character(len=18),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>prc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r1~3"></span>
+              real(kind=srk),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r1</strong>(2,2)</td>
+<td> =</td>
+                <td>reshape((/2.146_srk, -1.231_srk, 0.008_srk, 20.33_srk/), (/2, 2/))</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r2~2"></span>
+              real(kind=srk),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r2</strong>(1,2)</td>
+<td> =</td>
+                <td>reshape((/12.0_srk, -1234.5678_srk/), (/1, 2/))</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r3"></span>
+              real(kind=srk),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r3</strong>(2,1)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r3_2chr"></span>
+              character(len=6),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r3_2chr</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r4"></span>
+              real(kind=srk),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r4</strong>(1,1)</td>
+<td> =</td>
+                <td>reshape((/0.0_srk/), (/1, 1/))</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r5"></span>
+              real(kind=srk),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r5</strong></td>
+<td> =</td>
+                <td>0.0_srk</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rrangec"></span>
+              character(len=3),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rrangec</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rrng"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rrng</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-s1~6"></span>
+              character(len=12),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>s1</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-s2~6"></span>
+              character(len=17),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>s2</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-s3~6"></span>
+              character(len=16),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>s3</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-s3a~2"></span>
+              character(len=17),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>s3a</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-s4~6"></span>
+              character(len=9),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>s4</strong>(3)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+
+    
+    
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">  </span><span class="k">subroutine </span><span class="n">test_real</span><span class="w"></span>
+<span class="w">    </span><span class="c">! Check that disp works with reals</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">srk</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">r1</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">reshape</span><span class="p">((</span><span class="o">/</span><span class="mf">2.146_srk</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.231_srk</span><span class="p">,</span><span class="w"> </span><span class="mf">0.008_srk</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="mf">0.33_srk</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">srk</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">r2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">reshape</span><span class="p">((</span><span class="o">/</span><span class="mi">1</span><span class="mf">2.0_srk</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">123</span><span class="mf">4.5678_srk</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">srk</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">r3</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">srk</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">r4</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">reshape</span><span class="p">((</span><span class="o">/</span><span class="mf">0.0_srk</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">srk</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">r5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0_srk</span><span class="w"></span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rrng</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="n">rrangec</span><span class="w"></span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="n">r3_2chr</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">s1</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">f1</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">f3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">f2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">s3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">s2</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">s3a</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">s4</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">f4</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">prc</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">    </span><span class="k">call </span><span class="n">assert_init</span><span class="p">(</span><span class="s1">&#39;TEST_REAL&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">prc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">srk</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">kind</span><span class="p">(</span><span class="mf">0.0</span><span class="p">))</span><span class="w"> </span><span class="n">prc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;, single precision&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">srk</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">kind</span><span class="p">(</span><span class="mi">0</span><span class="n">d0</span><span class="p">))</span><span class="w"> </span><span class="n">prc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;, double precision&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">msg1</span><span class="p">(</span><span class="s1">&#39;  (kind = &#39;</span><span class="o">//</span><span class="n">tostring</span><span class="p">(</span><span class="n">srk</span><span class="p">)</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">prc</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;)&#39;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">s1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39; 2.15   0.01&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">s1</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;-1.23  20.33&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">f1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s1</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">    </span><span class="n">s2</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;--------AB-------&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">s2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;   12.00,-1234.57&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">f2</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;-------AB------&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">f2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;   12.0,-1234.6&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">    </span><span class="c">! A number close to the largest possible real</span>
+<span class="w">    </span><span class="c">! (r3 could for example be [1.2e21, -2e37] for single precision and [1.2e21, -2e307] for double)</span>
+<span class="w">    </span><span class="n">rrng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">min</span><span class="p">(</span><span class="mi">999</span><span class="p">,</span><span class="w"> </span><span class="nb">range</span><span class="p">(</span><span class="mf">0.0_srk</span><span class="p">))</span><span class="w"> </span><span class="c">! test not designed for numbers &gt;= 10**1000.</span>
+<span class="w">    </span><span class="k">write</span><span class="p">(</span><span class="n">rrangec</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;(i3.3)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">rrng</span><span class="w"></span>
+<span class="w">    </span><span class="n">s3</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;A =  1.20000E+21&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">s3a</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;A =  1.20000E+021&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">s3</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;    -2.00000E+&#39;</span><span class="o">//</span><span class="n">rrangec</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">s3a</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;    -2.00000E+&#39;</span><span class="o">//</span><span class="n">rrangec</span><span class="w"></span>
+<span class="w">    </span><span class="n">f3</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;A =  1.2E+021&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">f3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;    -2.0E+&#39;</span><span class="o">//</span><span class="n">rrangec</span><span class="w"></span>
+<span class="w">    </span><span class="n">r3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.2e21</span><span class="w"></span>
+<span class="w">    </span><span class="n">r3_2chr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;-2e&#39;</span><span class="o">//</span><span class="n">rrangec</span><span class="w"></span>
+<span class="w">    </span><span class="k">read</span><span class="p">(</span><span class="n">r3_2chr</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">r3</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">    </span><span class="n">s4</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Longtitle&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">s4</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;---------&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">s4</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39; 0.00000 &#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">f4</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Longtitle&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">f4</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;*********&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">f4</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;   0.    &#39;</span><span class="w"></span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">    </span><span class="c">! Test calls without format (r2(1,:) tests vector):</span>
+<span class="w">    </span><span class="k">call </span><span class="n">disp_set</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;PAD&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="w"> </span><span class="n">digmax</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;LEFT&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;  &#39;</span><span class="p">);</span><span class="w">   </span><span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ok-1&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="s1">&#39;AB&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">r2</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;no&#39;</span><span class="p">);</span><span class="w">                      </span><span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ok-2&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="s1">&#39;AB&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">r2</span><span class="p">(</span><span class="mi">1</span><span class="p">,:),</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;no&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">orient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;row&#39;</span><span class="p">);</span><span class="w"> </span><span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ok-3&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="s1">&#39;A = &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">r3</span><span class="p">,</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;left&#39;</span><span class="p">);</span><span class="w">                 </span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rrng</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">99</span><span class="p">)</span><span class="w">                                        </span><span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ok-4&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rrng</span><span class="w"> </span><span class="o">&gt;</span><span class="w">  </span><span class="mi">99</span><span class="p">)</span><span class="w">                                        </span><span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s3a</span><span class="p">,</span><span class="s1">&#39;ok-4&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="s1">&#39;Longtitle&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">r4</span><span class="p">,</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;underline&#39;</span><span class="p">);</span><span class="w">       </span><span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s4</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ok-6&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="s1">&#39;Longtitle&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">r5</span><span class="p">,</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;underline&#39;</span><span class="p">);</span><span class="w">       </span><span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">s4</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ok-7&#39;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">! Test calls with format:</span>
+<span class="w">    </span><span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;f5.2&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;LEFT&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;  &#39;</span><span class="p">);</span><span class="w">        </span><span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ok-8&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="s1">&#39;AB&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">r2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;f7.1&#39;</span><span class="p">);</span><span class="w">                              </span><span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">f2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ok-9&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="s1">&#39;AB&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">r2</span><span class="p">(</span><span class="mi">1</span><span class="p">,:),</span><span class="w"> </span><span class="s1">&#39;f7.1&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">orient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;row&#39;</span><span class="p">);</span><span class="w">         </span><span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">f2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ok-10&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="s1">&#39;A = &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">r3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;es9.1e3&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;left&#39;</span><span class="p">);</span><span class="w">         </span><span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">f3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ok-11&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">disp</span><span class="p">(</span><span class="s1">&#39;Longtitle&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">r4</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;f2.0&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;*underline&#39;</span><span class="p">);</span><span class="w"> </span><span class="k">call </span><span class="n">compare</span><span class="p">(</span><span class="n">f4</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ok-12&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">disp_set_factory</span><span class="w"></span>
+<span class="w">  </span><span class="k">end subroutine </span><span class="n">test_real</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-md-6"><p>M_display was developed by John S. Urban<br>&copy; 2023 
+</p>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <p class="text-right">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2023-04-12 01:23              </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+         ================================================== -->
+         <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        -->
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+        <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>
