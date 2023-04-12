@@ -299,7 +299,7 @@ MODULE M_display_UTIL
   use putstrmodule
   implicit none
 
-! ident_1="@(#)M_display(3fm): module for pretty-printing matrices"
+! ident_1="@(#) M_display(3fm) module for pretty-printing matrices"
 
   ! ***************** PUBLIC ENTITIES (ONLY PUBLIC TO M_display, NOT TO USER PROGRAMS) ***************
   private
@@ -2063,7 +2063,7 @@ end function disp_get
 !===================================================================================================================================
 subroutine disp_scalar_int(x, fmt, advance, sep, trim, unit, zeroas)
 
-! ident_2="@(#)M_disp::disp_scalar_int(3f): integer scalar without title  (call disp_title_scalar_int(3f) with title='')"
+! ident_2="@(#) M_disp disp_scalar_int(3f) integer scalar without title (call disp_title_scalar_int(3f) with title='')"
 
 character(*), intent(in), optional :: fmt, advance, sep, trim, zeroas
 integer(dint), intent(in)          :: x
@@ -2077,7 +2077,7 @@ end subroutine disp_scalar_int
 !===================================================================================================================================
 subroutine disp_title_scalar_int(title, x, fmt, advance, sep, style, trim, unit, zeroas)
 
-! ident_3="@(#)M_display::disp_scalar_int(3f): Default integer scalar with title"
+! ident_3="@(#) M_display disp_scalar_int(3f) Default integer scalar with title"
 
 character(*), intent(in) :: title
 character(*), intent(in), optional :: fmt, advance, sep, style, trim, zeroas
@@ -2092,7 +2092,7 @@ end subroutine disp_title_scalar_int
 !===================================================================================================================================
 subroutine disp_vector_int(x, fmt, advance, lbound, sep, style, trim, unit, orient, zeroas)
 
-! ident_4="@(#)M_display::disp_vector_int(3f): Default integer vector without title"
+! ident_4="@(#) M_display disp_vector_int(3f) Default integer vector without title"
 
 character(*), intent(in), optional :: fmt, advance, sep, style, trim, zeroas, orient
 integer(dint), intent(in) :: x(:)
@@ -2342,6 +2342,37 @@ end subroutine getwid_dint
 !()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()!
 !===================================================================================================================================
   ! ********* DEFAULT INTEGER TOSTRING PROCEDURES *********
+
+  pure function widthmax_dint(x, fmt) result(w)
+    ! Maximum width of string representation of an element in x
+    integer(dint), intent(in)  :: x(:)
+    character(*), intent(in) :: fmt
+    character(range(x)+2) sx(2)
+    integer w, d
+    logical gedit
+    character(nnblk(fmt)+5) :: fmt1
+    call readfmt(fmt, fmt1, w, d, gedit)
+    if (w<=0) then
+      write(sx, '(SS,I0)') maxval(x), minval(x)
+      w = maxval(len_trim(sx))
+    endif
+  end function widthmax_dint
+
+  pure function len_f_dint(x, fmt) result(wtot)
+    ! Total width of tostring representation of x
+    integer(dint), intent(in)        :: x(:)
+    character(*), intent(in)         :: fmt
+    character(widthmax_dint(x, fmt)) :: sa(size(x))
+    integer                          :: wtot, w, d
+    logical                          :: gedit
+    character(nnblk(fmt)+5)          :: fmt1
+    call readfmt(fmt, fmt1, w, d, gedit)
+    if (w < 0) then; wtot = len(errormsg); return; endif
+    write(sa, fmt1) x
+    if (tosset % trimb == 'YES' .or. w == 0) sa = adjustl(sa)
+    wtot = sum(len_trim(sa)) + (size(x) - 1)*(tosset % seplen)
+  end function len_f_dint
+
   function tostring_s_dint(x) result(st)
     ! Scalar to string
     integer(dint), intent(in)                   :: x
@@ -2379,36 +2410,6 @@ end subroutine getwid_dint
     if (tosset % trimb == 'YES' .or. w == 0) sa = adjustl(sa)
     call tostring_get(sa, st)
   end function tostring_f_dint
-
-  pure function len_f_dint(x, fmt) result(wtot)
-    ! Total width of tostring representation of x
-    integer(dint), intent(in)        :: x(:)
-    character(*), intent(in)         :: fmt
-    character(widthmax_dint(x, fmt)) :: sa(size(x))
-    integer                          :: wtot, w, d
-    logical                          :: gedit
-    character(nnblk(fmt)+5)          :: fmt1
-    call readfmt(fmt, fmt1, w, d, gedit)
-    if (w < 0) then; wtot = len(errormsg); return; endif
-    write(sa, fmt1) x
-    if (tosset % trimb == 'YES' .or. w == 0) sa = adjustl(sa)
-    wtot = sum(len_trim(sa)) + (size(x) - 1)*(tosset % seplen)
-  end function len_f_dint
-
-  pure function widthmax_dint(x, fmt) result(w)
-    ! Maximum width of string representation of an element in x
-    integer(dint), intent(in)  :: x(:)
-    character(*), intent(in) :: fmt
-    character(range(x)+2) sx(2)
-    integer w, d
-    logical gedit
-    character(nnblk(fmt)+5) :: fmt1
-    call readfmt(fmt, fmt1, w, d, gedit)
-    if (w<=0) then
-      write(sx, '(SS,I0)') maxval(x), minval(x)
-      w = maxval(len_trim(sx))
-    endif
-  end function widthmax_dint
 !===================================================================================================================================
 !()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()!
 !===================================================================================================================================
@@ -2643,6 +2644,40 @@ end subroutine getwid_dint
 !()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()!
 !===================================================================================================================================
   ! ******** TOSTRING SINGLE PRECISION PROCEDURES ***********
+  pure function widthmax_sngl(x, fmt) result(w)
+    ! Maximum width of an element of x
+    real(sngl), intent(in)   :: x(:)
+    character(*), intent(in) :: fmt
+    character(nnblk(fmt)+5)  :: fmt1
+    integer w, d
+    logical gedit
+    call readfmt(fmt, fmt1, w, d, gedit)
+    if (w < 0) then ! illegal format, use 1
+      w = 1
+    elseif (w == 0) then
+      w = maxw_sngl(x, d)
+    endif
+  end function widthmax_sngl
+
+  pure function len_f_sngl(x, fmt) result(wtot)
+    ! Total length of returned string, vector s
+    real(sngl), intent(in)           :: x(:)
+    character(*), intent(in)         :: fmt
+    character(widthmax_sngl(x, fmt)) :: sa(size(x))
+    integer                          :: wtot, w, d, ww
+    logical                          :: gedit
+    character(nnblk(fmt)+8)          :: fmt1  !(5 for readfmt and 3 for replace_w)
+    call readfmt(fmt, fmt1, w, d, gedit)
+    if (w < 0) then; wtot = len(errormsg); return; endif
+    if (w == 0) then
+      ww = maxw_sngl(x, d)
+      call replace_w(fmt1, ww)
+    endif
+    write(sa, fmt1) x
+    call trim_real(sa, gedit, w)
+    wtot = sum(len_trim(sa)) + (size(x) - 1)*(tosset % seplen)
+  end function len_f_sngl
+
   function tostring_s_sngl(x) result(st)
     ! Scalar to string
     real(sngl), intent(in) :: x
@@ -2687,39 +2722,6 @@ end subroutine getwid_dint
     call tostring_get(sa, st)
   end function tostring_f_sngl
 
-  pure function len_f_sngl(x, fmt) result(wtot)
-    ! Total length of returned string, vector s
-    real(sngl), intent(in)           :: x(:)
-    character(*), intent(in)         :: fmt
-    character(widthmax_sngl(x, fmt)) :: sa(size(x))
-    integer                          :: wtot, w, d, ww
-    logical                          :: gedit
-    character(nnblk(fmt)+8)          :: fmt1  !(5 for readfmt and 3 for replace_w)
-    call readfmt(fmt, fmt1, w, d, gedit)
-    if (w < 0) then; wtot = len(errormsg); return; endif
-    if (w == 0) then
-      ww = maxw_sngl(x, d)
-      call replace_w(fmt1, ww)
-    endif
-    write(sa, fmt1) x
-    call trim_real(sa, gedit, w)
-    wtot = sum(len_trim(sa)) + (size(x) - 1)*(tosset % seplen)
-  end function len_f_sngl
-
-  pure function widthmax_sngl(x, fmt) result(w)
-    ! Maximum width of an element of x
-    real(sngl), intent(in)   :: x(:)
-    character(*), intent(in) :: fmt
-    character(nnblk(fmt)+5)  :: fmt1
-    integer w, d
-    logical gedit
-    call readfmt(fmt, fmt1, w, d, gedit)
-    if (w < 0) then ! illegal format, use 1
-      w = 1
-    elseif (w == 0) then
-      w = maxw_sngl(x, d)
-    endif
-  end function widthmax_sngl
   ! *************************************** END OF SINGLE PRECISION PROCEDURES ***************************************
 !===================================================================================================================================
 !()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()!
@@ -2859,6 +2861,29 @@ end subroutine getwid_dint
 
   ! ******* TOSTRING SINGLE PRECISION COMPLEX PROCEDURES ********
 
+  pure function len_s_cplx(x, fmt) result(wtot)
+    complex(sngl), intent(in) :: x
+    character(*), intent(in)  :: fmt
+    integer                   :: wtot, w, d
+    logical                   :: gedit
+    character(nnblk(fmt)+8)   :: fmt1
+    call readfmt(fmt, fmt1, w, d, gedit)
+    if (w < 0) then; wtot = len(errormsg); return; endif
+    wtot = len_f_sngl([real(x)], fmt) + len_f_sngl([abs(aimag(x))], fmt) + 4
+  end function len_s_cplx
+
+  pure function len_f_cplx(x, fmt) result(wtot)
+    complex(sngl), intent(in) :: x(:)
+    character(*), intent(in)  :: fmt
+    integer                   :: wtot, w, d
+    logical                   :: gedit
+    character(nnblk(fmt)+8)   :: fmt1
+    call readfmt(fmt, fmt1, w, d, gedit)
+    if (w < 0) then; wtot = len(errormsg); return; endif
+    wtot = len_f_sngl(real(x), fmt) + len_f_sngl(abs(aimag(x)), fmt) + size(x)*4 - (size(x) - 1)*(tosset % seplen)
+    ! subtract seplen because it has been added twice in len_f_sngl
+  end function len_f_cplx
+
   function tostring_s_cplx(x) result(st)
     complex(sngl), intent(in)                   :: x
     character(len_s_cplx(x, tosset % rfmt)) :: st
@@ -2908,29 +2933,6 @@ end subroutine getwid_dint
     do i = 1,size(x); if (aimag(x(i)) < 0) then; sgn(i) = '-'; else; sgn(i) = '+'; endif; enddo
     call tostring_get_complex(sar, sgn, sai, st)
   end function tostring_f_cplx
-
-  pure function len_s_cplx(x, fmt) result(wtot)
-    complex(sngl), intent(in) :: x
-    character(*), intent(in)  :: fmt
-    integer                   :: wtot, w, d
-    logical                   :: gedit
-    character(nnblk(fmt)+8)   :: fmt1
-    call readfmt(fmt, fmt1, w, d, gedit)
-    if (w < 0) then; wtot = len(errormsg); return; endif
-    wtot = len_f_sngl([real(x)], fmt) + len_f_sngl([abs(aimag(x))], fmt) + 4
-  end function len_s_cplx
-
-  pure function len_f_cplx(x, fmt) result(wtot)
-    complex(sngl), intent(in) :: x(:)
-    character(*), intent(in)  :: fmt
-    integer                   :: wtot, w, d
-    logical                   :: gedit
-    character(nnblk(fmt)+8)   :: fmt1
-    call readfmt(fmt, fmt1, w, d, gedit)
-    if (w < 0) then; wtot = len(errormsg); return; endif
-    wtot = len_f_sngl(real(x), fmt) + len_f_sngl(abs(aimag(x)), fmt) + size(x)*4 - (size(x) - 1)*(tosset % seplen)
-    ! subtract seplen because it has been added twice in len_f_sngl
-  end function len_f_cplx
   ! *************************************** END OF SINGLE PRECISION COMPLEX PROCEDURES ********************************
 !===================================================================================================================================
 !()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()!
@@ -3163,6 +3165,41 @@ end subroutine getwid_dint
 !===================================================================================================================================
 
   ! ******** TOSTRING DOUBLE PRECISION PROCEDURES ***********
+
+  pure function widthmax_dble(x, fmt) result(w)
+    ! Maximum width of an element of x
+    real(dble), intent(in)   :: x(:)
+    character(*), intent(in) :: fmt
+    character(nnblk(fmt)+5)  :: fmt1
+    integer w, d
+    logical gedit
+    call readfmt(fmt, fmt1, w, d, gedit)
+    if (w < 0) then ! illegal format, use 1
+      w = 1
+    elseif (w == 0) then
+      w = maxw_dble(x, d)
+    endif
+  end function widthmax_dble
+
+  pure function len_f_dble(x, fmt) result(wtot)
+    ! Total length of returned string, vector s
+    real(dble), intent(in)           :: x(:)
+    character(*), intent(in)         :: fmt
+    character(widthmax_dble(x, fmt)) :: sa(size(x))
+    integer                          :: wtot, w, d, ww
+    logical                          :: gedit
+    character(nnblk(fmt)+8)          :: fmt1  !(5 for readfmt and 3 for replace_w)
+    call readfmt(fmt, fmt1, w, d, gedit)
+    if (w < 0) then; wtot = len(errormsg); return; endif
+    if (w == 0) then
+      ww = maxw_dble(x, d)
+      call replace_w(fmt1, ww)
+    endif
+    write(sa, fmt1) x
+    call trim_real(sa, gedit, w)
+    wtot = sum(len_trim(sa)) + (size(x) - 1)*(tosset % seplen)
+  end function len_f_dble
+
   function tostring_s_dble(x) result(st)
     ! Scalar to string
     real(dble), intent(in) :: x
@@ -3206,40 +3243,6 @@ end subroutine getwid_dint
     call trim_real(sa, gedit, w)
     call tostring_get(sa, st)
   end function tostring_f_dble
-
-  pure function len_f_dble(x, fmt) result(wtot)
-    ! Total length of returned string, vector s
-    real(dble), intent(in)           :: x(:)
-    character(*), intent(in)         :: fmt
-    character(widthmax_dble(x, fmt)) :: sa(size(x))
-    integer                          :: wtot, w, d, ww
-    logical                          :: gedit
-    character(nnblk(fmt)+8)          :: fmt1  !(5 for readfmt and 3 for replace_w)
-    call readfmt(fmt, fmt1, w, d, gedit)
-    if (w < 0) then; wtot = len(errormsg); return; endif
-    if (w == 0) then
-      ww = maxw_dble(x, d)
-      call replace_w(fmt1, ww)
-    endif
-    write(sa, fmt1) x
-    call trim_real(sa, gedit, w)
-    wtot = sum(len_trim(sa)) + (size(x) - 1)*(tosset % seplen)
-  end function len_f_dble
-
-  pure function widthmax_dble(x, fmt) result(w)
-    ! Maximum width of an element of x
-    real(dble), intent(in)   :: x(:)
-    character(*), intent(in) :: fmt
-    character(nnblk(fmt)+5)  :: fmt1
-    integer w, d
-    logical gedit
-    call readfmt(fmt, fmt1, w, d, gedit)
-    if (w < 0) then ! illegal format, use 1
-      w = 1
-    elseif (w == 0) then
-      w = maxw_dble(x, d)
-    endif
-  end function widthmax_dble
 
   ! *************************************** END OF DOUBLE PRECISION PROCEDURES ***************************************
 !===================================================================================================================================
@@ -3381,6 +3384,29 @@ end subroutine getwid_dint
 
   ! ******* TOSTRING DOUBLE PRECISION COMPLEX PROCEDURES ********
 
+  pure function len_s_cpld(x, fmt) result(wtot)
+    complex(dble), intent(in) :: x
+    character(*), intent(in)  :: fmt
+    integer                   :: wtot, w, d
+    logical                   :: gedit
+    character(nnblk(fmt)+8)   :: fmt1
+    call readfmt(fmt, fmt1, w, d, gedit)
+    if (w < 0) then; wtot = len(errormsg); return; endif
+    wtot = len_f_dble([real(x)], fmt) + len_f_dble([abs(aimag(x))], fmt) + 4
+  end function len_s_cpld
+
+  pure function len_f_cpld(x, fmt) result(wtot)
+    complex(dble), intent(in) :: x(:)
+    character(*), intent(in)  :: fmt
+    integer                   :: wtot, w, d
+    logical                   :: gedit
+    character(nnblk(fmt)+8)   :: fmt1
+    call readfmt(fmt, fmt1, w, d, gedit)
+    if (w < 0) then; wtot = len(errormsg); return; endif
+    wtot = len_f_dble(real(x), fmt) + len_f_dble(abs(aimag(x)), fmt) + size(x)*4 - (size(x) - 1)*(tosset % seplen)
+    ! subtract seplen because it has been added twice in len_f_dble
+  end function len_f_cpld
+
   function tostring_s_cpld(x) result(st)
     complex(dble), intent(in)                   :: x
     character(len_s_cpld(x, tosset % rfmt)) :: st
@@ -3430,29 +3456,6 @@ end subroutine getwid_dint
     do i = 1,size(x); if (aimag(x(i)) < 0) then; sgn(i) = '-'; else; sgn(i) = '+'; endif; enddo
     call tostring_get_complex(sar, sgn, sai, st)
   end function tostring_f_cpld
-
-  pure function len_s_cpld(x, fmt) result(wtot)
-    complex(dble), intent(in) :: x
-    character(*), intent(in)  :: fmt
-    integer                   :: wtot, w, d
-    logical                   :: gedit
-    character(nnblk(fmt)+8)   :: fmt1
-    call readfmt(fmt, fmt1, w, d, gedit)
-    if (w < 0) then; wtot = len(errormsg); return; endif
-    wtot = len_f_dble([real(x)], fmt) + len_f_dble([abs(aimag(x))], fmt) + 4
-  end function len_s_cpld
-
-  pure function len_f_cpld(x, fmt) result(wtot)
-    complex(dble), intent(in) :: x(:)
-    character(*), intent(in)  :: fmt
-    integer                   :: wtot, w, d
-    logical                   :: gedit
-    character(nnblk(fmt)+8)   :: fmt1
-    call readfmt(fmt, fmt1, w, d, gedit)
-    if (w < 0) then; wtot = len(errormsg); return; endif
-    wtot = len_f_dble(real(x), fmt) + len_f_dble(abs(aimag(x)), fmt) + size(x)*4 - (size(x) - 1)*(tosset % seplen)
-    ! subtract seplen because it has been added twice in len_f_dble
-  end function len_f_cpld
   ! *************************************** END OF DOUBLE PRECISION COMPLEX PROCEDURES ********************************
 !===================================================================================================================================
 !()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()!
@@ -3568,6 +3571,29 @@ end subroutine getwid_dint
   end subroutine tobox_dlog
 
   ! ********** DEFAULT LOGICAL TOSTRING PROCEDURES *********
+
+  pure function len_f_dlog(x, fmt) result(wtot)
+    logical(dlog), intent(in)  :: x(:)
+    character(*), intent(in)   :: fmt
+    integer                    :: wtot, w, d
+    logical                    :: gedit
+    character(nnblk(fmt)+5)    :: fmt1
+    call readfmt(fmt, fmt1, w, d, gedit)
+    if (w <= 0) then; wtot = len(errormsg); return; endif
+    if (tosset % trimb == 'YES') wtot = size(x)
+    if (tosset % trimb == 'NO' ) wtot = w*size(x)
+    wtot = wtot + (size(x) - 1)*(tosset % seplen)
+  end function len_f_dlog
+
+  pure function widthmax_dlog(fmt) result(w)
+    character(*), intent(in) :: fmt
+    integer w, d
+    logical gedit
+    character(nnblk(fmt)+5) :: fmt1
+    call readfmt(fmt, fmt1, w, d, gedit)
+    if (w <= 0) w = 1
+  end function widthmax_dlog
+
   function tostring_s_dlog(x) result(st)
     logical(dlog),intent(in)        :: x
     character(1)                    :: st
@@ -3601,28 +3627,6 @@ end subroutine getwid_dint
     if (tosset % trimb == 'YES') sa = adjustl(sa)
     call tostring_get(sa, st)
   end function tostring_f_dlog
-
-  pure function len_f_dlog(x, fmt) result(wtot)
-    logical(dlog), intent(in)  :: x(:)
-    character(*), intent(in)   :: fmt
-    integer                    :: wtot, w, d
-    logical                    :: gedit
-    character(nnblk(fmt)+5)    :: fmt1
-    call readfmt(fmt, fmt1, w, d, gedit)
-    if (w <= 0) then; wtot = len(errormsg); return; endif
-    if (tosset % trimb == 'YES') wtot = size(x)
-    if (tosset % trimb == 'NO' ) wtot = w*size(x)
-    wtot = wtot + (size(x) - 1)*(tosset % seplen)
-  end function len_f_dlog
-
-  pure function widthmax_dlog(fmt) result(w)
-    character(*), intent(in) :: fmt
-    integer w, d
-    logical gedit
-    character(nnblk(fmt)+5) :: fmt1
-    call readfmt(fmt, fmt1, w, d, gedit)
-    if (w <= 0) w = 1
-  end function widthmax_dlog
   ! ****************************** END OF DEFAULT LOGICAL PROCEDURES *******************************
 
   ! ******************************* DEFAULT CHARACTER PROCEDURES **********************************

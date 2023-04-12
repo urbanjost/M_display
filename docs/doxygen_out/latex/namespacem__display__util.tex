@@ -1,0 +1,807 @@
+\hypertarget{namespacem__display__util}{}\doxysection{m\+\_\+display\+\_\+util Module Reference}
+\label{namespacem__display__util}\index{m\_display\_util@{m\_display\_util}}
+\doxysubsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{structm__display__util_1_1boxlist}{boxlist}}
+\item 
+type \mbox{\hyperlink{structm__display__util_1_1boxnode}{boxnode}}
+\item 
+type \mbox{\hyperlink{structm__display__util_1_1disp__settings}{disp\+\_\+settings}}
+\item 
+type \mbox{\hyperlink{structm__display__util_1_1settings}{settings}}
+\item 
+type \mbox{\hyperlink{structm__display__util_1_1tostring__settings}{tostring\+\_\+settings}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__display__util_ad15e85a03cd2a7ef8f405fbb9c1061af}{check\+\_\+settings}} ()
+\item 
+logical function \mbox{\hyperlink{namespacem__display__util_a7a886d21010f7a6f0f8101d2b26fd97d}{number\+\_\+rows}} (SE)
+\item 
+logical function \mbox{\hyperlink{namespacem__display__util_a837cfbf5c0d097da743220ac0acfaec8}{number\+\_\+cols}} (SE)
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__display__util_a70f3818ca97ec91537e81b9f9b10953c}{preparebox}} (title, SE, m, n, wid, widp, lin1, wleft, boxp)
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__display__util_aca56756281a372cd4d186a032dd426fb}{copytobox}} (s, lin1, widj, widpj, nblj, boxp, wleft)
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__display__util_ab8090500f628c3475b88b0068c6788a4}{copyseptobox}} (sep, m, lin1, boxp, wleft)
+\item 
+subroutine \mbox{\hyperlink{namespacem__display__util_a43abab0fd2426042dc21b42e638210a8}{copycolumnnumberstobox}} (s, wleft, wid, widp, lsep, boxp, lin1)
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__display__util_a056732cc150994b9abe25ed0d72ebee4}{finishbox}} (title, SE, boxp)
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__display__util_abcd2aebb4cd373005b4d1fc4359a2d01}{find\+\_\+editdesc\+\_\+real}} (exp, expm, dmx, edesc, flen, ndec, posit)
+\item 
+pure subroutine, public \mbox{\hyperlink{namespacem__display__util_a73ae4e30d2dcf1f608ac24bf1623ee6c}{readfmt}} (fmt, fmt1, w, d, gedit)
+\item 
+pure subroutine, public \mbox{\hyperlink{namespacem__display__util_a76a458454b83026c12d4a90882f2719e}{replace\+\_\+w}} (fmt, wnew)
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__display__util_ac6c2d88538e3002af455b4c5aeb46ebf}{get\+\_\+se}} (SE, title, shapex, fmt, advance, lbound, separator, style, trim, unit, orient, zeroas, digmax)
+\item 
+subroutine \mbox{\hyperlink{namespacem__display__util_a692b7279b1883d8139b60e480aa1e430}{getstyles}} (style, tsty, tch, number, ok)
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__display__util_a72816de72f8a35ed93223a4bfd650c9b}{replace\+\_\+zeronaninf}} (s, zas, maskz, masknan, maskminf, maskinf)
+\item 
+pure character(len(s)) function, public \mbox{\hyperlink{namespacem__display__util_a6a829115368f9e77c8b35fb1c86ac9c3}{upper}} (s)
+\item 
+pure subroutine \mbox{\hyperlink{namespacem__display__util_a3fa60429ffcc82a33032d718cbe03e87}{sszipfmt}} (fmt, fmt1)
+\item 
+pure integer function, public \mbox{\hyperlink{namespacem__display__util_a03c9a1c990a26433230412d78fa46999}{nnblk}} (s)
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__display__util_a6bfbf2a614c2b0e059d5399eb8dda479}{disp\+\_\+errmsg}} (s)
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__display__util_a76361afb9f9c3952c258f1f8053ec62a}{tostring\+\_\+check\+\_\+settings}}
+\item 
+pure subroutine, public \mbox{\hyperlink{namespacem__display__util_ab69265e4c62f2b4c20d1a2b59e25959b}{trim\+\_\+s\+\_\+real}} (sa, gedit, w)
+\item 
+pure subroutine, public \mbox{\hyperlink{namespacem__display__util_ac428024047b90a34278426d21759faa0}{trim\+\_\+real}} (sa, gedit, w)
+\item 
+pure subroutine, public \mbox{\hyperlink{namespacem__display__util_a8329f722c059861aa54faa8f7668cc41}{tostring\+\_\+get}} (sa, st)
+\item 
+pure subroutine, public \mbox{\hyperlink{namespacem__display__util_a7803f63457d826fc3b8fe7ddfa7818ac}{tostring\+\_\+get\+\_\+complex}} (sar, sgn, sai, st)
+\item 
+type(\mbox{\hyperlink{structm__display__util_1_1boxlist}{boxlist}}) function, pointer \mbox{\hyperlink{namespacem__display__util_a093be898cc19ed648b45e728b72d4f5f}{getboxlist}} (unit)
+\item 
+subroutine \mbox{\hyperlink{namespacem__display__util_acc9b3b8faeba5d61ec46d3d76c161d27}{clearboxlist}} (unit)
+\item 
+subroutine \mbox{\hyperlink{namespacem__display__util_a5c3310ac01f093fd857b2a3aa3189e02}{newbox}} (unit, m, n, boxp)
+\item 
+character(size(a)) function \mbox{\hyperlink{namespacem__display__util_ae2d4ae17104c7a91b0a3e4962e3af54a}{tostr}} (a)
+\item 
+subroutine \mbox{\hyperlink{namespacem__display__util_af04928d07a7f716a0098c44bdd7ec3fd}{dispboxlist}} (unit, sep)
+\item 
+subroutine \mbox{\hyperlink{namespacem__display__util_a0bbd58b5406fa166a20d83f9737c7acd}{dispnewline}} (unit)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+type(\mbox{\hyperlink{structm__display__util_1_1disp__settings}{disp\+\_\+settings}}), save, public \mbox{\hyperlink{namespacem__display__util_a94e5894dfc5e8a59b6ceac6721ae4f8e}{defset}}
+\item 
+type(\mbox{\hyperlink{structm__display__util_1_1disp__settings}{disp\+\_\+settings}}), save, public \mbox{\hyperlink{namespacem__display__util_a9ce4a22503d46c3cf4d1a054812827c0}{factory\+\_\+settings}}
+\item 
+type(\mbox{\hyperlink{structm__display__util_1_1tostring__settings}{tostring\+\_\+settings}}), save, public \mbox{\hyperlink{namespacem__display__util_a5c904147cafd4110a901207d859bdf7b}{tosset}}
+\item 
+type(\mbox{\hyperlink{structm__display__util_1_1tostring__settings}{tostring\+\_\+settings}}), save, public \mbox{\hyperlink{namespacem__display__util_a0bd80d23e6e5fec3979a3357f65fb5e3}{tosfac}}
+\item 
+character($\ast$), parameter, public \mbox{\hyperlink{namespacem__display__util_a844bf51463bbf006c07c60eb75a44051}{errormsg}} = \textquotesingle{}Illegal format\textquotesingle{}
+\item 
+type(\mbox{\hyperlink{structm__display__util_1_1boxlist}{boxlist}}), pointer \mbox{\hyperlink{namespacem__display__util_af285f44a47c745fc4da9df4a73269ac2}{firstboxlist}} =$>$ null()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\hypertarget{namespacem__display__util_autotoc_md1}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__display__util_autotoc_md1}
+M\+\_\+display(3f) -\/ \mbox{[}M\+\_\+display\+::\+I\+N\+T\+RO\mbox{]} module for pretty-\/printing matrices\hypertarget{namespacem__display__util_autotoc_md2}{}\doxysubsubsection{I\+N\+T\+R\+O\+D\+U\+C\+T\+I\+ON}\label{namespacem__display__util_autotoc_md2}
+M\+\_\+display is a standard Fortran 95 module for quick and easy displaying of numbers, vectors or matrices using default or specified format. It can be useful for debugging purposes, for preliminary display of numerical results, and even for final display of such results in cases when carefully formatted tables are not needed. It is comparable to the automatic matrix printing of Matlab, S and R, but offers substantially more control over the format used.
+
+The module can handle the standard Fortran data types integer, single precision, double precision, complex, logical and character. Integer, real, complex and logical data of other than default kind are supported with add-\/on modules. The module contains the following public procedures\+: \begin{DoxyVerb}Subroutine DISP                  The main procedure used for displaying items
+Subroutine DISP_SET              Used to change default settings for DISP
+Subroutine DISP_SET_FACTORY      Restores DISP-settings to original (factory) default
+Function DISP_GET                Returns a structure with current DISP-settings
+Function TOSTRING                Returns a string representation of a scalar or vector
+Subroutine TOSTRING_SET          Used to change default settings for TOSTRING
+Subroutine TOSTRING_SET_FACTORY  Restores TOSTRING-settings to original default
+\end{DoxyVerb}
+
+
+In addition the module defines a public derived type, D\+I\+S\+P\+\_\+\+S\+E\+T\+T\+I\+N\+GS, used for saving and restoring settings for D\+I\+SP. The procedures D\+I\+SP and T\+O\+S\+T\+R\+I\+NG have a generic interface and optional arguments, so the same subroutine / function name, is used to display items of different data types and ranks, with or without labels, and using default or specified format. Similarly D\+I\+S\+P\+\_\+\+S\+ET is generic and can be used both to change individual settings and to restore previously saved settings.
+
+The most basic calling syntax for displaying is C\+A\+LL D\+I\+S\+P(expression) which will display the expression with default format. The format may be specified with C\+A\+LL D\+I\+SP(expression, edit-\/ descriptor), and C\+A\+LL D\+I\+S\+P(title, expression) will label the displayed item with a title. Examples are C\+A\+LL D\+I\+S\+P(\+A), C\+A\+LL D\+I\+SP(A,\textquotesingle{}F9.\+3\textquotesingle{}), C\+A\+LL D\+I\+SP(\textquotesingle{}A=\textquotesingle{},A) and C\+A\+LL D\+I\+SP(\textquotesingle{}A=\textquotesingle{},A,\textquotesingle{}F9.\+3\textquotesingle{}), the last one specifying both title and format. If aij = exp(i + j -\/ 1), i, j = 1,...,4, then C\+A\+LL D\+I\+SP(\textquotesingle{}A = \textquotesingle{}, A) writes out\+: \begin{DoxyVerb} > A =  2.72    7.39   20.09    54.60
+ >      7.39   20.09   54.60   148.41
+ >     20.09   54.60  148.41   403.43
+ >     54.60  148.41  403.43  1096.63
+\end{DoxyVerb}
+
+
+and if bij = exp(i$\ast$j) the result of C\+A\+LL D\+I\+S\+P(\+B) is\+: \begin{DoxyVerb} > 2.71828E+0  7.38906E+0  2.00855E+1  5.45981E+1
+ > 7.38906E+0  5.45981E+1  4.03429E+2  2.98096E+3
+ > 2.00855E+1  4.03429E+2  8.10308E+3  1.62755E+5
+ > 5.45981E+1  2.98096E+3  1.62755E+5  8.88611E+6.
+\end{DoxyVerb}
+
+
+It is also possible to number the rows and columns\+: C\+A\+LL D\+I\+SP(A, S\+T\+Y\+LE=\textquotesingle{}N\+U\+M\+B\+ER\textquotesingle{}) will give\+: \begin{DoxyVerb} >      1       2       3        4
+ > 1   2.72    7.39   20.09    54.60
+ > 2   7.39   20.09   54.60   148.41
+ > 3  20.09   54.60  148.41   403.43
+ > 4  54.60  148.41  403.43  1096.63.
+\end{DoxyVerb}
+
+
+The selection between F and E editing depends on the size of the largest displayed element as discussed in section 3.\+2 below. Among the settings that may be controlled is the spacing between columns, the number of significant digits, the placement of the label, and the file unit where the output goes. Items can in addition be displayed side by side, for example\+: \begin{DoxyVerb} > CALL DISP('X = ', X, ADVANCE='NO')
+ > CALL DISP('Y = ', Y)
+\end{DoxyVerb}
+
+
+which might output\+: \begin{DoxyVerb} > X = 7  8  3   Y = 11
+ >     4  0  2        2
+ >     1  3  6        7
+\end{DoxyVerb}
+
+
+Complex numbers are formatted as illustrated by\+: \begin{DoxyVerb} > COMPLEX C(3,3)
+ > FORALL(I=1:3, K=1:3) C(I,K)=LOG(CMPLX(-I*K))**K
+ > CALL DISP('C = ', C, 'F0.3')
+\end{DoxyVerb}
+
+
+which will display \begin{DoxyVerb} > C = 0.000 + 3.142i   -9.389 +  4.355i   -31.203 - 19.631i
+ >     0.693 + 3.142i   -7.948 +  8.710i   -47.300 -  0.749i
+ >     1.099 + 3.142i   -6.659 + 11.258i   -54.449 + 14.495i
+\end{DoxyVerb}
+
+
+infinite and not-\/a-\/number real values are supported and displayed as nan, +inf or -\/inf.
+
+the remaining sections in this user manual contain detailed information on using the module. section 2 discusses the basics of using the module, including use statements, compiling and linking, and add-\/on modules supporting non-\/default kinds of data. section 3 gives a detailed description of the generic subroutine disp. all the possible arguments are listed and the purpose of each one described. section 4 describes how to change various settings that control how items are displayed with disp. section 5 describes the function tostring which may be used to change numbers to strings. finally testing of the module is discussed in section 6.\hypertarget{namespacem__display__util_autotoc_md3}{}\doxysubsubsection{O\+V\+E\+R\+V\+I\+E\+W O\+F M\+O\+D\+U\+L\+ES}\label{namespacem__display__util_autotoc_md3}
+The file \mbox{\hyperlink{M__display_8f90}{M\+\_\+display.\+f90}} actually begins with two auxiliary modules, P\+U\+T\+S\+T\+R\+M\+O\+D\+U\+LE and M\+\_\+display\+\_\+\+U\+T\+IL. The first one contains two dummy subroutines, P\+U\+T\+S\+TR and P\+U\+T\+NL, which do nothing, but must be incorporated to avoid an \char`\"{}undefined symbol\char`\"{} link error. In addition it defines the named constant (parameter) D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+N\+IT = -\/3, which makes the asterisk unit (usually the screen) the default to display on.
+
+Alternatively the user can write his own P\+U\+T\+S\+T\+R\+M\+O\+D\+U\+LE as described below. An example is near the beginning of \mbox{\hyperlink{M__display_8f90}{M\+\_\+display.\+f90}} (commented out) and also in the file putstrmodule\+\_\+mex.\+f90, enclosed with the package. It may be used (commented in instead of the default one) to allow Matlab mex files to display in the Matlab command window.\hypertarget{namespacem__display__util_autotoc_md4}{}\doxysubsubsection{A\+N E\+X\+A\+M\+P\+L\+E P\+R\+O\+G\+R\+AM}\label{namespacem__display__util_autotoc_md4}
+Following is a short example program that uses the package\+: \begin{DoxyVerb}  program example
+    use M_display
+    real :: a(3) = [ 1.2345, 2.3456, 3.4567 ]
+    call disp('A = ', A, SEP=', ', ORIENT = 'ROW')
+  end program example
+\end{DoxyVerb}
+
+
+The program should write out \char`\"{}\+A = 1.\+23450, 2.\+34560, 3.\+45670\char`\"{}.
+
+A longer example program\+:
+
+program demo\+\_\+\+M\+\_\+display use M\+\_\+display implicit none integer, parameter \+:: rk = selected\+\_\+real\+\_\+kind(6), n = 3 real(rk) \+:: a(n,n), b(n,n), x integer i, j, k(5) call disp\+\_\+set(advance = \textquotesingle{}double\textquotesingle{}) forall(i=1\+:n, j=1\+:n) a(i,j) = exp(real(i+j-\/1, rk)) b(i,j) = exp(real(i$\ast$$\ast$j, rk)) end forall call disp(\textquotesingle{}A = \textquotesingle{}, a) call disp(b) call disp(a(1\+:2,\+:),\textquotesingle{}f0.\+5\textquotesingle{}) call disp(\textquotesingle{}M\+A\+T\+R\+IX\textquotesingle{}, a, style=\textquotesingle{}U\+N\+D\+E\+R\+L\+I\+NE \& N\+U\+M\+B\+ER\textquotesingle{}, unit=-\/3, digmax=4) k = \mbox{[}-\/3,0,12,14,0\mbox{]} call disp(\textquotesingle{}K\textquotesingle{}, k, style=\textquotesingle{}pad\textquotesingle{}, orient=\textquotesingle{}row\textquotesingle{}, sep=\textquotesingle{} \textquotesingle{}, zeroas=\textquotesingle{}.\textquotesingle{}) x = 1.\+5 call disp(\textquotesingle{}The square of \textquotesingle{}//tostring(x)//\textquotesingle{} is \textquotesingle{}//tostring(x$\ast$x)) call disp\+\_\+set(matsep = \textquotesingle{} $\vert$ \textquotesingle{}) call disp(\mbox{[}11,12,13\mbox{]}, advance=\textquotesingle{}no\textquotesingle{}) call disp(\mbox{[}.true., .false., .true.\mbox{]}, advance=\textquotesingle{}no\textquotesingle{}) call disp(\mbox{[}\textquotesingle{}A\textquotesingle{},\textquotesingle{}B\textquotesingle{},\textquotesingle{}C\textquotesingle{}\mbox{]}) end program demo\+\_\+\+M\+\_\+display
+
+Expected results\+: \begin{DoxyVerb}> A =  2.718   7.389   20.086
+>      7.389  20.086   54.598
+>     20.086  54.598  148.413
+>
+> 2.71828E+00  2.71828E+00  2.71828E+00
+> 7.38906E+00  5.45982E+01  2.98096E+03
+> 2.00855E+01  8.10308E+03  5.32048E+11
+>
+> 2.71828   7.38906  20.08554
+> 7.38906  20.08554  54.59815
+>
+>        MATRIX
+> --------------------
+>      1     2      3
+> 1   2.7   7.4   20.1
+> 2   7.4  20.1   54.6
+> 3  20.1  54.6  148.4
+>
+> ------K-----
+> -3 . 12 14 .
+>
+> The square of 1.5 is 2.25
+>
+> 11 | T | A
+> 12 | F | B
+> 13 | T | C
+\end{DoxyVerb}
+\hypertarget{namespacem__display__util_autotoc_md5}{}\doxysubsubsection{A\+U\+T\+H\+OR}\label{namespacem__display__util_autotoc_md5}
+Based on dispmodule(3f), \char`\"{}\+A Fortran 95 module for pretty-\/printing matrices\char`\"{}. Version number 1.\+02 6-\/Sept-\/2008, Kristjan Jonasson, Dept. of Computer Science, University of Iceland (\href{mailto:jonasson@hi.is}{\texttt{ jonasson@hi.\+is}}). 
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacem__display__util_ad15e85a03cd2a7ef8f405fbb9c1061af}\label{namespacem__display__util_ad15e85a03cd2a7ef8f405fbb9c1061af}} 
+\index{m\_display\_util@{m\_display\_util}!check\_settings@{check\_settings}}
+\index{check\_settings@{check\_settings}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{check\_settings()}{check\_settings()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+display\+\_\+util\+::check\+\_\+settings}
+
+
+
+References defset, disp\+\_\+errmsg(), and getstyles().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_ad15e85a03cd2a7ef8f405fbb9c1061af_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_ad15e85a03cd2a7ef8f405fbb9c1061af_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_acc9b3b8faeba5d61ec46d3d76c161d27}\label{namespacem__display__util_acc9b3b8faeba5d61ec46d3d76c161d27}} 
+\index{m\_display\_util@{m\_display\_util}!clearboxlist@{clearboxlist}}
+\index{clearboxlist@{clearboxlist}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{clearboxlist()}{clearboxlist()}}
+{\footnotesize\ttfamily subroutine m\+\_\+display\+\_\+util\+::clearboxlist (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References firstboxlist.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_acc9b3b8faeba5d61ec46d3d76c161d27_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a43abab0fd2426042dc21b42e638210a8}\label{namespacem__display__util_a43abab0fd2426042dc21b42e638210a8}} 
+\index{m\_display\_util@{m\_display\_util}!copycolumnnumberstobox@{copycolumnnumberstobox}}
+\index{copycolumnnumberstobox@{copycolumnnumberstobox}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{copycolumnnumberstobox()}{copycolumnnumberstobox()}}
+{\footnotesize\ttfamily subroutine m\+\_\+display\+\_\+util\+::copycolumnnumberstobox (\begin{DoxyParamCaption}\item[{character($\ast$), dimension(\+:), intent(in)}]{s,  }\item[{integer, intent(in)}]{wleft,  }\item[{integer, dimension(\+:), intent(in)}]{wid,  }\item[{integer, dimension(\+:), intent(in)}]{widp,  }\item[{integer, intent(in)}]{lsep,  }\item[{character, dimension(\+:,\+:), intent(inout)}]{boxp,  }\item[{integer, intent(inout)}]{lin1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a43abab0fd2426042dc21b42e638210a8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_ab8090500f628c3475b88b0068c6788a4}\label{namespacem__display__util_ab8090500f628c3475b88b0068c6788a4}} 
+\index{m\_display\_util@{m\_display\_util}!copyseptobox@{copyseptobox}}
+\index{copyseptobox@{copyseptobox}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{copyseptobox()}{copyseptobox()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+display\+\_\+util\+::copyseptobox (\begin{DoxyParamCaption}\item[{character($\ast$), intent(in)}]{sep,  }\item[{integer, intent(in)}]{m,  }\item[{integer, intent(in)}]{lin1,  }\item[{character, dimension(\+:,\+:), intent(inout)}]{boxp,  }\item[{integer, intent(inout)}]{wleft }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_ab8090500f628c3475b88b0068c6788a4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_aca56756281a372cd4d186a032dd426fb}\label{namespacem__display__util_aca56756281a372cd4d186a032dd426fb}} 
+\index{m\_display\_util@{m\_display\_util}!copytobox@{copytobox}}
+\index{copytobox@{copytobox}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{copytobox()}{copytobox()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+display\+\_\+util\+::copytobox (\begin{DoxyParamCaption}\item[{character($\ast$), dimension(\+:), intent(in)}]{s,  }\item[{integer, intent(in)}]{lin1,  }\item[{integer, intent(in)}]{widj,  }\item[{integer, intent(in)}]{widpj,  }\item[{integer, intent(in)}]{nblj,  }\item[{character, dimension(\+:,\+:), intent(inout)}]{boxp,  }\item[{integer, intent(inout)}]{wleft }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_aca56756281a372cd4d186a032dd426fb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a6bfbf2a614c2b0e059d5399eb8dda479}\label{namespacem__display__util_a6bfbf2a614c2b0e059d5399eb8dda479}} 
+\index{m\_display\_util@{m\_display\_util}!disp\_errmsg@{disp\_errmsg}}
+\index{disp\_errmsg@{disp\_errmsg}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{disp\_errmsg()}{disp\_errmsg()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+display\+\_\+util\+::disp\+\_\+errmsg (\begin{DoxyParamCaption}\item[{character($\ast$), intent(in)}]{s }\end{DoxyParamCaption})}
+
+
+
+References copytobox(), putstrmodule\+::default\+\_\+unit, dispboxlist(), and newbox().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a6bfbf2a614c2b0e059d5399eb8dda479_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a6bfbf2a614c2b0e059d5399eb8dda479_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_af04928d07a7f716a0098c44bdd7ec3fd}\label{namespacem__display__util_af04928d07a7f716a0098c44bdd7ec3fd}} 
+\index{m\_display\_util@{m\_display\_util}!dispboxlist@{dispboxlist}}
+\index{dispboxlist@{dispboxlist}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{dispboxlist()}{dispboxlist()}}
+{\footnotesize\ttfamily subroutine m\+\_\+display\+\_\+util\+::dispboxlist (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{unit,  }\item[{character($\ast$), intent(in)}]{sep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References clearboxlist(), dispnewline(), getboxlist(), putstrmodule\+::putstr(), and tostr().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_af04928d07a7f716a0098c44bdd7ec3fd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_af04928d07a7f716a0098c44bdd7ec3fd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a0bbd58b5406fa166a20d83f9737c7acd}\label{namespacem__display__util_a0bbd58b5406fa166a20d83f9737c7acd}} 
+\index{m\_display\_util@{m\_display\_util}!dispnewline@{dispnewline}}
+\index{dispnewline@{dispnewline}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{dispnewline()}{dispnewline()}}
+{\footnotesize\ttfamily subroutine m\+\_\+display\+\_\+util\+::dispnewline (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References putstrmodule\+::putnl().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a0bbd58b5406fa166a20d83f9737c7acd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a0bbd58b5406fa166a20d83f9737c7acd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_abcd2aebb4cd373005b4d1fc4359a2d01}\label{namespacem__display__util_abcd2aebb4cd373005b4d1fc4359a2d01}} 
+\index{m\_display\_util@{m\_display\_util}!find\_editdesc\_real@{find\_editdesc\_real}}
+\index{find\_editdesc\_real@{find\_editdesc\_real}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{find\_editdesc\_real()}{find\_editdesc\_real()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+display\+\_\+util\+::find\+\_\+editdesc\+\_\+real (\begin{DoxyParamCaption}\item[{integer, intent(inout)}]{exp,  }\item[{integer, intent(in)}]{expm,  }\item[{integer, intent(in)}]{dmx,  }\item[{character(14), intent(out)}]{edesc,  }\item[{integer, intent(out)}]{flen,  }\item[{integer, intent(out)}]{ndec,  }\item[{logical, intent(in)}]{posit }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_abcd2aebb4cd373005b4d1fc4359a2d01_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a056732cc150994b9abe25ed0d72ebee4}\label{namespacem__display__util_a056732cc150994b9abe25ed0d72ebee4}} 
+\index{m\_display\_util@{m\_display\_util}!finishbox@{finishbox}}
+\index{finishbox@{finishbox}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{finishbox()}{finishbox()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+display\+\_\+util\+::finishbox (\begin{DoxyParamCaption}\item[{character($\ast$), intent(in)}]{title,  }\item[{type(\mbox{\hyperlink{structm__display__util_1_1settings}{settings}}), intent(in)}]{SE,  }\item[{character, dimension(\+:,\+:), intent(inout)}]{boxp }\end{DoxyParamCaption})}
+
+
+
+References defset, dispboxlist(), dispnewline(), number\+\_\+cols(), and upper().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a056732cc150994b9abe25ed0d72ebee4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a056732cc150994b9abe25ed0d72ebee4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_ac6c2d88538e3002af455b4c5aeb46ebf}\label{namespacem__display__util_ac6c2d88538e3002af455b4c5aeb46ebf}} 
+\index{m\_display\_util@{m\_display\_util}!get\_se@{get\_se}}
+\index{get\_se@{get\_se}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{get\_se()}{get\_se()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+display\+\_\+util\+::get\+\_\+se (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structm__display__util_1_1settings}{settings}}), intent(out)}]{SE,  }\item[{character($\ast$), intent(in)}]{title,  }\item[{integer, dimension(\+:), intent(in)}]{shapex,  }\item[{character($\ast$), intent(in), optional}]{fmt,  }\item[{character($\ast$), intent(in), optional}]{advance,  }\item[{integer, dimension(\+:), intent(in), optional}]{lbound,  }\item[{character($\ast$), intent(in), optional}]{separator,  }\item[{character($\ast$), intent(in), optional}]{style,  }\item[{character($\ast$), intent(in), optional}]{trim,  }\item[{integer, intent(in), optional}]{unit,  }\item[{character($\ast$), intent(in), optional}]{orient,  }\item[{character($\ast$), intent(in), optional}]{zeroas,  }\item[{integer, intent(in), optional}]{digmax }\end{DoxyParamCaption})}
+
+
+
+References defset, disp\+\_\+errmsg(), getstyles(), readfmt(), trims(), and upper().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_ac6c2d88538e3002af455b4c5aeb46ebf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_ac6c2d88538e3002af455b4c5aeb46ebf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a093be898cc19ed648b45e728b72d4f5f}\label{namespacem__display__util_a093be898cc19ed648b45e728b72d4f5f}} 
+\index{m\_display\_util@{m\_display\_util}!getboxlist@{getboxlist}}
+\index{getboxlist@{getboxlist}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{getboxlist()}{getboxlist()}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structm__display__util_1_1boxlist}{boxlist}}) function, pointer m\+\_\+display\+\_\+util\+::getboxlist (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References firstboxlist.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a093be898cc19ed648b45e728b72d4f5f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a692b7279b1883d8139b60e480aa1e430}\label{namespacem__display__util_a692b7279b1883d8139b60e480aa1e430}} 
+\index{m\_display\_util@{m\_display\_util}!getstyles@{getstyles}}
+\index{getstyles@{getstyles}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{getstyles()}{getstyles()}}
+{\footnotesize\ttfamily subroutine m\+\_\+display\+\_\+util\+::getstyles (\begin{DoxyParamCaption}\item[{character($\ast$), intent(in)}]{style,  }\item[{character(9), intent(out)}]{tsty,  }\item[{character(1), intent(out)}]{tch,  }\item[{logical, intent(out)}]{number,  }\item[{logical, intent(out)}]{ok }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References upper().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a692b7279b1883d8139b60e480aa1e430_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a692b7279b1883d8139b60e480aa1e430_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a5c3310ac01f093fd857b2a3aa3189e02}\label{namespacem__display__util_a5c3310ac01f093fd857b2a3aa3189e02}} 
+\index{m\_display\_util@{m\_display\_util}!newbox@{newbox}}
+\index{newbox@{newbox}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{newbox()}{newbox()}}
+{\footnotesize\ttfamily subroutine m\+\_\+display\+\_\+util\+::newbox (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{unit,  }\item[{integer, intent(in)}]{m,  }\item[{integer, intent(in)}]{n,  }\item[{character, dimension(\+:,\+:), pointer}]{boxp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References getboxlist().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a5c3310ac01f093fd857b2a3aa3189e02_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a5c3310ac01f093fd857b2a3aa3189e02_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a03c9a1c990a26433230412d78fa46999}\label{namespacem__display__util_a03c9a1c990a26433230412d78fa46999}} 
+\index{m\_display\_util@{m\_display\_util}!nnblk@{nnblk}}
+\index{nnblk@{nnblk}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{nnblk()}{nnblk()}}
+{\footnotesize\ttfamily pure integer function, public m\+\_\+display\+\_\+util\+::nnblk (\begin{DoxyParamCaption}\item[{character($\ast$), intent(in)}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacem__display__util_a837cfbf5c0d097da743220ac0acfaec8}\label{namespacem__display__util_a837cfbf5c0d097da743220ac0acfaec8}} 
+\index{m\_display\_util@{m\_display\_util}!number\_cols@{number\_cols}}
+\index{number\_cols@{number\_cols}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{number\_cols()}{number\_cols()}}
+{\footnotesize\ttfamily logical function m\+\_\+display\+\_\+util\+::number\+\_\+cols (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structm__display__util_1_1settings}{settings}}), intent(in)}]{SE }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a837cfbf5c0d097da743220ac0acfaec8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a7a886d21010f7a6f0f8101d2b26fd97d}\label{namespacem__display__util_a7a886d21010f7a6f0f8101d2b26fd97d}} 
+\index{m\_display\_util@{m\_display\_util}!number\_rows@{number\_rows}}
+\index{number\_rows@{number\_rows}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{number\_rows()}{number\_rows()}}
+{\footnotesize\ttfamily logical function m\+\_\+display\+\_\+util\+::number\+\_\+rows (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structm__display__util_1_1settings}{settings}}), intent(in)}]{SE }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a7a886d21010f7a6f0f8101d2b26fd97d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a70f3818ca97ec91537e81b9f9b10953c}\label{namespacem__display__util_a70f3818ca97ec91537e81b9f9b10953c}} 
+\index{m\_display\_util@{m\_display\_util}!preparebox@{preparebox}}
+\index{preparebox@{preparebox}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{preparebox()}{preparebox()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+display\+\_\+util\+::preparebox (\begin{DoxyParamCaption}\item[{character($\ast$), intent(in)}]{title,  }\item[{type(\mbox{\hyperlink{structm__display__util_1_1settings}{settings}}), intent(in)}]{SE,  }\item[{integer, intent(in)}]{m,  }\item[{integer, intent(in)}]{n,  }\item[{integer, dimension(\+:), intent(inout)}]{wid,  }\item[{integer, dimension(\+:), intent(out)}]{widp,  }\item[{integer, intent(out)}]{lin1,  }\item[{integer, intent(out)}]{wleft,  }\item[{character, dimension(\+:,\+:), pointer}]{boxp }\end{DoxyParamCaption})}
+
+
+
+References copycolumnnumberstobox(), copyseptobox(), copytobox(), newbox(), number\+\_\+cols(), number\+\_\+rows(), replace\+\_\+w(), and upper().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a70f3818ca97ec91537e81b9f9b10953c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a70f3818ca97ec91537e81b9f9b10953c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a73ae4e30d2dcf1f608ac24bf1623ee6c}\label{namespacem__display__util_a73ae4e30d2dcf1f608ac24bf1623ee6c}} 
+\index{m\_display\_util@{m\_display\_util}!readfmt@{readfmt}}
+\index{readfmt@{readfmt}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{readfmt()}{readfmt()}}
+{\footnotesize\ttfamily pure subroutine, public m\+\_\+display\+\_\+util\+::readfmt (\begin{DoxyParamCaption}\item[{character($\ast$), intent(in)}]{fmt,  }\item[{character($\ast$), intent(out)}]{fmt1,  }\item[{integer, intent(out)}]{w,  }\item[{integer, intent(out)}]{d,  }\item[{logical, intent(out)}]{gedit }\end{DoxyParamCaption})}
+
+
+
+References sszipfmt(), and upper().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a73ae4e30d2dcf1f608ac24bf1623ee6c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{namespacem__display__util_a73ae4e30d2dcf1f608ac24bf1623ee6c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a76a458454b83026c12d4a90882f2719e}\label{namespacem__display__util_a76a458454b83026c12d4a90882f2719e}} 
+\index{m\_display\_util@{m\_display\_util}!replace\_w@{replace\_w}}
+\index{replace\_w@{replace\_w}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{replace\_w()}{replace\_w()}}
+{\footnotesize\ttfamily pure subroutine, public m\+\_\+display\+\_\+util\+::replace\+\_\+w (\begin{DoxyParamCaption}\item[{character($\ast$), intent(inout)}]{fmt,  }\item[{integer, intent(in)}]{wnew }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a76a458454b83026c12d4a90882f2719e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a72816de72f8a35ed93223a4bfd650c9b}\label{namespacem__display__util_a72816de72f8a35ed93223a4bfd650c9b}} 
+\index{m\_display\_util@{m\_display\_util}!replace\_zeronaninf@{replace\_zeronaninf}}
+\index{replace\_zeronaninf@{replace\_zeronaninf}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{replace\_zeronaninf()}{replace\_zeronaninf()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+display\+\_\+util\+::replace\+\_\+zeronaninf (\begin{DoxyParamCaption}\item[{character($\ast$), dimension(\+:), intent(inout)}]{s,  }\item[{character($\ast$), intent(in)}]{zas,  }\item[{logical, dimension(\+:), intent(in)}]{maskz,  }\item[{logical, dimension(\+:), intent(in), optional}]{masknan,  }\item[{logical, dimension(\+:), intent(in), optional}]{maskminf,  }\item[{logical, dimension(\+:), intent(in), optional}]{maskinf }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a72816de72f8a35ed93223a4bfd650c9b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a3fa60429ffcc82a33032d718cbe03e87}\label{namespacem__display__util_a3fa60429ffcc82a33032d718cbe03e87}} 
+\index{m\_display\_util@{m\_display\_util}!sszipfmt@{sszipfmt}}
+\index{sszipfmt@{sszipfmt}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{sszipfmt()}{sszipfmt()}}
+{\footnotesize\ttfamily pure subroutine m\+\_\+display\+\_\+util\+::sszipfmt (\begin{DoxyParamCaption}\item[{character($\ast$), intent(in)}]{fmt,  }\item[{character($\ast$), intent(out)}]{fmt1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{namespacem__display__util_a3fa60429ffcc82a33032d718cbe03e87_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_ae2d4ae17104c7a91b0a3e4962e3af54a}\label{namespacem__display__util_ae2d4ae17104c7a91b0a3e4962e3af54a}} 
+\index{m\_display\_util@{m\_display\_util}!tostr@{tostr}}
+\index{tostr@{tostr}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{tostr()}{tostr()}}
+{\footnotesize\ttfamily character(size(a)) function m\+\_\+display\+\_\+util\+::tostr (\begin{DoxyParamCaption}\item[{character, dimension(\+:), intent(in)}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_ae2d4ae17104c7a91b0a3e4962e3af54a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a76361afb9f9c3952c258f1f8053ec62a}\label{namespacem__display__util_a76361afb9f9c3952c258f1f8053ec62a}} 
+\index{m\_display\_util@{m\_display\_util}!tostring\_check\_settings@{tostring\_check\_settings}}
+\index{tostring\_check\_settings@{tostring\_check\_settings}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{tostring\_check\_settings()}{tostring\_check\_settings()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+display\+\_\+util\+::tostring\+\_\+check\+\_\+settings}
+
+
+
+References disp\+\_\+errmsg(), readfmt(), tosfac, and tosset.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a76361afb9f9c3952c258f1f8053ec62a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a76361afb9f9c3952c258f1f8053ec62a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a8329f722c059861aa54faa8f7668cc41}\label{namespacem__display__util_a8329f722c059861aa54faa8f7668cc41}} 
+\index{m\_display\_util@{m\_display\_util}!tostring\_get@{tostring\_get}}
+\index{tostring\_get@{tostring\_get}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{tostring\_get()}{tostring\_get()}}
+{\footnotesize\ttfamily pure subroutine, public m\+\_\+display\+\_\+util\+::tostring\+\_\+get (\begin{DoxyParamCaption}\item[{character($\ast$), dimension(\+:), intent(in)}]{sa,  }\item[{character($\ast$), intent(out)}]{st }\end{DoxyParamCaption})}
+
+
+
+References tosset.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a8329f722c059861aa54faa8f7668cc41_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a7803f63457d826fc3b8fe7ddfa7818ac}\label{namespacem__display__util_a7803f63457d826fc3b8fe7ddfa7818ac}} 
+\index{m\_display\_util@{m\_display\_util}!tostring\_get\_complex@{tostring\_get\_complex}}
+\index{tostring\_get\_complex@{tostring\_get\_complex}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{tostring\_get\_complex()}{tostring\_get\_complex()}}
+{\footnotesize\ttfamily pure subroutine, public m\+\_\+display\+\_\+util\+::tostring\+\_\+get\+\_\+complex (\begin{DoxyParamCaption}\item[{character($\ast$), dimension(\+:), intent(in)}]{sar,  }\item[{character($\ast$), dimension($\ast$), intent(in)}]{sgn,  }\item[{character($\ast$), dimension(\+:), intent(in)}]{sai,  }\item[{character($\ast$), intent(out)}]{st }\end{DoxyParamCaption})}
+
+
+
+References tosset.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a7803f63457d826fc3b8fe7ddfa7818ac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_ac428024047b90a34278426d21759faa0}\label{namespacem__display__util_ac428024047b90a34278426d21759faa0}} 
+\index{m\_display\_util@{m\_display\_util}!trim\_real@{trim\_real}}
+\index{trim\_real@{trim\_real}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{trim\_real()}{trim\_real()}}
+{\footnotesize\ttfamily pure subroutine, public m\+\_\+display\+\_\+util\+::trim\+\_\+real (\begin{DoxyParamCaption}\item[{character($\ast$), dimension(\+:), intent(inout)}]{sa,  }\item[{logical, intent(in)}]{gedit,  }\item[{integer, intent(in)}]{w }\end{DoxyParamCaption})}
+
+
+
+References tosset, and trim\+\_\+s\+\_\+real().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_ac428024047b90a34278426d21759faa0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_ac428024047b90a34278426d21759faa0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_ab69265e4c62f2b4c20d1a2b59e25959b}\label{namespacem__display__util_ab69265e4c62f2b4c20d1a2b59e25959b}} 
+\index{m\_display\_util@{m\_display\_util}!trim\_s\_real@{trim\_s\_real}}
+\index{trim\_s\_real@{trim\_s\_real}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{trim\_s\_real()}{trim\_s\_real()}}
+{\footnotesize\ttfamily pure subroutine, public m\+\_\+display\+\_\+util\+::trim\+\_\+s\+\_\+real (\begin{DoxyParamCaption}\item[{character($\ast$), intent(inout)}]{sa,  }\item[{logical, intent(in)}]{gedit,  }\item[{integer, intent(in)}]{w }\end{DoxyParamCaption})}
+
+
+
+References tosset.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_ab69265e4c62f2b4c20d1a2b59e25959b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__display__util_a6a829115368f9e77c8b35fb1c86ac9c3}\label{namespacem__display__util_a6a829115368f9e77c8b35fb1c86ac9c3}} 
+\index{m\_display\_util@{m\_display\_util}!upper@{upper}}
+\index{upper@{upper}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{upper()}{upper()}}
+{\footnotesize\ttfamily pure character(len(s)) function, public m\+\_\+display\+\_\+util\+::upper (\begin{DoxyParamCaption}\item[{character($\ast$), intent(in)}]{s }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__display__util_a6a829115368f9e77c8b35fb1c86ac9c3_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacem__display__util_a94e5894dfc5e8a59b6ceac6721ae4f8e}\label{namespacem__display__util_a94e5894dfc5e8a59b6ceac6721ae4f8e}} 
+\index{m\_display\_util@{m\_display\_util}!defset@{defset}}
+\index{defset@{defset}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{defset}{defset}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structm__display__util_1_1disp__settings}{disp\+\_\+settings}}), save, public m\+\_\+display\+\_\+util\+::defset}
+
+\mbox{\Hypertarget{namespacem__display__util_a844bf51463bbf006c07c60eb75a44051}\label{namespacem__display__util_a844bf51463bbf006c07c60eb75a44051}} 
+\index{m\_display\_util@{m\_display\_util}!errormsg@{errormsg}}
+\index{errormsg@{errormsg}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{errormsg}{errormsg}}
+{\footnotesize\ttfamily character($\ast$), parameter, public m\+\_\+display\+\_\+util\+::errormsg = \textquotesingle{}Illegal format\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacem__display__util_a9ce4a22503d46c3cf4d1a054812827c0}\label{namespacem__display__util_a9ce4a22503d46c3cf4d1a054812827c0}} 
+\index{m\_display\_util@{m\_display\_util}!factory\_settings@{factory\_settings}}
+\index{factory\_settings@{factory\_settings}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{factory\_settings}{factory\_settings}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structm__display__util_1_1disp__settings}{disp\+\_\+settings}}), save, public m\+\_\+display\+\_\+util\+::factory\+\_\+settings}
+
+\mbox{\Hypertarget{namespacem__display__util_af285f44a47c745fc4da9df4a73269ac2}\label{namespacem__display__util_af285f44a47c745fc4da9df4a73269ac2}} 
+\index{m\_display\_util@{m\_display\_util}!firstboxlist@{firstboxlist}}
+\index{firstboxlist@{firstboxlist}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{firstboxlist}{firstboxlist}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structm__display__util_1_1boxlist}{boxlist}}), pointer m\+\_\+display\+\_\+util\+::firstboxlist =$>$ null()\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacem__display__util_a0bd80d23e6e5fec3979a3357f65fb5e3}\label{namespacem__display__util_a0bd80d23e6e5fec3979a3357f65fb5e3}} 
+\index{m\_display\_util@{m\_display\_util}!tosfac@{tosfac}}
+\index{tosfac@{tosfac}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{tosfac}{tosfac}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structm__display__util_1_1tostring__settings}{tostring\+\_\+settings}}), save, public m\+\_\+display\+\_\+util\+::tosfac}
+
+\mbox{\Hypertarget{namespacem__display__util_a5c904147cafd4110a901207d859bdf7b}\label{namespacem__display__util_a5c904147cafd4110a901207d859bdf7b}} 
+\index{m\_display\_util@{m\_display\_util}!tosset@{tosset}}
+\index{tosset@{tosset}!m\_display\_util@{m\_display\_util}}
+\doxysubsubsection{\texorpdfstring{tosset}{tosset}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structm__display__util_1_1tostring__settings}{tostring\+\_\+settings}}), save, public m\+\_\+display\+\_\+util\+::tosset}
+
