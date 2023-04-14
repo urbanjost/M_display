@@ -2252,7 +2252,7 @@ logical,        intent(in)  :: xzero(:), xallz(:) ! True for columns with some/a
 type(settings), intent(in)  :: SE                 ! Settings
 integer,        intent(out) :: wid(:)             ! Widths of columns
 integer,        intent(out) :: nbl(:)             ! n of blanks to peel from left (w-wid)
-character(SE % w) :: stmax(size(xmaxv)), stmin(size(xmaxv))
+character(SE % w) :: stmax(size(xmaxv)), stmin(size(xminv))
 integer w
 
    w = SE % w
@@ -2366,9 +2366,10 @@ end subroutine getwid_dint
     integer                          :: wtot, w, d
     logical                          :: gedit
     character(nnblk(fmt)+5)          :: fmt1
+    integer                          :: iostat
     call readfmt(fmt, fmt1, w, d, gedit)
     if (w < 0) then; wtot = len(errormsg); return; endif
-    write(sa, fmt1) x
+    write(sa, fmt1, iostat=iostat) x
     if (tosset % trimb == 'YES' .or. w == 0) sa = adjustl(sa)
     wtot = sum(len_trim(sa)) + (size(x) - 1)*(tosset % seplen)
   end function len_f_dint
@@ -2404,9 +2405,10 @@ end subroutine getwid_dint
     integer                          :: w, d
     logical                          :: gedit
     character(nnblk(fmt)+5)          :: fmt1
+    integer                          :: iostat
     call readfmt(fmt, fmt1, w, d, gedit)
     if (w < 0) then; st = errormsg; return; endif
-    write(sa, fmt1) x
+    write(sa, fmt1,iostat=iostat) x
     if (tosset % trimb == 'YES' .or. w == 0) sa = adjustl(sa)
     call tostring_get(sa, st)
   end function tostring_f_dint
@@ -2509,13 +2511,14 @@ end subroutine getwid_dint
     integer            :: lin1, j, wleft, m, n, widp(size(wid))
     character, pointer :: boxp(:,:)
     real(sngl)         :: xj(size(x,1)), h
+    integer            :: iostat
     m = size(x,1)
     n = size(x,2)
     h = huge(x)
     call preparebox(title, SE, m, n, wid, widp, lin1, wleft, boxp)
     do j=1,n
       xj = x(:, j)
-      if (m > 0) write(s, SE % ed) xj
+      if (m > 0) write(s, SE % ed,iostat=iostat) xj
       call replace_zeronaninf(s, SE % zas(1:SE % lzas), xj == 0, xj /= xj, xj < -h, xj > h)
       call copytobox(s, lin1, wid(j), widp(j), nbl(j), boxp,  wleft)
       if (j<n) call copyseptobox(SE % sep(1:SE % lsep), m, lin1, boxp,  wleft)
@@ -2531,6 +2534,7 @@ end subroutine getwid_dint
     logical xfinite(size(x))
     real(sngl) xmax, xmin, h
     character(12) :: f1, s(2)
+    character(len=:),allocatable :: temp(:)
     xmin = 0; xmax = 0; h = huge(h)
     xfinite = x == x .and. x >= -h .and. x <= h ! neither NaN, Inf nor -Inf
     if (.not. any(xfinite)) then
@@ -2540,7 +2544,8 @@ end subroutine getwid_dint
       xmin = minval(x, mask=xfinite)
       f1 = '(SS,ES9.0E4)'
       write(s,f1) xmax, xmin
-      read(s(:)(5:9),'(I5)') expmax, expmin
+      temp=s(:)(5:9)
+      read(temp,'(I5)') expmax, expmin
       w = max(0, expmax, expmin) + d + 4
     endif
     if (.not. all(xfinite)) w = max(w, 4)
@@ -2619,11 +2624,12 @@ end subroutine getwid_dint
     type(settings), intent(in)  :: SE                 ! settings
     integer,        intent(out) :: wid(:)             ! widths of columns
     integer,        intent(out) :: nbl(:)             ! number of blanks to peel from left (w-wid)
-    character(SE % w) :: stmax(size(xmaxv)), stmin(size(xmaxv))
-    integer w
+    character(SE % w) :: stmax(size(xmaxv)), stmin(size(xminv))
+    integer           :: w
+    integer           :: iostat
     w = SE % w
-    write(stmin, SE % ed) xminv
-    write(stmax, SE % ed) xmaxv
+    write(stmin, SE % ed,iostat=iostat) xminv
+    write(stmax, SE % ed,iostat=iostat) xmaxv
     nbl = mod(verify(stmin, ' ') + w, w + 1) ! loc. of first nonblank
     nbl = min(nbl, mod(verify(stmax, ' ') + w, w + 1))
     if (SE % gedit) then
@@ -2667,13 +2673,14 @@ end subroutine getwid_dint
     integer                          :: wtot, w, d, ww
     logical                          :: gedit
     character(nnblk(fmt)+8)          :: fmt1  !(5 for readfmt and 3 for replace_w)
+    integer                          :: iostat
     call readfmt(fmt, fmt1, w, d, gedit)
     if (w < 0) then; wtot = len(errormsg); return; endif
     if (w == 0) then
       ww = maxw_sngl(x, d)
       call replace_w(fmt1, ww)
     endif
-    write(sa, fmt1) x
+    write(sa, fmt1,iostat=iostat) x
     call trim_real(sa, gedit, w)
     wtot = sum(len_trim(sa)) + (size(x) - 1)*(tosset % seplen)
   end function len_f_sngl
@@ -2709,6 +2716,7 @@ end subroutine getwid_dint
     character(nnblk(fmt)+8)          :: fmt1  !(5 for readfmt and 3 for replace_w)
     integer                          :: w, d, ww
     logical                          :: gedit
+    integer                          :: iostat
     call readfmt(fmt, fmt1, w, d, gedit)
     if (w < 0) then
       st = errormsg
@@ -2717,7 +2725,7 @@ end subroutine getwid_dint
       ww = maxw_sngl(x, d)
       call replace_w(fmt1, ww)
     endif
-    write(sa, fmt1) x
+    write(sa, fmt1,iostat=iostat) x
     call trim_real(sa, gedit, w)
     call tostring_get(sa, st)
   end function tostring_f_sngl
@@ -3051,6 +3059,7 @@ end subroutine getwid_dint
     logical xfinite(size(x))
     real(dble) xmax, xmin, h
     character(12) :: f1, s(2)
+    character(len=:),allocatable :: temp(:)
     xmin = 0; xmax = 0; h = huge(h)
     xfinite = x == x .and. x >= -h .and. x <= h ! neither NaN, Inf nor -Inf
     if (.not. any(xfinite)) then
@@ -3060,7 +3069,8 @@ end subroutine getwid_dint
       xmin = minval(x, mask=xfinite)
       f1 = '(SS,ES9.0E4)'
       write(s,f1) xmax, xmin
-      read(s(:)(5:9),'(I5)') expmax, expmin
+      temp=s(:)(5:9)
+      read(temp,'(I5)') expmax, expmin
       w = max(0, expmax, expmin) + d + 4
     endif
     if (.not. all(xfinite)) w = max(w, 4)
@@ -3139,11 +3149,11 @@ end subroutine getwid_dint
     type(settings), intent(in)  :: SE                 ! settings
     integer,        intent(out) :: wid(:)             ! widths of columns
     integer,        intent(out) :: nbl(:)             ! number of blanks to peel from left (w-wid)
-    character(SE % w) :: stmax(size(xmaxv)), stmin(size(xmaxv))
-    integer w
+    character(SE % w) :: stmax(size(xmaxv)), stmin(size(xminv))
+    integer w, iostat
     w = SE % w
-    write(stmin, SE % ed) xminv
-    write(stmax, SE % ed) xmaxv
+    write(stmin, SE % ed,iostat=iostat) xminv
+    write(stmax, SE % ed,iostat=iostat) xmaxv
     nbl = mod(verify(stmin, ' ') + w, w + 1) ! loc. of first nonblank
     nbl = min(nbl, mod(verify(stmax, ' ') + w, w + 1))
     if (SE % gedit) then
@@ -3742,10 +3752,10 @@ end subroutine getwid_dint
     call preparebox(title, SE, m, n, wid, widp, lin1, wleft, boxp)
     do j=1,n
       if (SE % trm) then
-        call copytobox(x(:,j)(n1(j):n2(j)), lin1, wid(j), widp(j), nbl(j), boxp,  wleft)
+        call copytobox( (x(:,j)(n1(j):n2(j))), lin1, wid(j), widp(j), nbl(j), boxp,  wleft)
       else
         if (widp(j) > lx) call copyseptobox(repeat(' ', widp(j)-lx), m, lin1, boxp,  wleft)
-        call copytobox(x(:,j), lin1, lx, lx, 0, boxp,  wleft)
+        call copytobox( x(:,j), lin1, lx, lx, 0, boxp,  wleft)
       endif
       if (j<n) call copyseptobox(SE % sep(1:SE % lsep), m, lin1, boxp,  wleft)
     enddo
