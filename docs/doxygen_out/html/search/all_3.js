@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['d_12',['d',['../structm__display__util_1_1settings.html#ae723b191970109c2e0885e92cab1d52f',1,'m_display_util::settings']]],
+  ['d_12',['d',['../structm__display____util_1_1settings.html#abf05b0c0f0a5ad15836b49e3a291e83b',1,'m_display__util::settings']]],
   ['dble_13',['dble',['../namespacem__display.html#a46d90b75b6ccef7ccade133e5847e815',1,'m_display']]],
-  ['default_5funit_14',['default_unit',['../namespaceputstrmodule.html#a7ec14945bb8449f20f21c0545b1825ee',1,'putstrmodule']]],
-  ['defset_15',['defset',['../namespacem__display__util.html#a94e5894dfc5e8a59b6ceac6721ae4f8e',1,'m_display_util']]],
-  ['digmax_16',['digmax',['../structm__display__util_1_1disp__settings.html#a86d10863c537cd157d36853f75b80944',1,'m_display_util::disp_settings']]],
+  ['default_5funit_14',['default_unit',['../namespacem__display____putstrmodule.html#a123878dbd87e00dc5a247f58a5938f8d',1,'m_display__putstrmodule']]],
+  ['defset_15',['defset',['../namespacem__display____util.html#afcbbc5b82d8cf5fecdd87cc3e4accbcb',1,'m_display__util']]],
+  ['digmax_16',['digmax',['../structm__display____util_1_1disp__settings.html#a4c8511acb1dc343ccd3064f950ff618b',1,'m_display__util::disp_settings']]],
   ['dint_17',['dint',['../namespacem__display.html#a73f772e9702cad6f40b78364fde2c7cd',1,'m_display']]],
   ['disp_18',['disp',['../interfacem__display_1_1disp.html',1,'m_display']]],
   ['disp_5fcpld_19',['disp_cpld',['../namespacem__display.html#a331e5caf7f78cff8f7e19145001bcdca',1,'m_display']]],
@@ -13,7 +13,7 @@ var searchData=
   ['disp_5fdchr_22',['disp_dchr',['../namespacem__display.html#a41b95f416778be093db3be49b2334570',1,'m_display']]],
   ['disp_5fdint_23',['disp_dint',['../namespacem__display.html#a0e150cc23de78529e22b17b1873a9e6e',1,'m_display']]],
   ['disp_5fdlog_24',['disp_dlog',['../namespacem__display.html#ac6960db2f07da55b2c8a72f30531ed97',1,'m_display']]],
-  ['disp_5ferrmsg_25',['disp_errmsg',['../namespacem__display__util.html#a6bfbf2a614c2b0e059d5399eb8dda479',1,'m_display_util']]],
+  ['disp_5ferrmsg_25',['disp_errmsg',['../namespacem__display____util.html#a8d23390a3510e2074c97c95acca389ff',1,'m_display__util']]],
   ['disp_5fget_26',['disp_get',['../namespacem__display.html#a6a49f987c37a95e67744950ecee69530',1,'m_display']]],
   ['disp_5fm_5fcpld_27',['disp_m_cpld',['../interfacem__display_1_1disp.html#a2944f5c9f6a1390fddfbe38f59d4872d',1,'m_display::disp::disp_m_cpld()'],['../namespacem__display.html#a0d50709ce2ad1894b93d80086584059a',1,'m_display::disp_m_cpld()']]],
   ['disp_5fm_5fcplx_28',['disp_m_cplx',['../interfacem__display_1_1disp.html#a5be00101b8758e33ffd2bdca1ca2cb12',1,'m_display::disp::disp_m_cplx()'],['../namespacem__display.html#a86ed603fd65468b46aad9ff127dc517c',1,'m_display::disp_m_cplx()']]],
@@ -32,7 +32,7 @@ var searchData=
   ['disp_5fset_41',['disp_set',['../interfacem__display_1_1disp__set.html',1,'m_display::disp_set'],['../interfacem__display_1_1disp__set.html#a3ed84626a8c0aec68c1c44b2e887e742',1,'m_display::disp_set::disp_set()'],['../namespacem__display.html#aca571cfcf5dcced1070969200f717a28',1,'m_display::disp_set()']]],
   ['disp_5fset_5fds_42',['disp_set_ds',['../interfacem__display_1_1disp__set.html#a763734e87c92afbf37d059cea632d541',1,'m_display::disp_set::disp_set_ds()'],['../namespacem__display.html#a6296917336a62e43005e56c48340eaf1',1,'m_display::disp_set_ds()']]],
   ['disp_5fset_5ffactory_43',['disp_set_factory',['../namespacem__display.html#a504ce34f82249882d1cc5a0ea2802bc6',1,'m_display']]],
-  ['disp_5fsettings_44',['disp_settings',['../structm__display__util_1_1disp__settings.html',1,'m_display_util']]],
+  ['disp_5fsettings_44',['disp_settings',['../structm__display____util_1_1disp__settings.html',1,'m_display__util']]],
   ['disp_5fsngl_45',['disp_sngl',['../namespacem__display.html#a1e0883cef47c57b43c8de794fe7724ff',1,'m_display']]],
   ['disp_5ftitle_5fmatrix_5fint_46',['disp_title_matrix_int',['../interfacem__display_1_1disp.html#a9fb1e23ed6c1f7d33d662e636ef62f6e',1,'m_display::disp::disp_title_matrix_int()'],['../namespacem__display.html#aa95be71bcd8730f4f01393ea6ede4bec',1,'m_display::disp_title_matrix_int()']]],
   ['disp_5ftitle_5fscalar_5fint_47',['disp_title_scalar_int',['../interfacem__display_1_1disp.html#a57d3c4c3ad9fc022b35a3ef9e5444661',1,'m_display::disp::disp_title_scalar_int()'],['../namespacem__display.html#afaae34a88f7f2d5799469f0a6214e0b2',1,'m_display::disp_title_scalar_int()']]],
@@ -62,8 +62,8 @@ var searchData=
   ['disp_5fv_5fdlog_71',['disp_v_dlog',['../interfacem__display_1_1disp.html#a9424131af4257736ae43d49968c70489',1,'m_display::disp::disp_v_dlog()'],['../namespacem__display.html#ae5c96bc7b0b54e6e183431c31fa7ae80',1,'m_display::disp_v_dlog()']]],
   ['disp_5fv_5fsngl_72',['disp_v_sngl',['../interfacem__display_1_1disp.html#ab53aa910e90a0f61e3517b55b9330b3a',1,'m_display::disp::disp_v_sngl()'],['../namespacem__display.html#a4ef66ee3da74984dd06012837795c459',1,'m_display::disp_v_sngl()']]],
   ['disp_5fvector_5fint_73',['disp_vector_int',['../interfacem__display_1_1disp.html#a6bf9d3a4f4d2cde6c51c7dc07de9d175',1,'m_display::disp::disp_vector_int()'],['../namespacem__display.html#abbb9f5e78b3998c8fa9774d594152dcc',1,'m_display::disp_vector_int()']]],
-  ['dispboxlist_74',['dispboxlist',['../namespacem__display__util.html#af04928d07a7f716a0098c44bdd7ec3fd',1,'m_display_util']]],
-  ['dispnewline_75',['dispnewline',['../namespacem__display__util.html#a0bbd58b5406fa166a20d83f9737c7acd',1,'m_display_util']]],
+  ['dispboxlist_74',['dispboxlist',['../namespacem__display____util.html#a648794269b013786fe4bce0caed7ebe8',1,'m_display__util']]],
+  ['dispnewline_75',['dispnewline',['../namespacem__display____util.html#a18999da6b8f7ea85214ad60af38f724b',1,'m_display__util']]],
   ['dlog_76',['dlog',['../namespacem__display.html#a8c6a3df510feabf6bc84dd0a8789f98c',1,'m_display']]],
-  ['dmx_77',['dmx',['../structm__display__util_1_1settings.html#aa0350d08ea4df3bf1ce10823eedbb1ba',1,'m_display_util::settings']]]
+  ['dmx_77',['dmx',['../structm__display____util_1_1settings.html#a673b6bcc3bb641f125d107386f83c508',1,'m_display__util::settings']]]
 ];

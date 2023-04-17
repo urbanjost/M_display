@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['n1_117',['n1',['../structm__display__util_1_1settings.html#a2b84936048353b3a4069bc4add4afbd2',1,'m_display_util::settings']]],
-  ['newbox_118',['newbox',['../namespacem__display__util.html#a5c3310ac01f093fd857b2a3aa3189e02',1,'m_display_util']]],
-  ['nextbox_119',['nextbox',['../structm__display__util_1_1boxnode.html#a66de6cb2ce074d35d978a4ac8f3bd29e',1,'m_display_util::boxnode']]],
-  ['nextboxlist_120',['nextboxlist',['../structm__display__util_1_1boxlist.html#a51aeeb63272988f526937af58361c577',1,'m_display_util::boxlist']]],
-  ['nnblk_121',['nnblk',['../namespacem__display__util.html#a03c9a1c990a26433230412d78fa46999',1,'m_display_util']]],
-  ['null_5funit_122',['null_unit',['../namespacem__display.html#a19eab1ae2710aecb5e6db7c68152d645',1,'m_display']]],
-  ['number_123',['number',['../structm__display__util_1_1settings.html#aa6d5b31c3417ac137c12ef56b413de2c',1,'m_display_util::settings']]],
-  ['number_5fcols_124',['number_cols',['../namespacem__display__util.html#a837cfbf5c0d097da743220ac0acfaec8',1,'m_display_util']]],
-  ['number_5frows_125',['number_rows',['../namespacem__display__util.html#a7a886d21010f7a6f0f8101d2b26fd97d',1,'m_display_util']]]
+  ['n1_118',['n1',['../structm__display____util_1_1settings.html#a556285b0758f01bdbb17c39ed03b7ddd',1,'m_display__util::settings']]],
+  ['newbox_119',['newbox',['../namespacem__display____util.html#a996d31be34f4144ecb40e2afa57530db',1,'m_display__util']]],
+  ['nextbox_120',['nextbox',['../structm__display____util_1_1boxnode.html#af0431b0a48225a35f8135c77aaac00a3',1,'m_display__util::boxnode']]],
+  ['nextboxlist_121',['nextboxlist',['../structm__display____util_1_1boxlist.html#a3aca296611c9b1599963a3d6a2e35f39',1,'m_display__util::boxlist']]],
+  ['nnblk_122',['nnblk',['../namespacem__display____util.html#a3920baebc217365c09b79a0d69f0b8c7',1,'m_display__util']]],
+  ['null_5funit_123',['null_unit',['../namespacem__display.html#a19eab1ae2710aecb5e6db7c68152d645',1,'m_display']]],
+  ['number_124',['number',['../structm__display____util_1_1settings.html#a78b1c94eba874c1e9fe4db76179093f2',1,'m_display__util::settings']]],
+  ['number_5fcols_125',['number_cols',['../namespacem__display____util.html#a68585ebe68893c1a4ef2c6eb6f97c308',1,'m_display__util']]],
+  ['number_5frows_126',['number_rows',['../namespacem__display____util.html#a3a18409b3d685d3677135b3c8d544197',1,'m_display__util']]]
 ];

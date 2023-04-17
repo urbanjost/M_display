@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ed_78',['ed',['../structm__display__util_1_1settings.html#a2834b85cc506001092e5c03b0cb99249',1,'m_display_util::settings']]],
-  ['errormsg_79',['errormsg',['../namespacem__display__util.html#a844bf51463bbf006c07c60eb75a44051',1,'m_display_util']]]
+  ['ed_78',['ed',['../structm__display____util_1_1settings.html#a08995c9beedcd79408c19f1e6f7dfc1a',1,'m_display__util::settings']]],
+  ['errormsg_79',['errormsg',['../namespacem__display____util.html#a74f2b3675f8b1163a42f80e9cd79ab4d',1,'m_display__util']]]
 ];

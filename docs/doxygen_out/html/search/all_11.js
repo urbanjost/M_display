@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vec_194',['vec',['../structm__display__util_1_1settings.html#a26be17f3439b252cbff6b846ac1efd3c',1,'m_display_util::settings']]]
+  ['vec_194',['vec',['../structm__display____util_1_1settings.html#a5d654543cf0e0391ce59b319aa8f7ebf',1,'m_display__util::settings']]]
 ];

@@ -216,7 +216,7 @@ One of the purposes of the P\+U\+T\+S\+T\+R\+\_\+\+U\+N\+IT is to make displayin
 \end{DoxyVerb}
 
 
-The first of these should output the string S, and the second one should advance output to the next line. These subroutines should be placed in a module P\+U\+T\+S\+T\+R\+M\+O\+D\+U\+LE as explained in section 2. The module should also define a named constant D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+N\+IT, which could be set to -\/2 to make the P\+U\+T\+S\+T\+R\+\_\+\+U\+N\+IT default. An example that works with g95 and Matlab mex-\/files is\+: \begin{DoxyVerb}  module putstrmodule
+The first of these should output the string S, and the second one should advance output to the next line. These subroutines should be placed in a module P\+U\+T\+S\+T\+R\+M\+O\+D\+U\+LE as explained in section 2. The module should also define a named constant D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+N\+IT, which could be set to -\/2 to make the P\+U\+T\+S\+T\+R\+\_\+\+U\+N\+IT default. An example that works with g95 and Matlab mex-\/files is\+: \begin{DoxyVerb}  module M_display__putstrmodule
     integer, parameter :: default_unit = -2
 
   contains
@@ -229,7 +229,7 @@ The first of these should output the string S, and the second one should advance
       call mexprintf(char(10)//char(0))
     end subroutine putnl
 
-  end module putstrmodule
+  end module M_display__putstrmodule
 \end{DoxyVerb}
 
 
@@ -498,4 +498,4 @@ Based on dispmodule(3f), \char`\"{}\+A Fortran 95 module for pretty-\/printing m
 
 The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/urbanjs/venus/\+V600/github/\+M\+\_\+display/src/\mbox{\hyperlink{M__display_8f90}{M\+\_\+display.\+f90}}\end{DoxyCompactItemize}
+/home/urbanjs/venus/\+V600/github7/\+M\+\_\+display/src/\mbox{\hyperlink{M__display_8f90}{M\+\_\+display.\+f90}}\end{DoxyCompactItemize}

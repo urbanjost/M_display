@@ -6,7 +6,7 @@ var searchData=
   ['disp_5fdchr_225',['disp_dchr',['../namespacem__display.html#a41b95f416778be093db3be49b2334570',1,'m_display']]],
   ['disp_5fdint_226',['disp_dint',['../namespacem__display.html#a0e150cc23de78529e22b17b1873a9e6e',1,'m_display']]],
   ['disp_5fdlog_227',['disp_dlog',['../namespacem__display.html#ac6960db2f07da55b2c8a72f30531ed97',1,'m_display']]],
-  ['disp_5ferrmsg_228',['disp_errmsg',['../namespacem__display__util.html#a6bfbf2a614c2b0e059d5399eb8dda479',1,'m_display_util']]],
+  ['disp_5ferrmsg_228',['disp_errmsg',['../namespacem__display____util.html#a8d23390a3510e2074c97c95acca389ff',1,'m_display__util']]],
   ['disp_5fget_229',['disp_get',['../namespacem__display.html#a6a49f987c37a95e67744950ecee69530',1,'m_display']]],
   ['disp_5fm_5fcpld_230',['disp_m_cpld',['../interfacem__display_1_1disp.html#a2944f5c9f6a1390fddfbe38f59d4872d',1,'m_display::disp::disp_m_cpld()'],['../namespacem__display.html#a0d50709ce2ad1894b93d80086584059a',1,'m_display::disp_m_cpld()']]],
   ['disp_5fm_5fcplx_231',['disp_m_cplx',['../interfacem__display_1_1disp.html#a5be00101b8758e33ffd2bdca1ca2cb12',1,'m_display::disp::disp_m_cplx()'],['../namespacem__display.html#a86ed603fd65468b46aad9ff127dc517c',1,'m_display::disp_m_cplx()']]],
@@ -54,6 +54,6 @@ var searchData=
   ['disp_5fv_5fdlog_273',['disp_v_dlog',['../interfacem__display_1_1disp.html#a9424131af4257736ae43d49968c70489',1,'m_display::disp::disp_v_dlog()'],['../namespacem__display.html#ae5c96bc7b0b54e6e183431c31fa7ae80',1,'m_display::disp_v_dlog()']]],
   ['disp_5fv_5fsngl_274',['disp_v_sngl',['../interfacem__display_1_1disp.html#ab53aa910e90a0f61e3517b55b9330b3a',1,'m_display::disp::disp_v_sngl()'],['../namespacem__display.html#a4ef66ee3da74984dd06012837795c459',1,'m_display::disp_v_sngl()']]],
   ['disp_5fvector_5fint_275',['disp_vector_int',['../interfacem__display_1_1disp.html#a6bf9d3a4f4d2cde6c51c7dc07de9d175',1,'m_display::disp::disp_vector_int()'],['../namespacem__display.html#abbb9f5e78b3998c8fa9774d594152dcc',1,'m_display::disp_vector_int()']]],
-  ['dispboxlist_276',['dispboxlist',['../namespacem__display__util.html#af04928d07a7f716a0098c44bdd7ec3fd',1,'m_display_util']]],
-  ['dispnewline_277',['dispnewline',['../namespacem__display__util.html#a0bbd58b5406fa166a20d83f9737c7acd',1,'m_display_util']]]
+  ['dispboxlist_276',['dispboxlist',['../namespacem__display____util.html#a648794269b013786fe4bce0caed7ebe8',1,'m_display__util']]],
+  ['dispnewline_277',['dispnewline',['../namespacem__display____util.html#a18999da6b8f7ea85214ad60af38f724b',1,'m_display__util']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unit_401',['unit',['../structm__display__util_1_1disp__settings.html#abed8dbd1ab1f752ce0d8536234fa2cd5',1,'m_display_util::disp_settings::unit()'],['../structm__display__util_1_1boxlist.html#a25d8047955ec4e12f09ff9233ba5c666',1,'m_display_util::boxlist::unit()']]]
+  ['unit_401',['unit',['../structm__display____util_1_1disp__settings.html#a8d3045e089e891a8bf7194029d7bd8f0',1,'m_display__util::disp_settings::unit()'],['../structm__display____util_1_1boxlist.html#aa47be298ae62d9ec8cd9d29d9fee51c3',1,'m_display__util::boxlist::unit()']]]
 ];

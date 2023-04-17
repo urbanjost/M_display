@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['tch_393',['tch',['../structm__display__util_1_1settings.html#ab1c6c7523b3660ecda155d49db2b35d3',1,'m_display_util::settings']]],
-  ['tosfac_394',['tosfac',['../namespacem__display__util.html#a0bd80d23e6e5fec3979a3357f65fb5e3',1,'m_display_util']]],
-  ['tosset_395',['tosset',['../namespacem__display__util.html#a5c904147cafd4110a901207d859bdf7b',1,'m_display_util']]],
-  ['trim_396',['trim',['../structm__display__util_1_1disp__settings.html#ac3cddf0fdf8876a82fbb8ccf8350b535',1,'m_display_util::disp_settings']]],
-  ['trimb_397',['trimb',['../structm__display__util_1_1tostring__settings.html#abe25da770037b27123ca85b581f08e30',1,'m_display_util::tostring_settings']]],
-  ['trimz_398',['trimz',['../structm__display__util_1_1tostring__settings.html#a3b37afe572f70b79ca2204ac5486ca7e',1,'m_display_util::tostring_settings']]],
-  ['trm_399',['trm',['../structm__display__util_1_1settings.html#aee8aaeb4f69cc02bcbc0ef0cd524af52',1,'m_display_util::settings']]],
-  ['tsty_400',['tsty',['../structm__display__util_1_1settings.html#aa44c905eb8019728ab7c29a035fffe46',1,'m_display_util::settings']]]
+  ['tch_393',['tch',['../structm__display____util_1_1settings.html#a6dd50eaefb7541ede932afd80607f8d1',1,'m_display__util::settings']]],
+  ['tosfac_394',['tosfac',['../namespacem__display____util.html#a45981a359922e49bcd4c80d4fb666333',1,'m_display__util']]],
+  ['tosset_395',['tosset',['../namespacem__display____util.html#a454cc855113ef418bb4035db506bd475',1,'m_display__util']]],
+  ['trim_396',['trim',['../structm__display____util_1_1disp__settings.html#a5366edc7f2694ce40e9b27336ef4a412',1,'m_display__util::disp_settings']]],
+  ['trimb_397',['trimb',['../structm__display____util_1_1tostring__settings.html#a72049cb71fc6ba92a9f0f2841f08879d',1,'m_display__util::tostring_settings']]],
+  ['trimz_398',['trimz',['../structm__display____util_1_1tostring__settings.html#a7ece665eaabad3c66a22c843ee38910c',1,'m_display__util::tostring_settings']]],
+  ['trm_399',['trm',['../structm__display____util_1_1settings.html#a0d7410c26d48178f5fc9489463c4365e',1,'m_display__util::settings']]],
+  ['tsty_400',['tsty',['../structm__display____util_1_1settings.html#a14f331697c90adb40e8ab4b685ac5adb',1,'m_display__util::settings']]]
 ];

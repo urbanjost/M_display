@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['n1_380',['n1',['../structm__display__util_1_1settings.html#a2b84936048353b3a4069bc4add4afbd2',1,'m_display_util::settings']]],
-  ['nextbox_381',['nextbox',['../structm__display__util_1_1boxnode.html#a66de6cb2ce074d35d978a4ac8f3bd29e',1,'m_display_util::boxnode']]],
-  ['nextboxlist_382',['nextboxlist',['../structm__display__util_1_1boxlist.html#a51aeeb63272988f526937af58361c577',1,'m_display_util::boxlist']]],
+  ['n1_380',['n1',['../structm__display____util_1_1settings.html#a556285b0758f01bdbb17c39ed03b7ddd',1,'m_display__util::settings']]],
+  ['nextbox_381',['nextbox',['../structm__display____util_1_1boxnode.html#af0431b0a48225a35f8135c77aaac00a3',1,'m_display__util::boxnode']]],
+  ['nextboxlist_382',['nextboxlist',['../structm__display____util_1_1boxlist.html#a3aca296611c9b1599963a3d6a2e35f39',1,'m_display__util::boxlist']]],
   ['null_5funit_383',['null_unit',['../namespacem__display.html#a19eab1ae2710aecb5e6db7c68152d645',1,'m_display']]],
-  ['number_384',['number',['../structm__display__util_1_1settings.html#aa6d5b31c3417ac137c12ef56b413de2c',1,'m_display_util::settings']]]
+  ['number_384',['number',['../structm__display____util_1_1settings.html#a78b1c94eba874c1e9fe4db76179093f2',1,'m_display__util::settings']]]
 ];

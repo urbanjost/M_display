@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['orient_126',['orient',['../structm__display__util_1_1disp__settings.html#a0fa7ec72928f1bdc958c8bb34115f46f',1,'m_display_util::disp_settings']]]
+  ['orient_127',['orient',['../structm__display____util_1_1disp__settings.html#a4a5b9ccc0ec80d78c182570d4044dd8b',1,'m_display__util::disp_settings']]]
 ];
