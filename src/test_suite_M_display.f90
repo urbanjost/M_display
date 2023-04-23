@@ -1,6 +1,5 @@
 PROGRAM TEST_M_display
 use M_framework__verify, only : unit_check, unit_check_start, unit_check_good, unit_check_bad
-use M_framework__verify, only : unit_check_command, unit_check_keep_going, unit_check_level
 
   ! MAIN TEST PROGRAM FOR M_display. SEE ALSO test_M_display_fpp.F90
 
@@ -33,9 +32,6 @@ use M_framework__verify, only : unit_check_command, unit_check_keep_going, unit_
   character(3)  :: adv = 'no'
   character(90) :: fmt = '("  Testing M_display, int kind=",I0,", real kind=",I0,", logical kind=",I0,"...")'
 
-   unit_check_command=''
-   unit_check_keep_going=.true.
-   unit_check_level=0
    write(*,'(a)')'STARTED M_display'
   ! Use goodbad(1) to indicate the test sequence was begun
    call unit_check_start('M_display',' &
