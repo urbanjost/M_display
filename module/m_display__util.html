@@ -1,3 +1,5 @@
+<!-- -*- mode: jinja2 -*- -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,81 +12,56 @@
 
     <title>M_display__UTIL &ndash; M_display</title>
 
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
       <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-         <script src="../js/jquery-2.1.3.min.js"></script>
-         <script src="../js/svg-pan-zoom.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
   <body>
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
           <a class="navbar-brand" href="../index.html">M_display </a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
-              <a href="#" class="dropdown-toggle"
-                 data-toggle="dropdown" role="button"
-                 aria-haspopup="true"
-                 aria-expanded="false">
-                 Contents <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                    <li><a href="../lists/files.html">Source Files</a></li>
-                  <li><a href="../lists/modules.html">Modules</a></li>
-                  <li><a href="../lists/procedures.html">Procedures</a></li>
-                  <li><a href="../lists/types.html">Derived Types</a></li>
-                  <li><a href="../lists/programs.html">Programs</a></li>
-              </ul>
-            </li>
-                <li class="visible-xs hidden-sm visible-lg">
-                  <a href="../lists/files.html">Source Files</a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
                 </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/modules.html">Modules</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/procedures.html">Procedures</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/types.html">Derived Types</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/programs.html">Programs</a>
-              </li>
-          </ul>
-            <form action="../search.html" class="navbar-form navbar-right" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
               </div>
-              <!--
-                  <button type="submit" class="btn btn-default">Submit</button>
-                  -->
-            </form>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
 
     <div class="container">
   <div class="row">
@@ -92,50 +69,53 @@
       <small>Module</small>
       
     </h1>
-      <div class="row" id="info-bar">
-    <div class="col-lg-12">
-      <div class="well well-sm">
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
         <ul class="list-inline" style="margin-bottom:0px;display:inline">
 
-          <li id="statements"><i class="fa fa-list-ol"></i>
-            <a data-toggle="tooltip"
-               data-placement="bottom" data-html="true"
-               title="31.8% of total for modules and submodules.">779 statements</a>
-          </li>
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip"
+                 data-bs-placement="bottom" data-html="true"
+                 title="31.8% of total for modules and submodules.">779 statements</a>
+            </li>
 
-            <li id="source-file">
+            <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
               <a href="../src/M_display.f90"> Source File</a>
             </li>
         </ul>
-        <ol class="breadcrumb in-well text-right">
-              <li><a href='../sourcefile/m_display.f90.html'>M_display.f90</a></li>
-          <li class="active">M_display__UTIL</li>
-        </ol>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/m_display.f90.html'>M_display.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">M_display__UTIL</li>
+          </ol>
+        </nav>
       </div>
     </div>
   </div>
   <script>
     $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-bs-toggle="tooltip"]').tooltip()
     })
   </script>
 
   </div>
 
   <div class="row">
-    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    <div class="col-md-3">
         <div id="sidebar">
       <h3>Contents</h3>
   
-      <div class="panel panel-primary">
-      <div class="panel-heading text-left">
-        <h3 class="panel-title">
-          <a data-toggle="collapse" href="#vars-0">Variables</a>
-        </h3>
-      </div>
-      <div id="vars-0" class="panel-collapse collapse">
-        <div class="list-group">
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
             <a class="list-group-item" href="../module/m_display__util.html#variable-defset">DEFSET</a>
             <a class="list-group-item" href="../module/m_display__util.html#variable-factory_settings">FACTORY_SETTINGS</a>
             <a class="list-group-item" href="../module/m_display__util.html#variable-errormsg">errormsg</a>
@@ -153,14 +133,13 @@
   
   
   
-      <div class="panel panel-primary">
-      <div class="panel-heading text-left">
-        <h3 class="panel-title">
-          <a data-toggle="collapse" href="#types-0">Derived Types</a>
-        </h3>
-      </div>
-      <div id="types-0" class="panel-collapse collapse">
-        <div class="list-group">
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#types-0"
+         aria-expanded="false" aria-controls="types-0">
+         <h4 class="card-header bg-primary text-white">Derived Types</h4>
+      </a>
+      <div id="types-0" class="collapse">
+        <div class="list-group list-group-flush">
             <a class="list-group-item" href="../module/m_display__util.html#type-boxlist">boxlist</a>
             <a class="list-group-item" href="../module/m_display__util.html#type-boxnode">boxnode</a>
             <a class="list-group-item" href="../module/m_display__util.html#type-disp_settings">disp_settings</a>
@@ -170,28 +149,26 @@
       </div>
     </div>
 
-      <div class="panel panel-primary">
-      <div class="panel-heading text-left">
-        <h3 class="panel-title">
-          <a data-toggle="collapse" href="#funcs-0">Functions</a>
-        </h3>
-      </div>
-      <div id="funcs-0" class="panel-collapse collapse">
-        <div class="list-group">
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#funcs-0"
+         aria-expanded="false" aria-controls="funcs-0">
+         <h4 class="card-header bg-primary text-white">Functions</h4>
+      </a>
+      <div id="funcs-0" class="collapse">
+        <div class="list-group list-group-flush">
             <a class="list-group-item" href="../module/m_display__util.html#proc-nnblk">nnblk</a>
             <a class="list-group-item" href="../module/m_display__util.html#proc-upper">upper</a>
         </div>
       </div>
     </div>
 
-      <div class="panel panel-primary">
-      <div class="panel-heading text-left">
-        <h3 class="panel-title">
-          <a data-toggle="collapse" href="#subs-0">Subroutines</a>
-        </h3>
-      </div>
-      <div id="subs-0" class="panel-collapse collapse">
-        <div class="list-group">
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
             <a class="list-group-item" href="../module/m_display__util.html#proc-check_settings">check_settings</a>
             <a class="list-group-item" href="../module/m_display__util.html#proc-copyseptobox">copyseptobox</a>
             <a class="list-group-item" href="../module/m_display__util.html#proc-copytobox">copytobox</a>
@@ -218,6 +195,7 @@
   
   
   
+  
 
 
   </div>
@@ -226,7 +204,7 @@
 
     <div class="col-md-9" id='text'>
       <h2 id="name">NAME</h2>
-<div class="codehilite"><pre><span></span><code>  <span class="nv">M_display</span><span class="ss">(</span><span class="mi">3</span><span class="nv">f</span><span class="ss">)</span> <span class="o">-</span> [<span class="nv">M_display</span>::<span class="nv">INTRO</span>] <span class="nv">module</span> <span class="k">for</span> <span class="nv">pretty</span><span class="o">-</span><span class="nv">printing</span> <span class="nv">matrices</span>
+<div class="codehilite"><pre><span></span><code>  M_display(3f) - [M_display::INTRO] module for pretty-printing matrices
 </code></pre></div>
 
 <h2 id="introduction">INTRODUCTION</h2>
@@ -241,13 +219,13 @@
  precision, double precision, complex, logical and character. Integer,
  real, complex and logical data of other than default kind are supported
  with add-on modules. The module contains the following public procedures:</p>
-<div class="codehilite"><pre><span></span><code> <span class="nv">Subroutine</span> <span class="nv">DISP</span>                  <span class="nv">The</span> <span class="nv">main</span> <span class="nv">procedure</span> <span class="nv">used</span> <span class="k">for</span> <span class="nv">displaying</span> <span class="nv">items</span>
- <span class="nv">Subroutine</span> <span class="nv">DISP_SET</span>              <span class="nv">Used</span> <span class="nv">to</span> <span class="nv">change</span> <span class="nv">default</span> <span class="nv">settings</span> <span class="k">for</span> <span class="nv">DISP</span>
- <span class="nv">Subroutine</span> <span class="nv">DISP_SET_FACTORY</span>      <span class="nv">Restores</span> <span class="nv">DISP</span><span class="o">-</span><span class="nv">settings</span> <span class="nv">to</span> <span class="nv">original</span> <span class="ss">(</span><span class="nv">factory</span><span class="ss">)</span> <span class="nv">default</span>
- <span class="nv">Function</span> <span class="nv">DISP_GET</span>                <span class="nv">Returns</span> <span class="nv">a</span> <span class="nv">structure</span> <span class="nv">with</span> <span class="nv">current</span> <span class="nv">DISP</span><span class="o">-</span><span class="nv">settings</span>
- <span class="nv">Function</span> <span class="nv">TOSTRING</span>                <span class="nv">Returns</span> <span class="nv">a</span> <span class="nv">string</span> <span class="nv">representation</span> <span class="nv">of</span> <span class="nv">a</span> <span class="nv">scalar</span> <span class="nv">or</span> <span class="nv">vector</span>
- <span class="nv">Subroutine</span> <span class="nv">TOSTRING_SET</span>          <span class="nv">Used</span> <span class="nv">to</span> <span class="nv">change</span> <span class="nv">default</span> <span class="nv">settings</span> <span class="k">for</span> <span class="nv">TOSTRING</span>
- <span class="nv">Subroutine</span> <span class="nv">TOSTRING_SET_FACTORY</span>  <span class="nv">Restores</span> <span class="nv">TOSTRING</span><span class="o">-</span><span class="nv">settings</span> <span class="nv">to</span> <span class="nv">original</span> <span class="nv">default</span>
+<div class="codehilite"><pre><span></span><code> Subroutine DISP                  The main procedure used for displaying items
+ Subroutine DISP_SET              Used to change default settings for DISP
+ Subroutine DISP_SET_FACTORY      Restores DISP-settings to original (factory) default
+ Function DISP_GET                Returns a structure with current DISP-settings
+ Function TOSTRING                Returns a string representation of a scalar or vector
+ Subroutine TOSTRING_SET          Used to change default settings for TOSTRING
+ Subroutine TOSTRING_SET_FACTORY  Restores TOSTRING-settings to original default
 </code></pre></div>
 
 <p>In addition the module defines a public derived type, DISP_SETTINGS,
@@ -304,9 +282,9 @@
 </code></pre></div>
 
 <p>Complex numbers are formatted as illustrated by:</p>
-<div class="codehilite"><pre><span></span><code>  &gt; COMPLEX C(3,3)
-  &gt; FORALL(I=1:3, K=1:3) C(I,K)=LOG(CMPLX(-I*K))**K
-  &gt; CALL DISP(&#39;C = &#39;, C, &#39;F0.3&#39;)
+<div class="codehilite"><pre><span></span><code><span class="k">  &gt; </span><span class="ge">COMPLEX C(3,3)</span>
+<span class="k">  &gt; </span><span class="ge">FORALL(I=1:3, K=1:3) C(I,K)=LOG(CMPLX(-I*K))**K</span>
+<span class="k">  &gt; </span><span class="ge">CALL DISP(&#39;C = &#39;, C, &#39;F0.3&#39;)</span>
 </code></pre></div>
 
 <p>which will display</p>
@@ -341,39 +319,39 @@
  mex files to display in the Matlab command window.</p>
 <h2 id="an-example-program">AN EXAMPLE PROGRAM</h2>
 <p>Following is a short example program that uses the package:</p>
-<div class="codehilite"><pre><span></span><code>   <span class="nv">program</span> <span class="nv">example</span>
-     <span class="nv">use</span> <span class="nv">M_display</span>
-     <span class="nv">real</span> :: <span class="nv">a</span><span class="ss">(</span><span class="mi">3</span><span class="ss">)</span> <span class="o">=</span> [ <span class="mi">1</span>.<span class="mi">2345</span>, <span class="mi">2</span>.<span class="mi">3456</span>, <span class="mi">3</span>.<span class="mi">4567</span> ]
-     <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">A = </span><span class="s1">&#39;</span>, <span class="nv">A</span>, <span class="nv">SEP</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">, </span><span class="s1">&#39;</span>, <span class="nv">ORIENT</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">ROW</span><span class="s1">&#39;</span><span class="ss">)</span>
-   <span class="k">end</span> <span class="nv">program</span> <span class="nv">example</span>
+<div class="codehilite"><pre><span></span><code>   program example
+     use M_display
+     real :: a(3) = [ 1.2345, 2.3456, 3.4567 ]
+     call disp(&#39;A = &#39;, A, SEP=&#39;, &#39;, ORIENT = &#39;ROW&#39;)
+   end program example
 </code></pre></div>
 
 <p>The program should write out &ldquo;A = 1.23450, 2.34560, 3.45670&rdquo;.</p>
 <p>A longer example program:</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">program</span> <span class="nv">demo_M_display</span>
-<span class="nv">use</span> <span class="nv">M_display</span>
-<span class="nv">implicit</span> <span class="nv">none</span>
-<span class="nv">integer</span>, <span class="nv">parameter</span> :: <span class="nv">rk</span> <span class="o">=</span> <span class="nv">selected_real_kind</span><span class="ss">(</span><span class="mi">6</span><span class="ss">)</span>, <span class="nv">n</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="nv">real</span><span class="ss">(</span><span class="nv">rk</span><span class="ss">)</span> :: <span class="nv">a</span><span class="ss">(</span><span class="nv">n</span>,<span class="nv">n</span><span class="ss">)</span>, <span class="nv">b</span><span class="ss">(</span><span class="nv">n</span>,<span class="nv">n</span><span class="ss">)</span>, <span class="nv">x</span>
-<span class="nv">integer</span> <span class="nv">i</span>, <span class="nv">j</span>, <span class="nv">k</span><span class="ss">(</span><span class="mi">5</span><span class="ss">)</span>
-  <span class="k">call</span> <span class="nl">disp_set</span><span class="ss">(</span><span class="nv">advance</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">double</span><span class="s1">&#39;</span><span class="ss">)</span>
-  <span class="nv">forall</span><span class="ss">(</span><span class="nv">i</span><span class="o">=</span><span class="mi">1</span>:<span class="nv">n</span>, <span class="nv">j</span><span class="o">=</span><span class="mi">1</span>:<span class="nv">n</span><span class="ss">)</span>
-    <span class="nv">a</span><span class="ss">(</span><span class="nv">i</span>,<span class="nv">j</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">exp</span><span class="ss">(</span><span class="nv">real</span><span class="ss">(</span><span class="nv">i</span><span class="o">+</span><span class="nv">j</span><span class="o">-</span><span class="mi">1</span>, <span class="nv">rk</span><span class="ss">))</span>
-    <span class="nv">b</span><span class="ss">(</span><span class="nv">i</span>,<span class="nv">j</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">exp</span><span class="ss">(</span><span class="nv">real</span><span class="ss">(</span><span class="nv">i</span><span class="o">**</span><span class="nv">j</span>, <span class="nv">rk</span><span class="ss">))</span>
-  <span class="k">end</span> <span class="nv">forall</span>
-  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">A = </span><span class="s1">&#39;</span>, <span class="nv">a</span><span class="ss">)</span>
-  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span><span class="nv">b</span><span class="ss">)</span>
-  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span><span class="nv">a</span><span class="ss">(</span><span class="mi">1</span>:<span class="mi">2</span>,:<span class="ss">)</span>,<span class="s1">&#39;</span><span class="s">f0.5</span><span class="s1">&#39;</span><span class="ss">)</span>
-  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">MATRIX</span><span class="s1">&#39;</span>, <span class="nv">a</span>, <span class="nv">style</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">UNDERLINE &amp; NUMBER</span><span class="s1">&#39;</span>, <span class="nv">unit</span><span class="o">=-</span><span class="mi">3</span>, <span class="nv">digmax</span><span class="o">=</span><span class="mi">4</span><span class="ss">)</span>
-  <span class="nv">k</span> <span class="o">=</span> [<span class="o">-</span><span class="mi">3</span>,<span class="mi">0</span>,<span class="mi">12</span>,<span class="mi">14</span>,<span class="mi">0</span>]
-  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">K</span><span class="s1">&#39;</span>, <span class="nv">k</span>, <span class="nv">style</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">pad</span><span class="s1">&#39;</span>, <span class="nv">orient</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">row</span><span class="s1">&#39;</span>, <span class="nv">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="s"> </span><span class="s1">&#39;</span>, <span class="nv">zeroas</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">.</span><span class="s1">&#39;</span><span class="ss">)</span>
-  <span class="nv">x</span> <span class="o">=</span> <span class="mi">1</span>.<span class="mi">5</span>
-  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">The square of </span><span class="s1">&#39;</span><span class="o">//</span><span class="nv">tostring</span><span class="ss">(</span><span class="nv">x</span><span class="ss">)</span><span class="o">//</span><span class="s1">&#39;</span><span class="s"> is </span><span class="s1">&#39;</span><span class="o">//</span><span class="nv">tostring</span><span class="ss">(</span><span class="nv">x</span><span class="o">*</span><span class="nv">x</span><span class="ss">))</span>
-  <span class="k">call</span> <span class="nl">disp_set</span><span class="ss">(</span><span class="nv">matsep</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s"> | </span><span class="s1">&#39;</span><span class="ss">)</span>
-  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span>[<span class="mi">11</span>,<span class="mi">12</span>,<span class="mi">13</span>], <span class="nv">advance</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">no</span><span class="s1">&#39;</span><span class="ss">)</span>
-  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span>[.<span class="nv">true</span>., .<span class="nv">false</span>., .<span class="nv">true</span>.], <span class="nv">advance</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">no</span><span class="s1">&#39;</span><span class="ss">)</span>
-  <span class="k">call</span> <span class="nl">disp</span><span class="ss">(</span>[<span class="s1">&#39;</span><span class="s">A</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">B</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">C</span><span class="s1">&#39;</span>]<span class="ss">)</span>
-<span class="k">end</span> <span class="nv">program</span> <span class="nv">demo_M_display</span>
+<div class="codehilite"><pre><span></span><code><span class="nx">program</span><span class="w"> </span><span class="nx">demo_M_display</span>
+<span class="nx">use</span><span class="w"> </span><span class="nx">M_display</span>
+<span class="nx">implicit</span><span class="w"> </span><span class="nx">none</span>
+<span class="nx">integer</span><span class="p">,</span><span class="w"> </span><span class="nx">parameter</span><span class="w"> </span><span class="o">::</span><span class="w"> </span><span class="nx">rk</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">selected_real_kind</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span>
+<span class="nx">real</span><span class="p">(</span><span class="nx">rk</span><span class="p">)</span><span class="w"> </span><span class="o">::</span><span class="w"> </span><span class="nx">a</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span><span class="nx">n</span><span class="p">),</span><span class="w"> </span><span class="nx">b</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span><span class="nx">n</span><span class="p">),</span><span class="w"> </span><span class="nx">x</span>
+<span class="nx">integer</span><span class="w"> </span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="p">,</span><span class="w"> </span><span class="nx">k</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">call</span><span class="w"> </span><span class="nx">disp_set</span><span class="p">(</span><span class="nx">advance</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">double</span><span class="err">&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="k">forall</span><span class="p">(</span><span class="nx">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="nx">n</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="nx">n</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">a</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="nx">j</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">exp</span><span class="p">(</span><span class="nx">real</span><span class="p">(</span><span class="nx">i</span><span class="o">+</span><span class="nx">j</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nx">rk</span><span class="p">))</span>
+<span class="w">    </span><span class="nx">b</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="nx">j</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">exp</span><span class="p">(</span><span class="nx">real</span><span class="p">(</span><span class="nx">i</span><span class="o">**</span><span class="nx">j</span><span class="p">,</span><span class="w"> </span><span class="nx">rk</span><span class="p">))</span>
+<span class="w">  </span><span class="nx">end</span><span class="w"> </span><span class="k">forall</span>
+<span class="w">  </span><span class="nx">call</span><span class="w"> </span><span class="nx">disp</span><span class="p">(</span><span class="err">&#39;</span><span class="nx">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">a</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">call</span><span class="w"> </span><span class="nx">disp</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">call</span><span class="w"> </span><span class="nx">disp</span><span class="p">(</span><span class="nx">a</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,:),</span><span class="err">&#39;</span><span class="nx">f0</span><span class="m m-Double">.5</span><span class="err">&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">call</span><span class="w"> </span><span class="nx">disp</span><span class="p">(</span><span class="err">&#39;</span><span class="nx">MATRIX</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">style</span><span class="p">=</span><span class="err">&#39;</span><span class="nx">UNDERLINE</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nx">NUMBER</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">unit</span><span class="p">=</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nx">digmax</span><span class="p">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">k</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="w">  </span><span class="nx">call</span><span class="w"> </span><span class="nx">disp</span><span class="p">(</span><span class="sc">&#39;K&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">k</span><span class="p">,</span><span class="w"> </span><span class="nx">style</span><span class="p">=</span><span class="err">&#39;</span><span class="nx">pad</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">orient</span><span class="p">=</span><span class="err">&#39;</span><span class="nx">row</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">sep</span><span class="p">=</span><span class="sc">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">zeroas</span><span class="p">=</span><span class="sc">&#39;.&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m m-Double">1.5</span>
+<span class="w">  </span><span class="nx">call</span><span class="w"> </span><span class="nx">disp</span><span class="p">(</span><span class="err">&#39;</span><span class="nx">The</span><span class="w"> </span><span class="nx">square</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="err">&#39;</span><span class="c1">//tostring(x)//&#39; is &#39;//tostring(x*x))</span>
+<span class="w">  </span><span class="nx">call</span><span class="w"> </span><span class="nx">disp_set</span><span class="p">(</span><span class="nx">matsep</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="err">&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">call</span><span class="w"> </span><span class="nx">disp</span><span class="p">([</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">],</span><span class="w"> </span><span class="nx">advance</span><span class="p">=</span><span class="err">&#39;</span><span class="nx">no</span><span class="err">&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">call</span><span class="w"> </span><span class="nx">disp</span><span class="p">([.</span><span class="kc">true</span><span class="p">.,</span><span class="w"> </span><span class="p">.</span><span class="kc">false</span><span class="p">.,</span><span class="w"> </span><span class="p">.</span><span class="kc">true</span><span class="p">.],</span><span class="w"> </span><span class="nx">advance</span><span class="p">=</span><span class="err">&#39;</span><span class="nx">no</span><span class="err">&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">call</span><span class="w"> </span><span class="nx">disp</span><span class="p">([</span><span class="sc">&#39;A&#39;</span><span class="p">,</span><span class="sc">&#39;B&#39;</span><span class="p">,</span><span class="sc">&#39;C&#39;</span><span class="p">])</span>
+<span class="nx">end</span><span class="w"> </span><span class="nx">program</span><span class="w"> </span><span class="nx">demo_M_display</span>
 </code></pre></div>
 
 <p>Expected results:</p>
@@ -406,126 +384,28 @@
 </code></pre></div>
 
 <h2 id="author">AUTHOR</h2>
-<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="n">Based</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">dispmodule</span><span class="p">(</span><span class="mi">3</span><span class="n">f</span><span class="p">),</span><span class="w"></span>
-<span class="w"> </span><span class="ss">&quot;A Fortran 95 module for pretty-printing matrices&quot;</span><span class="p">.</span><span class="w"></span>
-<span class="w"> </span><span class="n">Version</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="mf">1.02</span><span class="w"> </span><span class="mi">6</span><span class="o">-</span><span class="n">Sept</span><span class="o">-</span><span class="mi">2008</span><span class="p">,</span><span class="w"></span>
-<span class="w"> </span><span class="n">Kristjan</span><span class="w"> </span><span class="n">Jonasson</span><span class="p">,</span><span class="w"></span>
-<span class="w"> </span><span class="n">Dept</span><span class="p">.</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">Computer</span><span class="w"> </span><span class="n">Science</span><span class="p">,</span><span class="w"></span>
-<span class="w"> </span><span class="n">University</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">Iceland</span><span class="w"> </span><span class="p">(</span><span class="n">jonasson</span><span class="nv">@hi</span><span class="p">.</span><span class="k">is</span><span class="p">).</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="n">Based</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">dispmodule</span><span class="p">(</span><span class="mi">3</span><span class="n">f</span><span class="p">),</span>
+<span class="w"> </span><span class="ss">&quot;A Fortran 95 module for pretty-printing matrices&quot;</span><span class="p">.</span>
+<span class="w"> </span><span class="n">Version</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="mf">1.02</span><span class="w"> </span><span class="mi">6</span><span class="o">-</span><span class="n">Sept</span><span class="o">-</span><span class="mi">2008</span><span class="p">,</span>
+<span class="w"> </span><span class="n">Kristjan</span><span class="w"> </span><span class="n">Jonasson</span><span class="p">,</span>
+<span class="w"> </span><span class="n">Dept</span><span class="p">.</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">Computer</span><span class="w"> </span><span class="n">Science</span><span class="p">,</span>
+<span class="w"> </span><span class="n">University</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">Iceland</span><span class="w"> </span><span class="p">(</span><span class="n">jonasson</span><span class="nv">@hi</span><span class="p">.</span><span class="k">is</span><span class="p">).</span>
 </code></pre></div>
-<br>          <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Uses</h3>
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='m_display__putstrmodule.html'>M_display__PUTSTRMODULE</a></li>
+              </ul>
+            </li>
+        </ul>
       </div>
-      <ul class="list-group">
-          <li class="list-group-item">
-            <ul class="list-inline">
-                <li><a href='../module/m_display__putstrmodule.html'>M_display__PUTSTRMODULE</a></li>
-            </ul>
-          </li>
-      </ul>
     </div>
 
       
       <br>
-
-      <section class="visible-xs visible-sm hidden-md">
-          <h3>Contents</h3>
-  
-      <div class="panel panel-primary">
-      <div class="panel-heading text-left">
-        <h3 class="panel-title">
-          <a data-toggle="collapse" href="#vars-1">Variables</a>
-        </h3>
-      </div>
-      <div id="vars-1" class="panel-collapse collapse">
-        <div class="list-group">
-            <a class="list-group-item" href="../module/m_display__util.html#variable-defset">DEFSET</a>
-            <a class="list-group-item" href="../module/m_display__util.html#variable-factory_settings">FACTORY_SETTINGS</a>
-            <a class="list-group-item" href="../module/m_display__util.html#variable-errormsg">errormsg</a>
-            <a class="list-group-item" href="../module/m_display__util.html#variable-tosfac">tosfac</a>
-            <a class="list-group-item" href="../module/m_display__util.html#variable-tosset">tosset</a>
-        </div>
-      </div>
-    </div>
-
-  
-  
-  
-  
-  
-  
-  
-  
-      <div class="panel panel-primary">
-      <div class="panel-heading text-left">
-        <h3 class="panel-title">
-          <a data-toggle="collapse" href="#types-1">Derived Types</a>
-        </h3>
-      </div>
-      <div id="types-1" class="panel-collapse collapse">
-        <div class="list-group">
-            <a class="list-group-item" href="../module/m_display__util.html#type-boxlist">boxlist</a>
-            <a class="list-group-item" href="../module/m_display__util.html#type-boxnode">boxnode</a>
-            <a class="list-group-item" href="../module/m_display__util.html#type-disp_settings">disp_settings</a>
-            <a class="list-group-item" href="../module/m_display__util.html#type-settings">settings</a>
-            <a class="list-group-item" href="../module/m_display__util.html#type-tostring_settings">tostring_settings</a>
-        </div>
-      </div>
-    </div>
-
-      <div class="panel panel-primary">
-      <div class="panel-heading text-left">
-        <h3 class="panel-title">
-          <a data-toggle="collapse" href="#funcs-1">Functions</a>
-        </h3>
-      </div>
-      <div id="funcs-1" class="panel-collapse collapse">
-        <div class="list-group">
-            <a class="list-group-item" href="../module/m_display__util.html#proc-nnblk">nnblk</a>
-            <a class="list-group-item" href="../module/m_display__util.html#proc-upper">upper</a>
-        </div>
-      </div>
-    </div>
-
-      <div class="panel panel-primary">
-      <div class="panel-heading text-left">
-        <h3 class="panel-title">
-          <a data-toggle="collapse" href="#subs-1">Subroutines</a>
-        </h3>
-      </div>
-      <div id="subs-1" class="panel-collapse collapse">
-        <div class="list-group">
-            <a class="list-group-item" href="../module/m_display__util.html#proc-check_settings">check_settings</a>
-            <a class="list-group-item" href="../module/m_display__util.html#proc-copyseptobox">copyseptobox</a>
-            <a class="list-group-item" href="../module/m_display__util.html#proc-copytobox">copytobox</a>
-            <a class="list-group-item" href="../module/m_display__util.html#proc-disp_errmsg">disp_errmsg</a>
-            <a class="list-group-item" href="../module/m_display__util.html#proc-find_editdesc_real">find_editdesc_real</a>
-            <a class="list-group-item" href="../module/m_display__util.html#proc-finishbox">finishbox</a>
-            <a class="list-group-item" href="../module/m_display__util.html#proc-get_se">get_SE</a>
-            <a class="list-group-item" href="../module/m_display__util.html#proc-preparebox">preparebox</a>
-            <a class="list-group-item" href="../module/m_display__util.html#proc-readfmt">readfmt</a>
-            <a class="list-group-item" href="../module/m_display__util.html#proc-replace_w">replace_w</a>
-            <a class="list-group-item" href="../module/m_display__util.html#proc-replace_zeronaninf">replace_zeronaninf</a>
-            <a class="list-group-item" href="../module/m_display__util.html#proc-tostring_check_settings">tostring_check_settings</a>
-            <a class="list-group-item" href="../module/m_display__util.html#proc-tostring_get">tostring_get</a>
-            <a class="list-group-item" href="../module/m_display__util.html#proc-tostring_get_complex">tostring_get_complex</a>
-            <a class="list-group-item" href="../module/m_display__util.html#proc-trim_real">trim_real</a>
-            <a class="list-group-item" href="../module/m_display__util.html#proc-trim_s_real">trim_s_real</a>
-        </div>
-      </div>
-    </div>
-
-  
-  
-  
-  
-  
-  
-
-
-      </section>
-      <br class="visible-xs visible-sm hidden-md">
 
 
         <section>
@@ -533,11 +413,11 @@
             <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Visibility</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-<th></th><th>Initial</th>        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
@@ -586,7 +466,7 @@ parameter
             <td>::</td>
             <td><strong>errormsg</strong></td>
 <td> =</td>
-                <td>'Illegal format'</td>
+                <td>&#39;Illegal format&#39;</td>
             <td>
                 
             </td>
@@ -636,8 +516,8 @@ parameter
 
         <section>
           <h2>Derived Types</h2>
-              <div class="panel panel-default">
-    <div class="panel-heading codesum">
+              <div class="card">
+    <div class="card-header codesum">
       <span class="anchor" id="type-boxlist"></span>
       <h3>
         type, public&nbsp;::&nbsp;
@@ -645,18 +525,18 @@ parameter
         
       </h3>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
       
 
         <h4>Components</h4>
           <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Visibility</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-<th></th><th>Initial</th>        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
@@ -712,7 +592,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-unit"></span>
+              <span class="anchor" id="variable-unit~2"></span>
               integer,
             </td>
               <td>public</td>
@@ -736,8 +616,8 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum">
+              <div class="card">
+    <div class="card-header codesum">
       <span class="anchor" id="type-boxnode"></span>
       <h3>
         type, public&nbsp;::&nbsp;
@@ -745,18 +625,18 @@ parameter
         
       </h3>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
       
 
         <h4>Components</h4>
           <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Visibility</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-<th></th><th>Initial</th>        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
@@ -802,8 +682,8 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum">
+              <div class="card">
+    <div class="card-header codesum">
       <span class="anchor" id="type-disp_settings"></span>
       <h3>
         type, public&nbsp;::&nbsp;
@@ -811,18 +691,18 @@ parameter
         
       </h3>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
       
 
         <h4>Components</h4>
           <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Visibility</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-<th></th><th>Initial</th>        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
@@ -837,7 +717,7 @@ parameter
             <td>::</td>
             <td><strong>advance</strong></td>
 <td> =</td>
-                <td>'YES'</td>
+                <td>&#39;YES&#39;</td>
             <td>
 
             </td>
@@ -871,7 +751,7 @@ parameter
             <td>::</td>
             <td><strong>matsep</strong></td>
 <td> =</td>
-                <td>'&nbsp;&nbsp;&nbsp;'</td>
+                <td>&#39;   &#39;</td>
             <td>
 
             </td>
@@ -905,7 +785,7 @@ parameter
             <td>::</td>
             <td><strong>orient</strong></td>
 <td> =</td>
-                <td>'COL'</td>
+                <td>&#39;COL&#39;</td>
             <td>
 
             </td>
@@ -922,7 +802,7 @@ parameter
             <td>::</td>
             <td><strong>sep</strong></td>
 <td> =</td>
-                <td>'&nbsp;&nbsp;'</td>
+                <td>&#39;  &#39;</td>
             <td>
 
             </td>
@@ -956,7 +836,7 @@ parameter
             <td>::</td>
             <td><strong>style</strong></td>
 <td> =</td>
-                <td>'LEFT'</td>
+                <td>&#39;LEFT&#39;</td>
             <td>
 
             </td>
@@ -973,14 +853,14 @@ parameter
             <td>::</td>
             <td><strong>trim</strong></td>
 <td> =</td>
-                <td>'AUTO'</td>
+                <td>&#39;AUTO&#39;</td>
             <td>
 
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-unit~2"></span>
+              <span class="anchor" id="variable-unit"></span>
               integer,
             </td>
               <td>public</td>
@@ -1024,7 +904,7 @@ parameter
             <td>::</td>
             <td><strong>zeroas</strong></td>
 <td> =</td>
-                <td>''</td>
+                <td>&#39;&#39;</td>
             <td>
 
             </td>
@@ -1038,8 +918,8 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum">
+              <div class="card">
+    <div class="card-header codesum">
       <span class="anchor" id="type-settings"></span>
       <h3>
         type, public&nbsp;::&nbsp;
@@ -1047,18 +927,18 @@ parameter
         
       </h3>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
       
 
         <h4>Components</h4>
           <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Visibility</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-<th></th><th>Initial</th>        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
@@ -1267,7 +1147,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-sep~2"></span>
+              <span class="anchor" id="variable-sep~3"></span>
               character(len=9),
             </td>
               <td>public</td>
@@ -1393,8 +1273,8 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum">
+              <div class="card">
+    <div class="card-header codesum">
       <span class="anchor" id="type-tostring_settings"></span>
       <h3>
         type, public&nbsp;::&nbsp;
@@ -1402,18 +1282,18 @@ parameter
         
       </h3>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
       
 
         <h4>Components</h4>
           <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Visibility</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-<th></th><th>Initial</th>        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
@@ -1428,7 +1308,7 @@ parameter
             <td>::</td>
             <td><strong>ifmt</strong></td>
 <td> =</td>
-                <td>'I0'</td>
+                <td>&#39;I0&#39;</td>
             <td>
 
             </td>
@@ -1445,14 +1325,14 @@ parameter
             <td>::</td>
             <td><strong>rfmt</strong></td>
 <td> =</td>
-                <td>'1PG12.5'</td>
+                <td>&#39;1PG12.5&#39;</td>
             <td>
 
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-sep~3"></span>
+              <span class="anchor" id="variable-sep~2"></span>
               character(len=9),
             </td>
               <td>public</td>
@@ -1462,7 +1342,7 @@ parameter
             <td>::</td>
             <td><strong>sep</strong></td>
 <td> =</td>
-                <td>', '</td>
+                <td>&#39;, &#39;</td>
             <td>
 
             </td>
@@ -1496,7 +1376,7 @@ parameter
             <td>::</td>
             <td><strong>trimb</strong></td>
 <td> =</td>
-                <td>'YES'</td>
+                <td>&#39;YES&#39;</td>
             <td>
 
             </td>
@@ -1513,7 +1393,7 @@ parameter
             <td>::</td>
             <td><strong>trimz</strong></td>
 <td> =</td>
-                <td>'G'</td>
+                <td>&#39;G&#39;</td>
             <td>
 
             </td>
@@ -1532,10 +1412,10 @@ parameter
 
         <section>
           <h2>Functions</h2>
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-nnblk"></span><h3>public pure function <a href='../proc/nnblk.html'>nnblk</a>(s) result(n)  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-nnblk"></span> <h3>public pure function <a href='../proc/nnblk.html'>nnblk</a>(s) result(n)  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -1543,16 +1423,16 @@ parameter
       <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-s~7"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -1577,10 +1457,10 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-upper"></span><h3>public pure function <a href='../proc/upper.html'>upper</a>(s) result(su)  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-upper"></span> <h3>public pure function <a href='../proc/upper.html'>upper</a>(s) result(su)  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -1588,16 +1468,16 @@ parameter
       <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-s~6"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -1627,10 +1507,10 @@ parameter
 
         <section>
           <h2>Subroutines</h2>
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-check_settings"></span><h3>public  subroutine <a href='../proc/check_settings.html'>check_settings</a>()  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-check_settings"></span> <h3>public  subroutine <a href='../proc/check_settings.html'>check_settings</a>()  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -1640,10 +1520,10 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-copyseptobox"></span><h3>public  subroutine <a href='../proc/copyseptobox.html'>copyseptobox</a>(sep, m, lin1, boxp, wleft)  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-copyseptobox"></span> <h3>public  subroutine <a href='../proc/copyseptobox.html'>copyseptobox</a>(sep, m, lin1, boxp, wleft)  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -1651,16 +1531,16 @@ parameter
       <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-sep~4"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -1675,7 +1555,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-m~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1690,7 +1570,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-lin1~3"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1705,7 +1585,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-boxp~3"></span>
               character(len=1),
             </td>
 <td>intent(inout)</td>
@@ -1720,7 +1600,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-wleft~3"></span>
               integer,
             </td>
 <td>intent(inout)</td>
@@ -1740,10 +1620,10 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-copytobox"></span><h3>public  subroutine <a href='../proc/copytobox.html'>copytobox</a>(s, lin1, widj, widpj, nblj, boxp, wleft)  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-copytobox"></span> <h3>public  subroutine <a href='../proc/copytobox.html'>copytobox</a>(s, lin1, widj, widpj, nblj, boxp, wleft)  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -1751,16 +1631,16 @@ parameter
       <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-s~2"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -1775,7 +1655,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-lin1~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1790,7 +1670,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-widj"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1805,7 +1685,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-widpj"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1820,7 +1700,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-nblj"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1835,7 +1715,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-boxp~2"></span>
               character(len=1),
             </td>
 <td>intent(inout)</td>
@@ -1850,7 +1730,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-wleft~2"></span>
               integer,
             </td>
 <td>intent(inout)</td>
@@ -1870,10 +1750,10 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-disp_errmsg"></span><h3>public  subroutine <a href='../proc/disp_errmsg.html'>disp_errmsg</a>(s)  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-disp_errmsg"></span> <h3>public  subroutine <a href='../proc/disp_errmsg.html'>disp_errmsg</a>(s)  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -1881,16 +1761,16 @@ parameter
       <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-s~8"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -1910,10 +1790,10 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-find_editdesc_real"></span><h3>public  subroutine <a href='../proc/find_editdesc_real.html'>find_editdesc_real</a>(exp, expm, dmx, edesc, flen, ndec, posit)  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-find_editdesc_real"></span> <h3>public  subroutine <a href='../proc/find_editdesc_real.html'>find_editdesc_real</a>(exp, expm, dmx, edesc, flen, ndec, posit)  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -1921,16 +1801,16 @@ parameter
       <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-exp"></span>
               integer,
             </td>
 <td>intent(inout)</td>
@@ -1945,7 +1825,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-expm"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1960,7 +1840,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-dmx~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1975,7 +1855,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-edesc"></span>
               character(len=14),
             </td>
 <td>intent(out)</td>
@@ -1990,7 +1870,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-flen"></span>
               integer,
             </td>
 <td>intent(out)</td>
@@ -2005,7 +1885,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-ndec"></span>
               integer,
             </td>
 <td>intent(out)</td>
@@ -2020,7 +1900,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-posit"></span>
               logical,
             </td>
 <td>intent(in)</td>
@@ -2040,10 +1920,10 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-finishbox"></span><h3>public  subroutine <a href='../proc/finishbox.html'>finishbox</a>(title, SE, boxp)  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-finishbox"></span> <h3>public  subroutine <a href='../proc/finishbox.html'>finishbox</a>(title, SE, boxp)  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -2051,16 +1931,16 @@ parameter
       <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-title~2"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -2075,7 +1955,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-se~4"></span>
               type(<a href='../type/settings.html'>settings</a>),
             </td>
 <td>intent(in)</td>
@@ -2090,7 +1970,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-boxp~5"></span>
               character(len=1),
             </td>
 <td>intent(inout)</td>
@@ -2110,10 +1990,10 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-get_se"></span><h3>public  subroutine <a href='../proc/get_se.html'>get_SE</a>(SE, title, shapex, fmt, advance, lbound, separator, style, trim, unit, orient, zeroas, digmax)  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-get_se"></span> <h3>public  subroutine <a href='../proc/get_se.html'>get_SE</a>(SE, title, shapex, fmt, advance, lbound, separator, style, trim, unit, orient, zeroas, digmax)  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -2121,16 +2001,16 @@ parameter
       <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-se~5"></span>
               type(<a href='../type/settings.html'>settings</a>),
             </td>
 <td>intent(out)</td>
@@ -2145,7 +2025,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-title~3"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -2160,7 +2040,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-shapex"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -2175,7 +2055,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-fmt~4"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -2190,7 +2070,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-advance~2"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -2205,7 +2085,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-lbound"></span>
               integer,
             </td>
 <td>intent(in),</td>
@@ -2220,7 +2100,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-separator"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -2235,7 +2115,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-style~2"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -2250,7 +2130,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-trim~2"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -2265,7 +2145,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-unit~3"></span>
               integer,
             </td>
 <td>intent(in),</td>
@@ -2280,7 +2160,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-orient~2"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -2295,7 +2175,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-zeroas~2"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -2310,7 +2190,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-digmax~2"></span>
               integer,
             </td>
 <td>intent(in),</td>
@@ -2330,10 +2210,10 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-preparebox"></span><h3>public  subroutine <a href='../proc/preparebox.html'>preparebox</a>(title, SE, m, n, wid, widp, lin1, wleft, boxp)  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-preparebox"></span> <h3>public  subroutine <a href='../proc/preparebox.html'>preparebox</a>(title, SE, m, n, wid, widp, lin1, wleft, boxp)  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -2341,16 +2221,16 @@ parameter
       <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-title"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -2365,7 +2245,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-se~3"></span>
               type(<a href='../type/settings.html'>settings</a>),
             </td>
 <td>intent(in)</td>
@@ -2380,7 +2260,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-m"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -2395,7 +2275,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-n"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -2410,7 +2290,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-wid"></span>
               integer,
             </td>
 <td>intent(inout)</td>
@@ -2425,7 +2305,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-widp"></span>
               integer,
             </td>
 <td>intent(out)</td>
@@ -2440,7 +2320,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-lin1"></span>
               integer,
             </td>
 <td>intent(out)</td>
@@ -2455,7 +2335,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-wleft"></span>
               integer,
             </td>
 <td>intent(out)</td>
@@ -2470,7 +2350,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-boxp"></span>
               character(len=1),
             </td>
 <td></td>
@@ -2490,10 +2370,10 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-readfmt"></span><h3>public pure subroutine <a href='../proc/readfmt.html'>readfmt</a>(fmt, fmt1, w, d, gedit)  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-readfmt"></span> <h3>public pure subroutine <a href='../proc/readfmt.html'>readfmt</a>(fmt, fmt1, w, d, gedit)  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -2501,16 +2381,16 @@ parameter
       <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-fmt~2"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -2525,7 +2405,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-fmt1"></span>
               character(len=*),
             </td>
 <td>intent(out)</td>
@@ -2540,7 +2420,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-w~3"></span>
               integer,
             </td>
 <td>intent(out)</td>
@@ -2555,7 +2435,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-d~2"></span>
               integer,
             </td>
 <td>intent(out)</td>
@@ -2570,7 +2450,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-gedit~2"></span>
               logical,
             </td>
 <td>intent(out)</td>
@@ -2590,10 +2470,10 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-replace_w"></span><h3>public pure subroutine <a href='../proc/replace_w.html'>replace_w</a>(fmt, wnew)  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-replace_w"></span> <h3>public pure subroutine <a href='../proc/replace_w.html'>replace_w</a>(fmt, wnew)  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -2601,16 +2481,16 @@ parameter
       <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-fmt~3"></span>
               character(len=*),
             </td>
 <td>intent(inout)</td>
@@ -2625,7 +2505,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-wnew"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -2645,10 +2525,10 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-replace_zeronaninf"></span><h3>public  subroutine <a href='../proc/replace_zeronaninf.html'>replace_zeronaninf</a>(s, zas, maskz, masknan, maskminf, maskinf)  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-replace_zeronaninf"></span> <h3>public  subroutine <a href='../proc/replace_zeronaninf.html'>replace_zeronaninf</a>(s, zas, maskz, masknan, maskminf, maskinf)  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -2656,16 +2536,16 @@ parameter
       <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-s~5"></span>
               character(len=*),
             </td>
 <td>intent(inout)</td>
@@ -2680,7 +2560,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-zas~3"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -2695,7 +2575,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-maskz"></span>
               logical,
             </td>
 <td>intent(in)</td>
@@ -2710,12 +2590,12 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-masknan"></span>
               logical,
             </td>
-<td>intent(in)</td>
+<td>intent(in),</td>
               <td></td>            <td>
-              
+              optional
             </td>
             <td>::</td>
             <td><strong>masknan</strong>(:)</td>
@@ -2725,12 +2605,12 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-maskminf"></span>
               logical,
             </td>
-<td>intent(in)</td>
+<td>intent(in),</td>
               <td></td>            <td>
-              
+              optional
             </td>
             <td>::</td>
             <td><strong>maskminf</strong>(:)</td>
@@ -2740,12 +2620,12 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-maskinf"></span>
               logical,
             </td>
-<td>intent(in)</td>
+<td>intent(in),</td>
               <td></td>            <td>
-              
+              optional
             </td>
             <td>::</td>
             <td><strong>maskinf</strong>(:)</td>
@@ -2760,10 +2640,10 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-tostring_check_settings"></span><h3>public  subroutine <a href='../proc/tostring_check_settings.html'>tostring_check_settings</a>()  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-tostring_check_settings"></span> <h3>public  subroutine <a href='../proc/tostring_check_settings.html'>tostring_check_settings</a>()  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -2773,10 +2653,10 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-tostring_get"></span><h3>public pure subroutine <a href='../proc/tostring_get.html'>tostring_get</a>(sa, st)  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-tostring_get"></span> <h3>public pure subroutine <a href='../proc/tostring_get.html'>tostring_get</a>(sa, st)  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -2784,16 +2664,16 @@ parameter
       <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-sa~3"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -2808,7 +2688,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-st"></span>
               character(len=*),
             </td>
 <td>intent(out)</td>
@@ -2828,10 +2708,10 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-tostring_get_complex"></span><h3>public pure subroutine <a href='../proc/tostring_get_complex.html'>tostring_get_complex</a>(sar, sgn, sai, st)  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-tostring_get_complex"></span> <h3>public pure subroutine <a href='../proc/tostring_get_complex.html'>tostring_get_complex</a>(sar, sgn, sai, st)  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -2839,16 +2719,16 @@ parameter
       <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-sar"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -2863,7 +2743,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-sgn"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -2878,7 +2758,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-sai"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -2893,7 +2773,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-st~2"></span>
               character(len=*),
             </td>
 <td>intent(out)</td>
@@ -2913,10 +2793,10 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-trim_real"></span><h3>public pure subroutine <a href='../proc/trim_real.html'>trim_real</a>(sa, gedit, w)  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-trim_real"></span> <h3>public pure subroutine <a href='../proc/trim_real.html'>trim_real</a>(sa, gedit, w)  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -2924,16 +2804,16 @@ parameter
       <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-sa~2"></span>
               character(len=*),
             </td>
 <td>intent(inout)</td>
@@ -2948,7 +2828,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-gedit~6"></span>
               logical,
             </td>
 <td>intent(in)</td>
@@ -2963,7 +2843,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-w~7"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -2983,10 +2863,10 @@ parameter
     </div>
   </div>
 
-              <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-trim_s_real"></span><h3>public pure subroutine <a href='../proc/trim_s_real.html'>trim_s_real</a>(sa, gedit, w)  
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-trim_s_real"></span> <h3>public pure subroutine <a href='../proc/trim_s_real.html'>trim_s_real</a>(sa, gedit, w)  
 </h3></div>
-    <div class="panel-body">
+    <div class="card-body">
           
   
 
@@ -2994,16 +2874,16 @@ parameter
       <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-sa"></span>
               character(len=*),
             </td>
 <td>intent(inout)</td>
@@ -3018,7 +2898,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-gedit~5"></span>
               logical,
             </td>
 <td>intent(in)</td>
@@ -3033,7 +2913,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" ></span>
+              <span class="anchor" id="variable-w~6"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -3065,32 +2945,27 @@ parameter
     </div> <!-- /container -->
     <footer>
       <div class="container">
-        <div class="row">
-          <div class="col-xs-6 col-md-6"><p>M_display was developed by John S. Urban<br>&copy; 2023 
+        <div class="row justify-content-between">
+          <div class="col"><p>M_display was developed by John S. Urban<br>&copy; 2024 
 </p>
           </div>
-          <div class="col-xs-6 col-md-6">
-            <p class="text-right">
+          <div class="col">
+            <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-04-23 22:25              </p>
+ on 2024-03-29 03:47              </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
 
-    <!-- Bootstrap core JavaScript
-         ================================================== -->
-         <!-- Placed at the end of the document so the pages load faster -->
-    <!--
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        -->
-        <script src="../js/bootstrap.min.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="../js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
 
-        <!-- MathJax JavaScript
+    <!-- MathJax JavaScript
              ================================================== -->
              <!-- Placed at the end of the document so the pages load faster -->
         <script type="text/x-mathjax-config">
