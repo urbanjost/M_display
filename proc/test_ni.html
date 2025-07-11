@@ -12,14 +12,29 @@
 
     <title>test_ni &ndash; M_display</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="../css/pygments.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
     <link href="../css/local.css" rel="stylesheet">
-      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="../css/pygments.css" rel="stylesheet">
     <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
@@ -75,8 +90,7 @@
         <ul class="list-inline" style="margin-bottom:0px;display:inline">
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
-              <a data-bs-toggle="tooltip"
-                 data-bs-placement="bottom" data-html="true"
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
                  title=" 5.4% of total for procedures.">97 statements</a>
             </li>
 
@@ -98,9 +112,11 @@
     </div>
   </div>
   <script>
-    $(function () {
-    $('[data-bs-toggle="tooltip"]').tooltip()
-    })
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
   </script>
 
   </div>
@@ -117,17 +133,17 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../proc/test_ni.html#variable-d1~2">d1</a>
-            <a class="list-group-item" href="../proc/test_ni.html#variable-d2~2">d2</a>
-            <a class="list-group-item" href="../proc/test_ni.html#variable-d3~2">d3</a>
-            <a class="list-group-item" href="../proc/test_ni.html#variable-d4~2">d4</a>
+            <a class="list-group-item" href="../proc/test_ni.html#variable-d1">d1</a>
+            <a class="list-group-item" href="../proc/test_ni.html#variable-d2">d2</a>
+            <a class="list-group-item" href="../proc/test_ni.html#variable-d3">d3</a>
+            <a class="list-group-item" href="../proc/test_ni.html#variable-d4">d4</a>
             <a class="list-group-item" href="../proc/test_ni.html#variable-mask1">mask1</a>
             <a class="list-group-item" href="../proc/test_ni.html#variable-mask2">mask2</a>
             <a class="list-group-item" href="../proc/test_ni.html#variable-mask3">mask3</a>
-            <a class="list-group-item" href="../proc/test_ni.html#variable-s1~7">s1</a>
-            <a class="list-group-item" href="../proc/test_ni.html#variable-s2~8">s2</a>
-            <a class="list-group-item" href="../proc/test_ni.html#variable-s3~7">s3</a>
-            <a class="list-group-item" href="../proc/test_ni.html#variable-s4~8">s4</a>
+            <a class="list-group-item" href="../proc/test_ni.html#variable-s1">s1</a>
+            <a class="list-group-item" href="../proc/test_ni.html#variable-s2">s2</a>
+            <a class="list-group-item" href="../proc/test_ni.html#variable-s3">s3</a>
+            <a class="list-group-item" href="../proc/test_ni.html#variable-s4">s4</a>
             <a class="list-group-item" href="../proc/test_ni.html#variable-zero~2">zero</a>
         </div>
       </div>
@@ -258,7 +274,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-d1~2"></span>
+              <span class="anchor" id="variable-d1"></span>
               real(kind=srk),
             </td>
               <td>public</td>
@@ -275,7 +291,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-d2~2"></span>
+              <span class="anchor" id="variable-d2"></span>
               real(kind=srk),
             </td>
               <td>public</td>
@@ -292,7 +308,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-d3~2"></span>
+              <span class="anchor" id="variable-d3"></span>
               real(kind=srk),
             </td>
               <td>public</td>
@@ -309,7 +325,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-d4~2"></span>
+              <span class="anchor" id="variable-d4"></span>
               real(kind=srk),
             </td>
               <td>public</td>
@@ -377,7 +393,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-s1~7"></span>
+              <span class="anchor" id="variable-s1"></span>
               character(len=12),
             </td>
               <td>public</td>
@@ -394,7 +410,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-s2~8"></span>
+              <span class="anchor" id="variable-s2"></span>
               character(len=9),
             </td>
               <td>public</td>
@@ -411,7 +427,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-s3~7"></span>
+              <span class="anchor" id="variable-s3"></span>
               character(len=16),
             </td>
               <td>public</td>
@@ -428,7 +444,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-s4~8"></span>
+              <span class="anchor" id="variable-s4"></span>
               character(len=9),
             </td>
               <td>public</td>
@@ -588,40 +604,21 @@
     <footer>
       <div class="container">
         <div class="row justify-content-between">
-          <div class="col"><p>M_display was developed by John S. Urban<br>&copy; 2024 
+          <div class="col">
+            <p>
+              M_display
+ was developed by John S. Urban<br>              &copy; 2025 
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-03-30 00:11              </p>
+ on 2025-07-11 00:24 +0000             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-
-    <!-- MathJax JavaScript
-             ================================================== -->
-             <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-          <script src="../tipuesearch/tipuesearch_content.js"></script>
-          <script src="../tipuesearch/tipuesearch_set.js"></script>
-          <script src="../tipuesearch/tipuesearch.js"></script>
-
   </body>
 </html>

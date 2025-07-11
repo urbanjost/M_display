@@ -12,14 +12,29 @@
 
     <title>TEST_NANINF_MOD &ndash; M_display</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="../css/pygments.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
     <link href="../css/local.css" rel="stylesheet">
-      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="../css/pygments.css" rel="stylesheet">
     <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
@@ -75,8 +90,7 @@
         <ul class="list-inline" style="margin-bottom:0px;display:inline">
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
-              <a data-bs-toggle="tooltip"
-                 data-bs-placement="bottom" data-html="true"
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
                  title=" 7.0% of total for modules and submodules.">172 statements</a>
             </li>
 
@@ -97,9 +111,11 @@
     </div>
   </div>
   <script>
-    $(function () {
-    $('[data-bs-toggle="tooltip"]').tooltip()
-    })
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
   </script>
 
   </div>
@@ -116,12 +132,12 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/test_naninf_mod.html#variable-adv~4">adv</a>
-            <a class="list-group-item" href="../module/test_naninf_mod.html#variable-assert_string~2">assert_string</a>
-            <a class="list-group-item" href="../module/test_naninf_mod.html#variable-compare_no~2">compare_no</a>
-            <a class="list-group-item" href="../module/test_naninf_mod.html#variable-fmt~74">fmt</a>
-            <a class="list-group-item" href="../module/test_naninf_mod.html#variable-srk~2">srk</a>
-            <a class="list-group-item" href="../module/test_naninf_mod.html#variable-verbose~2">verbose</a>
+            <a class="list-group-item" href="../module/test_naninf_mod.html#variable-adv~3">adv</a>
+            <a class="list-group-item" href="../module/test_naninf_mod.html#variable-assert_string">assert_string</a>
+            <a class="list-group-item" href="../module/test_naninf_mod.html#variable-compare_no">compare_no</a>
+            <a class="list-group-item" href="../module/test_naninf_mod.html#variable-fmt~72">fmt</a>
+            <a class="list-group-item" href="../module/test_naninf_mod.html#variable-srk">srk</a>
+            <a class="list-group-item" href="../module/test_naninf_mod.html#variable-verbose">verbose</a>
         </div>
       </div>
     </div>
@@ -143,14 +159,14 @@
       </a>
       <div id="subs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/test_naninf_mod.html#proc-assert~2">assert</a>
-            <a class="list-group-item" href="../module/test_naninf_mod.html#proc-assert_init~2">assert_init</a>
-            <a class="list-group-item" href="../module/test_naninf_mod.html#proc-close_8~2">close_8</a>
-            <a class="list-group-item" href="../module/test_naninf_mod.html#proc-compare~2">compare</a>
-            <a class="list-group-item" href="../module/test_naninf_mod.html#proc-msg1~2">msg1</a>
-            <a class="list-group-item" href="../module/test_naninf_mod.html#proc-msg2~2">msg2</a>
-            <a class="list-group-item" href="../module/test_naninf_mod.html#proc-open_8~2">open_8</a>
-            <a class="list-group-item" href="../module/test_naninf_mod.html#proc-reopen_8~2">reopen_8</a>
+            <a class="list-group-item" href="../module/test_naninf_mod.html#proc-assert">assert</a>
+            <a class="list-group-item" href="../module/test_naninf_mod.html#proc-assert_init">assert_init</a>
+            <a class="list-group-item" href="../module/test_naninf_mod.html#proc-close_8">close_8</a>
+            <a class="list-group-item" href="../module/test_naninf_mod.html#proc-compare">compare</a>
+            <a class="list-group-item" href="../module/test_naninf_mod.html#proc-msg1">msg1</a>
+            <a class="list-group-item" href="../module/test_naninf_mod.html#proc-msg2">msg2</a>
+            <a class="list-group-item" href="../module/test_naninf_mod.html#proc-open_8">open_8</a>
+            <a class="list-group-item" href="../module/test_naninf_mod.html#proc-reopen_8">reopen_8</a>
             <a class="list-group-item" href="../module/test_naninf_mod.html#proc-test_ni">test_ni</a>
         </div>
       </div>
@@ -190,7 +206,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-adv~4"></span>
+              <span class="anchor" id="variable-adv~3"></span>
               character(len=3),
             </td>
               <td>public</td>
@@ -207,7 +223,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-assert_string~2"></span>
+              <span class="anchor" id="variable-assert_string"></span>
               character(len=30),
             </td>
               <td>public</td>
@@ -224,7 +240,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-compare_no~2"></span>
+              <span class="anchor" id="variable-compare_no"></span>
               integer,
             </td>
               <td>public</td>
@@ -241,7 +257,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~74"></span>
+              <span class="anchor" id="variable-fmt~72"></span>
               character(len=90),
             </td>
               <td>public</td>
@@ -258,7 +274,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-srk~2"></span>
+              <span class="anchor" id="variable-srk"></span>
               integer,
             </td>
               <td>public,</td>
@@ -275,7 +291,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-verbose~2"></span>
+              <span class="anchor" id="variable-verbose"></span>
               integer,
             </td>
               <td>public,</td>
@@ -304,7 +320,7 @@ parameter
         <section>
           <h2>Subroutines</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-assert~2"></span> <h3>public  subroutine <a href='../proc/assert~2.html'>assert</a>(s, msg)  
+    <div class="card-header codesum"><span class="anchor" id="proc-assert"></span> <h3>public  subroutine <a href='../proc/assert.html'>assert</a>(s, msg)  
 </h3></div>
     <div class="card-body">
           
@@ -323,7 +339,7 @@ parameter
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-s~29"></span>
+              <span class="anchor" id="variable-s~22"></span>
               logical
             </td>
 <td></td>
@@ -338,7 +354,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-msg~3"></span>
+              <span class="anchor" id="variable-msg"></span>
               character(len=*),
             </td>
 <td></td>
@@ -359,7 +375,7 @@ parameter
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-assert_init~2"></span> <h3>public  subroutine <a href='../proc/assert_init~2.html'>assert_init</a>(st)  
+    <div class="card-header codesum"><span class="anchor" id="proc-assert_init"></span> <h3>public  subroutine <a href='../proc/assert_init.html'>assert_init</a>(st)  
 </h3></div>
     <div class="card-body">
           
@@ -378,7 +394,7 @@ parameter
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-st~33"></span>
+              <span class="anchor" id="variable-st~29"></span>
               character(len=*),
             </td>
 <td></td>
@@ -399,7 +415,7 @@ parameter
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-close_8~2"></span> <h3>public  subroutine <a href='../proc/close_8~2.html'>close_8</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-close_8"></span> <h3>public  subroutine <a href='../proc/close_8.html'>close_8</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -412,7 +428,7 @@ parameter
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-compare~2"></span> <h3>public  subroutine <a href='../proc/compare~2.html'>compare</a>(sok, message, sok1)  
+    <div class="card-header codesum"><span class="anchor" id="proc-compare"></span> <h3>public  subroutine <a href='../proc/compare.html'>compare</a>(sok, message, sok1)  
 </h3></div>
     <div class="card-body">
           
@@ -431,7 +447,7 @@ parameter
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-sok~2"></span>
+              <span class="anchor" id="variable-sok"></span>
               character(len=*)
             </td>
 <td></td>
@@ -446,7 +462,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-message~2"></span>
+              <span class="anchor" id="variable-message"></span>
               character(len=*),
             </td>
 <td></td>
@@ -461,7 +477,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-sok1~2"></span>
+              <span class="anchor" id="variable-sok1"></span>
               character(len=*),
             </td>
 <td></td>
@@ -482,7 +498,7 @@ parameter
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-msg1~2"></span> <h3>public  subroutine <a href='../proc/msg1~2.html'>msg1</a>(st)  
+    <div class="card-header codesum"><span class="anchor" id="proc-msg1"></span> <h3>public  subroutine <a href='../proc/msg1.html'>msg1</a>(st)  
 </h3></div>
     <div class="card-body">
           
@@ -501,7 +517,7 @@ parameter
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-st~31"></span>
+              <span class="anchor" id="variable-st~27"></span>
               character(len=*)
             </td>
 <td></td>
@@ -522,7 +538,7 @@ parameter
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-msg2~2"></span> <h3>public  subroutine <a href='../proc/msg2~2.html'>msg2</a>(st)  
+    <div class="card-header codesum"><span class="anchor" id="proc-msg2"></span> <h3>public  subroutine <a href='../proc/msg2.html'>msg2</a>(st)  
 </h3></div>
     <div class="card-body">
           
@@ -541,7 +557,7 @@ parameter
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-st~32"></span>
+              <span class="anchor" id="variable-st~28"></span>
               character(len=*)
             </td>
 <td></td>
@@ -562,7 +578,7 @@ parameter
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-open_8~2"></span> <h3>public  subroutine <a href='../proc/open_8~2.html'>open_8</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-open_8"></span> <h3>public  subroutine <a href='../proc/open_8.html'>open_8</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -575,7 +591,7 @@ parameter
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-reopen_8~2"></span> <h3>public  subroutine <a href='../proc/reopen_8~2.html'>reopen_8</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-reopen_8"></span> <h3>public  subroutine <a href='../proc/reopen_8.html'>reopen_8</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -670,40 +686,21 @@ parameter
     <footer>
       <div class="container">
         <div class="row justify-content-between">
-          <div class="col"><p>M_display was developed by John S. Urban<br>&copy; 2024 
+          <div class="col">
+            <p>
+              M_display
+ was developed by John S. Urban<br>              &copy; 2025 
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-03-30 00:11              </p>
+ on 2025-07-11 00:24 +0000             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-
-    <!-- MathJax JavaScript
-             ================================================== -->
-             <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-          <script src="../tipuesearch/tipuesearch_content.js"></script>
-          <script src="../tipuesearch/tipuesearch_set.js"></script>
-          <script src="../tipuesearch/tipuesearch.js"></script>
-
   </body>
 </html>

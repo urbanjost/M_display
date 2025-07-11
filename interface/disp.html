@@ -12,14 +12,29 @@
 
     <title>disp &ndash; M_display</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="../css/pygments.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
     <link href="../css/local.css" rel="stylesheet">
-      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="../css/pygments.css" rel="stylesheet">
     <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
@@ -75,8 +90,7 @@
         <ul class="list-inline" style="margin-bottom:0px;display:inline">
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
-              <a data-bs-toggle="tooltip"
-                 data-bs-placement="bottom" data-html="true"
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
                  title="<p> 0.5% of total for procedures.</p>Including implementation: 419 statements, 23.3% of total for procedures.">9 statements</a>
             </li>
 
@@ -98,9 +112,11 @@
     </div>
   </div>
   <script>
-    $(function () {
-    $('[data-bs-toggle="tooltip"]').tooltip()
-    })
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
   </script>
 
   </div>
@@ -543,7 +559,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~6"></span>
+              <span class="anchor" id="variable-x"></span>
               integer(kind=dint),
             </td>
 <td>intent(in)</td>
@@ -558,7 +574,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~8"></span>
+              <span class="anchor" id="variable-fmt~6"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -687,7 +703,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~7"></span>
+              <span class="anchor" id="variable-x~2"></span>
               integer(kind=dint),
             </td>
 <td>intent(in)</td>
@@ -702,7 +718,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~9"></span>
+              <span class="anchor" id="variable-fmt~7"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -831,7 +847,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~8"></span>
+              <span class="anchor" id="variable-x~3"></span>
               integer(kind=dint),
             </td>
 <td>intent(in)</td>
@@ -846,7 +862,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~10"></span>
+              <span class="anchor" id="variable-fmt~8"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -1020,7 +1036,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~9"></span>
+              <span class="anchor" id="variable-x~4"></span>
               integer(kind=dint),
             </td>
 <td>intent(in)</td>
@@ -1035,7 +1051,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~11"></span>
+              <span class="anchor" id="variable-fmt~9"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -1194,7 +1210,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~10"></span>
+              <span class="anchor" id="variable-x~5"></span>
               integer(kind=dint),
             </td>
 <td>intent(in)</td>
@@ -1209,7 +1225,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~12"></span>
+              <span class="anchor" id="variable-fmt~10"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -1368,7 +1384,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~11"></span>
+              <span class="anchor" id="variable-x~6"></span>
               integer(kind=dint),
             </td>
 <td>intent(in)</td>
@@ -1383,7 +1399,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~13"></span>
+              <span class="anchor" id="variable-fmt~11"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -1527,7 +1543,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~21"></span>
+              <span class="anchor" id="variable-x~16"></span>
               real(kind=sngl),
             </td>
 <td>intent(in)</td>
@@ -1542,7 +1558,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~18"></span>
+              <span class="anchor" id="variable-fmt~16"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -1686,7 +1702,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~24"></span>
+              <span class="anchor" id="variable-x~19"></span>
               real(kind=sngl),
             </td>
 <td>intent(in)</td>
@@ -1701,7 +1717,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~21"></span>
+              <span class="anchor" id="variable-fmt~19"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -1845,7 +1861,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~22"></span>
+              <span class="anchor" id="variable-x~17"></span>
               real(kind=sngl),
             </td>
 <td>intent(in)</td>
@@ -1860,7 +1876,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~19"></span>
+              <span class="anchor" id="variable-fmt~17"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -2049,7 +2065,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~25"></span>
+              <span class="anchor" id="variable-x~20"></span>
               real(kind=sngl),
             </td>
 <td>intent(in)</td>
@@ -2064,7 +2080,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~22"></span>
+              <span class="anchor" id="variable-fmt~20"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -2238,7 +2254,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~23"></span>
+              <span class="anchor" id="variable-x~18"></span>
               real(kind=sngl),
             </td>
 <td>intent(in)</td>
@@ -2253,7 +2269,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~20"></span>
+              <span class="anchor" id="variable-fmt~18"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -2427,7 +2443,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~26"></span>
+              <span class="anchor" id="variable-x~21"></span>
               real(kind=sngl),
             </td>
 <td>intent(in)</td>
@@ -2442,7 +2458,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~23"></span>
+              <span class="anchor" id="variable-fmt~21"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -2601,7 +2617,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~51"></span>
+              <span class="anchor" id="variable-x~46"></span>
               real(kind=dble),
             </td>
 <td>intent(in)</td>
@@ -2616,7 +2632,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~38"></span>
+              <span class="anchor" id="variable-fmt~36"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -2760,7 +2776,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~54"></span>
+              <span class="anchor" id="variable-x~49"></span>
               real(kind=dble),
             </td>
 <td>intent(in)</td>
@@ -2775,7 +2791,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~41"></span>
+              <span class="anchor" id="variable-fmt~39"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -2919,7 +2935,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~52"></span>
+              <span class="anchor" id="variable-x~47"></span>
               real(kind=dble),
             </td>
 <td>intent(in)</td>
@@ -2934,7 +2950,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~39"></span>
+              <span class="anchor" id="variable-fmt~37"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -3123,7 +3139,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~55"></span>
+              <span class="anchor" id="variable-x~50"></span>
               real(kind=dble),
             </td>
 <td>intent(in)</td>
@@ -3138,7 +3154,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~42"></span>
+              <span class="anchor" id="variable-fmt~40"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -3312,7 +3328,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~53"></span>
+              <span class="anchor" id="variable-x~48"></span>
               real(kind=dble),
             </td>
 <td>intent(in)</td>
@@ -3327,7 +3343,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~40"></span>
+              <span class="anchor" id="variable-fmt~38"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -3501,7 +3517,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~56"></span>
+              <span class="anchor" id="variable-x~51"></span>
               real(kind=dble),
             </td>
 <td>intent(in)</td>
@@ -3516,7 +3532,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~43"></span>
+              <span class="anchor" id="variable-fmt~41"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -3675,7 +3691,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~37"></span>
+              <span class="anchor" id="variable-x~32"></span>
               complex(kind=sngl),
             </td>
 <td>intent(in)</td>
@@ -3690,7 +3706,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~28"></span>
+              <span class="anchor" id="variable-fmt~26"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -3834,7 +3850,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~40"></span>
+              <span class="anchor" id="variable-x~35"></span>
               complex(kind=sngl),
             </td>
 <td>intent(in)</td>
@@ -3849,7 +3865,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~31"></span>
+              <span class="anchor" id="variable-fmt~29"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -3993,7 +4009,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~38"></span>
+              <span class="anchor" id="variable-x~33"></span>
               complex(kind=sngl),
             </td>
 <td>intent(in)</td>
@@ -4008,7 +4024,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~29"></span>
+              <span class="anchor" id="variable-fmt~27"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -4197,7 +4213,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~41"></span>
+              <span class="anchor" id="variable-x~36"></span>
               complex(kind=sngl),
             </td>
 <td>intent(in)</td>
@@ -4212,7 +4228,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~32"></span>
+              <span class="anchor" id="variable-fmt~30"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -4386,7 +4402,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~39"></span>
+              <span class="anchor" id="variable-x~34"></span>
               complex(kind=sngl),
             </td>
 <td>intent(in)</td>
@@ -4401,7 +4417,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~30"></span>
+              <span class="anchor" id="variable-fmt~28"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -4575,7 +4591,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~42"></span>
+              <span class="anchor" id="variable-x~37"></span>
               complex(kind=sngl),
             </td>
 <td>intent(in)</td>
@@ -4590,7 +4606,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~33"></span>
+              <span class="anchor" id="variable-fmt~31"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -4749,7 +4765,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~67"></span>
+              <span class="anchor" id="variable-x~62"></span>
               complex(kind=dble),
             </td>
 <td>intent(in)</td>
@@ -4764,7 +4780,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~48"></span>
+              <span class="anchor" id="variable-fmt~46"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -4908,7 +4924,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~70"></span>
+              <span class="anchor" id="variable-x~65"></span>
               complex(kind=dble),
             </td>
 <td>intent(in)</td>
@@ -4923,7 +4939,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~51"></span>
+              <span class="anchor" id="variable-fmt~49"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -5067,7 +5083,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~68"></span>
+              <span class="anchor" id="variable-x~63"></span>
               complex(kind=dble),
             </td>
 <td>intent(in)</td>
@@ -5082,7 +5098,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~49"></span>
+              <span class="anchor" id="variable-fmt~47"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -5271,7 +5287,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~71"></span>
+              <span class="anchor" id="variable-x~66"></span>
               complex(kind=dble),
             </td>
 <td>intent(in)</td>
@@ -5286,7 +5302,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~52"></span>
+              <span class="anchor" id="variable-fmt~50"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -5460,7 +5476,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~69"></span>
+              <span class="anchor" id="variable-x~64"></span>
               complex(kind=dble),
             </td>
 <td>intent(in)</td>
@@ -5475,7 +5491,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~50"></span>
+              <span class="anchor" id="variable-fmt~48"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -5649,7 +5665,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~72"></span>
+              <span class="anchor" id="variable-x~67"></span>
               complex(kind=dble),
             </td>
 <td>intent(in)</td>
@@ -5664,7 +5680,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~53"></span>
+              <span class="anchor" id="variable-fmt~51"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -5823,7 +5839,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~81"></span>
+              <span class="anchor" id="variable-x~76"></span>
               logical(kind=dlog),
             </td>
 <td>intent(in)</td>
@@ -5838,7 +5854,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~58"></span>
+              <span class="anchor" id="variable-fmt~56"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -5952,7 +5968,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~84"></span>
+              <span class="anchor" id="variable-x~79"></span>
               logical(kind=dlog),
             </td>
 <td>intent(in)</td>
@@ -5967,7 +5983,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~61"></span>
+              <span class="anchor" id="variable-fmt~59"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -6081,7 +6097,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~82"></span>
+              <span class="anchor" id="variable-x~77"></span>
               logical(kind=dlog),
             </td>
 <td>intent(in)</td>
@@ -6096,7 +6112,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~59"></span>
+              <span class="anchor" id="variable-fmt~57"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -6255,7 +6271,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~85"></span>
+              <span class="anchor" id="variable-x~80"></span>
               logical(kind=dlog),
             </td>
 <td>intent(in)</td>
@@ -6270,7 +6286,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~62"></span>
+              <span class="anchor" id="variable-fmt~60"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -6414,7 +6430,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~83"></span>
+              <span class="anchor" id="variable-x~78"></span>
               logical(kind=dlog),
             </td>
 <td>intent(in)</td>
@@ -6429,7 +6445,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~60"></span>
+              <span class="anchor" id="variable-fmt~58"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -6573,7 +6589,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~86"></span>
+              <span class="anchor" id="variable-x~81"></span>
               logical(kind=dlog),
             </td>
 <td>intent(in)</td>
@@ -6588,7 +6604,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~63"></span>
+              <span class="anchor" id="variable-fmt~61"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -6732,7 +6748,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~96"></span>
+              <span class="anchor" id="variable-x~91"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -6747,7 +6763,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~70"></span>
+              <span class="anchor" id="variable-fmt~68"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -6861,7 +6877,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~94"></span>
+              <span class="anchor" id="variable-x~89"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -6876,7 +6892,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~68"></span>
+              <span class="anchor" id="variable-fmt~66"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -7035,7 +7051,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~98"></span>
+              <span class="anchor" id="variable-x~93"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -7050,7 +7066,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~72"></span>
+              <span class="anchor" id="variable-fmt~70"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -7194,7 +7210,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~95"></span>
+              <span class="anchor" id="variable-x~90"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -7209,7 +7225,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~69"></span>
+              <span class="anchor" id="variable-fmt~67"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -7353,7 +7369,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~99"></span>
+              <span class="anchor" id="variable-x~94"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -7368,7 +7384,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-fmt~73"></span>
+              <span class="anchor" id="variable-fmt~71"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -7485,40 +7501,21 @@
     <footer>
       <div class="container">
         <div class="row justify-content-between">
-          <div class="col"><p>M_display was developed by John S. Urban<br>&copy; 2024 
+          <div class="col">
+            <p>
+              M_display
+ was developed by John S. Urban<br>              &copy; 2025 
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-03-30 00:11              </p>
+ on 2025-07-11 00:24 +0000             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-
-    <!-- MathJax JavaScript
-             ================================================== -->
-             <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-          <script src="../tipuesearch/tipuesearch_content.js"></script>
-          <script src="../tipuesearch/tipuesearch_set.js"></script>
-          <script src="../tipuesearch/tipuesearch.js"></script>
-
   </body>
 </html>
